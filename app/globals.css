@@ -1,0 +1,314 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+  --background: #050506;
+  --foreground: #ffffff;
+  --page-bg: #050506;
+  --text-strong: #ffffff;
+  --text-main: rgba(255, 255, 255, 0.78);
+  --text-muted: rgba(255, 255, 255, 0.58);
+  --text-subtle: rgba(255, 255, 255, 0.42);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --header-bg: rgba(5, 5, 6, 0.76);
+  --surface-1: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --surface-3: #101012;
+  --surface-media: #17171a;
+  --surface-window: #121214;
+  --surface-window-inner: #0a0a0b;
+  --surface-metric: linear-gradient(145deg, #18181b, #0e0e10);
+  --control-bg: rgba(255, 255, 255, 0.05);
+  --control-active: #ffffff;
+  --control-active-text: #070707;
+  --button-bg: #ffffff;
+  --button-text: #050506;
+  --app-store-bg: #ffffff;
+  --hero-glow: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent-color) 18%, transparent),
+    color-mix(in oklch, var(--accent-color) 4.5%, transparent) 35%,
+    rgba(5, 5, 6, 0)
+  );
+  --hero-rule: rgba(255, 255, 255, 0.2);
+  --progress-track: rgba(255, 255, 255, 0.1);
+  --cta-bg: linear-gradient(135deg, color-mix(in oklch, var(--accent-sky) 14%, transparent), color-mix(in oklch, var(--accent-pink) 12%, transparent));
+  --grid-line: rgba(255, 255, 255, 0.025);
+  --soft-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 1%);
+  --hero-shadow: 0 50px 140px rgba(0, 0, 0, 0.55);
+  --cta-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+  --app-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 1%);
+  --app-hover-shadow: 0 24px 60px color-mix(in oklch, var(--accent-color) 20%, transparent);
+  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 28%, transparent);
+  --accent-pink-option: oklch(76% 0.16 354);
+  --accent-sky-option: oklch(80.9% 0.105 251.813);
+  --accent-pink: oklch(76% 0.16 354);
+  --accent-green: oklch(87.1% 0.15 154.449);
+  --accent-sky: oklch(80.9% 0.105 251.813);
+  --accent-color: var(--accent-pink);
+  --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 18%, transparent);
+  --accent-color-soft: var(--accent-pink-soft);
+  --accent-green-soft: rgba(52, 211, 153, 0.14);
+  --accent-glow: color-mix(in oklch, var(--accent-color) 68%, transparent);
+  --accent-soft-glow: color-mix(in oklch, var(--accent-color) 24%, transparent);
+  --accent-selection: color-mix(in oklch, var(--accent-color) 32%, transparent);
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  --background: #fffaf7;
+  --foreground: #171312;
+  --page-bg: #fffaf7;
+  --text-strong: #171312;
+  --text-main: rgba(23, 19, 18, 0.78);
+  --text-muted: rgba(23, 19, 18, 0.62);
+  --text-subtle: rgba(23, 19, 18, 0.44);
+  --border: rgba(120, 76, 67, 0.16);
+  --border-strong: rgba(120, 76, 67, 0.28);
+  --header-bg: rgba(255, 250, 247, 0.78);
+  --surface-1: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 247, 243, 0.92);
+  --surface-3: #ffffff;
+  --surface-media: #fff3ee;
+  --surface-window: rgba(255, 255, 255, 0.9);
+  --surface-window-inner: #fff7f3;
+  --surface-metric: linear-gradient(145deg, #ffffff, #fff1eb);
+  --control-bg: rgba(23, 19, 18, 0.05);
+  --control-active: #171312;
+  --control-active-text: #ffffff;
+  --button-bg: #171312;
+  --button-text: #ffffff;
+  --app-store-bg: #171312;
+  --hero-glow: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent-color) 14%, transparent),
+    color-mix(in oklch, var(--accent-color) 10%, transparent) 36%,
+    rgba(255, 250, 247, 0)
+  );
+  --hero-rule: rgba(120, 76, 67, 0.22);
+  --progress-track: rgba(23, 19, 18, 0.11);
+  --cta-bg: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--accent-sky) 12%, transparent),
+    rgba(255, 255, 255, 0.78) 42%,
+    color-mix(in oklch, var(--accent-pink) 12%, transparent)
+  );
+  --grid-line: rgba(120, 76, 67, 0.055);
+  --soft-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 2%);
+
+  --hero-shadow: 0 44px 120px rgba(104, 54, 42, 0.18);
+  --cta-shadow: 0 34px 100px rgba(104, 54, 42, 0.14);
+  --app-shadow: 0 12px 24px color-mix(in oklch, var(--accent-color) 12%, transparent);
+  --app-hover-shadow: 0 12px 56px color-mix(in oklch, var(--accent-color) 16%, transparent);
+  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 22%, transparent);
+  --accent-pink-option: oklch(57% 0.22 7);
+  --accent-sky-option: oklch(54.6% 0.245 262.881);
+  --accent-pink: oklch(57% 0.22 7);
+  --accent-green: oklch(49% 0.14 160);
+  --accent-sky: oklch(0.5535 0.2629 260.39);
+  --accent-color: var(--accent-pink);
+  --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 14%, transparent);
+  --accent-color-soft: var(--accent-pink-soft);
+  --accent-green-soft: rgba(18, 128, 92, 0.1);
+  --accent-glow: color-mix(in oklch, var(--accent-color) 68%, transparent);
+  --accent-soft-glow: color-mix(in oklch, var(--accent-color) 22%, transparent);
+  --accent-selection: color-mix(in oklch, var(--accent-color) 32%, transparent);
+}
+
+html[data-accent='sky'] {
+  --background: #03070b;
+  --page-bg: #03070b;
+  --header-bg: rgba(3, 7, 11, 0.76);
+  --surface-1: rgba(147, 197, 253, 0.045);
+  --surface-2: rgba(147, 197, 253, 0.07);
+  --surface-3: #071017;
+  --surface-media: #0b1822;
+  --surface-window: #0a141c;
+  --surface-window-inner: #050b11;
+  --surface-metric: linear-gradient(145deg, #0d1a24, #061018);
+  --control-bg: rgba(147, 197, 253, 0.06);
+  --border: rgba(147, 197, 253, 0.1);
+  --border-strong: rgba(147, 197, 253, 0.18);
+  --hero-glow: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent-color) 18%, transparent),
+    color-mix(in oklch, var(--accent-color) 4.5%, transparent) 35%,
+    rgba(5, 5, 6, 0)
+  );
+  --grid-line: rgba(147, 197, 253, 0.025);
+  --app-hover-shadow: 0 24px 60px color-mix(in oklch, var(--accent-color) 20%, transparent);
+  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 26%, transparent);
+  --accent-color: var(--accent-sky);
+  --accent-color-soft: color-mix(in oklch, var(--accent-color) 18%, transparent);
+}
+
+html[data-theme='light'][data-accent='sky'] {
+  --background: #f7fbff;
+  --page-bg: #f7fbff;
+  --header-bg: rgba(247, 251, 255, 0.78);
+  --surface-1: rgba(255, 255, 255, 0.74);
+  --surface-2: rgba(239, 248, 255, 0.94);
+  --surface-3: #ffffff;
+  --surface-media: #eef8ff;
+  --surface-window: rgba(255, 255, 255, 0.9);
+  --surface-window-inner: #f2f9ff;
+  --surface-metric: linear-gradient(145deg, #ffffff, #edf8ff);
+  --control-bg: rgba(37, 99, 235, 0.06);
+  --border: rgba(37, 99, 235, 0.16);
+  --border-strong: rgba(37, 99, 235, 0.28);
+  --hero-glow: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent-color) 14%, transparent),
+    color-mix(in oklch, var(--accent-color) 10%, transparent) 36%,
+    rgba(255, 250, 247, 0)
+  );
+  --grid-line: rgba(37, 99, 235, 0.055);
+  --app-hover-shadow: 0 24px 60px color-mix(in oklch, var(--accent-color) 16%, transparent);
+  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 20%, transparent);
+  --accent-color: var(--accent-sky);
+  --accent-color-soft: color-mix(in oklch, var(--accent-color) 14%, transparent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px), var(--background);
+  background-size: 52px 52px;
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.phone-stage {
+  --hero-front-x: 0px;
+  --hero-front-y: 0px;
+  --hero-back-x: 0px;
+  --hero-back-y: 0px;
+  --hero-grids-y: 48px;
+}
+
+.phone-grids,
+.phone-front,
+.phone-back {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.phone-grids {
+  transform: translate3d(0, var(--hero-grids-y), -140px) scale(0.96);
+}
+
+.hero-grid-fade {
+  --fade-solid: color-mix(in oklch, var(--page-bg) 95%, transparent);
+  --fade-clear: color-mix(in oklch, var(--accent-color) 0%, transparent);
+}
+
+.hero-grid-fade-top {
+  background: linear-gradient(to bottom in oklch, var(--fade-solid) 0%, var(--fade-clear) 100%);
+}
+
+.hero-grid-fade-bottom {
+  background: linear-gradient(to top in oklch, var(--fade-solid) 0%, var(--fade-clear) 100%);
+}
+
+.phone-front {
+  transform: translate3d(var(--hero-front-x), var(--hero-front-y), 80px) rotate(2deg);
+  transform-origin: 58% 78%;
+}
+
+.phone-back {
+  transform: translate3d(var(--hero-back-x), var(--hero-back-y), -80px) rotate(-7deg) scale(0.96);
+  transform-origin: 42% 36%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-grids,
+  .phone-front,
+  .phone-back {
+    transition: none;
+    transform: none;
+  }
+}
+
+::selection {
+  background: var(--accent-selection);
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.app-store-badge-black {
+  display: none;
+}
+
+.app-store-badge-white {
+  display: block;
+}
+
+html[data-theme='light'] .app-store-badge-black {
+  display: block;
+}
+
+html[data-theme='light'] .app-store-badge-white {
+  display: none;
+}
+
+html[data-theme='light'] [data-theme-option='light'],
+html[data-theme='dark'] [data-theme-option='dark'] {
+  background: var(--control-active);
+  color: var(--control-active-text);
+}
+
+.theme-icon-dark,
+.accent-icon-sky {
+  display: none;
+}
+
+html[data-theme='dark'] .theme-icon-light,
+html[data-accent='sky'] .accent-icon-pink {
+  display: none;
+}
+
+html[data-theme='dark'] .theme-icon-dark,
+html[data-accent='sky'] .accent-icon-sky {
+  display: block;
+}
+
+html[data-accent='pink'] [data-accent-option='pink'],
+html[data-accent='sky'] [data-accent-option='sky'] {
+  background: var(--surface-3);
+  box-shadow: 0 10px 28px var(--accent-soft-glow);
+}
+
+html[data-accent='pink'] [data-accent-option='pink'].accent-swatch-color,
+html[data-accent='sky'] [data-accent-option='sky'].accent-swatch-color {
+  opacity: 1;
+}
+html[data-accent='pink'] [data-accent-option='pink'] .accent-swatch,
+html[data-accent='sky'] [data-accent-option='sky'] .accent-swatch {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.134),
+    0 0 8px var(--accent-glow),
+    0 4px 16px var(--accent-soft-glow);
+}
