@@ -1,5 +1,5 @@
 'use client'
-
+import { Sun, Moon } from 'lucide-react'
 type Theme = 'dark' | 'light'
 type Accent = 'pink' | 'sky'
 type ToggleProps = {
@@ -38,24 +38,10 @@ function toggleAccent() {
 
 function ThemeIcon({ option }: { option: Theme }) {
   if (option === 'light') {
-    return (
-      <svg className="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <circle cx="10" cy="10" r="3.25" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M10 2.25v2M10 15.75v2M15.48 4.52l-1.42 1.42M5.94 14.06l-1.42 1.42M17.75 10h-2M4.25 10h-2M15.48 15.48l-1.42-1.42M5.94 5.94 4.52 4.52"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    )
+    return <Sun className="size-5" />
   }
 
-  return (
-    <svg className="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M14.8 12.9A6.4 6.4 0 0 1 7.1 5.2 6.45 6.45 0 1 0 14.8 12.9Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-    </svg>
-  )
+  return <Moon className="size-5" />
 }
 
 export function ThemeToggle({ compact = false }: ToggleProps) {
@@ -64,7 +50,7 @@ export function ThemeToggle({ compact = false }: ToggleProps) {
       <button
         type="button"
         onClick={toggleTheme}
-        className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-[var(--text-muted)] shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
+        className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
         aria-label="Toggle theme">
         <span className="theme-icon-light">
           <ThemeIcon option="light" />
@@ -107,8 +93,8 @@ export function AccentToggle({ compact = false }: ToggleProps) {
         onClick={toggleAccent}
         className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] shadow-[var(--soft-shadow)] transition hover:opacity-85"
         aria-label="Toggle accent color">
-        <span className="accent-icon-pink size-4 rounded-full bg-[var(--accent-pink-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
-        <span className="accent-icon-sky size-4 rounded-full bg-[var(--accent-sky-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
+        <span className="accent-icon-pink size-5 rounded-full bg-[var(--accent-pink-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
+        <span className="accent-icon-sky size-5 rounded-full bg-[var(--accent-sky-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
       </button>
     )
   }

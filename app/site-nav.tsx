@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
 import { appStoreUrl } from './app-store'
 import { AccentToggle, ThemeToggle } from './theme-toggle'
 
@@ -29,7 +30,7 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-3">
       {!textOnly && (
-        <div className="relative size-10 overflow-hidden rounded-[12px] shadow-[var(--icon-shadow)]">
+        <div className="relative size-9 overflow-hidden rounded-[12px] shadow-[var(--icon-shadow)]">
           <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="size-full object-cover" priority />
         </div>
       )}
@@ -42,14 +43,14 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
   return (
     <header className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl `}>
       <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4 px-5 py-2 sm:px-6 sm:py-0 lg:px-0`}>
-        <SiteLogo textOnly={true} />
+        <SiteLogo />
         <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-muted)] md:flex">
           <div className="group relative py-5">
             <Link className="inline-flex items-center gap-1 transition hover:text-[var(--text-strong)]" href="/">
               Product
               <span className="size-1.5 rotate-45 border-b border-r border-current opacity-60 transition group-hover:opacity-100" />
             </Link>
-            <div className="pointer-events-none absolute left-1/2 top-full z-50 w-40 -translate-x-1/2 translate-y-2 rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-1)] p-1.5 opacity-0 shadow-[var(--soft-shadow)] backdrop-blur-xl transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <div className="pointer-events-none absolute left-1/2 top-[80%] z-50 w-40 -translate-x-1/2 translate-y-2 rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-3)] p-1.5 opacity-0 shadow-[var(--soft-shadow)] backdrop-blur-xl transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
               {productLinks.map((item) => (
                 <Link
                   key={item.href}
@@ -81,14 +82,11 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
           <AccentToggle compact />
           <ThemeToggle compact />
           <details className="group relative">
-            <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-[var(--text-strong)] shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">
+            <summary className="flex size-9 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">
               <span className="sr-only">Open navigation menu</span>
-              <svg className="size-5 group-open:hidden" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4 6.5h12M4 10h12M4 13.5h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
-              <svg className="hidden size-5 group-open:block" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="m6 6 8 8M14 6l-8 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
+
+              <Menu className="size-5 group-open:hidden" />
+              <X className="hidden size-5 group-open:block" />
             </summary>
             <div className="absolute right-0 top-full z-50 mt-3 w-[calc(100vw-2.5rem)] max-w-sm rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-3)] p-3 shadow-[var(--soft-shadow)] backdrop-blur-xl">
               <div className="grid gap-1">
