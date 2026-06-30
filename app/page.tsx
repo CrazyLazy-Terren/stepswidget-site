@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { AppStoreButton } from './app-store-button'
 import { HeroPreview } from './hero-preview'
-import { SiteLogo, SiteNav, appStoreUrl } from './site-nav'
+import { SiteLogo, SiteNav } from './site-nav'
 
 const featureCards = [
   {
@@ -108,34 +109,6 @@ const faqItems = [
   },
 ]
 
-function AppStoreButton({ className = '' }: { className?: string }) {
-  return (
-    <a
-      href={appStoreUrl}
-      target="_blank"
-      rel="noreferrer"
-      className={`group inline-flex items-center justify-center rounded-[14px] transition hover:-translate-y-0.5 hover:shadow-(--hero-glow) ${className}`}
-      aria-label="Download Steps Widget on the App Store">
-      <Image
-        src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-        alt="Download on the App Store"
-        width={120}
-        height={40}
-        className="app-store-badge-black h-14 w-auto"
-        priority
-      />
-      <Image
-        src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
-        alt="Download on the App Store"
-        width={120}
-        height={40}
-        className="app-store-badge-white h-14 w-auto"
-        priority
-      />
-    </a>
-  )
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
@@ -143,7 +116,6 @@ export default function Home() {
 
       <section className="relative px-5 pt-28 sm:px-6 lg:px-8">
         <div className="absolute inset-x-0 top-0 h-[620px] bg-[image:var(--hero-glow)]" />
-        <div className="absolute inset-x-0 top-16 h-px bg-gradient-to-r from-transparent via-[var(--hero-rule)] to-transparent" />
         <div className="relative mx-auto flex max-w-7xl flex-col items-center text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[var(--surface-1)] px-3 py-1.5 text-sm text-[var(--text-muted)] shadow-[var(--soft-shadow)]">
             <span className="size-2 rounded-full bg-[var(--accent-color)] shadow-[0_0_18px_var(--accent-glow)]" />
@@ -236,15 +208,9 @@ export default function Home() {
 
       <section className="px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl rounded-[28px] border border-[color:var(--border-strong)] bg-[var(--surface-2)] p-8 text-center shadow-[var(--cta-shadow)] sm:p-12">
-          <Image
-            src="/assets/stepswidget-icon.png"
-            alt=""
-            width={92}
-            height={92}
-            className="mx-auto rounded-[22px] shadow-[0_20px_70px_var(--accent-soft-glow)]"
-          />
+          <Image src="/assets/stepswidget-icon.png" alt="" width={92} height={92} className="mx-auto rounded-[22px] " />
           <h2 className="mx-auto mt-7 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-            Find Your Momentum
+            Keep Your Momentum.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">Download Steps Widget for free and build a daily walking habit.</p>
           <div className="mt-8">

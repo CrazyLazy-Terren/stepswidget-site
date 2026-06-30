@@ -78,8 +78,8 @@ export function HeroPreview() {
 
   return (
     <div ref={stageRef} className="phone-stage relative mx-auto w-full max-w-6xl">
-      <div className="relative -mx-5 min-h-[380px] overflow-hidden sm:min-h-[650px] lg:min-h-[720px]">
-        <div className="phone-back absolute bottom-[-10%] left-[-22%] z-10 w-[110%] max-w-[760px]  sm:left-[13%] sm:w-[72%] lg:left-[12%] lg:top-[0%]">
+      <div className="relative -mx-5 min-h-110 sm:min-h-120 lg:min-h-180 overflow-hidden">
+        <div className="phone-back absolute bottom-[-10%] left-[-22%] z-10 w-[120%] max-w-[760px]  sm:left-[7%] sm:w-[72%] lg:left-[12%] lg:top-[0%]">
           <Image
             src="/assets/iphone-back.png"
             alt="Steps Widget Lock Screen preview behind the Home Screen phone"
@@ -91,7 +91,7 @@ export function HeroPreview() {
           />
         </div>
 
-        <div className="phone-front absolute bottom-[-34%] right-[-25%] z-10 w-[110%] max-w-[760px] sm:bottom-[-48%] sm:right-[3%] sm:w-[72%] lg:bottom-[-20%] lg:right-[12%] lg:w-[64%]">
+        <div className="phone-front absolute bottom-[-34%] right-[-25%] z-10 w-[120%] max-w-[760px] sm:bottom-[-32%] sm:right-[5%] sm:w-[72%]  lg:bottom-[-25%] lg:left-[32%] lg:w-[64%]">
           <Image
             src="/assets/iphone-front.png"
             alt="Steps Widget Home Screen preview in front"
@@ -103,22 +103,22 @@ export function HeroPreview() {
           />
         </div>
       </div>
-      <div className="mx-auto my-12 flex max-w-5xl flex-col items-center gap-6 text-center lg:flex-row lg:items-end lg:justify-between lg:text-left">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Widget gallery</p>
+      <div className="mx-auto my-12 flex max-w-5xl flex-col items-center gap-6 text-center lg:flex-row lg:items-center lg:justify-between lg:text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="imx-auto text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Widget gallery</p>
           <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
             Choose the step widget style that fits your day.
           </h2>
-          <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)]">
+          <p className="mx-auto my-5 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)]">
             Minimal step counts, progress rings, daily charts, and Lock Screen views help you keep walking progress visible across iPhone and Apple Watch.
           </p>
         </div>
       </div>
 
-      <div className="relative h-80 overflow-hidden">
+      <div className="relative h-90 overflow-hidden -mx-5">
         <div className="phone-grids w-[200%] left-[-50%] sm:left-0 sm:w-full absolute top-[-10%] sm:top-[-240px] z-5 ">
           <Image
-            src="/assets/steps-widget-gallery-2.png"
+            src="/assets/steps-widget-grid.png"
             alt="Steps Widget styles for iPhone Home Screen, Lock Screen, and Apple Watch"
             width={2226}
             height={2226}

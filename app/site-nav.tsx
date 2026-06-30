@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { appStoreUrl } from './app-store'
 import { AccentToggle, ThemeToggle } from './theme-toggle'
-
-export const appStoreUrl = 'https://apps.apple.com/app/apple-store/id6756297788?pt=120739140&ct=website&mt=8'
 
 type SiteNavProps = {
   fixed?: boolean
@@ -22,8 +21,8 @@ const productLinks = [
 ]
 
 const navLinks = [
-  { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
 ]
 
 export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
@@ -70,13 +69,13 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
         <div className="hidden flex-wrap items-center justify-end gap-2 md:flex">
           <AccentToggle />
           <ThemeToggle />
-          <a
+          {/* <a
             href={appStoreUrl}
             target="_blank"
             rel="noreferrer"
             className="hidden items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-2.5 text-sm font-semibold leading-none text-[var(--button-text)] transition hover:opacity-90 sm:inline-flex">
             Get app
-          </a>
+          </a> */}
         </div>
         <div className="flex items-center gap-2 md:hidden">
           <AccentToggle compact />

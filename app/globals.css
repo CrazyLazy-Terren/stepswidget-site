@@ -214,7 +214,7 @@ body {
 }
 
 .hero-grid-fade {
-  --fade-solid: color-mix(in oklch, var(--page-bg) 95%, transparent);
+  --fade-solid: color-mix(in oklch, var(--page-bg) 99%, transparent);
   --fade-clear: color-mix(in oklch, var(--accent-color) 0%, transparent);
 }
 
@@ -227,12 +227,12 @@ body {
 }
 
 .phone-front {
-  transform: translate3d(var(--hero-front-x), var(--hero-front-y), 80px) rotate(2deg);
+  transform: translate3d(var(--hero-front-x), var(--hero-front-y), 80px) rotate(1deg);
   transform-origin: 58% 78%;
 }
 
 .phone-back {
-  transform: translate3d(var(--hero-back-x), var(--hero-back-y), -80px) rotate(-7deg) scale(0.96);
+  transform: translate3d(var(--hero-back-x), var(--hero-back-y), -80px) rotate(-1deg);
   transform-origin: 42% 36%;
 }
 
