@@ -6,7 +6,8 @@
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postbuild": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
