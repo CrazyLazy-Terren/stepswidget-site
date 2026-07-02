@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  images: {
+    // Disable caching and optimization ONLY in local development
+    unoptimized: process.env.NODE_ENV === 'development',
+  },
 }
 
 export default nextConfig

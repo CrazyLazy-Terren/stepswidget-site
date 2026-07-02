@@ -15,7 +15,7 @@ keywords:
   - pedometer widget for iPhone
   - Home Screen step counter
   - Apple Health steps widget
-image: /assets/blog-step-counter.jpg
+image: /assets/blog-step-counter.svg
 ---
 
 Looking for a step counter widget for iPhone usually means one thing: your iPhone already has useful step data, but it is too easy to miss during the day.

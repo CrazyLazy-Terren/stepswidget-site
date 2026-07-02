@@ -92,15 +92,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span>{post.readingTime}</span>
           </div>
 
-          <div className="relative mt-8 aspect-[21/9] w-full overflow-hidden rounded-[16px] bg-[var(--surface-media)] border border-[color:var(--border)]">
-            <Image
-              src={post.image}
-              alt={`${post.title} hero`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-cover"
-              priority
-            />
+          <div className="mt-8 overflow-hidden rounded-3xl">
+            <Image src={post.image} alt={`${post.title} hero`} width={900} height={600} sizes=" 100vw, 896px" className="h-auto w-full object-cover" priority />
           </div>
 
           <div className="mt-8 space-y-5 text-lg leading-8 text-[var(--text-muted)]">
