@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ContentShell } from '../../content-shell'
@@ -90,6 +91,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span aria-hidden="true">/</span>
             <span>{post.readingTime}</span>
           </div>
+
+          <div className="relative mt-8 aspect-[21/9] w-full overflow-hidden rounded-[16px] bg-[var(--surface-media)] border border-[color:var(--border)]">
+            <Image
+              src={post.image}
+              alt={`${post.title} hero`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover"
+              priority
+            />
+          </div>
+
           <div className="mt-8 space-y-5 text-lg leading-8 text-[var(--text-muted)]">
             {post.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

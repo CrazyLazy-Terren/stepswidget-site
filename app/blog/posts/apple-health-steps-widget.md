@@ -15,6 +15,7 @@ keywords:
   - Apple Health step counter
   - iPhone Apple Health widget
   - Apple Health pedometer widget
+image: /assets/blog-apple-health.jpg
 ---
 
 Apple Health already stores step data from your iPhone, Apple Watch, and compatible apps. The missing piece is often visibility: seeing that data without opening Health every time.

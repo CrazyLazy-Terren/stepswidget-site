@@ -11,6 +11,7 @@ export type BlogPost = {
   readingTime: string
   order: number
   keywords: string[]
+  image: string
   intro: string[]
   sections: {
     heading: string
@@ -166,6 +167,7 @@ function parsePostFile(filename: string): BlogPost {
     readingTime: getString(frontMatter, 'readingTime'),
     order: getNumber(frontMatter, 'order'),
     keywords: getStringList(frontMatter, 'keywords'),
+    image: getString(frontMatter, 'image'),
     ...body,
   }
 }
