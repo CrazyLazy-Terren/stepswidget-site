@@ -10,10 +10,12 @@
     "postbuild": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.10",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "google": "link:@next/third-parties/google",
     "lucide-react": "^1.22.0",
-    "next": "16.2.9",
+    "next": "16.2.10",
     "posthog-js": "^1.396.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"

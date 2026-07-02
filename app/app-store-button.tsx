@@ -1,4 +1,5 @@
 'use client'
+import { sendGTMEvent } from '@next/third-parties/google'
 
 import Image from 'next/image'
 import { appStoreUrl } from './app-store'
@@ -14,7 +15,8 @@ export function AppStoreButton({ className = '' }: AppStoreButtonProps) {
       target="_blank"
       rel="noreferrer"
       className={`group inline-flex items-center justify-center rounded-[14px] transition hover:-translate-y-0.5 hover:shadow-(--hero-glow) ${className}`}
-      aria-label="Download Steps Widget on the App Store">
+      aria-label="Download Steps Widget on the App Store"
+      onClick={() => sendGTMEvent({ event: 'app_store_download' })}>
       <Image
         src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
         alt="Download on the App Store"

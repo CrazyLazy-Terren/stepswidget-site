@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { cookies } from 'next/headers'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.crazylazy.xyz'),
+  metadataBase: new URL('https://steps.crazylazy.xyz'),
   title: 'Steps Widget - iPhone Step Counter Widget',
   description: 'Steps Widget is a private iPhone step counter widget for Home Screen, Lock Screen, Apple Health, and Apple Watch step tracking.',
   keywords: [
@@ -57,7 +58,14 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="h-full antialiased" data-theme={theme} data-accent={accent} suppressHydrationWarning>
+      <head>
+        <meta name="apple-itunes-app" content="app-id=6756297788" />
+      </head>
+      <GoogleTagManager gtmId="GTM-53LHCW2R" />
       <body className="min-h-full flex flex-col">
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53LHCW2R" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
+        </noscript>
         {children}
         <Analytics />
         <SpeedInsights />
