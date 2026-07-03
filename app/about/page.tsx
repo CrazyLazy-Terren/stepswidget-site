@@ -1,9 +1,27 @@
 import type { Metadata } from 'next'
 import { ContentShell } from '../content-shell'
+import { defaultOgImages, siteName } from '../shared-metadata'
+
+const title = 'About - Steps Widget'
+const description = 'Learn about Steps Widget, a private step counter widget for iPhone, Apple Watch, Home Screen, and Lock Screen.'
 
 export const metadata: Metadata = {
-  title: 'About - Steps Widget',
-  description: 'Learn about Steps Widget, a private step counter widget for iPhone, Apple Watch, Home Screen, and Lock Screen.',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/about',
+    siteName,
+    type: 'website',
+    images: defaultOgImages,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: defaultOgImages,
+  },
 }
 
 const values = [

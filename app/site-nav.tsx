@@ -42,7 +42,7 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
 export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
   return (
     <header className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl `}>
-      <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4 px-5 py-2 sm:px-6 sm:py-0 lg:px-0`}>
+      <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4 px-5 py-2 sm:px-6 lg:px-0`}>
         <SiteLogo />
         <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-muted)] md:flex">
           <div className="group relative py-5">

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ContentShell } from '../../content-shell'
+import { siteName } from '../../shared-metadata'
 import { blogPosts, getBlogPost } from '../posts'
 
 type BlogPostPageProps = {
@@ -27,6 +28,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
+  const images = [{ url: post.image, alt: post.title }]
+
   return {
     title: post.metaTitle,
     description: post.description,
@@ -37,9 +40,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.metaTitle,
       description: post.description,
+      url: `/blog/${post.slug}`,
+      siteName,
       type: 'article',
       publishedTime: post.date,
       tags: post.keywords,
+      images,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle,
+      description: post.description,
+      images,
     },
   }
 }

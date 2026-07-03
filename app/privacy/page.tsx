@@ -1,10 +1,28 @@
 import type { Metadata } from "next";
 import { LegalShell } from "../legal-shell";
+import { defaultOgImages, siteName } from "../shared-metadata";
+
+const title = "Privacy Policy - Steps Widget";
+const description =
+  "Privacy Policy for Steps Widget by CrazyLazy OU, a private step counter widget for iPhone and Apple Watch.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Steps Widget",
-  description:
-    "Privacy Policy for Steps Widget by CrazyLazy OU, a private step counter widget for iPhone and Apple Watch.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "/privacy",
+    siteName,
+    type: "website",
+    images: defaultOgImages,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: defaultOgImages,
+  },
 };
 
 const sections = [

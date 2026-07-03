@@ -3,10 +3,11 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { cookies } from 'next/headers'
+import { defaultOgImages, siteName, siteUrl } from './shared-metadata'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://steps.crazylazy.xyz'),
+  metadataBase: new URL(siteUrl),
   title: 'Steps Widget - iPhone Step Counter Widget',
   description: 'Steps Widget is a private iPhone step counter widget for Home Screen, Lock Screen, Apple Health, and Apple Watch step tracking.',
   keywords: [
@@ -25,14 +26,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Steps Widget - iPhone Step Counter Widget',
     description: 'A private Apple Health steps widget for iPhone Home Screen, Lock Screen, and Apple Watch.',
-    images: [
-      {
-        url: 'https://static.crazylazy.xyz/pic/f01.png',
-        width: 1600,
-        height: 1080,
-        alt: 'Steps Widget preview across iPhone and Apple Watch',
-      },
-    ],
+    url: siteUrl,
+    siteName,
+    type: 'website',
+    locale: 'en_US',
+    images: defaultOgImages,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Steps Widget - iPhone Step Counter Widget',
+    description: 'A private Apple Health steps widget for iPhone Home Screen, Lock Screen, and Apple Watch.',
+    images: defaultOgImages,
   },
 }
 

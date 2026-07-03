@@ -1,12 +1,30 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ContentShell } from '../content-shell'
+import { defaultOgImages, siteName } from '../shared-metadata'
 import { blogPosts } from './posts'
 
+const title = 'Blog - Steps Widget'
+const description =
+  'SEO-friendly guides and product notes about iPhone step counter widgets, Lock Screen steps widgets, Apple Health, and Apple Watch step tracking.'
+
 export const metadata: Metadata = {
-  title: 'Blog - Steps Widget',
-  description:
-    'SEO-friendly guides and product notes about iPhone step counter widgets, Lock Screen steps widgets, Apple Health, and Apple Watch step tracking.',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/blog',
+    siteName,
+    type: 'website',
+    images: defaultOgImages,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: defaultOgImages,
+  },
 }
 
 export default function BlogPage() {
