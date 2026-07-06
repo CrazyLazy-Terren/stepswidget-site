@@ -9,7 +9,7 @@ export type BlogPost = {
   description: string
   date: string
   readingTime: string
-  order: number
+  order?: number
   keywords: string[]
   image: string
   intro: string[]
@@ -104,6 +104,26 @@ function getNumber(frontMatter: FrontMatter, key: string) {
   return value
 }
 
+function getOptionalNumber(frontMatter: FrontMatter, key: string) {
+  const value = frontMatter[key]
+
+  if (value === undefined) {
+    return undefined
+  }
+
+  if (Array.isArray(value)) {
+    return undefined
+  }
+
+  const num = Number(value)
+
+  if (!Number.isFinite(num)) {
+    throw new Error(`Invalid "${key}" number in blog post front matter.`)
+  }
+
+  return num
+}
+
 function parseMarkdownBody(markdown: string): Pick<BlogPost, 'intro' | 'sections'> {
   const intro: string[] = []
   const sections: BlogPost['sections'] = []
@@ -165,7 +185,7 @@ function parsePostFile(filename: string): BlogPost {
     description: getString(frontMatter, 'description'),
     date: getString(frontMatter, 'date'),
     readingTime: getString(frontMatter, 'readingTime'),
-    order: getNumber(frontMatter, 'order'),
+    order: getOptionalNumber(frontMatter, 'order'),
     keywords: getStringList(frontMatter, 'keywords'),
     image: getString(frontMatter, 'image'),
     ...body,
@@ -175,7 +195,30 @@ function parsePostFile(filename: string): BlogPost {
 export const blogPosts = readdirSync(postsDirectory)
   .filter((filename) => filename.endsWith('.md'))
   .map(parsePostFile)
-  .sort((firstPost, secondPost) => firstPost.order - secondPost.order)
+  .sort((firstPost, secondPost) => {
+    const firstOrder = firstPost.order
+    const secondOrder = secondPost.order
+
+    const hasFirstOrder = firstOrder !== undefined
+    const hasSecondOrder = secondOrder !== undefined
+
+    if (hasFirstOrder && hasSecondOrder) {
+      if (firstOrder !== secondOrder) {
+        return firstOrder - secondOrder
+      }
+      return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
+    }
+
+    if (hasFirstOrder) {
+      return -1
+    }
+
+    if (hasSecondOrder) {
+      return 1
+    }
+
+    return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
+  })
 
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug)

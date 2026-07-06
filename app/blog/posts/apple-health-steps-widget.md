@@ -6,7 +6,6 @@ metaTitle: Apple Health Steps Widget for iPhone and Apple Watch
 description: Use Apple Health step data in a private iPhone steps widget for Home Screen, Lock Screen, and Apple Watch without a social feed or separate tracker.
 date: 2026-06-28
 readingTime: 6 min read
-order: 3
 keywords:
   - Apple Health steps widget
   - Apple Watch steps widget
