@@ -6,6 +6,62 @@ import { ContentShell } from '../../content-shell'
 import { siteName } from '../../shared-metadata'
 import { blogPosts, getBlogPost } from '../posts'
 
+const IMAGE_REGEX = /(!\[.*?\]\(.*?\))/g
+const BOLD_REGEX = /(\*\*.*?\*\*)/g
+
+function renderTextWithBold(text: string) {
+  if (!text.includes('**')) {
+    return text
+  }
+
+  const parts = text.split(BOLD_REGEX)
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const boldText = part.slice(2, -2)
+      return (
+        <strong key={index} className="font-semibold text-[var(--text-strong)]">
+          {boldText}
+        </strong>
+      )
+    }
+    return part
+  })
+}
+
+function MarkdownParagraph({ text }: { text: string }) {
+  if (!text.includes('![')) {
+    return <p>{renderTextWithBold(text)}</p>
+  }
+
+  const parts = text.split(IMAGE_REGEX)
+  return (
+    <>
+      {parts.map((part, index) => {
+        const imageMatch = part.match(/^!\[(.*?)\]\((.*?)\)$/)
+        if (imageMatch) {
+          const [, alt, src] = imageMatch
+          return (
+            <div
+              key={index}
+              className="my-2 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] shadow-sm"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                width={800}
+                height={500}
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          )
+        }
+        return part.trim() ? <p key={index}>{renderTextWithBold(part)}</p> : null
+      })}
+    </>
+  )
+}
+
 type BlogPostPageProps = {
   params: Promise<{
     slug: string
@@ -109,8 +165,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="mt-8 space-y-5 text-lg leading-8 text-[var(--text-muted)]">
-            {post.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {post.intro.map((paragraph, index) => (
+              <MarkdownParagraph key={index} text={paragraph} />
             ))}
           </div>
 
@@ -119,13 +175,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <section key={section.heading}>
                 <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{section.heading}</h2>
                 <div className="mt-4 space-y-4 text-base leading-8 text-[var(--text-muted)]">
-                  {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                  {section.paragraphs.map((paragraph, index) => (
+                    <MarkdownParagraph key={index} text={paragraph} />
                   ))}
                   {section.bullets ? (
                     <ul className="ml-5 list-disc space-y-2">
-                      {section.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
+                      {section.bullets.map((bullet, idx) => (
+                        <li key={idx}>{renderTextWithBold(bullet)}</li>
                       ))}
                     </ul>
                   ) : null}

@@ -63,13 +63,10 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" data-theme={theme} data-accent={accent} suppressHydrationWarning>
       <head>
-        <meta name="apple-itunes-app" content="app-id=6756297788" />
+        <meta name="apple-itunes-app" content="app-id=6756297788, affiliate-data=pt=120739140&ct=website" />
       </head>
       <GoogleTagManager gtmId="GTM-53LHCW2R" />
       <body className="min-h-full flex flex-col">
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53LHCW2R" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
-        </noscript>
         {children}
         <Analytics />
         <SpeedInsights />
