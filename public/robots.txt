@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /blog/posts/
-Disallow: /blog/posts/*
+Allow: /about
 
 Sitemap: https://steps.crazylazy.xyz/sitemap.xml
