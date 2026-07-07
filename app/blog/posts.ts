@@ -94,16 +94,6 @@ function getStringList(frontMatter: FrontMatter, key: string) {
   return value
 }
 
-function getNumber(frontMatter: FrontMatter, key: string) {
-  const value = Number(getString(frontMatter, key))
-
-  if (!Number.isFinite(value)) {
-    throw new Error(`Invalid "${key}" number in blog post front matter.`)
-  }
-
-  return value
-}
-
 function getOptionalNumber(frontMatter: FrontMatter, key: string) {
   const value = frontMatter[key]
 

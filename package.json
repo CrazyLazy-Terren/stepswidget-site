@@ -6,7 +6,8 @@
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postbuild": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.10",
