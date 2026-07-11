@@ -1,10 +1,14 @@
 import type { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 import { blogPosts } from './blog/posts'
 
 export const dynamic = 'force-dynamic'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://steps.crazylazy.xyz'
+  const headersList = await headers()
+  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const protocol = host.includes('localhost') ? 'http' : 'https'
+  const baseUrl = `${protocol}://${host}`
 
   // Dynamic routes (blog posts)
   const blogUrls = blogPosts.map((post) => ({

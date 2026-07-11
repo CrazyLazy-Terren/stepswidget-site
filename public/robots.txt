@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /about
-
-Sitemap: https://steps.crazylazy.xyz/sitemap.xml
