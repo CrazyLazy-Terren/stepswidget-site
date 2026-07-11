@@ -20,8 +20,15 @@ export const metadata: Metadata = {
     'pedometer widget for iPhone',
   ],
   icons: {
-    icon: '/assets/stepswidget-icon.png',
-    apple: '/assets/stepswidget-icon.png',
+    icon: [
+      { url: '/assets/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/assets/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/assets/favicon-144x144.png', sizes: '144x144', type: 'image/png' },
+      { url: '/assets/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' },
+    ],
   },
   openGraph: {
     title: 'Steps Widget - iPhone Step Counter Widget',
