@@ -6,7 +6,7 @@ date: '2026-07-07'
 slug: steps-widget-iphone-battery-drain
 category: Privacy & Performance
 readingTime: 4 min read
-order: 9
+
 keywords:
   - pedometer widget battery drain
   - steps widget iphone battery life

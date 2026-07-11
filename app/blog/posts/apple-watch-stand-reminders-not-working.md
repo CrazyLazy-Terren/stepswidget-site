@@ -6,7 +6,7 @@ date: '2026-07-07'
 slug: apple-watch-stand-reminders-not-working
 category: Troubleshooting
 readingTime: 5 min read
-order: 8
+
 keywords:
   - apple watch stand reminders not working
   - stand up alert not working watchOS

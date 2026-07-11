@@ -6,7 +6,7 @@ date: '2026-07-07'
 slug: smart-stand-up-reminders-desk-job
 category: Fitness Habits
 readingTime: 5 min read
-order: 7
+
 keywords:
   - hourly stand up reminder app
   - sedentary reminder app
