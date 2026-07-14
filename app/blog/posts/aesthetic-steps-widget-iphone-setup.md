@@ -25,6 +25,7 @@ Here is how you can design a beautiful, functional, and highly aesthetic step tr
 The primary goal of a Home Screen widget is to give you instant information at a glance. However, too many details, charts, or heavy labels can quickly clutter a clean layout.
 
 When choosing a steps widget style, look for minimalist designs:
+
 - **The Progress Ring**: A clean circular ring that fills up as you walk is the most aesthetic way to visualize your daily goal. It takes up minimal visual weight and looks like a native design element.
 - **The Small Stats Block**: A simple number paired with small typography matches standard iOS system fonts and integrates seamlessly alongside calendars or clock widgets.
 - **Dynamic Chart Bars**: If you like seeing your hourly progress, opt for a small bar chart widget that uses clean pastel colors rather than high-contrast primary colors.
@@ -50,12 +51,12 @@ Adding a compact, circular Lock Screen steps widget lets you track your steps in
 
 ## 4. Leverage Background Motion Data (Battery-Friendly)
 
-An aesthetic setup is only as good as its performance. Traditional step trackers that run background GPS to map walks drain battery quickly, causing your phone to overheat.
+An aesthetic setup is only as good as its performance. Traditional step trackers that run background GPS to map walks drain battery quickly and can make your phone run warm.
 
-To keep your setup lightweight, make sure your widget app reads data directly from the iPhone's built-in Apple Health repository (which runs on the low-power motion coprocessor). This ensures your counts update accurately in the background without affecting your phone's performance.
+To keep your setup lightweight, make sure your widget app reads its numbers from Apple Health rather than doing its own tracking. Your iPhone already counts steps on a dedicated low-power motion coprocessor and stores them in Health, so a widget that simply reads that data adds no measurable battery cost.
 
 ## Why a Designed Pedometer Helps You Walk More
 
-Studies show that visibility leads to consistency. When your step counter is hidden inside a health app menu, it is easy to forget about your goal.
+Behavior research consistently finds that visible cues make habits easier to keep: self-monitoring is one of the most reliable techniques for increasing daily activity. When your step counter is hidden inside a health app menu, it is easy to forget about your goal.
 
 By integrating a beautiful, color-matched steps widget directly into your curated iOS Home Screen or Lock Screen, you keep your health goals top of mind. A simple glance at a glowing pink or sky-blue progress ring provides a gentle, encouraging nudge to close the gap and get moving—without disrupting the visual harmony of your device.

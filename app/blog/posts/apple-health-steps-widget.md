@@ -55,6 +55,8 @@ Steps Widget is designed around private progress. Your step data is used to show
 
 Sometimes a widget, Apple Health, and Apple Watch can appear slightly out of sync. That does not always mean something is broken. Step data can arrive from multiple sources, and iOS controls when widgets refresh.
 
+When iPhone and Apple Watch both record steps, Apple Health deduplicates the overlap automatically so you are not double-counted. You can also control which device wins when readings conflict: open Health, tap Browse, then Steps, then scroll to Data Sources & Access and drag your preferred source to the top of the list.
+
 - Open Steps Widget once after installing or terminating it.
 - Confirm Apple Health step permission is enabled.
 - Check that your iPhone or Apple Watch is recording steps during the day.

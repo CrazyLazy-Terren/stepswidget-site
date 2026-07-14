@@ -5,7 +5,7 @@ description: Learn how to add a steps widget to your iPhone StandBy mode screen 
 date: '2026-07-11'
 slug: show-steps-standby-mode-ios
 category: iOS Customization
-readingTime: 4 min read
+readingTime: 5 min read
 
 keywords:
   - show steps standby mode ios
@@ -24,40 +24,41 @@ Fortunately, you can easily show your steps in iOS StandBy mode using a third-pa
 
 ## Why Native Apple Apps Fall Short in StandBy Mode
 
-While Apple Health stores all of your motion data, its widgets only support showing activity rings (move, exercise, stand) or overall weekly averages. If you simply want to see your raw step count (e.g., "4,250 steps") at a glance, Apple's native widgets cannot help you on the StandBy screen.
+While Apple Health stores all of your motion data, Apple's own widgets focus on activity rings (move, exercise, stand) and trends rather than a plain step number. If you simply want to see your raw step count (for example, "4,250 steps") at a glance, Apple's native widgets cannot show that on the StandBy screen.
 
-To bridge this gap, you need a third-party widget app like **Steps Widget** that is specifically designed to read your step data from Apple Health and format it as a `systemSmall` widget, which is the exact size required by the StandBy interface.
+To bridge this gap, you need a third-party widget app like **Steps Widget** that reads your step data from Apple Health and offers small-size widgets, which is the exact format the StandBy interface displays.
 
-## How to Set Up a Steps Widget in StandBy Mode
+## Step 1: Install Steps Widget and enable permissions
 
-Before you begin, make sure your iPhone is running iOS 17 or later, as StandBy mode is not available on older operating system versions.
+Before you begin, make sure your iPhone is running iOS 17 or later, as StandBy mode is not available on older operating system versions. Then install Steps Widget on your iPhone if you haven't already.
 
-### Step 1: Download Steps Widget & Enable Permissions
+- Open the app once after installing.
+- When prompted, grant permission for the app to read your step count from Apple Health.
+- Your data stays completely private and local on your device.
 
-If you haven't already, install Steps Widget on your iPhone.
+## Step 2: Activate StandBy mode
 
-- Open the app.
-- When prompted, grant permission for the app to access your step count from Apple Health. (Your data stays completely private and local on your device).
+StandBy is on by default in iOS 17 and later, but it is worth confirming before you set up widgets.
 
-### Step 2: Activate StandBy Mode
-
-Ensure that StandBy is enabled in your system settings:
-
-- Open your iPhone **Settings**.
-- Tap **StandBy** and toggle it on.
-- Connect your iPhone to a charger (either a MagSafe stand, wireless charger, or standard lightning/USB-C cable).
+- Open your iPhone **Settings** and tap **StandBy**, then make sure the toggle is on.
+- Connect your iPhone to a charger (a MagSafe stand, Qi wireless charger, or a standard USB-C or Lightning cable all work).
 - Lock your iPhone and place it in **landscape (horizontal) orientation**.
-- After a second, the StandBy screen will illuminate automatically.
+- After a moment, the StandBy screen will illuminate automatically.
 
-### Step 3: Add Steps Widget to Your StandBy Display
+One hardware note: iPhones with an always-on display, such as the Pro models from iPhone 14 Pro onward, keep StandBy visible continuously. On other models the screen sleeps to save power, and a quick tap wakes it back up.
 
-- Once StandBy mode is active, **long-press (tap and hold)** on either the left or right side of the screen.
+## Step 3: Add Steps Widget to your StandBy display
+
+StandBy's leftmost view shows two stacks of widgets side by side. You can add your step counter to either stack.
+
+- With StandBy active, **long-press (tap and hold)** the left or right widget stack.
 - Authenticate with Face ID or enter your passcode if prompted.
 - Tap the **"+" (plus) button** in the top-left corner of the editing screen.
-- Scroll down the list of apps or use the search bar to find **Steps Widget**.
-- Swipe to choose your preferred small widget style (such as the minimalist number or the clean progress ring).
-- Tap **Add Widget**.
-- Tap **Done** in the top-right corner to save your layout.
+- Scroll the app list or use the search bar to find **Steps Widget**.
+- Swipe to choose your preferred style, such as the minimalist number or the progress ring.
+- Tap **Add Widget**, then tap **Done** in the top-right corner to save your layout.
+
+You can also enable Smart Rotate while editing, which lets iOS surface the steps widget automatically at relevant times, or turn it off to keep your step count pinned in place.
 
 ## Keeping Steps Glanceable on Your Desk
 

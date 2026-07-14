@@ -35,18 +35,18 @@ The most common reason reminders fail is that they were accidentally disabled in
 
 Apple Watch stand reminders rely on sensor data to know if you are actually wearing the watch. If Wrist Detection is disabled, the watch will not send stand alerts.
 
-- Open the **Settings** app on your Apple Watch (or open the Watch app on iPhone and select **Passcode**).
+- Open the **Settings** app on your Apple Watch and tap **Passcode**, or open the Watch app on iPhone and go to **My Watch**, then **Passcode**.
 - Scroll down to **Wrist Detection** and make sure the toggle is turned on.
 
-_Note: If you have dark wrist tattoos, they can sometimes block the watch's optical sensors, causing it to think it is not on your wrist. In this case, ensuring a snug fit or wearing the watch on the inside of your wrist can help._
+**Note:** dark wrist tattoos can sometimes block the watch's optical sensors, causing it to think it is not on your wrist. Ensuring a snug fit or moving the watch slightly up your arm can help.
 
 ## 3. Check Focus Modes
 
 If your iPhone or Watch is in a Focus Mode (like Work, Do Not Disturb, or Sleep), notifications from built-in health apps may be silenced automatically.
 
-- Swipe down on your Watch face (or up on watchOS 10+) to open the **Control Center**.
-- Tap the moon or Focus icon to see if a Focus mode is active.
-- If you want to receive stand reminders during focus times, you can customize your Focus settings on your iPhone under **Settings > Focus**, and allow notifications from the Watch system.
+- Press the **side button** on your Apple Watch to open Control Center (on watchOS 9 and earlier, swipe up from the watch face instead).
+- Look for the moon or Focus icon to see if a Focus mode is active, and tap it to turn it off.
+- Because Focus modes sync between iPhone and Apple Watch by default, also check your iPhone. To receive stand reminders during focus time, customize the Focus under iPhone **Settings > Focus** and allow notifications from the Watch app.
 
 ## 4. Verify Wheelchair Status
 
@@ -55,6 +55,12 @@ The Apple Watch changes its standing reminders to "roll" reminders if it detects
 - Open the **Watch** app on your iPhone.
 - Go to **Health > Health Details**.
 - Tap **Edit** in the top right, look at the **Wheelchair** setting, and ensure it is set correctly to "No" (unless you are a wheelchair user, in which case it should show "Yes" and you will receive "Roll" alerts).
+
+## 5. Restart Both Devices and Update watchOS
+
+If the settings all look correct, a stale connection between your iPhone and Apple Watch is the next likely cause. Restart both devices: hold the side button and a volume button on the iPhone, and hold the side button on the watch until the power slider appears.
+
+While you are at it, check for updates in the Watch app under **General > Software Update**. Stand reminder bugs have been fixed in several watchOS point releases over the years, and mismatched iOS and watchOS versions can cause notification delivery issues.
 
 ## A More Reliable Alternative: Steps Widget Smart Nudges
 

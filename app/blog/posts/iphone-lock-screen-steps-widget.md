@@ -23,7 +23,7 @@ Steps Widget is made for this exact use case: a private iPhone steps widget that
 
 ## Can you show steps on the iPhone Lock Screen?
 
-The iPhone Lock Screen supports widgets from built-in and third-party apps. Once Steps Widget is installed and Apple Health permission is enabled, you can add a compact step counter to the Lock Screen widget area.
+The iPhone Lock Screen has supported widgets from built-in and third-party apps since iOS 16. There are two placements to choose from: a row of small widgets below the clock, which holds up to four circular widgets or two rectangular ones, and a slim inline widget on the line above the clock. Once Steps Widget is installed and Apple Health permission is enabled, you can add a compact step counter to either spot.
 
 That makes the Lock Screen one of the most useful places for a step count. You see it before you decide what to do next, which is exactly when a short walk, one more block, or a few flights of stairs can still change the day.
 
@@ -31,13 +31,13 @@ That makes the Lock Screen one of the most useful places for a step count. You s
 
 Start by opening Steps Widget and granting access to Apple Health steps when prompted. Then edit your Lock Screen and choose Steps Widget from the widget picker.
 
-- Press the side button to show your Lock Screen.
+- Wake your iPhone and unlock it with Face ID, but stay on the Lock Screen.
 - Touch and hold the Lock Screen, then tap Customize.
-- Tap the Lock Screen preview.
-- Tap the widget area above or below the time.
+- Choose Lock Screen (not Home Screen) in the preview.
+- Tap the widget area below the time, or the line above it for an inline widget.
 - Choose Steps Widget from the widget list.
 - Pick the step count or goal progress style you prefer.
-- Tap Done to save the Lock Screen.
+- Tap the Lock Screen background, then tap Done in the top corner to save.
 
 ## What a good Lock Screen step counter should show
 

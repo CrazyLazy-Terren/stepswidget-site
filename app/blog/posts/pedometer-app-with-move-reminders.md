@@ -53,3 +53,7 @@ In addition to push notifications, visual cues on your phone can serve as silent
 - **Color-Coded Accents**: Color-customize your widgets (using curated pink or sky-blue accents) so they catch your eye on your Home Screen while matching your layout's aesthetic.
 
 By combining active notifications with glanceable, clean widgets, you build a supportive environment that keeps daily movement simple, natural, and highly achievable.
+
+## A Simple Setup That Covers Both
+
+Steps Widget combines both halves of this approach in one lightweight app. Its smart move reminders read your Apple Health step data, so they only fire when you have genuinely been inactive, and they respect the active hours you set. Meanwhile its Home Screen and Lock Screen widgets keep your progress visible between nudges, with no account, no social feed, and no GPS tracking. Your step data stays private on your device.

@@ -45,11 +45,11 @@ By integrating with on-device motion data via Apple Health, the app only nudges 
 
 Another common pitfall of fitness reminders is focusing solely on stand-up time rather than active movement. Simply standing at a standing desk is better than sitting, but to boost circulation and energy, you need to actually walk.
 
-Setting an hourly step goal—such as taking 250 steps every hour between 9:00 AM and 5:00 PM—is one of the most effective ways to build a consistent habit.
+Setting an hourly step goal—such as taking 250 steps every hour between 9:00 AM and 5:00 PM—is one of the most effective ways to build a consistent habit. It is the same threshold Apple Watch uses for closing the Stand ring, and it takes only two to three minutes of walking to reach.
 
 - It breaks down your large daily target (e.g., 10,000 steps) into small, achievable micro-goals.
 - It prevents you from trying to walk a massive distance at the end of the day to make up for hours of sitting.
-- It encourages regular, brief walking breaks, which are proven to improve focus and reduce physical stiffness.
+- It encourages regular, brief walking breaks, which research links to steadier energy, better focus, and less physical stiffness than a single long walk after hours of sitting.
 
 ## 4. Designing a Distraction-Free Walking Habit
 

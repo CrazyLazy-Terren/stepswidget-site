@@ -49,7 +49,7 @@ The strongest iPhone step counter widgets are clear, flexible, and respectful of
 
 After installing Steps Widget, open the app once and allow the Apple Health step permission when iOS asks. This lets the widget read your step count from the system health data source instead of asking you to maintain a separate pedometer.
 
-To add the widget, touch and hold an empty area of your Home Screen, tap Edit, then Add Widget. Search for Steps Widget, choose the size and style you want, tap Add Widget, and place it where your eyes already go during the day.
+To add the widget, touch and hold an empty area of your Home Screen, tap Edit in the top corner, then tap Add Widget. Search for Steps Widget, choose the size and style you want, tap Add Widget, and place it where your eyes already go during the day, such as next to your calendar or clock.
 
 ## Home Screen, Lock Screen, and Apple Watch each help differently
 
@@ -65,13 +65,15 @@ If your step counter widget looks stuck, open Steps Widget once, confirm Apple H
 
 ## Frequently asked questions about iPhone step widgets
 
-Can I show steps on my iPhone Home Screen? Yes. Use a step counter app with Home Screen widget support, then add the widget from the iPhone widget gallery.
+**Can I show steps on my iPhone Home Screen?** Yes. Use a step counter app with Home Screen widget support, then add the widget from the iPhone widget gallery.
 
-Can I show steps on my iPhone Lock Screen? Yes. Use a Lock Screen steps widget, then customize your Lock Screen and add the widget in the widget area.
+**Can I show steps on my iPhone Lock Screen?** Yes. Use a Lock Screen steps widget, then customize your Lock Screen and add the widget in the widget area. Lock Screen widgets require iOS 16 or later.
 
-Does Steps Widget use Apple Health? Yes. Steps Widget reads Apple Health step data with your permission so your daily count can appear in widgets.
+**Does Steps Widget use Apple Health?** Yes. Steps Widget reads Apple Health step data with your permission so your daily count can appear in widgets. Your data stays on your device.
 
-Do I need an Apple Watch? No. iPhone can record steps with its built-in sensors, and Apple Watch can add activity data when paired.
+**Do I need an Apple Watch?** No. Your iPhone records steps on its own with built-in sensors, and Apple Watch adds activity data when paired, including steps taken while your phone is left behind.
+
+**Is my step count accurate without a watch?** iPhone step counting is generally accurate when the phone is with you. The count only misses steps you take while the phone is on a desk or charging, which is where an Apple Watch helps.
 
 ## A calmer way to build a walking habit
 

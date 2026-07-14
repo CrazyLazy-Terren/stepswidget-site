@@ -23,7 +23,7 @@ By using the motion sensors built into your iPhone, the device automatically rec
 
 ## How your iPhone counts steps without a watch
 
-Every modern iPhone contains specialized hardware, including an accelerometer and motion coprocessor, that detects movement. When you walk, run, or climb stairs with your iPhone in your pocket, bag, or hand, it automatically counts your steps.
+Every iPhone since the iPhone 5s contains specialized hardware, including an accelerometer and a dedicated motion coprocessor, that detects movement. When you walk, run, or climb stairs with your iPhone in your pocket, bag, or hand, it automatically counts your steps, along with walking distance and flights of stairs climbed.
 
 This tracking happens in the background without needing you to start a workout or open an app. The iPhone stores this motion data directly in the built-in Apple Health application, which acts as the secure, central repository for your fitness metrics.
 
@@ -50,9 +50,9 @@ Setting up your step tracker takes only a few moments and does not require creat
 
 - Download and open Steps Widget on your iPhone.
 - Grant permission for the app to read step data from Apple Health.
-- Return to your Home Screen, touch and hold the background, and tap the Add button (+) in the top left.
+- Return to your Home Screen, touch and hold the background, tap Edit in the top corner, then tap Add Widget.
 - Search for Steps Widget, select your preferred size, and tap Add Widget.
-- Customize your Lock Screen by tapping and holding it, selecting Customize, and adding Steps Widget to the widget slot below the clock.
+- For the Lock Screen, touch and hold the Lock Screen, tap Customize, and add Steps Widget to the widget slot below the clock.
 
 ## Benefits of tracking steps directly on your iPhone
 
