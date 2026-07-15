@@ -6,7 +6,6 @@ date: '2026-07-13'
 slug: ios-18-tinted-steps-widgets
 category: iOS Customization
 readingTime: 4 min read
-order: 11
 keywords:
   - ios 18 tinted widgets
   - color match widgets ios 18
@@ -34,13 +33,10 @@ For widgets to look good in Tinted mode, developers must design them with the pr
 
 Setting up tinted widgets on iOS 18 takes only a few taps:
 
-1. **Jiggle Mode**: Long-press on an empty area of your Home Screen until your apps and widgets begin to shake.
-2. **Open Customizer**: Tap the **Edit** button in the top-left corner of the screen and select **Customize**.
-3. **Select Tinted**: Tap **Tinted** from the customization sheet that appears at the bottom of the screen.
-4. **Choose Your Color**:
-   - Use the hue slider to cycle through colors.
-   - Use the brightness slider to adjust the depth of the background overlay.
-   - Tap the **eyedropper icon** in the top-right corner of the sheet and drag the loupe over your wallpaper to pick an accent color that coordinates perfectly.
+- **1. Jiggle Mode**: Long-press on an empty area of your Home Screen until your apps and widgets begin to shake.
+- **2. Open Customizer**: Tap the **Edit** button in the top-left corner of the screen and select **Customize**.
+- **3. Select Tinted**: Tap **Tinted** from the customization sheet that appears at the bottom of the screen.
+- **4. Choose Your Color**: Adjust the hue and brightness sliders to select your accent color, or tap the eyedropper icon in the top-right corner of the sheet and drag the loupe over your wallpaper to pick an accent color that coordinates perfectly.
 
 ## Designing a Tinted Steps Widget with Steps Widget
 

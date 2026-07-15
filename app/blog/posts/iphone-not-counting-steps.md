@@ -14,7 +14,7 @@ keywords:
   - apple health not tracking steps
   - fix iphone step tracking
   - motion and fitness tracking iphone
-image: /assets/blog-track-no-watch.jpg
+image: /assets/blog-iphone-not-counting-steps.jpg
 ---
 
 You walked all morning, checked your phone, and the step count reads zero. It is a common frustration, and in almost every case the fix takes less than five minutes.
