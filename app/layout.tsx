@@ -26,9 +26,7 @@ export const metadata: Metadata = {
       { url: '/assets/favicon-144x144.png', sizes: '144x144', type: 'image/png' },
       { url: '/assets/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: [
-      { url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' },
-    ],
+    apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
     title: 'Steps Widget - iPhone Step Counter Widget',
@@ -72,7 +70,7 @@ export default async function RootLayout({
       <head>
         <meta name="apple-itunes-app" content="app-id=6756297788, affiliate-data=pt=120739140&ct=website" />
       </head>
-      <GoogleTagManager gtmId="GTM-53LHCW2R" />
+      <GoogleTagManager gtmId="GT-M3S9RXZC" />
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
