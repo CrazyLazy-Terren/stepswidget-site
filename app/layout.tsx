@@ -71,12 +71,12 @@ export default async function RootLayout({
         <meta name="apple-itunes-app" content="app-id=6756297788, affiliate-data=pt=120739140&ct=website" />
       </head>
       <GoogleTagManager gtmId="GT-M3S9RXZC" />
+      <GoogleAnalytics gaId="AW-18081795436" />
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
         <SpeedInsights />
       </body>
-      <GoogleAnalytics gaId="AW-18081795436" />
     </html>
   )
 }
