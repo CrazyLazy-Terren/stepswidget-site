@@ -22,7 +22,7 @@ const featureCards = [
   {
     title: 'Smart nudges',
     eyebrow: 'On-device reminders',
-    description: 'Helpful notifications can react to your day and encourage movement without turning progress into pressure.',
+    description: 'Helpful notifications can react to your day and encourage movement without pressure. ',
     image: '/assets/feature-nudges.png',
     accent: 'var(--accent-sky)',
   },
@@ -75,6 +75,47 @@ const privacyCards = [
   },
 ]
 
+const watchCards = [
+  {
+    title: 'Reminders on your wrist',
+    description: 'Goal reminders run directly on Apple Watch, so a gentle nudge still reaches you when your iPhone is not nearby.',
+    image: '/assets/w01.png',
+    icon: (
+      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 13 6 9Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M10 18.5a2 2 0 0 0 4 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Steps at a glance',
+    description: 'Check your progress from your watch throughout the day without pulling out your phone or opening a fitness app.',
+    image: '/assets/w02.png',
+    icon: (
+      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="7" y="6" width="10" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M9 6V3h6v3M9 18v3h6v-3" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M12 10v2.5l1.8 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Your style, on your wrist',
+    description: 'Pick a look that matches your watch face right from the wrist. Everything stays in sync with your iPhone automatically.',
+    image: '/assets/w03.png',
+    icon: (
+      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 3.5 13.8 9l5.7.1-4.6 3.4 1.7 5.5L12 14.7 7.4 18l1.7-5.5L4.5 9.1 10.2 9 12 3.5Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+]
+
 const faqItems = [
   {
     question: 'What is Steps Widget?',
@@ -95,7 +136,8 @@ const faqItems = [
   },
   {
     question: 'Does Steps Widget support Apple Watch?',
-    answer: 'Yes. Steps Widget is built to make walking progress easier to see across iPhone and Apple Watch, so your step count stays close by.',
+    answer:
+      'Yes. Steps Widget runs on Apple Watch with its own goal reminders, so you get notified even when your iPhone is not nearby. You can also unlock premium styles right from your wrist, and purchases sync with your iPhone automatically.',
   },
   {
     question: 'Is Steps Widget private?',
@@ -174,6 +216,45 @@ export default function Home() {
                   <p className="mt-3 leading-7 text-[var(--text-muted)]">{feature.description}</p>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="watch" className="px-5 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Apple Watch</p>
+            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
+              Your goal, right on your wrist.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
+              Goal reminders and every widget style now live directly on Apple Watch, so your walking habit no longer depends on where your iPhone is.
+            </p>
+          </div>
+
+          <div className="relative max-w-3xl mx-auto my-12 aspect-[1] overflow-hidden">
+            <Image
+              src="/assets/watch_feature.png"
+              alt="Steps Widget step counts on two Apple Watch faces alongside iPhone Lock Screen and Home Screen widgets"
+              fill
+              sizes="(max-width: 880px) 80vw, 880px"
+              className="object-fit-cover"
+            />
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {watchCards.map((card) => (
+              <div key={card.title} className="rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)]">
+                <div className="relative mb-6 aspect-[40/27] overflow-hidden rounded-[14px] bg-[var(--surface-media)]">
+                  <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
+                </div>
+                <div className="mb-6 flex size-10 items-center justify-center rounded-[12px] bg-[var(--accent-color-soft)] text-[var(--accent-color)]">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
+                <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+              </div>
             ))}
           </div>
         </div>

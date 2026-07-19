@@ -29,10 +29,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <ContentShell
-      eyebrow="Blog"
-      title="Every step counts."
-      description="Practical articles about keeping daily steps visible on iPhone, Lock Screen, Home Screen, Apple Health, and Apple Watch.">
+    <ContentShell eyebrow="Blog" title="Every step counts." description="Practical articles about keeping daily steps visible on iPhone and Apple Watch.">
       <div className="grid gap-5 lg:grid-cols-3">
         {blogPosts.map((post) => (
           <Link

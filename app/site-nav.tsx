@@ -17,6 +17,7 @@ const maxWidthClass = {
 const productLinks = [
   { href: '/', label: 'Overview' },
   { href: '/#features', label: 'Features' },
+  { href: '/#watch', label: 'Apple Watch' },
   { href: '/#privacy', label: 'Privacy' },
   { href: '/#faq', label: 'FAQ' },
 ]
