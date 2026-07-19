@@ -79,7 +79,7 @@ const watchCards = [
   {
     title: 'Reminders on your wrist',
     description: 'Goal reminders run directly on Apple Watch, so a gentle nudge still reaches you when your iPhone is not nearby.',
-    image: '/assets/w01.png',
+    image: '/assets/s01.png',
     icon: (
       <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M6 9a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 13 6 9Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
@@ -90,7 +90,7 @@ const watchCards = [
   {
     title: 'Steps at a glance',
     description: 'Check your progress from your watch throughout the day without pulling out your phone or opening a fitness app.',
-    image: '/assets/w02.png',
+    image: '/assets/s02.png',
     icon: (
       <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="7" y="6" width="10" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" />
