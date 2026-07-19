@@ -245,13 +245,13 @@ export default function Home() {
 
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {watchCards.map((card) => (
-              <div key={card.title} className="rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)]">
-                <div className="relative mb-6 aspect-[40/27] overflow-hidden rounded-[14px] bg-[var(--surface-media)]">
+              <div key={card.title} className="rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 shadow-[var(--soft-shadow)]">
+                <div className="relative mb-8 aspect-[40/27] overflow-hidden rounded-[14px] bg-[var(--surface-media)]">
                   <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className="mb-6 flex size-10 items-center justify-center rounded-[12px] bg-[var(--accent-color-soft)] text-[var(--accent-color)]">
+                {/* <div className="mb-4 flex size-10 items-center justify-center rounded-[12px] bg-[var(--accent-color-soft)] text-[var(--accent-color)]">
                   {card.icon}
-                </div>
+                </div> */}
                 <h3 className="text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
                 <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
               </div>
