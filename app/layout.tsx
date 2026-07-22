@@ -8,11 +8,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Steps Widget - iPhone Step Counter Widget',
-  description: 'Steps Widget is a private iPhone step counter widget for Home Screen, Lock Screen, Apple Health, and Apple Watch step tracking.',
+  title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
+  description:
+    'Steps Widget sends smart, activity-aware move reminders that nudge you to get up when you have actually been sitting, plus a private step counter widget for Home Screen, Lock Screen, and Apple Watch.',
   keywords: [
     'Steps Widget',
     'steps widget',
+    'move reminder app',
+    'stand up reminder app',
+    'sedentary reminder app',
+    'get up and move notifications iPhone',
     'iPhone step counter widget',
     'Apple Health steps widget',
     'Lock Screen steps widget',
@@ -29,8 +34,8 @@ export const metadata: Metadata = {
     apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Steps Widget - iPhone Step Counter Widget',
-    description: 'A private Apple Health steps widget for iPhone Home Screen, Lock Screen, and Apple Watch.',
+    title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
+    description: 'Smart move reminders that nudge you when you have been sitting, plus a private Apple Health steps widget for iPhone and Apple Watch.',
     url: siteUrl,
     siteName,
     type: 'website',
@@ -39,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steps Widget - iPhone Step Counter Widget',
-    description: 'A private Apple Health steps widget for iPhone Home Screen, Lock Screen, and Apple Watch.',
+    title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
+    description: 'Smart move reminders that nudge you when you have been sitting, plus a private Apple Health steps widget for iPhone and Apple Watch.',
     images: defaultOgImages,
   },
 }

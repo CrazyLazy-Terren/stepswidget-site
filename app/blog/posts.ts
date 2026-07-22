@@ -12,12 +12,7 @@ export type BlogPost = {
   order?: number
   keywords: string[]
   image: string
-  intro: string[]
-  sections: {
-    heading: string
-    paragraphs: string[]
-    bullets?: string[]
-  }[]
+  content: string
 }
 
 type FrontMatter = Record<string, string | string[]>
@@ -114,47 +109,6 @@ function getOptionalNumber(frontMatter: FrontMatter, key: string) {
   return num
 }
 
-function parseMarkdownBody(markdown: string): Pick<BlogPost, 'intro' | 'sections'> {
-  const intro: string[] = []
-  const sections: BlogPost['sections'] = []
-  let currentSection: BlogPost['sections'][number] | undefined
-
-  const blocks = markdown
-    .trim()
-    .split(/\n{2,}/)
-    .map((block) => block.trim())
-    .filter(Boolean)
-
-  for (const block of blocks) {
-    if (block.startsWith('## ')) {
-      currentSection = {
-        heading: block.replace(/^##\s+/, '').trim(),
-        paragraphs: [],
-      }
-      sections.push(currentSection)
-      continue
-    }
-
-    const lines = block.split('\n')
-    const isBulletList = lines.every((line) => line.trim().startsWith('- '))
-
-    if (isBulletList && currentSection) {
-      currentSection.bullets = lines.map((line) => line.replace(/^\s*-\s+/, '').trim())
-      continue
-    }
-
-    const paragraph = lines.join(' ')
-
-    if (currentSection) {
-      currentSection.paragraphs.push(paragraph)
-    } else {
-      intro.push(paragraph)
-    }
-  }
-
-  return { intro, sections }
-}
-
 function parsePostFile(filename: string): BlogPost {
   const raw = readFileSync(path.join(postsDirectory, filename), 'utf8')
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)
@@ -165,7 +119,6 @@ function parsePostFile(filename: string): BlogPost {
 
   const [, rawFrontMatter, markdown] = match
   const frontMatter = parseFrontMatter(rawFrontMatter)
-  const body = parseMarkdownBody(markdown)
 
   return {
     slug: getString(frontMatter, 'slug'),
@@ -178,7 +131,7 @@ function parsePostFile(filename: string): BlogPost {
     order: getOptionalNumber(frontMatter, 'order'),
     keywords: getStringList(frontMatter, 'keywords'),
     image: getString(frontMatter, 'image'),
-    ...body,
+    content: markdown.trim(),
   }
 }
 

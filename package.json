@@ -7,7 +7,8 @@
     "build": "next build && pnpm run postdeploy",
     "start": "next start",
     "lint": "eslint",
-    "postdeploy": "node scripts/post-deploy.js"
+    "postdeploy": "node scripts/post-deploy.js",
+    "compress-images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.10",
@@ -19,6 +20,8 @@
     "posthog-js": "^1.396.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "stepswidget-site": "link:"
   },
   "devDependencies": {
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

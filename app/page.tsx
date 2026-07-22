@@ -6,25 +6,26 @@ import { SiteLogo, SiteNav } from './site-nav'
 
 const featureCards = [
   {
-    title: 'Every screen',
+    title: 'Smart move reminders',
+    eyebrow: 'Activity-aware nudges',
+    description:
+      'A gentle reminder to stand and walk, sent only when you have actually been sitting. It reads your Apple Health activity, so you skip the buzz on hours you already moved.',
+    image: '/assets/feature-nudges.png',
+    accent: 'var(--accent-sky)',
+  },
+  {
+    title: 'On every screen',
     eyebrow: 'Home, Lock Screen, Watch',
-    description: 'Keep your steps close at hand on iPhone and Apple Watch without opening a fitness app.',
+    description: 'Between nudges, your progress stays one glance away on iPhone and Apple Watch, no fitness app to open.',
     image: '/assets/feature-every-screen.png',
     accent: 'var(--accent-pink)',
   },
   {
     title: 'Your style',
     eyebrow: 'Simple, detailed, charted',
-    description: 'Choose widgets that match the way you like to check progress, from minimal numbers to richer charts.',
+    description: 'Choose widgets that match the way you like to check progress, from minimal numbers to richer hourly charts.',
     image: '/assets/feature-styles.png',
     accent: 'var(--accent-green)',
-  },
-  {
-    title: 'Smart nudges',
-    eyebrow: 'On-device reminders',
-    description: 'Helpful notifications can react to your day and encourage movement without pressure. ',
-    image: '/assets/feature-nudges.png',
-    accent: 'var(--accent-sky)',
   },
 ]
 
@@ -89,8 +90,8 @@ const watchCards = [
   },
   {
     title: 'Steps at a glance',
-    description: 'Check your progress from your watch throughout the day without pulling out your phone or opening a fitness app.',
-    image: '/assets/s02.png',
+    description: 'Pairs with your Watch stand indicator for instant, phone-free updates.',
+    image: '/assets/w02.png',
     icon: (
       <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="7" y="6" width="10" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" />
@@ -161,15 +162,16 @@ export default function Home() {
         <div className="relative mx-auto flex max-w-7xl flex-col items-center text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[var(--surface-1)] px-3 py-1.5 text-sm text-[var(--text-muted)] shadow-[var(--soft-shadow)]">
             <span className="size-2 rounded-full bg-[var(--accent-color)] shadow-[0_0_18px_var(--accent-glow)]" />
-            Private for iPhone and Apple Watch
+            Minimalist Activity Tracking
           </div>
 
           <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl lg:text-8xl">
-            See the progress you&apos;ve already made.
+            Smarter nudges.
+            <br />
+            Move at your own pace.
           </h1>
           <p className="my-12 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
-            A simple, privacy-focused pedometer widget built for your Home Screen, Lock Screen, and Apple Watch. No social pressure, no leaderboard noise just
-            quiet encouragement to help you hit your daily movement goals.
+            Gentle, smart stand reminders that stay out of your way. Glanceable progress across your Home Screen, Lock Screen, and Apple Watch.
           </p>
 
           <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
@@ -185,12 +187,13 @@ export default function Home() {
       <section id="features" className="px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Why it works</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Built for desk days</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              A gentle loop for staying aware.
+              Break up the hours you spend sitting.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-              The app is built around the glance. You see progress, make a tiny decision, and keep moving without opening another dashboard.
+              Long stretches at a desk quietly add up. Steps Widget nudges you to move at the right moments and keeps your progress in view, so staying active
+              never means opening another dashboard.
             </p>
           </div>
 
@@ -229,7 +232,7 @@ export default function Home() {
               Your goal, right on your wrist.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-              Goal reminders and every widget style now live directly on Apple Watch, so your walking habit no longer depends on where your iPhone is.
+              Goal reminders and widget style now live directly on Apple Watch, so your walking habit no longer depends on where your iPhone is.
             </p>
           </div>
 
@@ -291,9 +294,11 @@ export default function Home() {
         <div className="mx-auto max-w-5xl rounded-[28px] border border-[color:var(--border-strong)] bg-[var(--surface-2)] p-8 text-center shadow-[var(--cta-shadow)] sm:p-12">
           <Image src="/assets/stepswidget-icon.png" alt="" width={92} height={92} className="mx-auto rounded-[22px] " />
           <h2 className="mx-auto mt-7 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-            Keep Your Momentum.
+            Sit less. Move more.
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">Download Steps Widget for free and build a daily walking habit.</p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
+            Download Steps Widget for free and turn long desk days into a steady walking habit.
+          </p>
           <div className="mt-8">
             <AppStoreButton />
           </div>
