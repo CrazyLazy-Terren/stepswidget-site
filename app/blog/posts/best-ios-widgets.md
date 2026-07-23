@@ -131,10 +131,3 @@ Privacy-focused pedometer widgets that read Apple Health data locally give you a
 | Glance test rule       | Limit your Home Screen to three or four essential widgets to avoid decision fatigue and keep fitness data readable.                      |
 | Accuracy source        | All Apple Health-connected widgets draw from the same motion coprocessor data, so accuracy depends on the data source, not the app.      |
 | Crazylazy Steps Widget | Steps Widget offers local Apple Health step tracking with customizable styles across Home Screen, Lock Screen, StandBy, and Apple Watch. |
-
-## Recommended
-
-- [Best Step Counter Widget for iPhone | Steps Widget](https://steps.crazylazy.xyz/blog/step-counter-widget-iphone)
-- [Apple Health Steps Widget for iPhone and Apple Watch](https://steps.crazylazy.xyz/blog/apple-health-steps-widget)
-- [Blog - Steps Widget](https://steps.crazylazy.xyz/blog)
-- [Aesthetic Steps Widget Setup Guide for iPhone](https://steps.crazylazy.xyz/blog/aesthetic-steps-widget-iphone-setup)

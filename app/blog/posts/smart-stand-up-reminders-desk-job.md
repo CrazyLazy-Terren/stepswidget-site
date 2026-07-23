@@ -48,7 +48,7 @@ This is the model Steps Widget is built around: it watches your Apple Health act
 
 ## Aim for movement, not just standing
 
-Another common pitfall is optimizing for stand-up *time* rather than actual movement. Standing at a standing desk beats sitting, but to shift circulation and energy you need to take steps.
+Another common pitfall is optimizing for stand-up _time_ rather than actual movement. Standing at a standing desk beats sitting, but to shift circulation and energy you need to take steps.
 
 Setting a small hourly step goal is one of the most effective habits you can build. A common target is 250 steps each hour between 9:00 AM and 5:00 PM. That is the same threshold Apple Watch uses to close the Stand ring, and it takes only two to three minutes of walking to hit.
 
@@ -79,17 +79,10 @@ Download Steps Widget from the App Store, set your active hours, and let the nud
 
 Rigid hourly stand-up alarms fail because they ignore what you are doing; activity-aware move reminders that read your step count only nudge you when you have genuinely been sitting.
 
-| Point                     | Details                                                                                                             |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Why dumb timers fail      | Fixed-interval alarms interrupt flow and ignore movement you already did, which trains you to dismiss them.          |
-| What makes a nudge smart  | It checks your Apple Health step count first and stays silent if you have already walked in the last hour.           |
-| Movement over standing    | Aim for a small hourly step goal, around 250 steps, rather than just standing time.                                 |
-| Tune it to your day       | Set active work hours and pair each nudge with a simple, specific action.                                            |
-| Steps Widget by Crazylazy | Activity-aware move reminders plus glanceable, private widgets across iPhone and Apple Watch.                        |
-
-## Recommended
-
-- [Pedometer Apps with Move Reminders for iPhone](https://steps.crazylazy.xyz/blog/pedometer-app-with-move-reminders)
-- [Apple Watch Stand Reminders Not Working? Here's the Fix](https://steps.crazylazy.xyz/blog/apple-watch-stand-reminders-not-working)
-- [Show Steps on iPhone Lock Screen | Steps Widget](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget)
-- [Blog - Steps Widget](https://steps.crazylazy.xyz/blog)
+| Point                     | Details                                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Why dumb timers fail      | Fixed-interval alarms interrupt flow and ignore movement you already did, which trains you to dismiss them. |
+| What makes a nudge smart  | It checks your Apple Health step count first and stays silent if you have already walked in the last hour.  |
+| Movement over standing    | Aim for a small hourly step goal, around 250 steps, rather than just standing time.                         |
+| Tune it to your day       | Set active work hours and pair each nudge with a simple, specific action.                                   |
+| Steps Widget by Crazylazy | Activity-aware move reminders plus glanceable, private widgets across iPhone and Apple Watch.               |

@@ -70,6 +70,14 @@ type BlogPostPageProps = {
   }>
 }
 
+function getRecommendedPosts(currentSlug: string, category: string, limit = 3) {
+  const others = blogPosts.filter((post) => post.slug !== currentSlug)
+  const sameCategory = others.filter((post) => post.category === category)
+  const otherCategory = others.filter((post) => post.category !== category)
+
+  return [...sameCategory, ...otherCategory].slice(0, limit)
+}
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
@@ -122,6 +130,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  const recommendedPosts = getRecommendedPosts(post.slug, post.category)
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -171,6 +181,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.content}
             </ReactMarkdown>
           </div>
+          {recommendedPosts.length > 0 && (
+            <section className="mt-12 border-t border-[color:var(--border)] pt-8">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Recommended posts</h2>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {recommendedPosts.map((recommended) => (
+                  <Link
+                    key={recommended.slug}
+                    href={`/blog/${recommended.slug}`}
+                    className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 shadow-[var(--soft-shadow)] transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{recommended.category}</p>
+                    <h3 className="mt-3 text-lg font-semibold leading-6 tracking-[-0.01em] text-[var(--text-strong)]">{recommended.title}</h3>
+                    <div className="flex items-center justify-between gap-3 pt-5 text-sm text-[var(--text-subtle)]">
+                      <span>{recommended.readingTime}</span>
+                      <span className="font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read -&gt;</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           <Link
             href="/blog"
             className="mt-12 inline-flex items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-2 text-sm font-semibold text-[var(--button-text)] transition hover:opacity-90">

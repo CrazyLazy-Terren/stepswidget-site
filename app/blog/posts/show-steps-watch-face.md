@@ -127,10 +127,3 @@ Displaying steps on your Apple Watch face requires a third-party app that reads 
 | Complication setup          | Press and hold your watch face, tap Edit, swipe to Complications, select a slot, and choose your app.                                                                              |
 | Watch face choice matters   | Modular and Infograph faces offer more and larger complication slots for better step count display.                                                                                |
 | Steps Widget by Crazylazy   | Reads Apple Health data locally with no account needed, covering Apple Watch, Home Screen, and Lock Screen.                                                                        |
-
-## Recommended
-
-- [Show Steps on iPhone Lock Screen | Steps Widget](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget)
-- [Apple Health Steps Widget for iPhone and Apple Watch](https://steps.crazylazy.xyz/blog/apple-health-steps-widget)
-- [Track Steps on iPhone Without Apple Watch | Steps Widget](https://steps.crazylazy.xyz/blog/track-steps-iphone-without-apple-watch)
-- [Blog - Steps Widget](https://steps.crazylazy.xyz/blog)

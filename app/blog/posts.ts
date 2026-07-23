@@ -139,26 +139,26 @@ export const blogPosts = readdirSync(postsDirectory)
   .filter((filename) => filename.endsWith('.md'))
   .map(parsePostFile)
   .sort((firstPost, secondPost) => {
-    const firstOrder = firstPost.order
-    const secondOrder = secondPost.order
+    // const firstOrder = firstPost.order
+    // const secondOrder = secondPost.order
 
-    const hasFirstOrder = firstOrder !== undefined
-    const hasSecondOrder = secondOrder !== undefined
+    // const hasFirstOrder = firstOrder !== undefined
+    // const hasSecondOrder = secondOrder !== undefined
 
-    if (hasFirstOrder && hasSecondOrder) {
-      if (firstOrder !== secondOrder) {
-        return firstOrder - secondOrder
-      }
-      return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
-    }
+    // if (hasFirstOrder && hasSecondOrder) {
+    //   if (firstOrder !== secondOrder) {
+    //     return firstOrder - secondOrder
+    //   }
+    //   return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
+    // }
 
-    if (hasFirstOrder) {
-      return -1
-    }
+    // if (hasFirstOrder) {
+    //   return -1
+    // }
 
-    if (hasSecondOrder) {
-      return 1
-    }
+    // if (hasSecondOrder) {
+    //   return 1
+    // }
 
     return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
   })

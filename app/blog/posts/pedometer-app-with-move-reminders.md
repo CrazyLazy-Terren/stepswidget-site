@@ -36,7 +36,7 @@ The most effective reminders target sedentary behavior directly rather than watc
 - **Sedentary alerts.** These fire when the app detects little to no movement for a set stretch, for example 50 minutes of sitting, prompting a short 2 to 3 minute walk to clear the hour.
 - **Hourly step reminders.** If you prefer pacing against the time of day, an hourly steps reminder helps you spread the work out, aiming for something like 250 to 500 steps each hour instead of one big walk.
 
-The key detail is that a good app checks your Apple Health activity *before* it interrupts you. If you already walked in the last hour, it stays quiet, so you skip the buzz on hours you already moved. That is what separates a reminder you act on from one you disable by Friday.
+The key detail is that a good app checks your Apple Health activity _before_ it interrupts you. If you already walked in the last hour, it stays quiet, so you skip the buzz on hours you already moved. That is what separates a reminder you act on from one you disable by Friday.
 
 ## Customize reminders for your schedule
 
@@ -67,17 +67,10 @@ There is no account, no social feed, and no GPS tracking. Your step data stays p
 
 Passive step counters wait for you to check them; a pedometer app with activity-aware move reminders nudges you to walk exactly when you have been sitting too long, and keeps your progress glanceable in between.
 
-| Point                     | Details                                                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| The core problem          | Silent trackers rely on you remembering to check, which usually happens too late in the day.                  |
-| Best reminder type        | Sedentary alerts that read Apple Health and only fire after a genuine stretch of inactivity.                   |
-| Avoid notification fatigue| Use active-hour scheduling and goal-based nudges so alerts stay relevant and infrequent.                       |
-| Back it with widgets      | Lock Screen and Home Screen progress rings keep movement in view between nudges.                               |
-| Steps Widget by Crazylazy | Activity-aware move reminders plus private, glanceable widgets across iPhone and Apple Watch.                  |
-
-## Recommended
-
-- [Why Hourly Stand-Up Reminders Fail (and How Smart Alerts Help)](https://steps.crazylazy.xyz/blog/smart-stand-up-reminders-desk-job)
-- [Best Step Counter Widget for iPhone | Steps Widget](https://steps.crazylazy.xyz/blog/step-counter-widget-iphone)
-- [Show Steps on iPhone Lock Screen | Steps Widget](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget)
-- [Blog - Steps Widget](https://steps.crazylazy.xyz/blog)
+| Point                      | Details                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| The core problem           | Silent trackers rely on you remembering to check, which usually happens too late in the day.  |
+| Best reminder type         | Sedentary alerts that read Apple Health and only fire after a genuine stretch of inactivity.  |
+| Avoid notification fatigue | Use active-hour scheduling and goal-based nudges so alerts stay relevant and infrequent.      |
+| Back it with widgets       | Lock Screen and Home Screen progress rings keep movement in view between nudges.              |
+| Steps Widget by Crazylazy  | Activity-aware move reminders plus private, glanceable widgets across iPhone and Apple Watch. |
