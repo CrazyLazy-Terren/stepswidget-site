@@ -22,7 +22,7 @@ export function ContentShell({ eyebrow, title, description, children }: ContentS
             {eyebrow}
           </div>
 
-          <h1 className="max-w-4xl text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">{title}</h1>
+          <h1 className="max-w-5xl text-balance text-4xl font-semibold tracking-[-0.02em] leading-[1.25] text-[var(--text-strong)] sm:text-6xl">{title}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
         </div>
       </section>

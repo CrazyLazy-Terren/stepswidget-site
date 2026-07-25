@@ -8,16 +8,20 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
+  title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
   description:
-    'Steps Widget sends smart, activity-aware move reminders that nudge you to get up when you have actually been sitting, plus a private step counter widget for Home Screen, Lock Screen, and Apple Watch.',
+    'A move reminder app for people who sit all day. Your iPhone learns when you have really been sitting, you choose how each nudge looks and sounds, and a private step counter keeps progress on your Home Screen, Lock Screen, and Apple Watch.',
   keywords: [
     'Steps Widget',
-    'steps widget',
-    'move reminder app',
     'stand up reminder app',
+    'move reminder app',
     'sedentary reminder app',
+    'movement reminder app for desk workers',
+    'customizable stand reminder iPhone',
+    'activity aware move reminders',
+    'on-device step reminder app',
     'get up and move notifications iPhone',
+    'stand up reminder for programmers',
     'iPhone step counter widget',
     'Apple Health steps widget',
     'Lock Screen steps widget',
@@ -34,8 +38,9 @@ export const metadata: Metadata = {
     apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
-    description: 'Smart move reminders that nudge you when you have been sitting, plus a private Apple Health steps widget for iPhone and Apple Watch.',
+    title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
+    description:
+      'Move reminders timed by what you actually did, not by a clock. You choose how they look and sound, plus a private Apple Health steps widget for iPhone and Apple Watch.',
     url: siteUrl,
     siteName,
     type: 'website',
@@ -44,8 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steps Widget - Move Reminders & Step Counter for iPhone',
-    description: 'Smart move reminders that nudge you when you have been sitting, plus a private Apple Health steps widget for iPhone and Apple Watch.',
+    title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
+    description:
+      'Move reminders timed by what you actually did, not by a clock. You choose how they look and sound, plus a private Apple Health steps widget for iPhone and Apple Watch.',
     images: defaultOgImages,
   },
 }

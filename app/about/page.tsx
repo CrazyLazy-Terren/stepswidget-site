@@ -1,13 +1,18 @@
 import type { Metadata } from 'next'
 import { ContentShell } from '../content-shell'
 import { defaultOgImages, siteName } from '../shared-metadata'
+import { JsonLd, absoluteUrl, applicationSchema, breadcrumbSchema, organizationId, organizationSchema } from '../structured-data'
 
 const title = 'About - Steps Widget'
-const description = 'Learn about Steps Widget, a private step counter widget for iPhone, Apple Watch, Home Screen, and Lock Screen.'
+const description =
+  'Steps Widget is a move reminder app built by a developer who kept losing whole afternoons to a screen. Nudges you control, all on device.'
 
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title,
     description,
@@ -26,16 +31,20 @@ export const metadata: Metadata = {
 
 const values = [
   {
+    title: 'A nudge has to earn the interruption',
+    description: 'Most stand reminders get muted because they fire on a timer and sound like an alarm. This one is timed around what you actually did.',
+  },
+  {
     title: 'Glance first',
-    description: 'Steps Widget is built around visual feedback, not long sessions. Your progress should be visible where you already look.',
+    description: 'The app is built around visual feedback, not long sessions. Your progress should be visible where you already look.',
   },
   {
     title: 'No pressure',
-    description: 'Your progress, your pace. The app avoids public leaderboards and social comparison so daily movement can stay personal and calm.',
+    description: 'Your progress, your pace. No public leaderboards and no social comparison, so daily movement can stay personal and calm.',
   },
   {
-    title: 'Private by design',
-    description: 'Apple Health step data powers the widgets and is handled with a privacy-first, on-device mindset.',
+    title: 'On device, not on a server',
+    description: 'The model that learns your activity pattern runs on your iPhone. Apple Health data is read with permission and stays local.',
   },
 ]
 
@@ -43,17 +52,43 @@ export default function AboutPage() {
   return (
     <ContentShell
       eyebrow="About"
-      title="No pressure step tracking."
-      description="Steps Widget turns Apple Health steps into glanceable iPhone Home Screen, Lock Screen, and Apple Watch widgets, so daily progress stays visible without pressure.">
+      title="Built by someone who sits too long."
+      description="Steps Widget started as a fix for my own workday: a move reminder I would not immediately turn off.">
+      <JsonLd
+        id="schema-about"
+        data={[
+          organizationSchema(),
+          applicationSchema(),
+          {
+            '@type': 'AboutPage',
+            '@id': `${absoluteUrl('/about')}#about`,
+            name: title,
+            description,
+            url: absoluteUrl('/about'),
+            inLanguage: 'en-US',
+            publisher: { '@id': organizationId },
+          },
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]),
+        ]}
+      />
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <section className="rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)] sm:p-8">
           <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">Why Steps Widget exists</h2>
           <div className="mt-5 space-y-4 text-base leading-8 text-[var(--text-muted)]">
             <p>
-              It&apos;s easy to forget to move when you&apos;re sitting at a desk, scrolling on your phone, or watching TV. Maintaining a minimum level of daily
-              activity is one of the foundations of good health.
+              I write software for a living. A good day means a few uninterrupted hours, and the cost is a body that has not moved since breakfast.
             </p>
-            <p>The goal is gentle awareness: a number you can notice, a small nudge when it helps, and a calmer way to stay connected to your day.</p>
+            <p>
+              I tried the usual stand reminders. Every one fired on a timer, buzzed while I was holding something complicated in my head, and used a sound I
+              never picked. I turned them all off within a fortnight.
+            </p>
+            <p>
+              So Steps Widget works differently. Your iPhone learns your real activity pattern, so the nudge comes after you have actually been sitting. And how
+              it looks and sounds is yours to set.
+            </p>
           </div>
         </section>
 

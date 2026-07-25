@@ -8,6 +8,13 @@ export type BlogPost = {
   metaTitle: string
   description: string
   date: string
+  /**
+   * Last meaningful content edit, as `YYYY-MM-DD`.
+   * Optional; falls back to `date`. Bump it whenever a post is refreshed so
+   * `dateModified` in the Article schema stays honest — search engines and AI
+   * answer engines both weight recency.
+   */
+  updated?: string
   readingTime: string
   order?: number
   keywords: string[]
@@ -89,6 +96,12 @@ function getStringList(frontMatter: FrontMatter, key: string) {
   return value
 }
 
+function getOptionalString(frontMatter: FrontMatter, key: string) {
+  const value = frontMatter[key]
+
+  return typeof value === 'string' && value ? value : undefined
+}
+
 function getOptionalNumber(frontMatter: FrontMatter, key: string) {
   const value = frontMatter[key]
 
@@ -127,6 +140,7 @@ function parsePostFile(filename: string): BlogPost {
     metaTitle: getString(frontMatter, 'metaTitle'),
     description: getString(frontMatter, 'description'),
     date: getString(frontMatter, 'date'),
+    updated: getOptionalString(frontMatter, 'updated'),
     readingTime: getString(frontMatter, 'readingTime'),
     order: getOptionalNumber(frontMatter, 'order'),
     keywords: getStringList(frontMatter, 'keywords'),

@@ -1,38 +1,45 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AppStoreButton } from './app-store-button'
 import { HeroPreview } from './hero-preview'
 import { SiteLogo, SiteNav } from './site-nav'
+import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema } from './structured-data'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 const featureCards = [
   {
-    title: 'Smart move reminders',
-    eyebrow: 'Activity-aware nudges',
-    description:
-      'A gentle reminder to stand and walk, sent only when you have actually been sitting. It reads your Apple Health activity, so you skip the buzz on hours you already moved.',
+    title: 'It learns when you actually sit',
+    eyebrow: 'On-device model',
+    description: 'Your iPhone learns your daily pattern, so a nudge only arrives after you have really been sitting. Hours you already moved stay quiet.',
     image: '/assets/feature-nudges.png',
     accent: 'var(--accent-sky)',
   },
   {
-    title: 'On every screen',
-    eyebrow: 'Home, Lock Screen, Watch',
-    description: 'Between nudges, your progress stays one glance away on iPhone and Apple Watch, no fitness app to open.',
-    image: '/assets/feature-every-screen.png',
+    title: 'You decide how it interrupts',
+    eyebrow: 'Look and sound, your call',
+    description: 'Pick how each reminder looks and which sound it uses. A nudge that fits your focus time is one you keep switched on.',
+    image: '/assets/feature-styles.png',
     accent: 'var(--accent-pink)',
   },
   {
-    title: 'Your style',
-    eyebrow: 'Simple, detailed, charted',
-    description: 'Choose widgets that match the way you like to check progress, from minimal numbers to richer hourly charts.',
-    image: '/assets/feature-styles.png',
+    title: 'Progress stays one glance away',
+    eyebrow: 'Home, Lock Screen, Watch',
+    description: 'Between nudges, your step count sits on the screens you already look at. No fitness app to open.',
+    image: '/assets/feature-every-screen.png',
     accent: 'var(--accent-green)',
   },
 ]
 
 const privacyCards = [
   {
-    title: 'On-device model',
-    description: 'Smart nudges can be triggered from your daily pattern.',
+    title: 'The model stays on your phone',
+    description: 'Your activity pattern is learned on your iPhone, not on a server. Your step data stays with you.',
     icon: (
       <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M9 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="1.8" />
@@ -42,7 +49,7 @@ const privacyCards = [
   },
   {
     title: 'Apple Health',
-    description: 'The step source stays the system you already trust.',
+    description: 'The step source stays the system you already trust, read with your permission.',
     icon: (
       <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -121,7 +128,27 @@ const faqItems = [
   {
     question: 'What is Steps Widget?',
     answer:
-      'Steps Widget is a simple iPhone step counter widget that shows your daily Apple Health steps on the screens you check most: Home Screen, Lock Screen, and Apple Watch.',
+      'Steps Widget is a move reminder app for iPhone, built for people who sit at a desk all day. It learns your activity pattern on device and nudges you to stand only after you have really been sitting. It also shows your Apple Health steps on the Home Screen, Lock Screen, and Apple Watch.',
+  },
+  {
+    question: 'How is this different from an hourly stand reminder?',
+    answer:
+      'An hourly reminder fires on a timer no matter what you did. Steps Widget reads your Apple Health activity, so it stays quiet during hours you already moved. That is the difference between a reminder you keep and one you mute after a week.',
+  },
+  {
+    question: 'Can I change how the reminders look and sound?',
+    answer:
+      'Yes. You choose the appearance of each reminder and which sound it uses, so a nudge can be as gentle or as noticeable as you like. The wrong alert is why most people turn movement reminders off.',
+  },
+  {
+    question: 'Does the on-device model send my activity anywhere?',
+    answer:
+      'No. The model runs on your iPhone and your step data is not sent to our servers. There is no account to create and no sign-in. Optional iCloud sync keeps your settings consistent across your own devices, using your private iCloud account rather than ours.',
+  },
+  {
+    question: 'Is Steps Widget good for developers and desk workers?',
+    answer:
+      'That is exactly who it is for. It was built by a developer who kept losing whole afternoons to a screen. If your day gives you no reason to stand up, the nudge is timed around your real activity.',
   },
   {
     question: 'Can I show my step count on the iPhone Lock Screen?',
@@ -155,6 +182,10 @@ const faqItems = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
+      <JsonLd
+        id="schema-home"
+        data={[organizationSchema(), websiteSchema(), applicationSchema(), faqSchema(faqItems, 'https://steps.crazylazy.xyz/#faq')]}
+      />
       <SiteNav fixed />
 
       <section className="relative px-5 pt-28 sm:px-6 lg:px-8">
@@ -162,16 +193,16 @@ export default function Home() {
         <div className="relative mx-auto flex max-w-7xl flex-col items-center text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[var(--surface-1)] px-3 py-1.5 text-sm text-[var(--text-muted)] shadow-[var(--soft-shadow)]">
             <span className="size-2 rounded-full bg-[var(--accent-color)] shadow-[0_0_18px_var(--accent-glow)]" />
-            Minimalist Activity Tracking
+            Built for desk-bound days
           </div>
 
           <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl lg:text-8xl">
-            Smarter nudges.
+            Move reminders that
             <br />
-            Move at your own pace.
+            know when you sat still.
           </h1>
           <p className="my-12 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
-            Gentle, smart stand reminders that stay out of your way. Glanceable progress across your Home Screen, Lock Screen, and Apple Watch.
+            A stand up reminder app for desk days. Your iPhone learns when you have really been sitting, and you choose how the nudge looks and sounds.
           </p>
 
           <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
@@ -187,13 +218,13 @@ export default function Home() {
       <section id="features" className="px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Built for desk days</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Why hourly timers fail</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              Break up the hours you spend sitting.
+              A stand up reminder you will not turn off.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-              Long stretches at a desk quietly add up. Steps Widget nudges you to move at the right moments and keeps your progress in view, so staying active
-              never means opening another dashboard.
+              Hourly alarms buzz whether or not you moved, and they land mid-thought with a sound you never chose. So you mute them. Steps Widget times the nudge
+              around what you actually did.
             </p>
           </div>
 
@@ -229,7 +260,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Apple Watch</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              Your goal, right on your wrist.
+              Apple Watch step tracking, right on your wrist.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
               Goal reminders and widget style now live directly on Apple Watch, so your walking habit no longer depends on where your iPhone is.
@@ -268,11 +299,10 @@ export default function Home() {
           <div className="flex flex-col justify-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Simple and private</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              Your step data stays with you.
+              Everything happens on your device.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--text-muted)]">
-              Steps Widget reads Apple Health with permission and focuses on useful local feedback. There is no social feed, no public ranking, and no pressure
-              to perform for anyone else.
+              The model that decides when to nudge you runs on your iPhone, not on a server. No account, no social feed, no pressure to perform for anyone.
             </p>
           </div>
 
@@ -309,7 +339,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.5fr_1fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">FAQ</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">What to Expect.</h2>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">Steps Widget questions, answered.</h2>
           </div>
           <div className="divide-y divide-[color:var(--border)] rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] shadow-[var(--soft-shadow)]">
             {faqItems.map((item) => (

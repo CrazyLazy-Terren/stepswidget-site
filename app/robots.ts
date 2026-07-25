@@ -20,10 +20,36 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   }
 
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+      {
+        // Named explicitly so AI crawler access is unambiguous rather than
+        // merely implied by the wildcard rule above. Retrieval bots
+        // (OAI-SearchBot, ChatGPT-User, PerplexityBot) are what put the site
+        // into AI answers; the training bots build long-term brand recall.
+        userAgent: [
+          'GPTBot',
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-User',
+          'Claude-SearchBot',
+          'PerplexityBot',
+          'Perplexity-User',
+          'Google-Extended',
+          'Applebot',
+          'Applebot-Extended',
+          'Bingbot',
+          'Amazonbot',
+          'meta-externalagent',
+          'cohere-ai',
+        ],
+        allow: '/',
+      },
+    ],
     sitemap: `https://${host}/sitemap.xml`,
   }
 }

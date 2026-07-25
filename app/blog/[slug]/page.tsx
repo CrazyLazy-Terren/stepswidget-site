@@ -6,10 +6,26 @@ import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { ContentShell } from '../../content-shell'
 import { siteName } from '../../shared-metadata'
+import {
+  JsonLd,
+  absoluteUrl,
+  applicationId,
+  applicationSchema,
+  breadcrumbSchema,
+  countWords,
+  faqSchema,
+  imageSchema,
+  organizationId,
+  organizationSchema,
+  readingTimeToDuration,
+  webPageSchema,
+  websiteSchema,
+} from '../../structured-data'
+import { extractFaqEntries } from '../extract-faq'
 import { blogPosts, getBlogPost } from '../posts'
 
 const markdownComponents: Components = {
-  h2: ({ children }) => <h2 className="mt-10 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h2>,
+  h2: ({ children }) => <h2 className="my-8 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h2>,
   h3: ({ children }) => <h3 className="mt-8 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h3>,
   p: ({ children }) => <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold text-[var(--text-strong)]">{children}</strong>,
@@ -110,6 +126,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       siteName,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
       tags: post.keywords,
       images,
     },
@@ -132,34 +149,72 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const recommendedPosts = getRecommendedPosts(post.slug, post.category)
 
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+  const url = absoluteUrl(`/blog/${post.slug}`)
+  const faqEntries = extractFaqEntries(post.content)
+
+  const articleSchema = {
+    // BlogPosting rather than the generic Article: it is the accurate type for
+    // a dated post inside a Blog, and it inherits everything Article supports.
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
     headline: post.title,
+    name: post.title,
     description: post.description,
+    url,
+    mainEntityOfPage: { '@id': url },
+    image: { '@id': `${url}#primaryimage` },
+    thumbnailUrl: absoluteUrl(post.image),
     datePublished: post.date,
-    dateModified: post.date,
-    author: {
-      '@type': 'Organization',
-      name: 'CrazyLazy OU',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Steps Widget',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.crazylazy.xyz/icon/stepsWidget.png',
-      },
-    },
-    mainEntityOfPage: `/blog/${post.slug}`,
+    // Falls back to the publish date when a post has never been revised.
+    dateModified: post.updated ?? post.date,
+    inLanguage: 'en-US',
+    articleSection: post.category,
     keywords: post.keywords.join(', '),
+    wordCount: countWords(post.content),
+    timeRequired: readingTimeToDuration(post.readingTime),
+    author: { '@id': organizationId },
+    publisher: { '@id': organizationId },
+    isPartOf: { '@id': `${absoluteUrl('/blog')}#blog` },
+    // Names the product this post is about, so every guide reinforces the same
+    // entity instead of reading as 18 unrelated articles.
+    about: { '@id': applicationId },
+    mentions: { '@id': applicationId },
+    // Tells voice and assistant surfaces which parts are safe to read aloud.
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2'],
+    },
+  }
+
+  const graph: Record<string, unknown>[] = [
+    organizationSchema(),
+    websiteSchema(),
+    // The full app node travels with every post, so a crawler that fetches one
+    // article in isolation still gets the product facts.
+    applicationSchema(),
+    webPageSchema({ url, name: post.metaTitle, description: post.description, image: post.image }),
+    imageSchema(post.image, `${url}#primaryimage`, `${post.title} hero`),
+    articleSchema,
+    breadcrumbSchema(
+      [
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: post.title, path: `/blog/${post.slug}` },
+      ],
+      `${url}#breadcrumb`
+    ),
+  ]
+
+  // Only emit FAQPage when the post genuinely contains Q&A content.
+  if (faqEntries.length > 0) {
+    graph.push(faqSchema(faqEntries, `${url}#faq`))
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <JsonLd id={`schema-post-${post.slug}`} data={graph} />
       <ContentShell eyebrow={post.category} title={post.title} description={post.description}>
-        <article className="mx-auto max-w-4xl rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)] sm:p-8">
+        <article className="mx-auto max-w-5xl rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)] sm:p-12">
           <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--text-subtle)]">
             <time dateTime={post.date}>
               {new Intl.DateTimeFormat('en', {

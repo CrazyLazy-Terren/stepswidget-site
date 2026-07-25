@@ -15,6 +15,8 @@ keywords:
 image: /assets/blog-walking-reminders.jpg
 ---
 
+> Comparing specific apps? See [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus) for an honest head-to-head, including where Pedometer++ is the better choice.
+
 A sedentary desk day is one of the most common health challenges of modern work. Most of us start the morning meaning to hit our step goal, then look up at 8:00 PM having barely left the chair. The intention was never the problem. The reminder was missing.
 
 That is why **pedometer apps with move reminders** have taken off. Instead of passively logging steps you forget to check, they act more like a quiet coach, nudging you to stand, stretch, and walk at the moments you have actually been sitting too long.

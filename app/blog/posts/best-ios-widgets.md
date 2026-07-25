@@ -35,7 +35,7 @@ The strongest pedometer and fitness widgets in 2026 share a specific set of capa
 - **Battery-efficient refresh scheduling** — WidgetKit gives each widget a refresh budget, so your battery isn't drained by constant polling
 - **Customizable visual styles** — progress rings, bar charts, minimal number displays, and tinted color schemes that match your wallpaper
 
-Steps Widget by Crazylazy covers all of these. It offers [multiple display styles](https://steps.crazylazy.xyz/blog/favorite-home-screen-steps-widget-layouts) including progress rings and hourly bar charts, supports iOS 18 tinted widget color schemes, and processes everything locally.
+Steps Widget by Crazylazy covers all of these. It offers multiple display styles including progress rings and hourly bar charts, supports [iOS 18 tinted widget color schemes](https://steps.crazylazy.xyz/blog/ios-18-tinted-steps-widgets), and processes everything locally.
 
 ## What makes a pedometer widget truly privacy-conscious?
 
@@ -87,6 +87,8 @@ The fitness widget space in 2026 has a clear split between apps built around pri
 **Steps Widget by Crazylazy** is the most focused option for pure pedometer tracking. It does one job well: showing your Apple Health step count in a clean, customizable widget across every iOS surface. No social features, no account, no cloud. The [Apple Watch integration](https://steps.crazylazy.xyz/blog/apple-health-steps-widget) means your step count is visible on your wrist and your Home Screen simultaneously.
 
 **Apple Fitness Rings** is the built-in choice for Apple Watch users. It shows move, exercise, and stand rings locally, requires no third-party app, and updates automatically. Its limitation is that it shows ring progress rather than raw step count, which matters if steps are your primary metric.
+
+**Pedometer++** is the deepest step tracker of the group, with twelve years of history behind it, route mapping, workouts, and streak tracking. Its free tier carries ads and it has no activity-aware move reminder, so the choice between it and a reminder-first app comes down to which problem you are solving — we compare them directly in [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus).
 
 **Widgetsmith** offers broader customization with Health integration, supporting activity data alongside calendar, weather, and photos. It's the right pick if you want a single app managing multiple widget types, though its feature depth means a longer setup time than a dedicated pedometer app.
 

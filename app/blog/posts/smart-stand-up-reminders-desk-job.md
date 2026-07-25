@@ -86,3 +86,5 @@ Rigid hourly stand-up alarms fail because they ignore what you are doing; activi
 | Movement over standing    | Aim for a small hourly step goal, around 250 steps, rather than just standing time.                         |
 | Tune it to your day       | Set active work hours and pair each nudge with a simple, specific action.                                   |
 | Steps Widget by Crazylazy | Activity-aware move reminders plus glanceable, private widgets across iPhone and Apple Watch.               |
+
+Weighing up a dedicated step tracker instead? We put the two side by side in [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus), including the cases where Pedometer++ is the better pick.
