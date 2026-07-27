@@ -14,7 +14,7 @@ keywords:
   - stand up reminder for desk workers
   - break reminder app iphone
   - move reminder app
-image: /assets/blog-aesthetic-steps.jpg
+image: /assets/blog-stand-reminders.jpg
 ---
 
 **Short answer:** the best stand up reminder app depends on what you want the reminder to do. **Moova** is the most complete if you want guided stretches and exercises. **Deskly** is the best minimal option and collects no data at all. **Steps Widget** is the best pick if you want the nudge timed by your real activity and your step count visible between reminders. And if you own an Apple Watch, its built-in stand reminder is free and may be enough.
@@ -29,19 +29,19 @@ If you are on an app not listed here and it works for you, keep it. The goal is 
 
 ## The four approaches at a glance
 
-| | Moova | Deskly | Steps Widget | Apple Watch built-in |
-| --- | --- | --- | --- | --- |
-| Core idea | Guided movement breaks | Calm, minimal reminders | Activity-aware nudges plus a step widget | Hourly stand prompt |
-| How reminders are timed | Schedule, plus experimental step-aware timing | Schedule you set | On-device model reading your activity | Hourly, if no standing detected |
-| Guided stretches and exercises | Yes, extensive | No | No | No |
-| Breathing and mindfulness | Yes | No | No | No |
-| Reminder tone or personality options | Sound options | Four written tones | Look and sound both configurable | No |
-| Step counter widgets | Walking-break pedometer | No | Yes, Home Screen, Lock Screen, StandBy, Watch | No |
-| Apple Watch | Yes | Yes | Yes, standalone with its own reminders | Native |
-| Water and eye-break reminders | No | Yes | No | No |
-| App size | Very large | Very small | Small | Built in |
-| Data collection declared | Tracks you across other companies' apps and sites | None | Anonymous analytics, not linked to you | Apple Health |
-| Pricing model | Subscription | One-time lifetime unlock | Reminders free; paying only restyles the widget | Free |
+|                                      | Moova                                             | Deskly                   | Steps Widget                                    | Apple Watch built-in            |
+| ------------------------------------ | ------------------------------------------------- | ------------------------ | ----------------------------------------------- | ------------------------------- |
+| Core idea                            | Guided movement breaks                            | Calm, minimal reminders  | Activity-aware nudges plus a step widget        | Hourly stand prompt             |
+| How reminders are timed              | Schedule, plus experimental step-aware timing     | Schedule you set         | On-device model reading your activity           | Hourly, if no standing detected |
+| Guided stretches and exercises       | Yes, extensive                                    | No                       | No                                              | No                              |
+| Breathing and mindfulness            | Yes                                               | No                       | No                                              | No                              |
+| Reminder tone or personality options | Sound options                                     | Four written tones       | Look and sound both configurable                | No                              |
+| Step counter widgets                 | Walking-break pedometer                           | No                       | Yes, Home Screen, Lock Screen, StandBy, Watch   | No                              |
+| Apple Watch                          | Yes                                               | Yes                      | Yes, standalone with its own reminders          | Native                          |
+| Water and eye-break reminders        | No                                                | Yes                      | No                                              | No                              |
+| App size                             | Very large                                        | Very small               | Small                                           | Built in                        |
+| Data collection declared             | Tracks you across other companies' apps and sites | None                     | Anonymous analytics, not linked to you          | Apple Health                    |
+| Pricing model                        | Subscription                                      | One-time lifetime unlock | Reminders free; paying only restyles the widget | Free                            |
 
 ## Moova: best for guided movement breaks
 
@@ -51,7 +51,7 @@ It is also the only one here that speaks directly to **ADHD and hyperfocus**, fr
 
 Other things it does that nothing else here does: a walking-break pedometer that counts steps during breaks, active-hour tracking with daily and weekly breakdowns, Apple Health sync, and full-screen break alerts built on iOS 26's AlarmKit so a reminder cannot get buried under other notifications.
 
-**Where it beats Steps Widget, plainly:** if you do not know *what* to do when you stand up, Moova tells you and shows you. Steps Widget just tells you to move. For many people that guidance is the whole value, and we do not offer it.
+**Where it beats Steps Widget, plainly:** if you do not know _what_ to do when you stand up, Moova tells you and shows you. Steps Widget just tells you to move. For many people that guidance is the whole value, and we do not offer it.
 
 **One thing to check before installing.** Moova's App Store privacy label declares that identifiers and usage data **may be used to track you across apps and websites owned by other companies**, and links contact info, identifiers, and usage data to your identity for advertising and marketing. Its listing also warns the app may use your location even when it is not open, which can affect battery. The app is also several hundred megabytes because of the exercise video content. None of that makes it a bad app — it makes it a bigger one, with a more commercial data posture than the alternatives here. Decide whether that trade is worth the guided routines.
 
@@ -115,13 +115,13 @@ Try this first before paying for anything. If you find it too easy to satisfy, t
 
 ## Key takeaways
 
-| Point | Detail |
-| --- | --- |
-| No single winner | These four apps solve different versions of the problem. Match the app to your actual frustration. |
-| Best guided routines | Moova, if you want to be shown what to do. Review its privacy label and app size first. |
-| Best privacy and minimalism | Deskly, which declares zero data collection and offers a one-time unlock. |
-| Best activity-aware timing | Steps Widget, which holds the nudge until you have really been sitting and keeps steps visible between reminders. |
-| Free option first | Apple Watch has a built-in hourly stand reminder. Try it before paying for anything. |
-| The category is moving | Activity-aware timing was a single-app idea until recently. Expect more apps to adopt it. |
+| Point                       | Detail                                                                                                            |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| No single winner            | These four apps solve different versions of the problem. Match the app to your actual frustration.                |
+| Best guided routines        | Moova, if you want to be shown what to do. Review its privacy label and app size first.                           |
+| Best privacy and minimalism | Deskly, which declares zero data collection and offers a one-time unlock.                                         |
+| Best activity-aware timing  | Steps Widget, which holds the nudge until you have really been sitting and keeps steps visible between reminders. |
+| Free option first           | Apple Watch has a built-in hourly stand reminder. Try it before paying for anything.                              |
+| The category is moving      | Activity-aware timing was a single-app idea until recently. Expect more apps to adopt it.                         |
 
 The honest summary: if you have never used a movement reminder, start with the free Apple Watch one. If it does not stick, the reason it did not stick tells you which app above to try — too vague means Moova, too noisy means Deskly, wrong timing means Steps Widget.

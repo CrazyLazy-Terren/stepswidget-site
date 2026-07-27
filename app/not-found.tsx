@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ContentShell } from './content-shell'
-import { blogPosts } from './blog/posts'
+import { getBlogPosts } from './blog/posts'
 
 const title = '404 - Page Not Found'
 const description = 'The page you are looking for does not exist. Check out recent posts from the blog or head back home.'
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default function NotFound() {
-  const recentPosts = blogPosts.slice(0, 3)
+  const recentPosts = getBlogPosts().slice(0, 3)
 
   return (
     <ContentShell eyebrow="404" title="This page took a wrong turn." description="We couldn't find the page you were looking for. Here are some recent posts, or head back home.">

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
-import { blogPosts } from './blog/posts'
+import { getBlogPosts } from './blog/posts'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = `${protocol}://${host}`
 
   // Dynamic routes (blog posts)
-  const blogUrls = blogPosts.map((post) => ({
+  const blogUrls = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(`${post.date}T00:00:00Z`),
     changeFrequency: 'monthly' as const,

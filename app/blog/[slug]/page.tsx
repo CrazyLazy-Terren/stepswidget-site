@@ -22,7 +22,7 @@ import {
   websiteSchema,
 } from '../../structured-data'
 import { extractFaqEntries } from '../extract-faq'
-import { blogPosts, getBlogPost } from '../posts'
+import { getBlogPost, getBlogPosts } from '../posts'
 
 const markdownComponents: Components = {
   h2: ({ children }) => <h2 className="my-8 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h2>,
@@ -87,7 +87,7 @@ type BlogPostPageProps = {
 }
 
 function getRecommendedPosts(currentSlug: string, category: string, limit = 3) {
-  const others = blogPosts.filter((post) => post.slug !== currentSlug)
+  const others = getBlogPosts().filter((post) => post.slug !== currentSlug)
   const sameCategory = others.filter((post) => post.category === category)
   const otherCategory = others.filter((post) => post.category !== category)
 
@@ -95,7 +95,7 @@ function getRecommendedPosts(currentSlug: string, category: string, limit = 3) {
 }
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return getBlogPosts().map((post) => ({
     slug: post.slug,
   }))
 }
@@ -214,7 +214,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <JsonLd id={`schema-post-${post.slug}`} data={graph} />
       <ContentShell eyebrow={post.category} title={post.title} description={post.description}>
-        <article className="mx-auto max-w-5xl rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)] sm:p-12">
+        <article className="mx-auto max-w-5xl rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6  sm:p-12">
           <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--text-subtle)]">
             <time dateTime={post.date}>
               {new Intl.DateTimeFormat('en', {

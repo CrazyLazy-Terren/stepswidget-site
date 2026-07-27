@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { blogPosts, getBlogPostMarkdown } from '../../posts'
+import { getBlogPostMarkdown, getBlogPosts } from '../../posts'
 
 type BlogPostMarkdownRouteProps = {
   params: Promise<{
@@ -8,7 +8,7 @@ type BlogPostMarkdownRouteProps = {
 }
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return getBlogPosts().map((post) => ({
     slug: post.slug,
   }))
 }

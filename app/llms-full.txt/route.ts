@@ -1,4 +1,4 @@
-import { blogPosts } from '../blog/posts'
+import { getBlogPosts } from '../blog/posts'
 import { appFacts } from '../structured-data'
 
 export const dynamic = 'force-static'
@@ -41,7 +41,7 @@ export async function GET() {
     '',
   ]
 
-  for (const post of blogPosts) {
+  for (const post of getBlogPosts()) {
     sections.push(
       `## ${post.title}`,
       '',

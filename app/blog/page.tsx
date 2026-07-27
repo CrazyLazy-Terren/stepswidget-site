@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ContentShell } from '../content-shell'
 import { defaultOgImages, siteName } from '../shared-metadata'
 import { JsonLd, absoluteUrl, applicationId, applicationSchema, breadcrumbSchema, organizationId, organizationSchema, websiteSchema } from '../structured-data'
-import { blogPosts } from './posts'
+import { getBlogPosts } from './posts'
 
 const title = 'Blog - Steps Widget'
 const description =
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
+  const blogPosts = getBlogPosts()
   const blogUrl = absoluteUrl('/blog')
 
   const blogSchema = {

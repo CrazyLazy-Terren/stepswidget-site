@@ -14,37 +14,37 @@ keywords:
   - pedometer++ review
   - move reminder app vs pedometer app
   - iphone step counter comparison
-image: /assets/blog-favorite-home-widget.jpg
+image: /assets/blog-vs-pedometer.jpg
 ---
 
 **Short answer:** these apps solve different problems. Pedometer++ is the better step tracker, with over a decade of development behind it, deeper stats, route mapping, and workout tracking. Steps Widget is the better move reminder, because it nudges you when you have actually been sitting and lets you control how that nudge looks and sounds.
 
-If your problem is *"I want to track my walking properly,"* pick Pedometer++. If your problem is *"I sit at a desk for six hours without noticing,"* pick Steps Widget.
+If your problem is _"I want to track my walking properly,"_ pick Pedometer++. If your problem is _"I sit at a desk for six hours without noticing,"_ pick Steps Widget.
 
 This post is written by the developer of Steps Widget, so treat the verdict accordingly — but every fact below is sourced from each app's own published documentation, checked in July 2026.
 
 ## Steps Widget vs Pedometer++ at a glance
 
-| | Steps Widget | Pedometer++ |
-| --- | --- | --- |
-| Made by | CrazyLazy OU | Cross Forward, Inc. |
-| Focus | Move reminders, with a step widget | Step tracking, in depth |
-| Activity-aware move reminders | Yes, timed by an on-device model | Not listed in its feature documentation |
-| Custom reminder look and sound | Yes | Not applicable |
-| Home Screen widgets | Yes | Yes |
-| Lock Screen widgets | Yes | Yes |
-| StandBy mode | Yes | Not documented |
-| Apple Watch app | Yes, with standalone goal reminders | Yes, with workouts and complications |
-| Step history and streaks | Basic daily and hourly view | Deep history, streaks, badges, Rest Days |
-| Route mapping and GPX | No | Yes, including offline maps |
-| Workout tracking | No | Yes, on iPhone and Watch |
-| Wheelchair push counting | No | Yes, with an Apple Watch |
-| Data export | Not documented | CSV and .steps export |
-| Ads in the free tier | No | Yes, removed by Premium |
-| What is behind the paywall | Widget appearance only; reminders are free | Functional features: offline maps, Expedition Mode, Live Activities |
-| One-time unlock option | Yes | No, subscription only |
-| Device support | Recent iPhone and Apple Watch only | Reaches back to older hardware |
-| Account required | No | No |
+|                                | Steps Widget                               | Pedometer++                                                         |
+| ------------------------------ | ------------------------------------------ | ------------------------------------------------------------------- |
+| Made by                        | CrazyLazy OU                               | Cross Forward, Inc.                                                 |
+| Focus                          | Move reminders, with a step widget         | Step tracking, in depth                                             |
+| Activity-aware move reminders  | Yes, timed by an on-device model           | Not listed in its feature documentation                             |
+| Custom reminder look and sound | Yes                                        | Not applicable                                                      |
+| Home Screen widgets            | Yes                                        | Yes                                                                 |
+| Lock Screen widgets            | Yes                                        | Yes                                                                 |
+| StandBy mode                   | Yes                                        | Not documented                                                      |
+| Apple Watch app                | Yes, with standalone goal reminders        | Yes, with workouts and complications                                |
+| Step history and streaks       | Basic daily and hourly view                | Deep history, streaks, badges, Rest Days                            |
+| Route mapping and GPX          | No                                         | Yes, including offline maps                                         |
+| Workout tracking               | No                                         | Yes, on iPhone and Watch                                            |
+| Wheelchair push counting       | No                                         | Yes, with an Apple Watch                                            |
+| Data export                    | Not documented                             | CSV and .steps export                                               |
+| Ads in the free tier           | No                                         | Yes, removed by Premium                                             |
+| What is behind the paywall     | Widget appearance only; reminders are free | Functional features: offline maps, Expedition Mode, Live Activities |
+| One-time unlock option         | Yes                                        | No, subscription only                                               |
+| Device support                 | Recent iPhone and Apple Watch only         | Reaches back to older hardware                                      |
+| Account required               | No                                         | No                                                                  |
 
 ## What does Pedometer++ do better?
 
@@ -92,7 +92,7 @@ The shape of the two models differs more than the numbers do, so here is the str
 
 **Pedometer++** is free with ads in the free tier. Premium is a subscription — monthly or yearly, with a trial and Family Sharing — and it removes the ads while unlocking Expedition Mode, Live Activities, live and offline maps, Maps on Apple Watch, and premium app icons. There is no one-time purchase option; if you want the paid features, you subscribe.
 
-**Steps Widget** is free with no ads at any tier. The important part: **the move reminders are free**, including their settings and schedule. Nothing that makes the app work sits behind a paywall. The paid unlock only changes how the widget *looks* — extra styles and colours — and you can buy it once or subscribe.
+**Steps Widget** is free with no ads at any tier. The important part: **the move reminders are free**, including their settings and schedule. Nothing that makes the app work sits behind a paywall. The paid unlock only changes how the widget _looks_ — extra styles and colours — and you can buy it once or subscribe.
 
 Three differences matter and none depends on the current price:
 
@@ -164,13 +164,13 @@ A reasonable setup is Pedometer++ for history, streaks, and weekend walks, with 
 
 ## Key takeaways
 
-| Point | Detail |
-| --- | --- |
-| Different problems | Pedometer++ is a step tracker. Steps Widget is a move reminder that also shows steps. |
-| Pedometer++ wins on | Depth, history, routes, workouts, accessibility, data export, accuracy edge cases, track record, device support |
-| Steps Widget wins on | Activity-aware nudges, control over reminder look and sound, no ads, on-device processing |
-| Pricing | Steps Widget has no ads, free reminders, and gates only widget appearance behind an optional one-time unlock or subscription. Pedometer++ has ads in its free tier and gates functional features behind a subscription with no one-time option. |
-| Accuracy | Effectively the same source. Pedometer++ adds a device-reconciliation layer that helps when your hands are occupied. |
-| Can you run both | Yes. Both read Apple Health, so there is no conflict and negligible battery cost. |
+| Point                | Detail                                                                                                                                                                                                                                          |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Different problems   | Pedometer++ is a step tracker. Steps Widget is a move reminder that also shows steps.                                                                                                                                                           |
+| Pedometer++ wins on  | Depth, history, routes, workouts, accessibility, data export, accuracy edge cases, track record, device support                                                                                                                                 |
+| Steps Widget wins on | Activity-aware nudges, control over reminder look and sound, no ads, on-device processing                                                                                                                                                       |
+| Pricing              | Steps Widget has no ads, free reminders, and gates only widget appearance behind an optional one-time unlock or subscription. Pedometer++ has ads in its free tier and gates functional features behind a subscription with no one-time option. |
+| Accuracy             | Effectively the same source. Pedometer++ adds a device-reconciliation layer that helps when your hands are occupied.                                                                                                                            |
+| Can you run both     | Yes. Both read Apple Health, so there is no conflict and negligible battery cost.                                                                                                                                                               |
 
-If you have read this far and your honest answer to *"what is actually wrong with my day"* is that nothing reminds you to get up, that is the gap Steps Widget was built for. If your answer is that you want to track your walking properly, Pedometer++ is the better app and you should use it.
+If you have read this far and your honest answer to _"what is actually wrong with my day"_ is that nothing reminds you to get up, that is the gap Steps Widget was built for. If your answer is that you want to track your walking properly, Pedometer++ is the better app and you should use it.

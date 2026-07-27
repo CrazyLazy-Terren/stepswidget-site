@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ContentShell } from '../../content-shell'
-import { blogPosts } from '../posts'
+import { getBlogPosts } from '../posts'
 
 export const metadata: Metadata = {
   title: 'Markdown Sources - Steps Widget Blog',
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPostSourcesPage() {
+  const blogPosts = getBlogPosts()
+
   return (
     <ContentShell
       eyebrow="Markdown sources"

@@ -149,36 +149,41 @@ function parsePostFile(filename: string): BlogPost {
   }
 }
 
-export const blogPosts = readdirSync(postsDirectory)
-  .filter((filename) => filename.endsWith('.md'))
-  .map(parsePostFile)
-  .sort((firstPost, secondPost) => {
-    // const firstOrder = firstPost.order
-    // const secondOrder = secondPost.order
+// A function, not a top-level constant: the bundler only re-runs a module
+// when its own source changes, so a cached top-level array would keep
+// serving stale posts in dev whenever only a `.md` file is edited.
+export function getBlogPosts() {
+  return readdirSync(postsDirectory)
+    .filter((filename) => filename.endsWith('.md'))
+    .map(parsePostFile)
+    .sort((firstPost, secondPost) => {
+      // const firstOrder = firstPost.order
+      // const secondOrder = secondPost.order
 
-    // const hasFirstOrder = firstOrder !== undefined
-    // const hasSecondOrder = secondOrder !== undefined
+      // const hasFirstOrder = firstOrder !== undefined
+      // const hasSecondOrder = secondOrder !== undefined
 
-    // if (hasFirstOrder && hasSecondOrder) {
-    //   if (firstOrder !== secondOrder) {
-    //     return firstOrder - secondOrder
-    //   }
-    //   return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
-    // }
+      // if (hasFirstOrder && hasSecondOrder) {
+      //   if (firstOrder !== secondOrder) {
+      //     return firstOrder - secondOrder
+      //   }
+      //   return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
+      // }
 
-    // if (hasFirstOrder) {
-    //   return -1
-    // }
+      // if (hasFirstOrder) {
+      //   return -1
+      // }
 
-    // if (hasSecondOrder) {
-    //   return 1
-    // }
+      // if (hasSecondOrder) {
+      //   return 1
+      // }
 
-    return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
-  })
+      return new Date(secondPost.date).getTime() - new Date(firstPost.date).getTime()
+    })
+}
 
 export function getBlogPost(slug: string) {
-  return blogPosts.find((post) => post.slug === slug)
+  return getBlogPosts().find((post) => post.slug === slug)
 }
 
 export function getBlogPostMarkdown(slug: string) {
