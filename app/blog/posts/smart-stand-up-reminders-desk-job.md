@@ -87,4 +87,4 @@ Rigid hourly stand-up alarms fail because they ignore what you are doing; activi
 | Tune it to your day       | Set active work hours and pair each nudge with a simple, specific action.                                   |
 | Steps Widget by Crazylazy | Activity-aware move reminders plus glanceable, private widgets across iPhone and Apple Watch.               |
 
-Weighing up a dedicated step tracker instead? We put the two side by side in [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus), including the cases where Pedometer++ is the better pick.
+Comparing apps? See [the best stand up reminder apps for iPhone](https://steps.crazylazy.xyz/blog/best-stand-up-reminder-apps-iphone) for how the main options differ, or [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus) if you are weighing a dedicated step tracker instead.

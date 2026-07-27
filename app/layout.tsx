@@ -8,9 +8,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
-  description:
-    'A move reminder app for people who sit all day. Your iPhone learns when you have really been sitting, you choose how each nudge looks and sounds, and a private step counter keeps progress on your Home Screen, Lock Screen, and Apple Watch.',
+  title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
+    description:
+    'An app that reminds you to leave your chair and move when you have actually been sitting, then shows your daily step count so you can see it working. Free reminders, private Apple Health data, and progress on your Home Screen, Lock Screen, and Apple Watch.',
   keywords: [
     'Steps Widget',
     'stand up reminder app',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
+    title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
     description:
-      'Move reminders timed by what you actually did, not by a clock. You choose how they look and sound, plus a private Apple Health steps widget for iPhone and Apple Watch.',
+      'Reminders to leave your chair, timed by what you actually did rather than by a clock. Your daily step count shows you it worked, on iPhone and Apple Watch.',
     url: siteUrl,
     siteName,
     type: 'website',
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steps Widget - Smart Stand Up Reminder App for Desk Workers',
+    title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
     description:
-      'Move reminders timed by what you actually did, not by a clock. You choose how they look and sound, plus a private Apple Health steps widget for iPhone and Apple Watch.',
+      'Reminders to leave your chair, timed by what you actually did rather than by a clock. Your daily step count shows you it worked, on iPhone and Apple Watch.',
     images: defaultOgImages,
   },
 }

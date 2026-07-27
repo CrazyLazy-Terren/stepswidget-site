@@ -17,7 +17,7 @@ keywords:
 image: /assets/blog-favorite-home-widget.jpg
 ---
 
-**Short answer:** these apps solve different problems. Pedometer++ is the better step tracker, with twelve years of history, deeper stats, route mapping, and a 4.8-star rating across 172,000 reviews. Steps Widget is the better move reminder, because it nudges you when you have actually been sitting and lets you control how that nudge looks and sounds.
+**Short answer:** these apps solve different problems. Pedometer++ is the better step tracker, with over a decade of development behind it, deeper stats, route mapping, and workout tracking. Steps Widget is the better move reminder, because it nudges you when you have actually been sitting and lets you control how that nudge looks and sounds.
 
 If your problem is *"I want to track my walking properly,"* pick Pedometer++. If your problem is *"I sit at a desk for six hours without noticing,"* pick Steps Widget.
 
@@ -28,8 +28,7 @@ This post is written by the developer of Steps Widget, so treat the verdict acco
 | | Steps Widget | Pedometer++ |
 | --- | --- | --- |
 | Made by | CrazyLazy OU | Cross Forward, Inc. |
-| First released | 2025 | 2013 |
-| App Store rating | 3.8 stars, 11 ratings | 4.8 stars, ~172,000 ratings |
+| Focus | Move reminders, with a step widget | Step tracking, in depth |
 | Activity-aware move reminders | Yes, timed by an on-device model | Not listed in its feature documentation |
 | Custom reminder look and sound | Yes | Not applicable |
 | Home Screen widgets | Yes | Yes |
@@ -42,17 +41,16 @@ This post is written by the developer of Steps Widget, so treat the verdict acco
 | Wheelchair push counting | No | Yes, with an Apple Watch |
 | Data export | Not documented | CSV and .steps export |
 | Ads in the free tier | No | Yes, removed by Premium |
-| One-time unlock option | Yes, Customization at $2.99 | No, subscription only |
-| Subscription | $1.99/month or $7.99/year | $3.99/month or $29.99/year |
-| Minimum iOS | 18.6 | Lower, supports older devices |
-| Minimum watchOS | 10.6 | 10 |
+| What is behind the paywall | Widget appearance only; reminders are free | Functional features: offline maps, Expedition Mode, Live Activities |
+| One-time unlock option | Yes | No, subscription only |
+| Device support | Recent iPhone and Apple Watch only | Reaches back to older hardware |
 | Account required | No | No |
 
 ## What does Pedometer++ do better?
 
 A lot, and it would be dishonest to pretend otherwise.
 
-Pedometer++ has been shipping since 2013 and has passed 20 million downloads. That longevity shows up everywhere in the product. It tracks steps, walking distance, flights of stairs, active calories, and heart rate. It keeps full step history with streaks, badges, and monthly challenges, and it has a **Rest Day** system that protects your streak after six successful days, which is a genuinely thoughtful piece of habit design.
+Pedometer++ has been shipping since 2013, and that longevity shows up everywhere in the product. It tracks steps, walking distance, flights of stairs, active calories, and heart rate. It keeps full step history with streaks, badges, and monthly challenges, and it has a **Rest Day** system that protects your streak after six successful days, which is a genuinely thoughtful piece of habit design.
 
 It also does things Steps Widget does not attempt at all:
 
@@ -64,7 +62,7 @@ It also does things Steps Widget does not attempt at all:
 
 There is one more advantage worth naming clearly, because it affects the number you see every day. Pedometer++ merges Apple Health data with its own algorithm and picks whichever device better captured your activity. Their documentation notes this means pushing a stroller or holding a dog leash will not wreck your count. Steps Widget reads Apple Health directly without that reconciliation layer, so on those specific edge cases Pedometer++ will be more accurate.
 
-Finally, the track record. A 4.8-star average across roughly 172,000 ratings is not something a newer app can argue with, and if you want the safe, proven choice, that is Pedometer++.
+Finally, the track record. Pedometer++ has been refined over more than a decade and is one of the most established step counters on iOS. Steps Widget is a much newer app. If you want the safe, proven choice, that is Pedometer++.
 
 ## So what does Steps Widget do differently?
 
@@ -90,18 +88,19 @@ It is worth adding that Apple Watch has its own built-in stand reminder, which n
 
 ## How do the two apps compare on price?
 
-The free tier of Pedometer++ includes ads, and Premium removes them along with unlocking Expedition Mode, Live Activities, live and offline maps, Maps on Apple Watch, and premium app icons. Premium costs $3.99 per month or $29.99 per year, with a seven-day trial and Family Sharing support.
+The shape of the two models differs more than the numbers do, so here is the structure rather than figures that go out of date. Check each App Store listing for current pricing.
 
-Steps Widget is free to download and shows no ads at any tier. The included widget styles cost nothing. Beyond that there are two ways to pay, and you pick whichever suits you:
+**Pedometer++** is free with ads in the free tier. Premium is a subscription — monthly or yearly, with a trial and Family Sharing — and it removes the ads while unlocking Expedition Mode, Live Activities, live and offline maps, Maps on Apple Watch, and premium app icons. There is no one-time purchase option; if you want the paid features, you subscribe.
 
-- **Customization, $2.99 once.** A one-time purchase that unlocks widget customization. No recurring charge.
-- **Subscription, $1.99/month or $7.99/year.** Unlocks the full feature set.
+**Steps Widget** is free with no ads at any tier. The important part: **the move reminders are free**, including their settings and schedule. Nothing that makes the app work sits behind a paywall. The paid unlock only changes how the widget *looks* — extra styles and colours — and you can buy it once or subscribe.
 
-The practical difference is that Steps Widget gives you a way out of the subscription model entirely. If you just want your widget to look right, $2.99 once is the whole cost. Pedometer++ has no one-time equivalent — Premium is subscription-only.
+Three differences matter and none depends on the current price:
 
-On price alone, Steps Widget is cheaper on every axis: $7.99/year against $29.99/year, and no ads in the free tier where Pedometer++ has them.
+- **Ads.** Pedometer++ shows them in the free tier. Steps Widget does not, at any tier.
+- **What is gated.** Steps Widget puts only cosmetics behind payment. Pedometer++ Premium gates functional features like offline maps and Expedition Mode.
+- **A way out of subscriptions.** Steps Widget's one-time purchase means you never have to subscribe. Pedometer++ Premium has no equivalent.
 
-That said, price is the wrong way to choose here. If you will genuinely use route mapping, offline maps, and workout tracking, $29.99 a year for Pedometer++ Premium is fair value for a much larger app. Paying less for software that does not solve your problem is not a saving.
+Steps Widget is the cheaper app on both its one-time and subscription options. But price is the wrong way to choose here. If you will genuinely use route mapping, offline maps, and workout tracking, Pedometer++ Premium is fair value for a much larger app. Paying less for software that does not solve your problem is not a saving.
 
 ## Which app is more accurate?
 
@@ -115,9 +114,9 @@ If day-to-day step precision is your priority, that layer is a real advantage. W
 
 This is the clearest case where Pedometer++ wins on availability.
 
-Steps Widget requires iOS 18.6 or later, watchOS 11.6 or later, iPadOS 18.6, or visionOS 2.6. That is a modern-device requirement and it excludes older hardware.
+Steps Widget targets recent releases of iOS, iPadOS, watchOS, and visionOS. That keeps the app small and lets it use current widget APIs, but it does exclude older hardware.
 
-Pedometer++ supports a wider range. It raised its minimum to watchOS 10, which drops Apple Watch Series 3 and older, but it reaches further back than Steps Widget does on both platforms. On an older iPhone or Watch, Pedometer++ may be your only option of the two.
+Pedometer++ supports a wider range and reaches further back on both iPhone and Apple Watch. On older hardware, Pedometer++ may be your only option of the two. Check the current requirements on each App Store listing before you commit.
 
 ## Choose Pedometer++ if
 
@@ -129,7 +128,7 @@ Pedometer++ supports a wider range. It raised its minimum to watchOS 10, which d
 - You want to export your data.
 - You want maximum step accuracy when your hands are occupied.
 - You are on an older iPhone or Apple Watch.
-- You want a twelve-year track record and 172,000 reviews behind your choice.
+- You want the longer, more established track record behind your choice.
 
 ## Choose Steps Widget if
 
@@ -149,11 +148,11 @@ A reasonable setup is Pedometer++ for history, streaks, and weekend walks, with 
 
 ## Frequently asked questions
 
-**Is Pedometer++ free?** Yes, the core features are free, but the free tier includes ads. Pedometer++ Premium costs $3.99 per month or $29.99 per year and removes ads while unlocking Expedition Mode, Live Activities, offline maps, and premium icons.
+**Is Pedometer++ free?** The core features are free, but the free tier includes ads. Pedometer++ Premium is a subscription that removes ads and unlocks Expedition Mode, Live Activities, offline maps, and premium icons. There is no one-time purchase option.
 
-**Does Steps Widget require a subscription?** No. The app is free to download, shows no ads, and the included widget styles cost nothing. If you want more, there are two options: a one-time Customization purchase at $2.99, or a subscription at $1.99 per month or $7.99 per year. The one-time option means you never have to subscribe.
+**Does Steps Widget require a subscription?** No. The app is free to download, shows no ads, and the move reminders are entirely free including their settings. The optional paid unlock only changes how the widget looks, and you can buy it once rather than subscribe.
 
-**Is Steps Widget cheaper than Pedometer++?** Yes, at every tier. Steps Widget's subscription is $1.99/month or $7.99/year against Pedometer++ Premium at $3.99/month or $29.99/year, and Steps Widget offers a $2.99 one-time unlock that Pedometer++ has no equivalent to. Steps Widget also shows no ads in its free tier, where Pedometer++ does.
+**Is Steps Widget cheaper than Pedometer++?** Yes, on both its one-time and subscription options. It also shows no ads in its free tier, where Pedometer++ does. Check both App Store listings for current pricing.
 
 **Which app has better widgets?** Both offer a full set of Home Screen and Lock Screen widgets plus Apple Watch complications. Steps Widget adds StandBy mode support and iOS 18 tinted colour matching. Pedometer++ widgets can show distance, stairs, and other metrics that Steps Widget does not display.
 
@@ -170,7 +169,7 @@ A reasonable setup is Pedometer++ for history, streaks, and weekend walks, with 
 | Different problems | Pedometer++ is a step tracker. Steps Widget is a move reminder that also shows steps. |
 | Pedometer++ wins on | Depth, history, routes, workouts, accessibility, data export, accuracy edge cases, track record, device support |
 | Steps Widget wins on | Activity-aware nudges, control over reminder look and sound, no ads, on-device processing |
-| Pricing | Steps Widget: no ads, $2.99 one-time customization, or $1.99/month or $7.99/year. Pedometer++: ads in the free tier, Premium $3.99/month or $29.99/year, no one-time option. |
+| Pricing | Steps Widget has no ads, free reminders, and gates only widget appearance behind an optional one-time unlock or subscription. Pedometer++ has ads in its free tier and gates functional features behind a subscription with no one-time option. |
 | Accuracy | Effectively the same source. Pedometer++ adds a device-reconciliation layer that helps when your hands are occupied. |
 | Can you run both | Yes. Both read Apple Health, so there is no conflict and negligible battery cost. |
 

@@ -64,6 +64,8 @@ While you are at it, check for updates in the Watch app under **General > Softwa
 
 ## A More Reliable Alternative: Steps Widget Smart Nudges
 
+If the built-in reminder is not working for you even after these fixes, it may be worth switching approach entirely. We compared the main options in [the best stand up reminder apps for iPhone](https://steps.crazylazy.xyz/blog/best-stand-up-reminder-apps-iphone), including where other apps beat Steps Widget.
+
 If native Apple Watch reminders continue to be inconsistent, or if you find yourself ignoring them because they buzz at inconvenient times, it may be time to try a different approach.
 
 Unlike the native watchOS notifications that run on a rigid 50-minute timer, **Steps Widget** offers smart movement alerts that sync directly with Apple Health on your iPhone:

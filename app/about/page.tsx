@@ -86,8 +86,8 @@ export default function AboutPage() {
               never picked. I turned them all off within a fortnight.
             </p>
             <p>
-              So Steps Widget works differently. Your iPhone learns your real activity pattern, so the nudge comes after you have actually been sitting. And how
-              it looks and sounds is yours to set.
+              So Steps Widget works differently. Your iPhone learns your real activity pattern, so the nudge comes after you have actually been sitting. It asks
+              you to walk rather than just stand up. And your step count is there to show you it happened, which is the part that makes it stick.
             </p>
           </div>
         </section>

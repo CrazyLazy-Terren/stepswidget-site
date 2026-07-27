@@ -26,27 +26,34 @@ export const appFacts = {
     visionos: '2.6',
   },
   features: [
-    'Activity-aware move reminders that fire only after real sedentary time',
-    'An on-device model that learns your daily activity pattern and times nudges around it',
-    'Full control over how reminders look and sound, so alerts fit your focus time',
-    'Home Screen step counter widgets in multiple sizes',
-    'Lock Screen steps widget',
-    'StandBy mode support',
+    'Reminders to get out of your chair and move, sent only after real sitting time',
+    'An on-device model that learns your daily activity pattern and times the nudge around it',
+    'Reminder settings, including how each nudge looks and sounds, all free',
+    'A daily step count that measures whether the movement actually happened',
+    'Step progress on the Home Screen, Lock Screen, StandBy mode, and Apple Watch',
     'Standalone Apple Watch app with its own goal reminders',
     'Apple Health (HealthKit) step data read on device',
-    'Tinted widget colour matching for iOS 18 and later',
+    'Paid widget customisation: styles, colours, and tinted matching for iOS 18 and later',
     'No account, no leaderboard, no social feed',
     'Optional iCloud sync across your own devices',
   ],
   /**
-   * In-app purchase tiers, as listed on the App Store product page.
-   * Keep in sync with the store — pricing claims appear in blog comparisons.
+   * Pricing *structure*, not amounts.
+   *
+   * Deliberately no dollar figures anywhere on the site: prices change, and a
+   * stale number in copy or in schema is worse than no number. The App Store
+   * listing is the single source of truth for what things cost.
+   *
+   * The model in one line: the reminder is free, you pay to restyle the widget.
+   * Nothing that makes the app *work* sits behind the paywall.
    */
   pricing: {
-    customizationOneTime: '2.99',
-    subscriptionMonthly: '1.99',
-    subscriptionYearly: '7.99',
-    currency: 'USD',
+    freeToDownload: true,
+    adsInFreeTier: false,
+    remindersFree: true,
+    paidUnlockCovers: 'widget appearance and styles',
+    hasOneTimeUnlock: true,
+    hasSubscription: true,
   },
   /** Who the product is actually built for. Drives copy and keyword focus. */
   audience: [
@@ -129,39 +136,23 @@ export function applicationSchema() {
     downloadUrl: appFacts.appStoreUrl,
     installUrl: appFacts.appStoreUrl,
     description:
-      'A move reminder app for desk workers, built around an on-device model that learns when you have actually been sitting. You control how each reminder looks and sounds, and a private Apple Health step counter keeps progress visible on the Home Screen, Lock Screen, StandBy mode, and Apple Watch.',
+      'An app that reminds desk workers to get out of the chair and move. An on-device model learns when you have actually been sitting, so the nudge lands at the right moment, and your daily step count from Apple Health is how you see whether the movement happened. Reminders are free; paying customises how the widget looks.',
     screenshot: appFacts.screenshot,
     featureList: [...appFacts.features],
     audience: {
       '@type': 'Audience',
       audienceType: 'Desk workers, software developers, and remote knowledge workers who sit for long stretches',
     },
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'Free',
-        price: '0',
-        priceCurrency: appFacts.pricing.currency,
-        category: 'Free download, no ads',
-        availability: 'https://schema.org/InStock',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Customization',
-        price: appFacts.pricing.customizationOneTime,
-        priceCurrency: appFacts.pricing.currency,
-        category: 'One-time in-app purchase',
-        availability: 'https://schema.org/InStock',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Yearly subscription',
-        price: appFacts.pricing.subscriptionYearly,
-        priceCurrency: appFacts.pricing.currency,
-        category: 'Subscription',
-        availability: 'https://schema.org/InStock',
-      },
-    ],
+    // Only the download price is asserted, because it is the one figure that
+    // cannot go stale. Paid tiers are described in `featureList` without
+    // amounts — see the note on `appFacts.pricing`.
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      category: 'Free download with no ads. Reminders are free; an optional one-time unlock or subscription customises widget appearance.',
+      availability: 'https://schema.org/InStock',
+    },
     author: { '@id': organizationId },
     publisher: { '@id': organizationId },
     isAccessibleForFree: true,
