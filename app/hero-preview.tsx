@@ -103,16 +103,14 @@ export function HeroPreview() {
           />
         </div>
       </div>
-      <div className="mx-auto my-12 flex max-w-5xl flex-col items-center gap-6 text-center lg:flex-row lg:items-center lg:justify-between lg:text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="imx-auto text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Widget gallery</p>
-          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-            Choose the step widget style that fits your day.
-          </h2>
-          <p className="mx-auto my-5 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)]">
-            Minimal step counts, progress rings, daily charts, and Lock Screen views help you keep walking progress visible across iPhone and Apple Watch.
-          </p>
-        </div>
+      <div className="my-14 max-w-2xl">
+        <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widget gallery</p>
+        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">
+          Choose the step widget style that fits your day.
+        </h2>
+        <p className="mt-5 text-pretty text-lg leading-8 text-[var(--text-muted)]">
+          Minimal step counts, progress rings, hourly charts, and Lock Screen views keep your progress visible across iPhone, Apple Watch, and Mac.
+        </p>
       </div>
 
       <div className="relative h-90 overflow-hidden -mx-5">

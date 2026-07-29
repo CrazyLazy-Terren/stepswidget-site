@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight } from '../../arrow'
 import { notFound } from 'next/navigation'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -249,7 +250,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <h3 className="mt-3 text-lg font-semibold leading-6 tracking-[-0.01em] text-[var(--text-strong)]">{recommended.title}</h3>
                     <div className="flex items-center justify-between gap-3 pt-5 text-sm text-[var(--text-subtle)]">
                       <span>{recommended.readingTime}</span>
-                      <span className="font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read -&gt;</span>
+                      <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read <ArrowRight /></span>
                     </div>
                   </Link>
                 ))}

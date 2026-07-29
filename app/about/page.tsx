@@ -4,8 +4,7 @@ import { defaultOgImages, siteName } from '../shared-metadata'
 import { JsonLd, absoluteUrl, applicationSchema, breadcrumbSchema, organizationId, organizationSchema } from '../structured-data'
 
 const title = 'About - Steps Widget'
-const description =
-  'Steps Widget is a move reminder app built by a developer who kept losing whole afternoons to a screen. Nudges you control, all on device.'
+const description = 'Steps Widget is a move reminder app built by a developer who kept losing whole afternoons to a screen. Nudges you control, all on device.'
 
 export const metadata: Metadata = {
   title,
@@ -75,12 +74,10 @@ export default function AboutPage() {
         ]}
       />
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-        <section className="rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)] sm:p-8">
+        <section className="rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
           <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">Why Steps Widget exists</h2>
           <div className="mt-5 space-y-4 text-base leading-8 text-[var(--text-muted)]">
-            <p>
-              I write software for a living. A good day means a few uninterrupted hours, and the cost is a body that has not moved since breakfast.
-            </p>
+            <p>I write software for a living. A good day means a few uninterrupted hours, and the cost is a body that has not moved since breakfast.</p>
             <p>
               I tried the usual stand reminders. Every one fired on a timer, buzzed while I was holding something complicated in my head, and used a sound I
               never picked. I turned them all off within a fortnight.

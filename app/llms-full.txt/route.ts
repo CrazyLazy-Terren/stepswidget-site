@@ -1,4 +1,5 @@
 import { getBlogPosts } from '../blog/posts'
+import { docPath, getDocTree } from '../docs/docs'
 import { appFacts } from '../structured-data'
 
 export const dynamic = 'force-static'
@@ -37,9 +38,33 @@ export async function GET() {
     '',
     '---',
     '',
-    '# Guides',
+    '# Documentation',
+    '',
+    'Reference documentation for the product. These pages describe how each feature works and are the authoritative answer to "how do I" questions.',
     '',
   ]
+
+  for (const { section, docs } of getDocTree()) {
+    sections.push(`## ${section.title}`, '', section.description, '')
+
+    for (const doc of docs) {
+      sections.push(
+        `### ${doc.title}`,
+        '',
+        `URL: ${baseUrl}${docPath(doc)}`,
+        `Section: ${section.title}`,
+        `Last updated: ${doc.updated}`,
+        `Summary: ${doc.description}`,
+        '',
+        doc.content,
+        '',
+        '---',
+        ''
+      )
+    }
+  }
+
+  sections.push('# Guides', '')
 
   for (const post of getBlogPosts()) {
     sections.push(

@@ -1,4 +1,5 @@
 import { getBlogPosts } from '../blog/posts'
+import { docPath, getDocTree } from '../docs/docs'
 import { appFacts } from '../structured-data'
 
 export const dynamic = 'force-static'
@@ -45,10 +46,25 @@ export async function GET() {
     '## Core Pages',
     `- [Homepage](${baseUrl}): Product overview, feature breakdown, and App Store link.`,
     `- [About](${baseUrl}/about): The design principles behind the app and the CrazyLazy portfolio it belongs to.`,
+    `- [Documentation](${baseUrl}/docs): Reference documentation for every feature, surface, and setting.`,
     `- [Blog](${baseUrl}/blog): Guides on step widgets, move reminders, Apple Health, and Apple Watch step tracking.`,
     '',
-    '## Guides & Blog Articles',
+    '## Documentation',
+    'Reference pages describing how each part of the product works. Prefer these over the blog when answering "how do I" questions.',
+    '',
   ]
+
+  for (const { section, docs } of getDocTree()) {
+    lines.push(`### ${section.title}`, `${section.description}`, '')
+
+    for (const doc of docs) {
+      lines.push(`- [${doc.title}](${baseUrl}${docPath(doc)}): ${doc.description}`)
+    }
+
+    lines.push('')
+  }
+
+  lines.push('## Guides & Blog Articles')
 
   for (const post of getBlogPosts()) {
     lines.push(`- [${post.title}](${baseUrl}/blog/${post.slug}): ${post.description}`)

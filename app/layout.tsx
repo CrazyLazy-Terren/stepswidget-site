@@ -8,9 +8,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
+  title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
     description:
-    'An app that reminds you to leave your chair and move when you have actually been sitting, then shows your daily step count so you can see it working. Free reminders, private Apple Health data, and progress on your Home Screen, Lock Screen, and Apple Watch.',
+    'A step counter that projects how your day will end. An on-device model forecasts your end-of-day step count and reminds you only when you are heading to miss your goal. Apple Health steps on your Home Screen, Lock Screen, Apple Watch, and Mac. Free reminders, no account.',
   keywords: [
     'Steps Widget',
     'stand up reminder app',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
+    title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
     description:
-      'Reminders to leave your chair, timed by what you actually did rather than by a clock. Your daily step count shows you it worked, on iPhone and Apple Watch.',
+      'An on-device model projects your end-of-day step count and reminds you only when you are heading for a miss. Apple Health steps on iPhone, Apple Watch, and Mac.',
     url: siteUrl,
     siteName,
     type: 'website',
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steps Widget - Move Reminders and a Daily Step Count for Desk Workers',
+    title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
     description:
-      'Reminders to leave your chair, timed by what you actually did rather than by a clock. Your daily step count shows you it worked, on iPhone and Apple Watch.',
+      'An on-device model projects your end-of-day step count and reminds you only when you are heading for a miss. Apple Health steps on iPhone, Apple Watch, and Mac.',
     images: defaultOgImages,
   },
 }

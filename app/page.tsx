@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowLink } from './arrow'
 import { AppStoreButton } from './app-store-button'
 import { HeroPreview } from './hero-preview'
+import { PageSection, pageGutter } from './page-shell'
 import { SiteLogo, SiteNav } from './site-nav'
 import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema } from './structured-data'
 
@@ -14,113 +17,75 @@ export const metadata: Metadata = {
 
 const featureCards = [
   {
-    title: 'It learns when you actually sit',
+    title: 'It projects how your day will end',
     eyebrow: 'On-device model',
-    description: 'Your iPhone learns your daily pattern, so a nudge only arrives after you have really been sitting. Hours you already moved stay quiet.',
+    description:
+      'A model on your iPhone predicts the step count you are heading for. A reminder arrives only when that projection falls short of your goal, so a day you are already walking stays quiet.',
     image: '/assets/feature-nudges.png',
-    accent: 'var(--accent-sky)',
+    href: '/docs/goal-reminders/how-goal-reminders-work',
+    linkLabel: 'How the projection works',
   },
   {
-    title: 'You decide how it interrupts',
-    eyebrow: 'Look and sound, your call',
-    description: 'Pick how each reminder looks and which sound it uses. A nudge that fits your focus time is one you keep switched on.',
+    title: 'It sounds the way you ask it to',
+    eyebrow: 'Apple Intelligence',
+    description:
+      'Describe the tone you want in plain language and each reminder is rewritten on device to match. Encouraging, short and direct, or something of your own.',
     image: '/assets/feature-styles.png',
-    accent: 'var(--accent-pink)',
+    href: '/docs/goal-reminders/reminder-messages',
+    linkLabel: 'Setting the tone',
   },
   {
     title: 'Progress stays one glance away',
-    eyebrow: 'Home, Lock Screen, Watch',
-    description: 'Between nudges, your step count sits on the screens you already look at. No fitness app to open.',
+    eyebrow: 'Home Screen, Lock Screen, Watch',
+    description: 'Between reminders your step count sits on the screens you already look at, including your Mac desktop. No fitness app to open.',
     image: '/assets/feature-every-screen.png',
-    accent: 'var(--accent-green)',
+    href: '/docs/widgets/widget-gallery',
+    linkLabel: 'Every widget',
   },
+]
+
+const trustFacts = [
+  { label: 'Step data', value: 'Read from Apple Health on device' },
+  { label: 'The model', value: 'Trains and runs on your iPhone' },
+  { label: 'Account', value: 'None — there is nothing to sign in to' },
+  { label: 'Reminders', value: 'Free, including every setting' },
 ]
 
 const privacyCards = [
   {
     title: 'The model stays on your phone',
-    description: 'Your activity pattern is learned on your iPhone, not on a server. Your step data stays with you.',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M9 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M10 18h4M10 6h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    description:
+      'Your activity pattern is learned on your iPhone and retrained there. Nothing about your routine is uploaded, and no server is involved in deciding when to remind you.',
   },
   {
-    title: 'Apple Health',
-    description: 'The step source stays the system you already trust, read with your permission.',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M12 20s-7-4.35-9.1-8.6C1.35 8.25 3.25 5 6.55 5c1.9 0 3.2 1.05 3.95 2.05C11.25 6.05 12.55 5 14.45 5c3.3 0 5.2 3.25 3.65 6.4C16 15.65 12 20 12 20Z"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    title: 'Three read-only Health types',
+    description: 'Step count, stand hours, and your activity summary — read with your permission. The app never writes to Health and never asks for more.',
   },
   {
-    title: 'No leaderboard, no logins',
-    description: 'Just keep moving the way you want. Full stop.',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 4v16M5 9h14M7 15h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="m4 20 16-16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    title: 'No account, no leaderboard',
+    description: 'There is no sign-in, no password, and no social feed. A database that was never assembled cannot leak.',
   },
   {
-    title: 'Glanceable design',
-    description: 'Widgets are built for quick checks, not long sessions.',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 12s3.25-5 9-5 9 5 9 5-3.25 5-9 5-9-5-9-5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" strokeWidth="1.8" />
-      </svg>
-    ),
+    title: 'iCloud carries settings only',
+    description: 'Your goal, reminder preferences, and widget styles follow you through your own private iCloud. Your step history stays in Apple Health.',
   },
 ]
 
 const watchCards = [
   {
     title: 'Reminders on your wrist',
-    description: 'Goal reminders run directly on Apple Watch, so a gentle nudge still reaches you when your iPhone is not nearby.',
+    description: 'Goal reminders run on Apple Watch itself, so a tap still reaches you when your iPhone is in another room.',
     image: '/assets/s01.png',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M6 9a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 13 6 9Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M10 18.5a2 2 0 0 0 4 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
   },
   {
     title: 'Steps at a glance',
-    description: 'Pairs with your Watch stand indicator for instant, phone-free updates.',
+    description: 'Three complication styles for any watch face. The rectangular one marks the hours you stood alongside the chart.',
     image: '/assets/w02.png',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="7" y="6" width="10" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M9 6V3h6v3M9 18v3h6v-3" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M12 10v2.5l1.8 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: 'Your style, on your wrist',
-    description: 'Pick a look that matches your watch face right from the wrist. Everything stays in sync with your iPhone automatically.',
+    description: 'Pick a look that matches your watch face from the wrist. Styles and purchases stay in sync with your iPhone.',
     image: '/assets/w03.png',
-    icon: (
-      <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M12 3.5 13.8 9l5.7.1-4.6 3.4 1.7 5.5L12 14.7 7.4 18l1.7-5.5L4.5 9.1 10.2 9 12 3.5Z"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
   },
 ]
 
@@ -128,250 +93,260 @@ const faqItems = [
   {
     question: 'What is Steps Widget?',
     answer:
-      'Steps Widget is a move reminder app for iPhone, built for people who sit at a desk all day. It learns your activity pattern on device and nudges you to stand only after you have really been sitting. It also shows your Apple Health steps on the Home Screen, Lock Screen, and Apple Watch.',
+      'Steps Widget is a step counter and goal reminder app for iPhone. A model on your device projects the step count you are heading for, and reminds you when you are on track to miss your daily goal. It also shows your Apple Health steps on the Home Screen, Lock Screen, Apple Watch, and Mac.',
   },
   {
     question: 'How is this different from an hourly stand reminder?',
     answer:
-      'An hourly reminder fires on a timer no matter what you did. Steps Widget reads your Apple Health activity, so it stays quiet during hours you already moved. That is the difference between a reminder you keep and one you mute after a week.',
+      'An hourly reminder fires on a timer no matter what you did. Steps Widget projects your end-of-day total from your own step history and only sends a reminder when that projection falls short of your goal, so hours where you are already walking stay quiet.',
   },
   {
-    question: 'Can I change how the reminders look and sound?',
+    question: 'Can I change how the reminders are worded?',
     answer:
-      'Yes. You choose the appearance of each reminder and which sound it uses, so a nudge can be as gentle or as noticeable as you like. The wrong alert is why most people turn movement reminders off.',
+      'Yes. Describe the tone you want in plain language and Apple Intelligence rewrites each reminder on your device to match. A live preview in Settings shows the exact wording your current day would produce. This requires iOS 26 with Apple Intelligence; otherwise you get the standard wording.',
   },
   {
     question: 'Does the on-device model send my activity anywhere?',
     answer:
-      'No. The model runs on your iPhone and your step data is not sent to our servers. There is no account to create and no sign-in. Optional iCloud sync keeps your settings consistent across your own devices, using your private iCloud account rather than ours.',
+      'No. The model trains and runs on your iPhone, and your step data is not sent to our servers. There is no account to create and no sign-in. Optional iCloud sync keeps your settings consistent across your own devices, using your private iCloud account rather than ours.',
   },
   {
-    question: 'Is Steps Widget good for developers and desk workers?',
+    question: 'What does the app read from Apple Health?',
     answer:
-      'That is exactly who it is for. It was built by a developer who kept losing whole afternoons to a screen. If your day gives you no reason to stand up, the nudge is timed around your real activity.',
+      'Three read-only types: your step count, your stand hours, and your daily activity summary. It never writes to Apple Health, and it does not request location for step counting. Location is used only if you turn on Local Sunset, which shifts evening reminders earlier.',
+  },
+  {
+    question: 'Is Steps Widget free?',
+    answer:
+      'The app is free to download with no ads at any tier, and the entire reminder system is free, including the on-device model and every setting behind it. An optional Customization purchase adds extra widget styles and colours, available as a one-time purchase or a subscription.',
   },
   {
     question: 'Can I show my step count on the iPhone Lock Screen?',
-    answer: 'Yes. You can add a Steps Widget Lock Screen widget to keep your current step count visible without opening a fitness app.',
+    answer: 'Yes. Add a Steps Widget Lock Screen widget to keep your current step count visible without opening a fitness app.',
   },
   {
-    question: 'Does Steps Widget work with Apple Health?',
-    answer: 'Yes. The app uses Apple Health step data, so your widget reflects the steps your iPhone or Apple Watch records during the day.',
-  },
-  {
-    question: 'Can I use Steps Widget on my iPhone Home Screen?',
-    answer: 'Yes. Add it from the iPhone widget gallery, choose a layout, and place it wherever it helps you notice your daily progress.',
+    question: 'Can I put the widget on my Mac?',
+    answer:
+      'Yes. On macOS Sonoma or later the Mac can show your iPhone widgets over Continuity, so your step count can sit on the desktop you are already working at. There is no separate Mac app to install.',
   },
   {
     question: 'Does Steps Widget support Apple Watch?',
     answer:
-      'Yes. Steps Widget runs on Apple Watch with its own goal reminders, so you get notified even when your iPhone is not nearby. You can also unlock premium styles right from your wrist, and purchases sync with your iPhone automatically.',
-  },
-  {
-    question: 'Is Steps Widget private?',
-    answer:
-      'Your step data stays on your device. Steps Widget reads Apple Health data with permission and avoids social feeds, public leaderboards, or pressure-based features.',
+      'Yes. Steps Widget runs on Apple Watch with its own settings and goal reminders, so you are notified even when your iPhone is not nearby. You can change styles and buy the unlock from the wrist, and purchases sync with your iPhone automatically.',
   },
   {
     question: 'Why is my step widget not updating right away?',
     answer:
-      'iOS manages widget refreshes to preserve battery life, so updates may not be instant. If it looks stuck, check Apple Health permission, open Steps Widget once, then give iOS a little time to refresh.',
+      'iOS manages widget refreshes to preserve battery life, so updates are not instant. Apple Health also shares step updates roughly once an hour. If it looks stuck, check Apple Health permission and open Steps Widget once. Turning on Motion Sensor reads the pedometer directly for a fresher count.',
   },
 ]
+
+const lineBreakPattern = /<br\s*\/?>/i
+
+/**
+ * Renders a heading string, turning literal `<br/>` markers into real line
+ * breaks so the copy can control where it wraps.
+ *
+ * The string is split and each piece is rendered as a text node — nothing
+ * reaches `dangerouslySetInnerHTML`, so a heading can never become an HTML
+ * injection point. Only `<br>` is understood; any other markup stays visible
+ * as plain text, which makes a mistake obvious rather than silent.
+ */
+function withLineBreaks(text: string) {
+  return text.split(lineBreakPattern).map((part, index) => (
+    <Fragment key={index}>
+      {index > 0 && <br />}
+      {part}
+    </Fragment>
+  ))
+}
+
+function SectionHeading({ eyebrow, title, centered = false, children }: { eyebrow: string; title: string; centered?: boolean; children?: React.ReactNode }) {
+  // `text-balance` redistributes lines on its own, which fights a break the
+  // author placed deliberately. Drop it when the copy sets its own.
+  const hasManualBreak = lineBreakPattern.test(title)
+
+  return (
+    <div className={centered ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'}>
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">{eyebrow}</p>
+      <h2 className={`mt-12 text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl ${hasManualBreak ? '' : 'text-balance'}`}>
+        {withLineBreaks(title)}
+      </h2>
+      {children ? <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">{children}</p> : null}
+    </div>
+  )
+}
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
-      <JsonLd
-        id="schema-home"
-        data={[organizationSchema(), websiteSchema(), applicationSchema(), faqSchema(faqItems, 'https://steps.crazylazy.xyz/#faq')]}
-      />
+      <JsonLd id="schema-home" data={[organizationSchema(), websiteSchema(), applicationSchema(), faqSchema(faqItems, 'https://steps.crazylazy.xyz/#faq')]} />
       <SiteNav fixed />
 
-      <section className="relative px-5 pt-28 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-0 top-0 h-[620px] bg-[image:var(--hero-glow)]" />
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[var(--surface-1)] px-3 py-1.5 text-sm text-[var(--text-muted)] shadow-[var(--soft-shadow)]">
-            <span className="size-2 rounded-full bg-[var(--accent-color)] shadow-[0_0_18px_var(--accent-glow)]" />
-            Built for desk-bound days
-          </div>
-
-          <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl lg:text-8xl">
-            Move reminders that
-            <br />
-            know when you sat still.
+      <PageSection paddingY="top" overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
+        <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
+          <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Step counter and goal reminder</p>
+          <h1 className="mt-12 text-balance text-center text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">
+            It knows how your day is going to end.
           </h1>
-          <p className="my-12 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
-            A stand up reminder app for desk days. Your iPhone learns when you have really been sitting, and you choose how the nudge looks and sounds.
+          <p className="mt-6 max-w-2xl text-center text-pretty text-lg leading-8 text-[var(--text-muted)]">
+            Steps Widget projects your end-of-day step count on your iPhone and reminds you only when you are heading for a miss — with your Apple Health steps
+            on every screen you already look at.
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
-            <AppStoreButton />
-          </div>
-
-          <div className="mt-14 w-full">
-            <HeroPreview />
-          </div>
+          <AppStoreButton className="mt-12" />
         </div>
-      </section>
 
-      <section id="features" className="px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Why hourly timers fail</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              A stand up reminder you will not turn off.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-              Hourly alarms buzz whether or not you moved, and they land mid-thought with a sound you never chose. So you mute them. Steps Widget times the nudge
-              around what you actually did.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {featureCards.map((feature) => (
-              <article
-                key={feature.title}
-                className="group rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-3)] p-2 shadow-[var(--soft-shadow)] transition duration-300 hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
-                <div className="relative aspect-[40/27] overflow-hidden rounded-[18px] bg-[var(--surface-media)]">
-                  <Image
-                    src={feature.image}
-                    alt={`${feature.title} preview`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: feature.accent }}>
-                    {feature.eyebrow}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
-                  <p className="mt-3 leading-7 text-[var(--text-muted)]">{feature.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div className="mt-16 w-full">
+          <HeroPreview />
         </div>
-      </section>
+      </PageSection>
 
-      <section id="watch" className="px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Apple Watch</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              Apple Watch step tracking, right on your wrist.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-              Goal reminders and widget style now live directly on Apple Watch, so your walking habit no longer depends on where your iPhone is.
-            </p>
-          </div>
+      <PageSection paddingY="top" containerClassName="border-t border-[color:var(--border)] pt-10">
+        <dl className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+          {trustFacts.map((fact) => (
+            <div key={fact.label}>
+              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{fact.label}</dt>
+              <dd className="mt-2 leading-7 text-[var(--text-strong)]">{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </PageSection>
 
-          <div className="relative max-w-3xl mx-auto my-12 aspect-[1] overflow-hidden">
-            <Image
-              src="/assets/watch_feature.png"
-              alt="Steps Widget step counts on two Apple Watch faces alongside iPhone Lock Screen and Home Screen widgets"
-              fill
-              sizes="(max-width: 880px) 80vw, 880px"
-              className="object-fit-cover"
-            />
-          </div>
+      <PageSection id="features" containerClassName="border-t border-[color:var(--border)] pt-14 pb-0!">
+        <SectionHeading eyebrow="Why hourly timers fail" title="A reminder that knows what you already did." centered>
+          An hourly alarm buzzes whether or not you moved, so it interrupts you when there is nothing to act on and you mute it within a week. Steps Widget
+          decides from a forecast instead.
+        </SectionHeading>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {watchCards.map((card) => (
-              <div key={card.title} className="rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 shadow-[var(--soft-shadow)]">
-                <div className="relative mb-8 aspect-[40/27] overflow-hidden rounded-[14px] bg-[var(--surface-media)]">
-                  <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
-                </div>
-                {/* <div className="mb-4 flex size-10 items-center justify-center rounded-[12px] bg-[var(--accent-color-soft)] text-[var(--accent-color)]">
-                  {card.icon}
-                </div> */}
-                <h3 className="text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
-                <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          {featureCards.map((feature) => (
+            <article
+              key={feature.title}
+              className="flex flex-col rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-2 transition duration-300 hover:border-[color:var(--border-strong)]">
+              <div className="relative aspect-[40/27] overflow-hidden rounded-[8px] bg-[var(--surface-media)]">
+                <Image src={feature.image} alt={`${feature.title} preview`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="privacy" className="px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Simple and private</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-              Everything happens on your device.
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--text-muted)]">
-              The model that decides when to nudge you runs on your iPhone, not on a server. No account, no social feed, no pressure to perform for anyone.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {privacyCards.map((card) => (
-              <div key={card.title} className="rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)]">
-                <div className="mb-6 flex size-10 items-center justify-center rounded-[12px] bg-[var(--accent-color-soft)] text-[var(--accent-color)]">
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
-                <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
+                <h3 className="mt-3 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
+                <p className="mt-3 flex-1 leading-7 text-[var(--text-muted)]">{feature.description}</p>
+                <ArrowLink href={feature.href} className="mt-5 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">{feature.linkLabel}</ArrowLink>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      <section className="px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[28px] border border-[color:var(--border-strong)] bg-[var(--surface-2)] p-8 text-center shadow-[var(--cta-shadow)] sm:p-12">
-          <Image src="/assets/stepswidget-icon.png" alt="" width={92} height={92} className="mx-auto rounded-[22px] " />
-          <h2 className="mx-auto mt-7 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
+      <PageSection id="watch" containerClassName="border-[color:var(--border)] pt-14">
+        <SectionHeading eyebrow="Apple Watch" title="Not required,<br/>but it is the better setup." centered>
+          The Watch counts the walks your phone slept through, delivers reminders as a tap wherever the phone is, and is the only source of the stand hours the
+          chart marks.
+        </SectionHeading>
+
+        <div className="relative mx-auto my-14 aspect-[1] max-w-2xl overflow-hidden">
+          <Image
+            src="/assets/watch_feature.png"
+            alt="Steps Widget step counts on two Apple Watch faces alongside iPhone Lock Screen and Home Screen widgets"
+            fill
+            sizes="(max-width: 880px) 80vw, 672px"
+            className="object-contain"
+          />
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-3">
+          {watchCards.map((card) => (
+            <div key={card.title} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5">
+              <div className="relative mb-6 aspect-[40/27] overflow-hidden rounded-[8px] bg-[var(--surface-media)]">
+                <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
+              </div>
+              <h3 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
+              <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <ArrowLink href="/docs/widgets/apple-watch" className="text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">Apple Watch documentation</ArrowLink>
+        </div>
+      </PageSection>
+
+      <PageSection id="privacy" containerClassName="border-t border-[color:var(--border)] pt-14">
+        <SectionHeading eyebrow="Private by construction" title="Everything happens on your device.">
+          The model that decides when to remind you runs on your iPhone, not on a server. There is no account, no social feed, and nothing to sign in to.
+        </SectionHeading>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          {privacyCards.map((card) => (
+            <div key={card.title} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6">
+              <h3 className="font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
+              <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <ArrowLink
+          href="/docs/steps-and-data/privacy-and-sync"
+          className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">How to verify each of these</ArrowLink>
+      </PageSection>
+
+      <PageSection id="faq" containerClassName="grid gap-10 border-t border-[color:var(--border)] pt-14 lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">FAQ</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Questions, answered.</h2>
+          <ArrowLink href="/docs" className="mt-5 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">Full documentation</ArrowLink>
+        </div>
+        <div className="border-[color:var(--border)]">
+          {faqItems.map((item) => (
+            <details key={item.question} className="group border-b border-[color:var(--border)] py-5">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
+                <span className="font-medium text-[var(--text-strong)]">{item.question}</span>
+                <span className="mt-0.5 shrink-0 text-[var(--text-subtle)] transition group-open:rotate-45">
+                  <svg className="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </summary>
+              <p className="mt-4 max-w-2xl leading-7 text-[var(--text-muted)]">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </PageSection>
+
+      <PageSection paddingY="bottom" containerClassName=" border-[color:var(--border)] pt-14">
+        <div className="rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-2)] p-8 text-center sm:p-12">
+          <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="mx-auto rounded-[18px]" />
+          <h2 className="mx-auto mt-7 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
             Sit less. Move more.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
-            Download Steps Widget for free and turn long desk days into a steady walking habit.
+            Free to download, no ads at any tier, and the reminders cost nothing.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center">
             <AppStoreButton />
           </div>
         </div>
-      </section>
+      </PageSection>
 
-      <section id="faq" className="px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.5fr_1fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">FAQ</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">Steps Widget questions, answered.</h2>
-          </div>
-          <div className="divide-y divide-[color:var(--border)] rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] shadow-[var(--soft-shadow)]">
-            {faqItems.map((item) => (
-              <details key={item.question} className="group p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
-                  <span className="text-lg font-semibold text-[var(--text-strong)]">{item.question}</span>
-                  <span className="flex size-8 items-center justify-center rounded-full border border-[color:var(--border)] text-[var(--text-subtle)] transition group-open:rotate-45 group-open:text-[var(--text-strong)]">
-                    <svg className="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                      <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 max-w-2xl leading-7 text-[var(--text-muted)]">{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-[color:var(--border)] px-5 py-8 sm:px-6 lg:px-8">
+      <footer className={`border-t border-[color:var(--border)] py-8 ${pageGutter}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[var(--text-subtle)] sm:flex-row sm:items-center sm:justify-between">
           <SiteLogo textOnly={true} />
-          <p>Built for iPhone, Apple Watch, and keeping daily momentum.</p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <div className="flex gap-4">
-              <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
-                Terms
-              </Link>
-              <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
-                Privacy
-              </Link>
-            </div>
+          <div className="flex gap-5">
+            <Link href="/docs" className="transition hover:text-[var(--text-strong)]">
+              Docs
+            </Link>
+            <Link href="/blog" className="transition hover:text-[var(--text-strong)]">
+              Blog
+            </Link>
+            <Link href="/about" className="transition hover:text-[var(--text-strong)]">
+              About
+            </Link>
+            <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
+              Terms
+            </Link>
+            <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
+              Privacy
+            </Link>
           </div>
         </div>
       </footer>

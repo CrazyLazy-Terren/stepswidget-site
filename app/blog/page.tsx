@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ArrowRight } from '../arrow'
 import { ContentShell } from '../content-shell'
 import { defaultOgImages, siteName } from '../shared-metadata'
 import { JsonLd, absoluteUrl, applicationId, applicationSchema, breadcrumbSchema, organizationId, organizationSchema, websiteSchema } from '../structured-data'
@@ -122,7 +123,7 @@ export default function BlogPage() {
             <p className="leading-7 text-[var(--text-muted)]">{post.description}</p>
             <div className="flex items-center justify-between gap-3 pt-8 text-sm text-[var(--text-subtle)]">
               <span>{post.readingTime}</span>
-              <span className="font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read -&gt;</span>
+              <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read <ArrowRight /></span>
             </div>
           </Link>
         ))}

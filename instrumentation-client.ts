@@ -2,7 +2,7 @@ import posthog from 'posthog-js'
 
 const posthogToken = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN
 
-if (posthogToken) {
+if (posthogToken && process.env.NODE_ENV !== 'development') {
   posthog.init(posthogToken, {
     api_host: 'https://ts.crazylazy.xyz', // your managed reverse proxy domain
     ui_host: 'https://us.posthog.com', // necessary because you're using a proxy, this way links will point back to PostHog properly

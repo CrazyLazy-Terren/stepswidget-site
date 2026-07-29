@@ -23,6 +23,7 @@ const productLinks = [
 ]
 
 const navLinks = [
+  { href: '/docs', label: 'Docs' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ]
@@ -42,8 +43,9 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
 
 export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
   return (
-    <header className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl `}>
-      <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4 px-5 py-2 sm:py-0 sm:px-6 lg:px-0`}>
+    <header
+      className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl py-2 sm:py-0 px-5 sm:px-6 lg:px-8`}>
+      <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4`}>
         <SiteLogo />
         <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-muted)] md:flex">
           <div className="group relative py-5">
