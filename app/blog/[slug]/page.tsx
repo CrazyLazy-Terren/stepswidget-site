@@ -245,12 +245,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <Link
                     key={recommended.slug}
                     href={`/blog/${recommended.slug}`}
-                    className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 shadow-[var(--soft-shadow)] transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
+                    className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{recommended.category}</p>
                     <h3 className="mt-3 text-lg font-semibold leading-6 tracking-[-0.01em] text-[var(--text-strong)]">{recommended.title}</h3>
                     <div className="flex items-center justify-between gap-3 pt-5 text-sm text-[var(--text-subtle)]">
                       <span>{recommended.readingTime}</span>
-                      <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">Read <ArrowRight /></span>
+                      <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
+                        Read <ArrowRight />
+                      </span>
                     </div>
                   </Link>
                 ))}
@@ -263,17 +265,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             className="mt-12 inline-flex items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-2 text-sm font-semibold text-[var(--button-text)] transition hover:opacity-90">
             Back to list
           </Link>
-          <div className="mt-10 rounded-[20px] border border-[color:var(--border)] bg-[image:var(--cta-bg)] p-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Try Steps Widget</p>
-            <p className="mt-3 leading-7 text-[var(--text-muted)]">
-              Keep your daily steps visible on iPhone, Lock Screen, Home Screen, and Apple Watch with a private Apple Health step counter widget.
-            </p>
-            <Link
-              href="/"
-              className="mt-4 inline-flex h-11 items-center justify-center rounded-full bg-[var(--button-bg)] px-5 text-sm font-semibold text-[var(--button-text)] transition hover:opacity-90">
-              Back to home
-            </Link>
-          </div>
+          <Link href="/" className="">
+            <div className="mt-10 rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Try Steps Widget</p>
+              <p className="mt-3 leading-7 text-[var(--text-muted)]">
+                Keep your daily steps visible on iPhone, Lock Screen, Home Screen, and Apple Watch with a private Apple Health step counter widget.
+              </p>
+            </div>
+          </Link>
         </article>
       </ContentShell>
     </>

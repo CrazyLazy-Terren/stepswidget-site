@@ -23,6 +23,8 @@ This post is written by the developer of Steps Widget. So rather than ask you to
 
 ## How these apps were chosen
 
+First, the reason this category exists at all: [the iPhone has no built-in stand up reminder](https://steps.crazylazy.xyz/blog/does-iphone-have-stand-up-reminder). Only Apple Watch does. So if you do not wear one, an app is the only option.
+
 The App Store has dozens of stand-up reminder apps and most are the same fifteen-minute timer with a different icon. Rather than list twenty, this covers four options that each represent a genuinely different approach, with every feature checked against the app's own App Store listing in July 2026.
 
 If you are on an app not listed here and it works for you, keep it. The goal is not to switch you, it is to explain which approach fits which problem.
