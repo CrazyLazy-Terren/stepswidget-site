@@ -21,7 +21,7 @@ export const pageGutter = 'px-5 sm:px-6 lg:px-8'
 export const pageMaxWidth = 'max-w-7xl'
 
 const paddingYClass = {
-  default: 'py-12',
+  default: 'py-24',
   top: 'pt-24',
   bottom: 'pb-24',
   none: '',
