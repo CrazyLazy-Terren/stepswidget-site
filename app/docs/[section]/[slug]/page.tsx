@@ -21,6 +21,7 @@ import {
   webPageSchema,
   websiteSchema,
 } from '../../../structured-data'
+import { DocFeedback } from '../../doc-feedback'
 import { docMarkdownComponents, extractToc } from '../../doc-markdown'
 import { docPath, getDoc, getDocNeighbours, getDocs } from '../../docs'
 import { DocsBreadcrumb, DocsShell } from '../../docs-shell'
@@ -229,6 +230,8 @@ export default async function DocPage({ params }: DocPageProps) {
                 )}
               </nav>
             )}
+
+            <DocFeedback section={doc.section.slug} slug={doc.slug} title={doc.title} path={docPath(doc)} />
 
             <div className="mt-14 border-t border-[color:var(--border)] pt-8">
               <p className="leading-7 text-[var(--text-muted)]">
