@@ -1,5 +1,5 @@
 export const siteName = 'Steps Widget'
-export const siteUrl = 'https://steps.crazylazy.xyz'
+export const siteUrl = 'https://stepswidget.app'
 
 export const defaultOgImages = [
   {

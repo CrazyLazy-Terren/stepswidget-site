@@ -7,6 +7,7 @@ import { AppStoreButton } from './app-store-button'
 import { HeroPreview } from './hero-preview'
 import { PageSection, pageGutter } from './page-shell'
 import { SiteLogo, SiteNav } from './site-nav'
+import { siteUrl } from './shared-metadata'
 import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema } from './structured-data'
 
 export const metadata: Metadata = {
@@ -180,7 +181,7 @@ function SectionHeading({ eyebrow, title, centered = false, children }: { eyebro
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
-      <JsonLd id="schema-home" data={[organizationSchema(), websiteSchema(), applicationSchema(), faqSchema(faqItems, 'https://steps.crazylazy.xyz/#faq')]} />
+      <JsonLd id="schema-home" data={[organizationSchema(), websiteSchema(), applicationSchema(), faqSchema(faqItems, `${siteUrl}/#faq`)]} />
       <SiteNav fixed />
 
       <PageSection paddingY="top" overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
