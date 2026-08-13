@@ -1,8 +1,9 @@
+import { headers } from 'next/headers'
 import { getBlogPosts } from '../blog/posts'
 import { docPath, getDocTree } from '../docs/docs'
 import { appFacts } from '../structured-data'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 /**
  * llms.txt — a compact map of the site for language models.
@@ -12,7 +13,10 @@ export const dynamic = 'force-static'
  * Keep it in sync with `appFacts` in app/structured-data.tsx.
  */
 export async function GET() {
-  const baseUrl = 'https://steps.crazylazy.xyz'
+  const headersList = await headers()
+  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const protocol = host.includes('localhost') ? 'http' : 'https'
+  const baseUrl = `${protocol}://${host}`
   const { requirements } = appFacts
 
   const lines = [

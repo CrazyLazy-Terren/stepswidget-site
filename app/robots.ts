@@ -8,7 +8,10 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   // Define production hostname. Can be configured via env var if needed.
   const prodHost = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).host : 'steps.crazylazy.xyz'
 
-  const isProduction = host === prodHost || host === `www.${prodHost}`
+  // Additional production hosts allowed to be indexed alongside prodHost.
+  const additionalProdHosts = ['stepswidget.app', 'www.stepswidget.app']
+
+  const isProduction = host === prodHost || host === `www.${prodHost}` || additionalProdHosts.includes(host)
 
   if (!isProduction) {
     return {

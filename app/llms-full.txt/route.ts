@@ -1,8 +1,9 @@
+import { headers } from 'next/headers'
 import { getBlogPosts } from '../blog/posts'
 import { docPath, getDocTree } from '../docs/docs'
 import { appFacts } from '../structured-data'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 /**
  * llms-full.txt — the entire corpus as plain text in a single fetch.
@@ -12,7 +13,10 @@ export const dynamic = 'force-static'
  * crawling 18 separate URLs.
  */
 export async function GET() {
-  const baseUrl = 'https://steps.crazylazy.xyz'
+  const headersList = await headers()
+  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const protocol = host.includes('localhost') ? 'http' : 'https'
+  const baseUrl = `${protocol}://${host}`
   const { requirements } = appFacts
 
   const sections: string[] = [
