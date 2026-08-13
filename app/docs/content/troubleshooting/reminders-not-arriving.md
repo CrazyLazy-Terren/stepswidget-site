@@ -4,7 +4,7 @@ title: Reminders not arriving
 metaTitle: Fix Goal Reminders That Are Not Arriving in Steps Widget
 description: The reminder window, the elected sending device, notification permission, Focus modes, and Scheduled Summary — why a goal reminder stays silent.
 order: 3
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 5 min read
 keywords:
   - notifications not working iPhone
@@ -24,7 +24,9 @@ If neither applies, work through the list.
 
 ## 1. Check the hour
 
-Reminders only fire between **11:00 and 23:00** local time. Nothing is sent outside that window, however far behind you are. A morning with no reminders is by design — before 11am there is not enough of your day on record to project from.
+Reminders only fire during the 11th to the 23rd hour of your day — **11:00 to 23:00** on a default setup. Nothing is sent outside that window, however far behind you are. A quiet morning is by design: before the 11th hour there is not enough of your day on record to project from.
+
+If you have moved **Start of Day**, the window moves with it. A day starting at 3:00 AM puts the window at 14:00 to 02:00, which is worth checking before assuming reminders are broken.
 
 ## 2. Notification permission
 

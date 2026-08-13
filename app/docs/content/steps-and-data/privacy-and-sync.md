@@ -4,7 +4,7 @@ title: Privacy and sync
 metaTitle: How Steps Widget Handles Your Health Data
 description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server holding your steps.
 order: 4
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 5 min read
 keywords:
   - private step counter
@@ -52,7 +52,7 @@ You cannot leak a database that was never assembled. That is a stronger guarante
 If you use more than one Apple device, your **settings** follow you — not your health data:
 
 - Daily goal
-- Last 24-Hour and Day Ends At
+- Last 24-Hour and Start of Day
 - Goal Reminder on/off, reminder tone, Local Sunset
 - Widget styles and display options
 

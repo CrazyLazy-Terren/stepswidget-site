@@ -4,7 +4,7 @@ title: Set your daily goal
 metaTitle: Set a Daily Step Goal in Steps Widget
 description: The goal drives every progress ring and the reminder model's projection. How to set it, what the research says, and how to pick a number you will hit.
 order: 3
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 4 min read
 keywords:
   - daily step goal
@@ -60,7 +60,7 @@ A goal you clear by noon has the opposite problem: the ring stops telling you an
 
 ## When does the goal reset?
 
-At the start of your day, which by default is midnight local time. If you are often up past midnight, **Day Ends At** moves that boundary up to six hours later so a 1am walk still counts toward the day you have been living. There is also a **Last 24-Hour** mode that drops the calendar day entirely for a rolling window.
+At the start of your day, which by default is midnight local time. If you are often up past midnight, **Start of Day** moves that boundary up to six hours later so a 1am walk still counts toward the day you have been living. There is also a **Last 24-Hour** mode that drops the calendar day entirely for a rolling window.
 
 Both are covered in [The step window](/docs/steps-and-data/step-window).
 

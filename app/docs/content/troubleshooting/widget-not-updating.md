@@ -4,7 +4,7 @@ title: Widget not updating
 metaTitle: Fix a Steps Widget That Is Not Updating on iPhone
 description: The three-stage chain from Health to widget, what counts as normal lag, and the checks that fix a widget genuinely stuck or reading zero.
 order: 1
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 5 min read
 keywords:
   - widget not updating iPhone
@@ -41,7 +41,7 @@ Expected, and not a fault. The app pushes those updates itself, so they stop as 
 
 Opening Steps gives it a foreground moment to read current Health data and hand fresh values to the widget system. This resolves a large share of cases, particularly after an iOS update or a restart.
 
-> **Note:** Do not force-quit Steps as a habit. Swiping an app away from the App Switcher makes iOS block its background refresh until you open it again — force-quitting makes widget staleness _more_ likely, not less. The app says so on its own How Step Update screen.
+> **Note:** Do not force-quit Steps as a habit. Swiping an app away from the App Switcher makes iOS block its background refresh until you open it again — force-quitting makes widget staleness _more_ likely, not less.
 
 ## 2. Check Health permission
 
@@ -75,7 +75,7 @@ Low Power Mode deliberately throttles background activity, and widget refreshes 
 
 ## 6. Confirm which window you are looking at
 
-A widget that looks wrong rather than stale may be showing a different slice of time than you expect. If **Last 24-Hour** is on, the number is a rolling 24-hour total, not today. If **Day Ends At** is set past midnight, a late-night walk counts toward the previous day.
+A widget that looks wrong rather than stale may be showing a different slice of time than you expect. If **Last 24-Hour** is on, the number is a rolling 24-hour total, not today. If **Start of Day** is set past midnight, a late-night walk counts toward the previous day.
 
 Both are in Settings, and both are explained in [the step window](/docs/steps-and-data/step-window).
 
@@ -87,9 +87,13 @@ If everything above is correct and the widget is still frozen, rebuild it: touch
 
 A restart clears the widget refresh queue along with other temporary system state. Blunt, but it resolves what survives everything above.
 
-## Why is my Apple Watch complication behind?
+## My Watch and iPhone disagree
 
-watchOS applies the same kind of refresh budget, and the Watch also has to sync step data with the iPhone before it can show a merged total. Bring the devices near each other with Bluetooth on and open the app on the Watch once. See [Apple Watch](/docs/widgets/apple-watch).
+Usually the **iPhone** is the one behind, and the reason is the direction the data travels.
+
+The Watch is worn, so it is the device that actually captures the steps — including every walk you took without your phone. Those steps then have to sync to Apple Health and be merged there before the iPhone can show them. The Watch reads its own count directly; the iPhone reads the merged result at the end of that chain, so it trails by design.
+
+If the **complication itself** is stale rather than the number, watchOS budgets complication refreshes the same way iOS budgets widgets. Raise your wrist and open Steps on the Watch once. See [Apple Watch](/docs/widgets/apple-watch).
 
 ## The widget shows zero all day
 

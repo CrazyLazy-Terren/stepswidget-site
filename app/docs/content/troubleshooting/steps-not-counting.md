@@ -4,7 +4,7 @@ title: Steps not counting
 metaTitle: Fix an iPhone That Is Not Counting Steps
 description: Work through the recording chain — motion tracking, Health permission, data sources, and where you carry the phone — when your count stays at zero or reads low.
 order: 2
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 6 min read
 keywords:
   - iPhone not counting steps
@@ -61,7 +61,7 @@ Apple Health de-duplicates overlapping steps from an iPhone and an Apple Watch, 
 
 ## 6. Check the step window
 
-Before assuming steps are missing, confirm you are looking at the window you think you are. With **Day Ends At** set to 3:00 AM, a walk at 1am counts toward yesterday — so today can legitimately look empty at 2am. With **Last 24-Hour** on, the number is a rolling total rather than today's.
+Before assuming steps are missing, confirm you are looking at the window you think you are. With **Start of Day** set to 3:00 AM, a walk at 1am counts toward yesterday — so today can legitimately look empty at 2am. With **Last 24-Hour** on, the number is a rolling total rather than today's.
 
 See [the step window](/docs/steps-and-data/step-window).
 
@@ -79,7 +79,7 @@ If Health registers nothing after a restart and a test walk, check **Settings �
 
 ## Why does my Apple Watch show more steps than my iPhone?
 
-Because the Watch is on your wrist all day and the phone is not. Every trip to the kitchen without your phone is a gap in the iPhone's count and not the Watch's.
+Two reasons, and they stack. The Watch is on your wrist all day and the phone is not, so every trip to the kitchen without your phone is a gap in the iPhone's count and not the Watch's. On top of that the iPhone is usually the slower of the two to update, because Motion Sensor is off by default there and on by default on the Watch — see [My Watch and iPhone disagree](/docs/troubleshooting/widget-not-updating#my-watch-and-iphone-disagree).
 
 Neither is wrong — they measured different things, because they were in different places. Health merges them into one daily total, which is the figure Steps shows. The [Live Activity](/docs/widgets/standby-and-live-activity) shows both contributions separately if you want to see the split.
 

@@ -4,7 +4,7 @@ title: Apple Watch
 metaTitle: Steps Widget for Apple Watch - Complications and Reminders
 description: The standalone Watch app, its three complication styles, the settings you can change from the wrist, and why the Watch is the best device to send reminders.
 order: 4
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 5 min read
 keywords:
   - Apple Watch step app
@@ -58,7 +58,7 @@ Steps reads your stand hours too, and the **Rectangular** layout is where they a
 The Watch app is not read-only. From the wrist you can change:
 
 - **Daily Goal**
-- **Last 24 Hour** and **Day Ends At** — see [the step window](/docs/steps-and-data/step-window)
+- **Last 24 Hour** and **Start of Day** — see [the step window](/docs/steps-and-data/step-window)
 - **Motion Sensor**
 - **Goal Reminder**
 - Complication style, chart type, and timestamp format for each accessory type
@@ -84,7 +84,11 @@ No, but it is the recommended setup. iPhone counts steps with its own motion cop
 
 ## Why do my Watch and iPhone show different numbers?
 
-Because they have not synced yet, or because they genuinely measured different things. Steps taken with the phone on your desk exist only in the Watch's count.
+Usually because the iPhone is behind, not the Watch. The Watch is the device on your body, so it captures the steps first; they then sync to Apple Health and merge there before the iPhone can show them. The iPhone is reading the end of that chain.
+
+Two things speed it up: keeping the devices near each other with Bluetooth on, and turning on **Motion Sensor** on the iPhone, where it is off by default (on the Watch it is on).
+
+Some of the difference is real rather than lag — steps taken with the phone on your desk exist only in the Watch's count, and Health de-duplicates the overlap rather than adding the two together.
 
 Apple Health merges and de-duplicates the two, so the daily total is deliberately not the sum. Bring the devices near each other with Bluetooth on and the totals converge. The [Live Activity](/docs/widgets/standby-and-live-activity) shows the two contributions separately if you want to see the split.
 

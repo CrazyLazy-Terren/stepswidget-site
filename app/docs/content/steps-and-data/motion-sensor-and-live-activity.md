@@ -21,7 +21,7 @@ Apple Health shares step updates with apps about **once an hour**. That is fine 
 
 **Settings › Motion Sensor**. The app describes it in one line: *"See your latest steps without waiting for Health sync."*
 
-It is also available in the Watch app's settings.
+It is also in the Watch app's settings, where it is **on by default** — the Watch runs its pedometer live and pushes the count to your iPhone, which is why the Watch is rarely the device that looks behind.
 
 ## What changes
 
@@ -52,7 +52,7 @@ To check on your own device, open **Settings › Battery** and look at the last 
 
 ## Why is Motion Sensor not on by default?
 
-Because Apple Health alone is already accurate. The gap only matters if you check your count during it, and a total that lands within the hour is fine for a glance at a widget between meetings.
+On iPhone it is off by default because Apple Health alone is already accurate: the gap only matters if you check your count during it, and a total that lands within the hour is fine for a glance at a widget between meetings. On Apple Watch it is on by default, because a wrist glance is usually made mid-walk.
 
 Turn it on if you check your count while walking, if you want the Live Activity, or if "the widget is behind" is a recurring annoyance.
 

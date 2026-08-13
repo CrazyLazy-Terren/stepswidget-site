@@ -4,7 +4,7 @@ title: Reminder timing and devices
 metaTitle: When Steps Widget Reminders Fire and Which Device Sends Them
 description: The hours reminders are allowed, the once-per-hour limit, how Local Sunset lowers the bar in the evening, and why only one of your devices sends.
 order: 3
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 5 min read
 keywords:
   - reminder schedule
@@ -17,7 +17,9 @@ Two things decide whether a reminder reaches you: whether the projection says yo
 
 ## The reminder window
 
-Reminders can only fire between **11:00 and 23:00** local time. Outside that window nothing is sent, regardless of how far behind you are.
+Reminders can only fire during the **11th to the 23rd hour of your day**. On a default setup that is 11:00 to 23:00. Outside the window nothing is sent, regardless of how far behind you are.
+
+The window is measured from your own start of day, not from midnight, so it moves with the [Start of Day](/docs/steps-and-data/step-window) setting. Set your day to begin at 3:00 AM and reminders run 14:00 to 02:00 instead — the same eleven-hour offset into a day that now ends later.
 
 The morning cutoff exists because a projection made at 7am is mostly guesswork — you have barely any steps yet, and being told at breakfast that you are behind is neither surprising nor useful. By 11am there is enough of your day on record for the projection to mean something.
 
@@ -66,7 +68,7 @@ If you want reminders to survive a Focus, add Steps Widget to that Focus's allow
 In rough order of likelihood:
 
 - You had already moved, and the projection now clears your goal. This is the feature working.
-- The hour was outside 11:00–23:00.
+- The hour was outside the reminder window.
 - A reminder had already been sent this hour.
 - Another of your devices is the elected sender.
 - A Focus mode or Do Not Disturb suppressed it.

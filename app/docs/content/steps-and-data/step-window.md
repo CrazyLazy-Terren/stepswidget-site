@@ -1,10 +1,10 @@
 ---
 slug: step-window
 title: The step window
-metaTitle: Last 24-Hour Mode and Day Ends At in Steps Widget
+metaTitle: Last 24-Hour Mode and Start of Day in Steps Widget
 description: Change what "today" means — push the day boundary up to six hours past midnight for night owls, or drop the calendar day for a rolling 24-hour window.
 order: 1
-updated: 2026-07-28
+updated: 2026-08-10
 readingTime: 4 min read
 keywords:
   - last 24 hours steps
@@ -15,21 +15,23 @@ keywords:
 
 By default your step count covers today, midnight to midnight. Two settings change that, and both exist because "today" is a worse fit for some people's lives than it looks.
 
-## Day Ends At
+## Start of Day
 
 If you are often awake past midnight, the default boundary splits your evening in half: a walk at 12:30am lands in a brand-new day with an empty ring, while the day you were actually living closes out one walk short.
 
-**Settings › Day Ends At** moves the boundary up to **six hours** past midnight. Pick 3:00 AM and steps taken at 1am count toward the day that started the previous morning; your count resets at 3am instead.
+**Settings › Start of Day** moves the boundary up to **six hours** past midnight. Pick 3:00 AM and steps taken at 1am count toward the day that started the previous morning; your count resets at 3am instead.
 
-The picker shows real times in your locale — 12:00 AM through 6:00 AM — and the app explains it in one line: *"Night owls: steps before this time go to yesterday's total."*
+The picker shows real times in your locale — 12:00 AM through 6:00 AM — and the app explains it in one line: *"Steps before this time count toward yesterday."*
 
 This shifts everything consistently: the widgets, the goal, Insight, and the reminder model's sense of how much day you have left. It does not change what Apple Health stores, only the window Steps reads.
+
+It also slides the reminder window. Reminders run from the 11th to the 23rd hour of your day, so a day starting at 3:00 AM moves them from 11:00–23:00 to 14:00–02:00. See [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
 
 ## Last 24-Hour
 
 **Last 24-Hour** discards the calendar day entirely. Instead of today, the widget shows a **rolling window of the previous 24 hours**, always ending now.
 
-Turn it on and **Day Ends At** disappears from Settings, because a day boundary means nothing when there is no day.
+Turn it on and **Start of Day** disappears from Settings, because a day boundary means nothing when there is no day.
 
 This suits a genuinely irregular schedule — shift work, frequent long-haul travel, anyone whose waking hours do not line up with a calendar. Your goal is then read as a rolling target: the app expects your trailing 24-hour total to sit near your goal at any moment, rather than climbing from zero each morning.
 
@@ -40,7 +42,7 @@ This suits a genuinely irregular schedule — shift work, frequent long-haul tra
 | Your schedule | Setting |
 | --- | --- |
 | Ordinary days, asleep before midnight | Leave both alone |
-| Usually up past midnight | **Day Ends At**, 2:00–4:00 AM |
+| Usually up past midnight | **Start of Day**, 2:00–4:00 AM |
 | Shift work, no fixed day | **Last 24-Hour** |
 | Frequent long-haul travel | **Last 24-Hour** |
 
