@@ -188,11 +188,11 @@ export default function Home() {
         <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
           <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Step counter and goal reminder</p>
           <h1 className="mt-12 text-balance text-center text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">
-            It knows how your day is going to end.
+            The Nudge at a Glance.
           </h1>
-          <p className="mt-6 max-w-2xl text-center text-pretty text-lg leading-8 text-[var(--text-muted)]">
-            Steps Widget projects your end-of-day step count on your iPhone and reminds you only when you are heading for a miss — with your Apple Health steps
-            on every screen you already look at.
+          <p className="mt-6 max-w-3xl text-center text-pretty text-lg leading-8 text-[var(--text-muted)]">
+            You want to stay active enough to be healthy, but you do not need a new fitness hobby. Because your phone already collects your step data, this
+            widget just places that number where you already look.
           </p>
 
           <AppStoreButton className="mt-12" />
@@ -232,7 +232,9 @@ export default function Home() {
                 <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
                 <h3 className="mt-3 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
                 <p className="mt-3 flex-1 leading-7 text-[var(--text-muted)]">{feature.description}</p>
-                <ArrowLink href={feature.href} className="mt-5 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">{feature.linkLabel}</ArrowLink>
+                <ArrowLink href={feature.href} className="mt-5 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+                  {feature.linkLabel}
+                </ArrowLink>
               </div>
             </article>
           ))}
@@ -268,7 +270,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 text-center">
-          <ArrowLink href="/docs/widgets/apple-watch" className="text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">Apple Watch documentation</ArrowLink>
+          <ArrowLink href="/docs/widgets/apple-watch" className="text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+            Apple Watch documentation
+          </ArrowLink>
         </div>
       </PageSection>
 
@@ -286,16 +290,18 @@ export default function Home() {
           ))}
         </div>
 
-        <ArrowLink
-          href="/docs/steps-and-data/privacy-and-sync"
-          className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">How to verify each of these</ArrowLink>
+        <ArrowLink href="/docs/steps-and-data/privacy-and-sync" className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+          How to verify each of these
+        </ArrowLink>
       </PageSection>
 
       <PageSection id="faq" containerClassName="grid gap-10 border-t border-[color:var(--border)] pt-14 lg:grid-cols-[20rem_minmax(0,1fr)]">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">FAQ</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Questions, answered.</h2>
-          <ArrowLink href="/docs" className="mt-5 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">Full documentation</ArrowLink>
+          <ArrowLink href="/docs" className="mt-5 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+            Full documentation
+          </ArrowLink>
         </div>
         <div className="border-[color:var(--border)]">
           {faqItems.map((item) => (
