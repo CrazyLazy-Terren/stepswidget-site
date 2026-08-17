@@ -1,102 +1,105 @@
 ---
 slug: how-goal-reminders-work
 title: How goal reminders work
-metaTitle: How Steps Widget Goal Reminders Predict Your Day
-description: An on-device Core ML model projects your end-of-day step total, and a reminder fires only when that projection falls short of your goal.
+metaTitle: Set Up and Tune Goal Reminders in Steps Widget
+description: Turn on goal reminders, read what each message is telling you, and tune the four settings that change when and how they arrive.
 order: 1
-updated: 2026-07-28
-readingTime: 7 min read
+updated: 2026-08-10
+readingTime: 5 min read
 keywords:
   - goal reminder
-  - step prediction
-  - on-device Core ML
   - step goal notification
-  - end of day step projection
+  - set up reminders iPhone
+  - tune step reminders
 image: /assets/feature-nudges.png
 ---
 
-Steps reminds you based on a forecast rather than a timer: a model on your iPhone projects how many steps you will finish the day with, and a reminder fires only when that projection falls short of your goal. This is why no reminders arrive on a day you are already walking enough.
+Steps reminds you from a forecast rather than a timer. It projects the step count you are heading for and only speaks up when that projection falls short of your goal — so on a day you are already walking enough, you hear nothing.
 
-## The projection
+The app sums it up in one line under the toggle: *"If you're likely to miss your goal, it sends a reminder."*
 
-The model is a Core ML regressor that runs entirely on your device. It takes four numbers:
+## Turning it on
 
-| Input              | Range |
-| ------------------ | ----- |
-| Hour of day        | 0–23  |
-| Weekday            | 0–6   |
-| Day of month       | 0–30  |
-| Steps so far today | 0+    |
+1. Open **Settings** in the app.
+2. Turn on **Goal Reminder**.
+3. Allow notifications when iOS asks.
 
-And it outputs one: **expected end-of-day steps**.
+That is the whole setup. Everything below is optional tuning.
 
-The calendar inputs let it distinguish your weekdays from your weekends, and the start of a month from the middle. The projection is based on your own history rather than an average.
+If you have an Apple Watch, wear it — the Watch usually ends up as the device that sends, and a wrist tap reaches you wherever your phone is. See [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
 
-## From projection to a decision
+## What each message is telling you
 
-The projection becomes a risk score between 0 and 1, measuring how far short of your goal you are heading:
+There are four, chosen from how your day is tracking. Two of them are for information; two ask for something.
 
-```
-risk = 0.5 + 0.5 × (goal − projected) / goal
-```
+| Message | What it means | What to do |
+| --- | --- | --- |
+| **Goal hit** | You are past your goal | Nothing. A few hundred more if you feel like it |
+| **Strong lead** | Projected comfortably over | Nothing — you are ahead |
+| **Steady pace** | On track, with a figure to go | Keep the rhythm; no change needed |
+| **Push now** | Heading for a miss | Take a walk — the message carries how many steps and how long you have |
 
-A projection that lands exactly on your goal scores 0.5. Projecting well over scores below it; projecting short scores above. A reminder fires when the risk clears the threshold:
+Only the states that actually need your attention get delivered. The other two exist because the same wording drives the **Preview** in Settings, where you can see what your current day would produce.
 
-|                                               | Threshold |
-| --------------------------------------------- | --------- |
-| Normal                                        | 0.615     |
-| After local sunset, if **Local Sunset** is on | 0.565     |
+## Why it went quiet
 
-The evening threshold is lower because there is less time left to close a gap, so a shortfall that did not warrant a reminder at 2pm may warrant one at 8pm. See [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
+A day with no reminders is usually the feature working. In rough order of likelihood:
 
-## What you actually receive
+- You are on track, so there is nothing to say.
+- It is outside the reminder window — roughly the 11th to 23rd hour of your day.
+- You already had one this hour; that is the limit.
+- Another of your devices is the one sending.
+- A Focus mode or Do Not Disturb suppressed it.
 
-The message is chosen from the risk score, so a reminder tells you where you stand:
+If none of those fit, work through [Reminders not arriving](/docs/troubleshooting/reminders-not-arriving).
 
-| State           | When                           | Message                                                              |
-| --------------- | ------------------------------ | -------------------------------------------------------------------- |
-| **Goal hit**    | You are already past your goal | _Goal hit 🎉 Feeling good? A few hundred more makes it a great day._ |
-| **Strong lead** | Risk below 0.475               | _You're N steps ahead. Keep moving and protect the lead._            |
-| **Steady pace** | Risk below 0.525               | _You're on track — about N steps to go. Keep the rhythm._            |
-| **Push now**    | Risk 0.525 and above           | _N steps in Nh — a short walk gets you there._                       |
+## Tuning it to your day
 
-Only states at or above the threshold are delivered. The lower ones are still generated for the app and the widgets, so you can see the wording your current day would produce.
+Four settings change the behaviour, and all of them are free:
 
-With Apple Intelligence available, this templated copy is then rewritten in a tone you choose — see [Reminder messages](/docs/goal-reminders/reminder-messages).
+| Setting | What it changes | Reach for it when |
+| --- | --- | --- |
+| **Daily Goal** | The target the projection is measured against | Reminders feel too frequent or too rare |
+| **Start of Day** | When your day begins, which slides the reminder window with it | You are regularly up past midnight |
+| **Local Sunset** | Lowers the bar for an evening reminder, tracking real sunset | You want a firmer nudge once it is dark |
+| **Reminder tone** | The wording, rewritten on device | The phrasing grates, or you want it blunter |
 
-## It learns your routine
+**Start with the goal.** It is the single most effective lever. Reminders come from the gap between your projection and your goal, so a goal set too high produces a stream of Push now messages you will end up muting, and one you clear by noon produces near-silence. [Set your daily goal](/docs/getting-started/set-your-daily-goal) covers picking a number against a month of your own days.
 
-The bundled model is a starting point, and it then personalises on your device.
+## It is personalised from the start
 
-Once a day, Steps records a training row: the calendar features, your steps, and — after the day rolls over — what you actually finished with. Rows are capped at the most recent 365, and the model retrains on device against that history. Nothing is uploaded; there is no server involved in training.
+There is no warm-up period. On first launch the app trains a model on **your own step history from Apple Health** — up to a year of it — so the projections are shaped by your actual days from the beginning rather than by an average.
 
-It also detects changes in your routine. When your step pattern for a given hour shifts persistently, the app flags it, shows a small indicator on the widget, and retrains against the new pattern.
+The only case that needs patience is a genuinely empty Health history, such as a brand-new iPhone. With nothing to learn from, the app uses its built-in model until your history has something in it.
 
-You can see the training state in **Settings**, under the Goal Reminder toggle. That row normally cycles through short explanations of the feature, and switches to a warning only if a training run failed.
+After that it retrains when your **routine changes**, not on a schedule. If the pattern for some hour shifts persistently — a new commute, a different gym slot — the app notices, retrains, and tells you which hour moved: *"Your 6 PM hour changed — goal reminders are retrained to match."* A small dot on the widget marks a retrain as pending and clears itself when it finishes.
 
-## If the model is unavailable
+## Getting better results
 
-There is a hand-tuned fallback. When no model output is available, the risk score is computed from four ingredients instead:
-
-- How far behind a perfectly even day you are
-- The pace you would now need per hour
-- Whether Health has gone quiet for over an hour
-- How late in the day it is
-
-Reminders continue to work in this case, and the app does not report the difference, because the decision it produces is the same kind.
+- **Set a goal you will actually hit** on an ordinary day. Everything else follows from this.
+- **Put a widget where you already look** so you can act on a reminder without opening the app — see [the widget gallery](/docs/widgets/widget-gallery).
+- **Wear your Apple Watch** if you have one, for delivery and for a fuller step count.
+- **Do not force-quit the app.** iOS then blocks its background refresh until you open it again, which delays the projection along with your widgets.
+- **Give a changed routine a few days** to be recognised before you conclude the timing is wrong.
 
 ## Why not just remind me hourly?
 
-An hourly timer has no knowledge of what you did. It fires whether or not you walked, so it can interrupt you when there is nothing to act on. Reminders like that tend to get muted, and a muted reminder has no effect on how much you move.
+An hourly timer has no knowledge of what you did. It fires whether or not you walked, so it interrupts you when there is nothing to act on — and reminders like that get muted, which ends their effect entirely.
 
-Projecting forward also means the reminder arrives while there is still time to act on it. Being told at 10pm that you missed your goal is only a record; being told at 4pm that you are heading for 6,000 against a goal of 8,000 still leaves you a choice.
+Forecasting forward also means the reminder arrives while you can still do something. Being told at 10pm that you missed your goal is a record; being told at 4pm that you are heading for 6,000 against a goal of 8,000 still leaves you a choice.
 
 ## Why does it ask for movement rather than standing?
 
 Standing up satisfies most stand reminders without you having gone anywhere. Steps measures steps, so the only way to change the projection is to take some. The app does read your Apple Watch stand hours, but only to mark them in the hourly chart as context.
 
+## Under the hood
+
+Briefly, for those who want it: a Core ML model reads your last 24 hours of steps and predicts the next hour. The app rolls that forward hour by hour to the end of your day and adds the result to the steps you have already taken — which is why the projection can never come out below your current count. It runs and retrains entirely on your iPhone, and a built-in fallback keeps reminders working if the model is ever unavailable.
+
+The exact thresholds, the reminder window, and how one device is elected to send are in [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices). What the model does and does not keep is in [Privacy and sync](/docs/steps-and-data/privacy-and-sync).
+
 ## What to read next
 
-- [Reminder messages](/docs/goal-reminders/reminder-messages) — choose the tone, on device.
+- [Reminder messages](/docs/goal-reminders/reminder-messages) — set the tone, on device.
 - [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices) — hours, sunset, and which device sends.
 - [Reminders not arriving](/docs/troubleshooting/reminders-not-arriving) — when nothing fires.

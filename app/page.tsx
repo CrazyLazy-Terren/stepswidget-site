@@ -191,8 +191,8 @@ export default function Home() {
             The Nudge at a Glance.
           </h1>
           <p className="mt-6 max-w-3xl text-center text-pretty text-lg leading-8 text-[var(--text-muted)]">
-            You want to stay active enough to be healthy, but you do not need a new fitness hobby. Because your phone already collects your step data, this
-            widget just places that number where you already look.
+            Stay active enough to be healthy, without starting a new fitness hobby. Since the phone already collects step data, this widget just places that
+            number right on the home screen.
           </p>
 
           <AppStoreButton className="mt-12" />

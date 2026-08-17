@@ -26,7 +26,7 @@ There is one location exception, and it is opt-in: **Local Sunset** uses your lo
 
 ## What stays on your device
 
-The model that decides when to remind you runs and _trains_ on your iPhone. It stores one row per day — at most 365 — and retrains locally against that history. Your activity pattern, the thing that makes the reminders feel personal, never leaves the phone.
+The model that decides when to remind you runs and _trains_ on your iPhone. It trains against your existing Apple Health step history, read at training time — it does not build a separate copy of your activity to learn from. Your pattern, the thing that makes the reminders feel personal, never leaves the phone.
 
 Reminder rewriting is the same story: Apple Intelligence runs the rewrite on device, so your step counts, your goal, and your tone instruction are not sent to a server — not ours, and not Apple's.
 

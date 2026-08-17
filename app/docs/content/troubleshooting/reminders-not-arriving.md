@@ -64,11 +64,11 @@ Also confirm **Do Not Disturb** is not left on from Control Centre. Focus modes 
 
 Steps sends at most one reminder per clock hour. If you already had one, the next is at least an hour away even if your projection gets worse.
 
-## 6. Give the model time
+## 6. If your routine just changed
 
-A newly installed app is running the bundled model with no personal history yet. It works, but its projections sharpen as it accumulates days — it logs one training row per day and retrains on device.
+The app trains on your existing Apple Health history at first launch, so it is personalised from the start rather than warming up over days. The exception is an empty history, such as a brand-new iPhone, where it falls back to the built-in model until there is something to learn from.
 
-If reminders arrive but feel mistimed, that is the learning period rather than a fault. If they arrive but you do not notice them, adjust the wording and alert style in [Reminder messages](/docs/goal-reminders/reminder-messages).
+If your routine has recently changed, give it a few days — retraining is triggered by a persistent shift in the pattern, not on a schedule. If reminders arrive but you do not notice them, adjust the wording and alert style in [Reminder messages](/docs/goal-reminders/reminder-messages).
 
 ## 7. Background App Refresh and Low Power Mode
 

@@ -20,19 +20,15 @@ Styling is the one paid part of Steps. It changes how widgets look, not what the
 
 In the app's main screen, swipe between widget types along the top. Each type has its own preview and its own saved style, so **Steps Ring** and **Steps Timeline** can look completely different.
 
-Below the preview is the palette. Above it, the **slider icon** in the toolbar opens the display options for the selected widget.
-
 ## Colour palettes
 
 Each widget type offers three rows of styles:
 
-| Row | What it is |
-| --- | --- |
-| Solid | System colour plus a set of single-colour treatments, including muted text tones |
-| Two-tone | A primary and a secondary colour — the number in one, the ring or chart in the other |
+| Row      | What it is                                                                                     |
+| -------- | ---------------------------------------------------------------------------------------------- |
+| Solid    | System colour plus a set of single-colour treatments, including muted text tones               |
+| Two-tone | A primary and a secondary colour — the number in one, the ring or chart in the other           |
 | Gradient | A gradient background with light text, in themes like Sunrise, Meadow, Dusk, Aurora, and Ocean |
-
-Gradients make the widget stand out. Solid colours let it blend into the Home Screen.
 
 ## Display options
 
