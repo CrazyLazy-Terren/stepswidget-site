@@ -1,5 +1,5 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stepswidget.app'
-const secret = process.env.INDEXNOW_SUBMIT_SECRET || process.env.INDEXNOW_KEY || 'c578ec83f7ae49908bfeb9b9f494de37'
+const secret = process.env.INDEXNOW_SUBMIT_SECRET || process.env.INDEXNOW_KEY || '1ddd539af5b64d15a2ff241b9aa92079'
 
 const submitUrl = `${siteUrl.replace(/\/$/, '')}/api/indexnow/submit?secret=${secret}`
 

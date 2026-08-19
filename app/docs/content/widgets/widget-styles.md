@@ -68,16 +68,6 @@ What is free and what is paid:
 
 No feature the app needs to function is behind the paywall. Without the purchase you still get the full reminder system and your step count on every surface. The purchase changes appearance only.
 
-## The Customization purchase
-
-It is called **Customization** in the app and on the App Store, and it comes three ways:
-
-- A **one-time purchase** that never expires
-- A **monthly** subscription
-- A **yearly** subscription
-
-A subscription is never required — the one-time purchase unlocks the same thing permanently. Current prices are on the App Store listing; they are deliberately not printed here, because a stale price on a website is worse than no price.
-
 ## Restoring a purchase
 
 Purchases are tied to your Apple Account, not to an app account — Steps has no accounts. On a new device or after a reinstall, sign in with the same Apple Account and use the restore option in the app.

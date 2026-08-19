@@ -2,10 +2,10 @@
 slug: widget-gallery
 title: The widget gallery
 metaTitle: Every Steps Widget for iPhone Home and Lock Screen
-description: All eight Steps widgets — Steps Ring, Timeline, Prompt, Goal Progress, Minimal, and the three Lock Screen accessories — with sizes and what each one shows.
+description: All eight Steps widgets — Steps Ring, Timeline, Prompt, Goal Progress, Minimal, and the three Lock Screen accessories — plus how adaptive refresh keeps them current.
 order: 1
-updated: 2026-07-28
-readingTime: 5 min read
+updated: 2026-08-10
+readingTime: 6 min read
 keywords:
   - iPhone step widget
   - home screen widget steps
@@ -77,6 +77,27 @@ As many as you like, in any combination. Each widget remembers its own style and
 Dragging one widget onto another of the same size creates a stack you can swipe through. Steps reports a relevance score to iOS so it surfaces itself in a Smart Stack at useful moments — when you have been moving in the last couple of hours, and when you are between 70% and just past your goal.
 
 That said, with **Smart Rotate** on, iOS decides what is showing when you glance. If seeing your progress reliably is the point, give the widget a dedicated slot.
+
+## Adaptive widget updates
+
+Widgets do not refresh on a fixed timer. Steps varies how often it asks iOS to redraw, based on how likely the number is to have changed and how likely you are to look at it.
+
+| | iPhone | Apple Watch |
+| --- | --- | --- |
+| Active | about every 5 minutes | about every 5 minutes |
+| Quiet | up to every 30 minutes | up to every 60 minutes |
+
+Three signals push it toward the fast end:
+
+- **You are moving now** — steps recorded in the current stretch.
+- **This hour is usually active for you** — from a learned profile of your own 24 hours.
+- **You usually open the app around now** — a glance at the widget tends to precede the tap, so those hours are kept fresh too.
+
+It weighs the current hour *and the next one*, so the widget speeds up ahead of your usual walk rather than catching up after it. Everything is measured against your own busiest hour rather than an absolute, so a generally quiet day still gets its fast periods.
+
+The Watch has the wider range because its refresh budget is tighter. Spending less on quiet stretches leaves more for the moments you actually raise your wrist.
+
+> **Note:** These are requests, not guarantees — iOS grants widget reloads from a daily budget and can delay any of them to save power. Steps also skips reloads that would change nothing visible: a redraw needs at least 200 steps of change and at least 60 seconds since the last one.
 
 ## Can I put the widget on my Mac?
 

@@ -27,9 +27,9 @@ Your steps pass through three stages, each on its own schedule. The app explains
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Apple Health** collects your steps               | Shares updates with apps about once an hour                                                                             |
 | **The app** reads Health and hands data to widgets | Every time you open it, plus background refreshes                                                                       |
-| **The widget** redraws                             | Asks about every 3 minutes in active hours, up to every 30 minutes in quiet ones — iOS decides when it actually reloads |
+| **The widget** redraws                             | Asks about every 5 minutes in active hours, up to every 30 minutes in quiet ones — iOS decides when it actually reloads |
 
-Nothing in that chain is instant, and the widget is the least instant part of it. iOS grants each widget a limited daily reload budget to protect battery life, which is why a widget is a recent snapshot rather than a live readout.
+Nothing in that chain is instant, and the widget is the least instant part of it. That cadence is not fixed — it adapts to when you move and when you tend to check, and the Apple Watch stretches further in both directions. See [Adaptive widget updates](/docs/widgets/widget-gallery#adaptive-widget-updates). iOS grants each widget a limited daily reload budget to protect battery life, which is why a widget is a recent snapshot rather than a live readout.
 
 If you want a genuinely live number, that is what [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity) and the Live Activity are for.
 
