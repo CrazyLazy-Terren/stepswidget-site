@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic'
  */
 export async function GET() {
   const headersList = await headers()
-  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const host = headersList.get('host') || 'stepswidget.app'
   const protocol = host.includes('localhost') ? 'http' : 'https'
   const baseUrl = `${protocol}://${host}`
   const { requirements } = appFacts

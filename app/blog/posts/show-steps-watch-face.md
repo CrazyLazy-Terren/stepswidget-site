@@ -74,7 +74,7 @@ Three apps stand out for their complication quality, privacy approach, and custo
 
 - **Duffy** focuses on step counting with a clean, minimal complication style. Setup is quick, and it reads directly from Apple Health, so your data stays consistent across devices. The complication displays your current step count and daily goal progress.
 - **StepsApp** offers more visual variety, including ring-style and numeric complications in multiple sizes. It supports Apple Watch complications across several watch face types and lets you set custom daily step goals. The free tier covers the basics well.
-- **Steps Widget by Crazylazy** reads your [Apple Health step data](https://steps.crazylazy.xyz/blog/apple-health-steps-widget) locally on your device, with no social sharing, no leaderboards, and no account required. It offers multiple complication styles including progress rings and minimal numeric displays, plus widget support for your iPhone Home Screen and Lock Screen.
+- **Steps Widget by Crazylazy** reads your [Apple Health step data](https://stepswidget.app/blog/apple-health-steps-widget) locally on your device, with no social sharing, no leaderboards, and no account required. It offers multiple complication styles including progress rings and minimal numeric displays, plus widget support for your iPhone Home Screen and Lock Screen.
 
 | Feature               | Duffy                          | StepsApp                       | Steps Widget                       |
 | --------------------- | ------------------------------ | ------------------------------ | ---------------------------------- |
@@ -110,11 +110,11 @@ Adding a complication does draw slightly more power since the watch face refresh
 
 ## Steps Widget by Crazylazy fits this workflow well
 
-If you want a step count complication that stays private and looks good without a complicated setup, [Steps Widget](https://steps.crazylazy.xyz) by Crazylazy is worth a look. It reads your Apple Health data locally, so nothing leaves your device. There are no social feeds, no challenges, and no subscription required to get the core experience.
+If you want a step count complication that stays private and looks good without a complicated setup, [Steps Widget](https://stepswidget.app) by Crazylazy is worth a look. It reads your Apple Health data locally, so nothing leaves your device. There are no social feeds, no challenges, and no subscription required to get the core experience.
 
 ![Steps](https://csuxjmfbwmkxiegfpljm.supabase.co/storage/v1/object/public/blog-images/organization-46447/1784650334526_steps.jpg)
 
-You get multiple complication styles for your Apple Watch face, plus widget options for your iPhone [Home Screen and Lock Screen](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget), so your step count is visible wherever you check. Download Steps Widget from the App Store and add the complication to your watch face in under five minutes.
+You get multiple complication styles for your Apple Watch face, plus widget options for your iPhone [Home Screen and Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget), so your step count is visible wherever you check. Download Steps Widget from the App Store and add the complication to your watch face in under five minutes.
 
 ## Key Takeaways
 

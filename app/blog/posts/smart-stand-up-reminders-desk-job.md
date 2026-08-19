@@ -35,7 +35,7 @@ The result is predictable. The alerts you dismiss most are the ones that were po
 
 ## What makes a move reminder "smart"
 
-A smart [sedentary reminder app](https://steps.crazylazy.xyz/blog/pedometer-app-with-move-reminders) solves this by checking your actual activity before it interrupts you.
+A smart [sedentary reminder app](https://stepswidget.app/blog/pedometer-app-with-move-reminders) solves this by checking your actual activity before it interrupts you.
 
 Instead of watching a static clock, it reads your step count from Apple Health. If you have already walked past a small threshold in the last hour, say 100 to 250 steps, it quietly resets and stays silent. You only hear from it when you have genuinely been inactive for a stretch.
 
@@ -61,7 +61,7 @@ Setting a small hourly step goal is one of the most effective habits you can bui
 To make movement alerts stick, tune them to your real workday instead of a generic default.
 
 - **Define your active hours.** Match reminders to your working schedule, for example Monday to Friday, 9:00 AM to 5:00 PM. You do not want a move alert buzzing during dinner or on a Saturday hike.
-- **Pair alerts with quiet visual cues.** Back up push notifications with zero-click widgets on your iPhone [Home Screen or Lock Screen](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget). A glance at a clean progress ring tells you whether you are on pace for the hour without opening anything.
+- **Pair alerts with quiet visual cues.** Back up push notifications with zero-click widgets on your iPhone [Home Screen or Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget). A glance at a clean progress ring tells you whether you are on pace for the hour without opening anything.
 - **Give the nudge a simple job.** When the reminder fires, have one easy default: refill your water bottle, do a lap of the room, or a standing stretch. A specific action is far easier to follow than "move more."
 - **Keep the nudge on your wrist.** If your iPhone is across the room, an Apple Watch reminder still reaches you at your desk, so the habit does not depend on where your phone is.
 
@@ -71,7 +71,7 @@ To make movement alerts stick, tune them to your real workday instead of a gener
 
 The best habit tools support you quietly in the background instead of demanding your attention.
 
-[Steps Widget](https://steps.crazylazy.xyz) gives you smart, private move reminders that sync with your Apple Health data. They only fire when you have actually been inactive, they respect the active hours you set, and between nudges your progress rings stay a glance away on your Home Screen, Lock Screen, and Apple Watch. There is no account, no social feed, and no GPS tracking. Your step data stays local to your device.
+[Steps Widget](https://stepswidget.app) gives you smart, private move reminders that sync with your Apple Health data. They only fire when you have actually been inactive, they respect the active hours you set, and between nudges your progress rings stay a glance away on your Home Screen, Lock Screen, and Apple Watch. There is no account, no social feed, and no GPS tracking. Your step data stays local to your device.
 
 Download Steps Widget from the App Store, set your active hours, and let the nudges handle the timing so you do not have to.
 
@@ -87,4 +87,4 @@ Rigid hourly stand-up alarms fail because they ignore what you are doing; activi
 | Tune it to your day       | Set active work hours and pair each nudge with a simple, specific action.                                   |
 | Steps Widget by Crazylazy | Activity-aware move reminders plus glanceable, private widgets across iPhone and Apple Watch.               |
 
-New to this? Start with [does the iPhone have a stand up reminder](https://steps.crazylazy.xyz/blog/does-iphone-have-stand-up-reminder), which explains why you need an app in the first place. Then see [the best stand up reminder apps for iPhone](https://steps.crazylazy.xyz/blog/best-stand-up-reminder-apps-iphone) for how the main options differ, or [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus) if you are weighing a dedicated step tracker instead.
+New to this? Start with [does the iPhone have a stand up reminder](https://stepswidget.app/blog/does-iphone-have-stand-up-reminder), which explains why you need an app in the first place. Then see [the best stand up reminder apps for iPhone](https://stepswidget.app/blog/best-stand-up-reminder-apps-iphone) for how the main options differ, or [Steps Widget vs Pedometer++](https://stepswidget.app/blog/steps-widget-vs-pedometer-plus-plus) if you are weighing a dedicated step tracker instead.

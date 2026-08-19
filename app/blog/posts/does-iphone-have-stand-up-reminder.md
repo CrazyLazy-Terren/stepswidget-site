@@ -55,7 +55,7 @@ If you search for this, you will be told to use the Clock app or the Reminders a
 
 **Focus modes and Screen Time.** Neither is designed for this. Screen Time limits app usage, which is a different problem, and Focus modes suppress notifications rather than create them.
 
-The common failure is that all of these are **timers**. They fire on the clock, not on your actual activity. A reminder that buzzes right after you walked across the office teaches you it is not worth reading, and within a fortnight you are dismissing it without looking. That pattern is worth understanding in detail, because it is the reason most people abandon movement reminders: [why hourly stand up reminders fail](https://steps.crazylazy.xyz/blog/smart-stand-up-reminders-desk-job).
+The common failure is that all of these are **timers**. They fire on the clock, not on your actual activity. A reminder that buzzes right after you walked across the office teaches you it is not worth reading, and within a fortnight you are dismissing it without looking. That pattern is worth understanding in detail, because it is the reason most people abandon movement reminders: [why hourly stand up reminders fail](https://stepswidget.app/blog/smart-stand-up-reminders-desk-job).
 
 ## What does work on an iPhone
 
@@ -63,7 +63,7 @@ Your iPhone cannot detect standing. But it counts steps continuously on a low-po
 
 That is the workaround the sensors allow: instead of asking _have you stood up_, ask _have you moved_. Step data answers that, and it is arguably the better question. Movement is what the research on sedentary behaviour actually cares about, not the act of standing.
 
-A third-party app can read that step data and only prompt you when you have genuinely been still. Nothing built into iOS does this, which is why the App Store has a large category of stand-up and movement reminder apps. We compared the main options, including where each beats the others, in [the best stand up reminder apps for iPhone](https://steps.crazylazy.xyz/blog/best-stand-up-reminder-apps-iphone).
+A third-party app can read that step data and only prompt you when you have genuinely been still. Nothing built into iOS does this, which is why the App Store has a large category of stand-up and movement reminder apps. We compared the main options, including where each beats the others, in [the best stand up reminder apps for iPhone](https://stepswidget.app/blog/best-stand-up-reminder-apps-iphone).
 
 Steps Widget is our take on it: a model on your iPhone learns your activity pattern, the nudge only arrives after you have really been sitting, and your daily step count is how you see whether the walk actually happened. The reminders are free.
 
@@ -75,7 +75,7 @@ An Apple Watch is a significant purchase to solve a problem a free or inexpensiv
 
 Buy the Watch for workout tracking, heart-rate data, notifications on your wrist, or the many other things it does well. The stand reminder is a small feature within a large device, and it is the least customisable part of it.
 
-If you already own one, use it. If you do not, you are not missing much here. More on working without one: [how to track steps on iPhone without an Apple Watch](https://steps.crazylazy.xyz/blog/track-steps-iphone-without-apple-watch).
+If you already own one, use it. If you do not, you are not missing much here. More on working without one: [how to track steps on iPhone without an Apple Watch](https://stepswidget.app/blog/track-steps-iphone-without-apple-watch).
 
 ## Frequently asked questions
 

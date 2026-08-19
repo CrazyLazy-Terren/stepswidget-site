@@ -70,7 +70,7 @@ One thing, deliberately: it tries to interrupt you at the right moment.
 
 Steps Widget was built by a developer who kept losing entire afternoons to a screen. The problem was never a lack of step data — it was that no amount of step data makes you stand up. So the app is built around the reminder rather than around the tracking.
 
-**The nudge is timed by what you actually did.** A model running on your iPhone learns your daily activity pattern and stays quiet during hours you already moved. A fixed hourly alarm buzzes regardless, which is exactly why most people mute them. You can read more on [why hourly stand-up reminders fail](https://steps.crazylazy.xyz/blog/smart-stand-up-reminders-desk-job).
+**The nudge is timed by what you actually did.** A model running on your iPhone learns your daily activity pattern and stays quiet during hours you already moved. A fixed hourly alarm buzzes regardless, which is exactly why most people mute them. You can read more on [why hourly stand-up reminders fail](https://stepswidget.app/blog/smart-stand-up-reminders-desk-job).
 
 **You control how the reminder behaves.** Its appearance and its sound are both yours to set. This sounds cosmetic and is not: the wrong alert during a focus block is the single most common reason a movement reminder gets switched off in week two.
 
@@ -84,7 +84,7 @@ Based on its own published feature documentation as of July 2026 — the Pedomet
 
 Pedometer++ does have goals, streaks, and badges, which are motivational tools. They are not the same as a notification that arrives because you have been sitting for ninety minutes. If we have this wrong, we will correct it — email us and we will update the post.
 
-It is worth adding that Apple Watch has its own built-in stand reminder, which nudges you roughly once an hour if it has not detected standing. That covers some of the same ground, though it is time-based rather than activity-aware, and it only works if you wear the watch. We wrote more about [why Apple Watch stand reminders miss real sitting time](https://steps.crazylazy.xyz/blog/apple-watch-stand-reminders-not-working).
+It is worth adding that Apple Watch has its own built-in stand reminder, which nudges you roughly once an hour if it has not detected standing. That covers some of the same ground, though it is time-based rather than activity-aware, and it only works if you wear the watch. We wrote more about [why Apple Watch stand reminders miss real sitting time](https://stepswidget.app/blog/apple-watch-stand-reminders-not-working).
 
 ## How do the two apps compare on price?
 
@@ -108,7 +108,7 @@ For most people, identically accurate, because both read the same source. Your i
 
 The difference appears at the edges. Pedometer++ adds a reconciliation layer that decides whether your iPhone or your Apple Watch better captured a given period, which helps in the specific situations where wrist tracking fails — pushing a stroller, holding a leash, gripping a shopping trolley. Steps Widget reads Apple Health as-is.
 
-If day-to-day step precision is your priority, that layer is a real advantage. We covered the underlying sensor behaviour in [how accurate Apple Watch steps really are](https://steps.crazylazy.xyz/blog/apple-watch-steps-accuracy-limitations).
+If day-to-day step precision is your priority, that layer is a real advantage. We covered the underlying sensor behaviour in [how accurate Apple Watch steps really are](https://stepswidget.app/blog/apple-watch-steps-accuracy-limitations).
 
 ## Which devices does each app support?
 

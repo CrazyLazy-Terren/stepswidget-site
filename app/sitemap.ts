@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const headersList = await headers()
-  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const host = headersList.get('host') || 'stepswidget.app'
   const protocol = host.includes('localhost') ? 'http' : 'https'
   const baseUrl = `${protocol}://${host}`
 
@@ -23,7 +23,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const docSectionUrls = getDocTree().map(({ section, docs }) => ({
     url: `${baseUrl}/docs/${section.slug}`,
     // A section is as fresh as its most recently edited page.
-    lastModified: new Date(`${docs.map((doc) => doc.updated).sort().at(-1)}T00:00:00Z`),
+    lastModified: new Date(
+      `${docs
+        .map((doc) => doc.updated)
+        .sort()
+        .at(-1)}T00:00:00Z`
+    ),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))

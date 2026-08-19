@@ -15,7 +15,7 @@ keywords:
 image: /assets/blog-walking-reminders.jpg
 ---
 
-> Comparing specific apps? See [the best stand up reminder apps for iPhone](https://steps.crazylazy.xyz/blog/best-stand-up-reminder-apps-iphone) for the main options ranked honestly, or [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus) for a head-to-head with a dedicated step tracker.
+> Comparing specific apps? See [the best stand up reminder apps for iPhone](https://stepswidget.app/blog/best-stand-up-reminder-apps-iphone) for the main options ranked honestly, or [Steps Widget vs Pedometer++](https://stepswidget.app/blog/steps-widget-vs-pedometer-plus-plus) for a head-to-head with a dedicated step tracker.
 
 A sedentary desk day is one of the most common health challenges of modern work. Most of us start the morning meaning to hit our step goal, then look up at 8:00 PM having barely left the chair. The intention was never the problem. The reminder was missing.
 
@@ -25,7 +25,7 @@ Here is how to set up move reminders on your iPhone that break up inactive time 
 
 ## Why passive step counters are not enough
 
-A standard [step counter](https://steps.crazylazy.xyz/blog/step-counter-widget-iphone) runs silently in the background. It counts accurately, but it depends on you remembering to open it, which most people do not do until the day is nearly over.
+A standard [step counter](https://stepswidget.app/blog/step-counter-widget-iphone) runs silently in the background. It counts accurately, but it depends on you remembering to open it, which most people do not do until the day is nearly over.
 
 That passive design leads straight to the familiar 8:00 PM realization: 2,000 steps down, 8,000 to go, and no time left to catch up.
 
@@ -55,13 +55,13 @@ The fastest way to kill a reminder habit is notification fatigue. If an app buzz
 Push notifications are only half the system. Silent visual cues on your phone keep progress in view between nudges, so you course-correct without any alert at all.
 
 - **Lock Screen widgets.** Keep a daily progress ring visible the moment you lift your phone, a reminder of your movement target without opening an app.
-- **Home Screen widgets.** Place a step widget where your eyes already land. [Color-customized accents](https://steps.crazylazy.xyz/blog/ios-18-tinted-steps-widgets) in pink or sky blue catch your attention while matching your layout.
+- **Home Screen widgets.** Place a step widget where your eyes already land. [Color-customized accents](https://stepswidget.app/blog/ios-18-tinted-steps-widgets) in pink or sky blue catch your attention while matching your layout.
 
 Pairing active notifications with clean, glanceable widgets builds a supportive environment that makes daily movement feel simple and natural instead of like one more task.
 
 ## A simple setup that covers both
 
-[Steps Widget](https://steps.crazylazy.xyz) combines both halves of this approach in one lightweight app. Its smart move reminders read your Apple Health step data, so they only fire when you have genuinely been inactive, and they respect the active hours you set. Between nudges, its Home Screen, Lock Screen, and Apple Watch widgets keep your progress a glance away.
+[Steps Widget](https://stepswidget.app) combines both halves of this approach in one lightweight app. Its smart move reminders read your Apple Health step data, so they only fire when you have genuinely been inactive, and they respect the active hours you set. Between nudges, its Home Screen, Lock Screen, and Apple Watch widgets keep your progress a glance away.
 
 There is no account, no social feed, and no GPS tracking. Your step data stays private on your device. Download Steps Widget from the App Store, set your active hours, and let the reminders do the timing for you.
 

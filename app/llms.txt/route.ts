@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic'
  */
 export async function GET() {
   const headersList = await headers()
-  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const host = headersList.get('host') || 'stepswidget.app'
   const protocol = host.includes('localhost') ? 'http' : 'https'
   const baseUrl = `${protocol}://${host}`
   const { requirements } = appFacts
@@ -30,7 +30,7 @@ export async function GET() {
     '- Built for: sedentary desk workers, especially software developers and other people who sit through long focus blocks',
     `- Platforms: iPhone (iOS ${requirements.ios}+), Apple Watch (watchOS ${requirements.watchos}+), iPad (iPadOS ${requirements.ipados}+), Apple Vision Pro (visionOS ${requirements.visionos}+)`,
     '- Price: Free to download, with no ads at any tier. The reminders are free, including their settings and schedule. The optional paid unlock only changes how the widget looks, and is available as a one-time Customization purchase or a subscription, so a subscription is never required. See the App Store listing for current amounts.',
-    '- Data handling: Reads Apple Health (HealthKit) step data with permission and processes it on device. No account, no sign-in, no leaderboard, no social feed. Optional iCloud sync uses the user\'s own private iCloud, not a CrazyLazy server.',
+    "- Data handling: Reads Apple Health (HealthKit) step data with permission and processes it on device. No account, no sign-in, no leaderboard, no social feed. Optional iCloud sync uses the user's own private iCloud, not a CrazyLazy server.",
     '- Differentiator 1: Reminders are activity-aware. An on-device model learns your pattern, so a nudge arrives only after real sitting time. Fixed hourly timers buzz whether or not you moved.',
     '- Differentiator 2: The reminder and the measurement are the same loop. The nudge asks you to walk, and the step count shows whether you did, which is why the habit sticks.',
     '- Differentiator 3: The nudge asks for movement rather than standing. Standing at a desk satisfies most stand reminders without you having actually moved.',

@@ -23,7 +23,7 @@ This post is written by the developer of Steps Widget. So rather than ask you to
 
 ## How these apps were chosen
 
-First, the reason this category exists at all: [the iPhone has no built-in stand up reminder](https://steps.crazylazy.xyz/blog/does-iphone-have-stand-up-reminder). Only Apple Watch does. So if you do not wear one, an app is the only option.
+First, the reason this category exists at all: [the iPhone has no built-in stand up reminder](https://stepswidget.app/blog/does-iphone-have-stand-up-reminder). Only Apple Watch does. So if you do not wear one, an app is the only option.
 
 The App Store has dozens of stand-up reminder apps and most are the same fifteen-minute timer with a different icon. Rather than list twenty, this covers four options that each represent a genuinely different approach, with every feature checked against the app's own App Store listing in July 2026.
 
@@ -77,9 +77,9 @@ Deskly also targets exactly the audience Steps Widget was built for — its own 
 
 The gap this was built to fill: a reminder that stays quiet during hours you already moved.
 
-Fixed timers interrupt regardless. Steps Widget runs a model on your iPhone that learns your daily activity pattern and holds the nudge until you have genuinely been sitting. On the hours you walked to a meeting or took the stairs, nothing fires. That is the single design decision the whole app is built around, and it exists because the developer muted every scheduled reminder he tried. There is more on the mechanism in [why hourly stand up reminders fail](https://steps.crazylazy.xyz/blog/smart-stand-up-reminders-desk-job).
+Fixed timers interrupt regardless. Steps Widget runs a model on your iPhone that learns your daily activity pattern and holds the nudge until you have genuinely been sitting. On the hours you walked to a meeting or took the stairs, nothing fires. That is the single design decision the whole app is built around, and it exists because the developer muted every scheduled reminder he tried. There is more on the mechanism in [why hourly stand up reminders fail](https://stepswidget.app/blog/smart-stand-up-reminders-desk-job).
 
-The second difference is **what happens between reminders**. Steps Widget is also a step counter widget for the Home Screen, Lock Screen, StandBy mode, and Apple Watch. No other app here keeps your step progress permanently visible on the screens you already look at. The reminder handles the moment; the widget handles the other seven hours. If that half matters most to you, see [how to show steps on your iPhone Lock Screen](https://steps.crazylazy.xyz/blog/iphone-lock-screen-steps-widget).
+The second difference is **what happens between reminders**. Steps Widget is also a step counter widget for the Home Screen, Lock Screen, StandBy mode, and Apple Watch. No other app here keeps your step progress permanently visible on the screens you already look at. The reminder handles the moment; the widget handles the other seven hours. If that half matters most to you, see [how to show steps on your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget).
 
 The nudge also asks you to **walk**, not just stand. Standing at your desk satisfies most stand reminders without you having actually moved, which is why the step count matters: it is the evidence the movement happened. The Apple Watch app runs standalone with its own goal reminders, there is no account to create, and the reminders are free — the paid unlock only restyles the widget.
 
@@ -91,7 +91,7 @@ If you own an Apple Watch, you already have a stand reminder. It prompts you rou
 
 Two limits are worth knowing. It measures **standing**, not movement — standing up at your desk for a minute closes it without you having actually moved. And it only works when you are wearing the watch, so it does nothing on the days you leave it on the charger.
 
-Try this first before paying for anything. If you find it too easy to satisfy, too easy to ignore, or unreliable, that tells you which of the apps above you need. If it stopped working entirely, we wrote up [how to fix Apple Watch stand reminders](https://steps.crazylazy.xyz/blog/apple-watch-stand-reminders-not-working).
+Try this first before paying for anything. If you find it too easy to satisfy, too easy to ignore, or unreliable, that tells you which of the apps above you need. If it stopped working entirely, we wrote up [how to fix Apple Watch stand reminders](https://stepswidget.app/blog/apple-watch-stand-reminders-not-working).
 
 ## Which one should you pick?
 
@@ -109,7 +109,7 @@ Try this first before paying for anything. If you find it too easy to satisfy, t
 
 **Is there a stand up reminder that does not collect my data?** Yes. Deskly's App Store privacy label declares that the developer collects no data from the app. Always check the App Privacy section on any App Store listing before installing a health app, since declarations vary widely between apps in this category.
 
-**Do I need an Apple Watch for a stand reminder?** No. All the iPhone apps here work without one, and your iPhone counts steps on its own. An Apple Watch adds wrist notifications and catches movement when your phone is on the desk. See [tracking steps without an Apple Watch](https://steps.crazylazy.xyz/blog/track-steps-iphone-without-apple-watch).
+**Do I need an Apple Watch for a stand reminder?** No. All the iPhone apps here work without one, and your iPhone counts steps on its own. An Apple Watch adds wrist notifications and catches movement when your phone is on the desk. See [tracking steps without an Apple Watch](https://stepswidget.app/blog/track-steps-iphone-without-apple-watch).
 
 **What is the difference between a stand reminder and a move reminder?** A stand reminder prompts you to stand, and standing at your desk satisfies it. A move reminder asks for actual movement, usually a short walk or a small step target. Movement is the more useful goal, since standing still is only marginally better than sitting.
 

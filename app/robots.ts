@@ -3,10 +3,10 @@ import { headers } from 'next/headers'
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   const headersList = await headers()
-  const host = headersList.get('host') || 'steps.crazylazy.xyz'
+  const host = headersList.get('host') || 'stepswidget.app'
 
   // Define production hostname. Can be configured via env var if needed.
-  const prodHost = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).host : 'steps.crazylazy.xyz'
+  const prodHost = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).host : 'stepswidget.app'
 
   // Additional production hosts allowed to be indexed alongside prodHost.
   const additionalProdHosts = ['stepswidget.app', 'www.stepswidget.app']

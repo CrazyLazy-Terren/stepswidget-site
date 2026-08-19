@@ -35,7 +35,7 @@ The strongest pedometer and fitness widgets in 2026 share a specific set of capa
 - **Battery-efficient refresh scheduling** — WidgetKit gives each widget a refresh budget, so your battery isn't drained by constant polling
 - **Customizable visual styles** — progress rings, bar charts, minimal number displays, and tinted color schemes that match your wallpaper
 
-Steps Widget by Crazylazy covers all of these. It offers multiple display styles including progress rings and hourly bar charts, supports [iOS 18 tinted widget color schemes](https://steps.crazylazy.xyz/blog/ios-18-tinted-steps-widgets), and processes everything locally.
+Steps Widget by Crazylazy covers all of these. It offers multiple display styles including progress rings and hourly bar charts, supports [iOS 18 tinted widget color schemes](https://stepswidget.app/blog/ios-18-tinted-steps-widgets), and processes everything locally.
 
 ## What makes a pedometer widget truly privacy-conscious?
 
@@ -47,7 +47,7 @@ Privacy in a fitness widget comes down to one question: where does your Health d
 - **No social integration** — leaderboards and friend comparisons require your data to leave the device; privacy-focused apps skip these entirely
 - **Transparent privacy policy** — check that the app explicitly states it does not sell or share Health data with third parties
 
-Steps Widget by Crazylazy is built around this model. It [reads Apple Health data locally](https://steps.crazylazy.xyz/blog/step-counter-widget-iphone), requires no account, and has no social layer. That design keeps your walking habits yours.
+Steps Widget by Crazylazy is built around this model. It [reads Apple Health data locally](https://stepswidget.app/blog/step-counter-widget-iphone), requires no account, and has no social layer. That design keeps your walking habits yours.
 
 **Pro Tip:** _Before installing any fitness widget app, go to Settings > Privacy & Security > Health on your iPhone and review exactly which data categories the app has requested. A step counter needs only "Steps" under Activity. Anything beyond that is worth questioning._
 
@@ -59,7 +59,7 @@ iOS 26, released in September 2025, brought the most significant visual and func
 - **Lock Screen widget expansion** — iOS 26 supports up to four small widgets below the time and one larger widget above it, giving step count a permanent visible spot without unlocking your phone
 - **Interactive widgets** — building on the interactivity introduced in iOS 17 and refined through iOS 18, interactive fitness widgets let you check progress and trigger quick actions without opening the app
 - **StandBy mode support** — when your iPhone charges on its side, full-panel fitness widgets display your step count and progress rings in a nightstand-friendly format
-- **Tinted widget color schemes** — introduced in iOS 18 and carried into iOS 26, [tinted widgets](https://steps.crazylazy.xyz/blog/ios-18-tinted-steps-widgets) let you match your pedometer widget's color to your wallpaper palette
+- **Tinted widget color schemes** — introduced in iOS 18 and carried into iOS 26, [tinted widgets](https://stepswidget.app/blog/ios-18-tinted-steps-widgets) let you match your pedometer widget's color to your wallpaper palette
 - **Real-time ring and step updates** — WidgetKit's refined refresh scheduling keeps fitness data current while protecting battery life
 
 Steps Widget by Crazylazy supports StandBy mode, tinted color customization, and the Liquid Glass aesthetic, so it fits naturally into an iOS 26 setup.
@@ -84,11 +84,11 @@ The fitness widget space in 2026 has a clear split between apps built around pri
 
 ![App developer coding privacy-focused fitness widget](https://csuxjmfbwmkxiegfpljm.supabase.co/storage/v1/object/public/blog-images/organization-46447/1784650460759_App-developer-coding-privacy-focused-fitness-widget.jpeg)
 
-**Steps Widget by Crazylazy** is the most focused option for pure pedometer tracking. It does one job well: showing your Apple Health step count in a clean, customizable widget across every iOS surface. No social features, no account, no cloud. The [Apple Watch integration](https://steps.crazylazy.xyz/blog/apple-health-steps-widget) means your step count is visible on your wrist and your Home Screen simultaneously.
+**Steps Widget by Crazylazy** is the most focused option for pure pedometer tracking. It does one job well: showing your Apple Health step count in a clean, customizable widget across every iOS surface. No social features, no account, no cloud. The [Apple Watch integration](https://stepswidget.app/blog/apple-health-steps-widget) means your step count is visible on your wrist and your Home Screen simultaneously.
 
 **Apple Fitness Rings** is the built-in choice for Apple Watch users. It shows move, exercise, and stand rings locally, requires no third-party app, and updates automatically. Its limitation is that it shows ring progress rather than raw step count, which matters if steps are your primary metric.
 
-**Pedometer++** is the deepest step tracker of the group, with twelve years of history behind it, route mapping, workouts, and streak tracking. Its free tier carries ads and it has no activity-aware move reminder, so the choice between it and a reminder-first app comes down to which problem you are solving — we compare them directly in [Steps Widget vs Pedometer++](https://steps.crazylazy.xyz/blog/steps-widget-vs-pedometer-plus-plus).
+**Pedometer++** is the deepest step tracker of the group, with twelve years of history behind it, route mapping, workouts, and streak tracking. Its free tier carries ads and it has no activity-aware move reminder, so the choice between it and a reminder-first app comes down to which problem you are solving — we compare them directly in [Steps Widget vs Pedometer++](https://stepswidget.app/blog/steps-widget-vs-pedometer-plus-plus).
 
 **Widgetsmith** offers broader customization with Health integration, supporting activity data alongside calendar, weather, and photos. It's the right pick if you want a single app managing multiple widget types, though its feature depth means a longer setup time than a dedicated pedometer app.
 
@@ -120,7 +120,7 @@ If you've read this far, you're looking for a pedometer widget that respects you
 
 ![Steps](https://csuxjmfbwmkxiegfpljm.supabase.co/storage/v1/object/public/blog-images/organization-46447/1784650334526_steps.jpg)
 
-Steps Widget reads your Apple Health step data locally, displays it in your choice of progress rings, hourly bar charts, or minimal number formats, and supports every major iOS surface: Home Screen, Lock Screen, StandBy, and Apple Watch. The tinted color customization and Liquid Glass compatibility mean it looks at home on an iOS 26 setup. There's no account to create, no data leaving your device, and no subscription required to use the core features. You can [download Steps Widget](https://steps.crazylazy.xyz) from the App Store and have it on your Home Screen in under two minutes.
+Steps Widget reads your Apple Health step data locally, displays it in your choice of progress rings, hourly bar charts, or minimal number formats, and supports every major iOS surface: Home Screen, Lock Screen, StandBy, and Apple Watch. The tinted color customization and Liquid Glass compatibility mean it looks at home on an iOS 26 setup. There's no account to create, no data leaving your device, and no subscription required to use the core features. You can [download Steps Widget](https://stepswidget.app) from the App Store and have it on your Home Screen in under two minutes.
 
 ## Key Takeaways
 
