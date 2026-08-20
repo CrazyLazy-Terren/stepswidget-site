@@ -33,11 +33,11 @@ In the foreground the pedometer streams updates, so the number moves as you walk
 
 ## The live count and the Live Activity
 
-With Motion Sensor on, the app shows a live sensor reading near the top of its main screen. **Tap it** to start a [Live Activity](/docs/widgets/standby-and-live-activity) — a count on your Lock Screen and in the Dynamic Island that updates as you walk. Tap again to stop.
+With Motion Sensor on, the app shows a live sensor reading near the top of its main screen. **Tap it** to start a **Live Activity** — a count on your Lock Screen and in the Dynamic Island that updates as you walk. Tap again to stop.
 
 This is the app's answer to "why isn't my widget instant". Widgets are throttled by iOS on purpose; a Live Activity is not, so a walk you are watching gets a live number without the widget system having to change its behaviour.
 
-The catch is that the app pushes those updates itself, so they stop the moment iOS suspends it — pocket the phone and the count freezes at its last value until you open the app again. [StandBy and Live Activity](/docs/widgets/standby-and-live-activity) covers it.
+The catch is that the app pushes those updates itself, so they stop the moment iOS suspends it — pocket the phone and the count freezes at its last value until you open the app again.
 
 ## Battery
 
@@ -74,6 +74,5 @@ Yes, and this is the case it helps most. Without a Watch, your iPhone is your on
 
 ## What to read next
 
-- [StandBy and Live Activity](/docs/widgets/standby-and-live-activity) — where the live count appears.
 - [Widget not updating](/docs/troubleshooting/widget-not-updating) — the refresh chain explained.
 - [The step window](/docs/steps-and-data/step-window) — which slice of time you are watching.

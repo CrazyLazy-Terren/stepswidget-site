@@ -88,9 +88,7 @@ Usually because the iPhone is behind, not the Watch. The Watch is the device on 
 
 Two things speed it up: keeping the devices near each other with Bluetooth on, and turning on **Motion Sensor** on the iPhone, where it is off by default (on the Watch it is on).
 
-Some of the difference is real rather than lag — steps taken with the phone on your desk exist only in the Watch's count, and Health de-duplicates the overlap rather than adding the two together.
-
-Apple Health merges and de-duplicates the two, so the daily total is deliberately not the sum. Bring the devices near each other with Bluetooth on and the totals converge. The [Live Activity](/docs/widgets/standby-and-live-activity) shows the two contributions separately if you want to see the split.
+Some of the difference is real rather than lag: steps taken with the phone on your desk exist only in the Watch's count. Apple Health de-duplicates the overlap rather than adding the two together, so the daily total is deliberately not the sum. The [Live Activity](/docs/steps-and-data/motion-sensor-and-live-activity) shows the two contributions separately if you want to see the split.
 
 ## Does the Watch app drain the battery?
 

@@ -35,7 +35,7 @@ If you want a genuinely live number, that is what [Motion Sensor](/docs/steps-an
 
 ## My Live Activity has stopped moving
 
-Expected, and not a fault. The app pushes those updates itself, so they stop as soon as iOS suspends it — pocket the phone and the count freezes at its last value. Open Steps again and it resumes and catches up. See [StandBy and Live Activity](/docs/widgets/standby-and-live-activity).
+Expected, and not a fault. The app pushes those updates itself, so they stop as soon as iOS suspends it — pocket the phone and the count freezes at its last value. Open Steps again and it resumes and catches up. See [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity).
 
 ## 1. Open the app once
 

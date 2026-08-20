@@ -121,5 +121,5 @@ Touch and hold a widget to drag it. Touch and hold and choose **Remove Widget** 
 ## What to read next
 
 - [Styling widgets](/docs/widgets/widget-styles) — colours, charts, timestamps, and the purchase.
-- [StandBy and Live Activity](/docs/widgets/standby-and-live-activity) — steps while charging, and in the Dynamic Island.
+- [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity) — a live count while you walk.
 - [Widget not updating](/docs/troubleshooting/widget-not-updating) — when the number is stale.

@@ -81,7 +81,7 @@ If Health registers nothing after a restart and a test walk, check **Settings �
 
 Two reasons, and they stack. The Watch is on your wrist all day and the phone is not, so every trip to the kitchen without your phone is a gap in the iPhone's count and not the Watch's. On top of that the iPhone is usually the slower of the two to update, because Motion Sensor is off by default there and on by default on the Watch — see [My Watch and iPhone disagree](/docs/troubleshooting/widget-not-updating#my-watch-and-iphone-disagree).
 
-Neither is wrong — they measured different things, because they were in different places. Health merges them into one daily total, which is the figure Steps shows. The [Live Activity](/docs/widgets/standby-and-live-activity) shows both contributions separately if you want to see the split.
+Neither is wrong — they measured different things, because they were in different places. Health merges them into one daily total, which is the figure Steps shows. The [Live Activity](/docs/steps-and-data/motion-sensor-and-live-activity) shows both contributions separately if you want to see the split.
 
 ## Why did my step count drop or change?
 
