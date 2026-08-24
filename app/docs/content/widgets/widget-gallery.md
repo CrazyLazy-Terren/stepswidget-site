@@ -18,13 +18,13 @@ Steps ships eight widgets: five for the Home Screen and three accessory widgets 
 
 ## Home Screen widgets
 
-| Widget | Sizes | Shows |
-| --- | --- | --- |
-| **Steps Ring** | Small | Current steps with goal progress in a ring |
-| **Steps Timeline** | Small | Steps by hour as a compact bar chart |
-| **Steps Prompt** | Small, Medium | Step count with a motivational message |
-| **Goal Progress** | Small | How close you are to today's goal |
-| **Steps Minimal** | Small | A clean, minimal step count |
+| Widget             | Sizes         | Shows                                      |
+| ------------------ | ------------- | ------------------------------------------ |
+| **Steps Ring**     | Small         | Current steps with goal progress in a ring |
+| **Steps Timeline** | Small         | Steps by hour as a compact bar chart       |
+| **Steps Prompt**   | Small, Medium | Step count with a motivational message     |
+| **Goal Progress**  | Small         | How close you are to today's goal          |
+| **Steps Minimal**  | Small         | A clean, minimal step count                |
 
 **Steps Timeline** shows the shape of the day rather than just the outcome: a flat run of empty bars from 10am to 3pm tells you more than a daily total does. It can also render as a **line chart**, plotting your running total as a climbing curve whose slope shows your momentum — see [Line Chart: the momentum view](/docs/widgets/widget-styles#line-chart-the-momentum-view).
 
@@ -32,11 +32,11 @@ Steps ships eight widgets: five for the Home Screen and three accessory widgets 
 
 ## Lock Screen and accessory widgets
 
-| Widget | Families | Shows |
-| --- | --- | --- |
+| Widget                 | Families                      | Shows                                   |
+| ---------------------- | ----------------------------- | --------------------------------------- |
 | **Steps Complication** | Inline, Circular, Rectangular | Quick step glance in any accessory slot |
-| **Steps Summary** | Rectangular | Compact summary of steps and goal |
-| **Steps Reminder** | Inline | Inline reminder text to stay on track |
+| **Steps Summary**      | Rectangular                   | Compact summary of steps and goal       |
+| **Steps Reminder**     | Inline                        | Inline reminder text to stay on track   |
 
 The same three families serve the iPhone Lock Screen and Apple Watch complication slots, which is why one widget covers both.
 
@@ -82,10 +82,10 @@ That said, with **Smart Rotate** on, iOS decides what is showing when you glance
 
 Widgets do not refresh on a fixed timer. Steps varies how often it asks iOS to redraw, based on how likely the number is to have changed and how likely you are to look at it.
 
-| | iPhone | Apple Watch |
-| --- | --- | --- |
-| Active | about every 5 minutes | about every 5 minutes |
-| Quiet | up to every 30 minutes | up to every 60 minutes |
+|        | iPhone                 | Apple Watch            |
+| ------ | ---------------------- | ---------------------- |
+| Active | about every 5 minutes  | about every 5 minutes  |
+| Quiet  | up to every 30 minutes | up to every 60 minutes |
 
 Three signals push it toward the fast end:
 
@@ -93,7 +93,7 @@ Three signals push it toward the fast end:
 - **This hour is usually active for you** — from a learned profile of your own 24 hours.
 - **You usually open the app around now** — a glance at the widget tends to precede the tap, so those hours are kept fresh too.
 
-It weighs the current hour *and the next one*, so the widget speeds up ahead of your usual walk rather than catching up after it. Everything is measured against your own busiest hour rather than an absolute, so a generally quiet day still gets its fast periods.
+It weighs the current hour _and the next one_, so the widget speeds up ahead of your usual walk rather than catching up after it. Everything is measured against your own busiest hour rather than an absolute, so a generally quiet day still gets its fast periods.
 
 The Watch has the wider range because its refresh budget is tighter. Spending less on quiet stretches leaves more for the moments you actually raise your wrist.
 
@@ -110,16 +110,12 @@ There is no Mac app to install. On macOS Sonoma or later the Mac borrows the wid
 3. Turn on **Use iPhone widgets**.
 4. Right-click the desktop, choose **Edit Widgets**, find **Steps Widget**, and drag one out.
 
-Because the widget is powered by the phone rather than the Mac, it greys out when the iPhone is out of range.
-
-iPad works too, on iPadOS 18.6 or later, with the same touch-and-hold flow as iPhone.
-
 ## Moving and removing
 
 Touch and hold a widget to drag it. Touch and hold and choose **Remove Widget** to delete it. Removing a widget does nothing to your data — your steps are in Apple Health, and the widget is only a window onto them.
 
 ## What to read next
 
-- [Styling widgets](/docs/widgets/widget-styles) — colours, charts, timestamps, and the purchase.
+- [Styling widgets](/docs/widgets/widget-styles) — colours, charts, timestamps, and the subscription.
 - [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity) — a live count while you walk.
 - [Widget not updating](/docs/troubleshooting/widget-not-updating) — when the number is stale.

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { appStoreUrl } from './app-store'
-import { AccentToggle, ThemeToggle } from './theme-toggle'
+import { ThemeToggle } from './theme-toggle'
 
 type SiteNavProps = {
   fixed?: boolean
@@ -32,7 +32,7 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-3">
       {!textOnly && (
-        <div className="relative size-9 overflow-hidden rounded-[12px] shadow-[var(--icon-shadow)]">
+        <div className="relative size-8 ">
           <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="size-full object-cover" priority />
         </div>
       )}
@@ -47,9 +47,9 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
       className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl py-2 sm:py-0 px-5 sm:px-6 lg:px-8`}>
       <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4`}>
         <SiteLogo />
-        <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-muted)] md:flex">
+        <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-strong)] md:flex">
           <div className="group relative py-5">
-            <Link className="inline-flex items-center gap-1 transition hover:text-[var(--text-strong)]" href="/">
+            <Link className="inline-flex items-center gap-1 transition hover:text-[var(--text-muted)]" href="/">
               Product
               <span className="size-1.5 rotate-45 border-b border-r border-current opacity-60 transition group-hover:opacity-100" />
             </Link>
@@ -65,13 +65,12 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
             </div>
           </div>
           {navLinks.map((item) => (
-            <Link key={item.href} className="transition hover:text-[var(--text-strong)]" href={item.href}>
+            <Link key={item.href} className="transition hover:text-[var(--text-muted)]" href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
         <div className="hidden flex-wrap items-center justify-end gap-2 md:flex">
-          <AccentToggle />
           <ThemeToggle />
           {/* <a
             href={appStoreUrl}
@@ -82,7 +81,6 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
           </a> */}
         </div>
         <div className="flex items-center gap-2 md:hidden">
-          <AccentToggle compact />
           <ThemeToggle compact />
           <details className="group relative">
             <summary className="flex size-9 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">

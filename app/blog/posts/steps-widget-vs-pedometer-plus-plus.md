@@ -42,7 +42,7 @@ This post is written by the developer of Steps Widget, so treat the verdict acco
 | Data export                    | Not documented                             | CSV and .steps export                                               |
 | Ads in the free tier           | No                                         | Yes, removed by Premium                                             |
 | What is behind the paywall     | Widget appearance only; reminders are free | Functional features: offline maps, Expedition Mode, Live Activities |
-| One-time unlock option         | Yes                                        | No, subscription only                                               |
+| What a lapsed subscription costs you | Nothing you already applied; only switching styles stops      | Ads return and the paid features switch off                         |
 | Device support                 | Recent iPhone and Apple Watch only         | Reaches back to older hardware                                      |
 | Account required               | No                                         | No                                                                  |
 
@@ -92,15 +92,15 @@ The shape of the two models differs more than the numbers do, so here is the str
 
 **Pedometer++** is free with ads in the free tier. Premium is a subscription — monthly or yearly, with a trial and Family Sharing — and it removes the ads while unlocking Expedition Mode, Live Activities, live and offline maps, Maps on Apple Watch, and premium app icons. There is no one-time purchase option; if you want the paid features, you subscribe.
 
-**Steps Widget** is free with no ads at any tier. The important part: **the move reminders are free**, including their settings and schedule. Nothing that makes the app work sits behind a paywall. The paid unlock only changes how the widget _looks_ — extra styles and colours — and you can buy it once or subscribe.
+**Steps Widget** is free with no ads at any tier. The important part: **the move reminders are free**, including their settings and schedule. Nothing that makes the app work sits behind a paywall. The Customization subscription only changes how the widget _looks_ — extra styles and colours — and it is what lets you _apply_ a different one. A style you have already applied keeps working after the subscription lapses.
 
 Three differences matter and none depends on the current price:
 
 - **Ads.** Pedometer++ shows them in the free tier. Steps Widget does not, at any tier.
 - **What is gated.** Steps Widget puts only cosmetics behind payment. Pedometer++ Premium gates functional features like offline maps and Expedition Mode.
-- **A way out of subscriptions.** Steps Widget's one-time purchase means you never have to subscribe. Pedometer++ Premium has no equivalent.
+- **What lapsing costs you.** Let Steps Widget's subscription go and you keep the style you are using; you simply cannot switch to a different one until you resubscribe. Let Pedometer++ Premium go and the ads come back and the paid features switch off.
 
-Steps Widget is the cheaper app on both its one-time and subscription options. But price is the wrong way to choose here. If you will genuinely use route mapping, offline maps, and workout tracking, Pedometer++ Premium is fair value for a much larger app. Paying less for software that does not solve your problem is not a saving.
+Both apps charge by subscription, so the real question is what stops working when you stop paying. But price is the wrong way to choose here. If you will genuinely use route mapping, offline maps, and workout tracking, Pedometer++ Premium is fair value for a much larger app. Paying less for software that does not solve your problem is not a saving.
 
 ## Which app is more accurate?
 
@@ -150,9 +150,9 @@ A reasonable setup is Pedometer++ for history, streaks, and weekend walks, with 
 
 **Is Pedometer++ free?** The core features are free, but the free tier includes ads. Pedometer++ Premium is a subscription that removes ads and unlocks Expedition Mode, Live Activities, offline maps, and premium icons. There is no one-time purchase option.
 
-**Does Steps Widget require a subscription?** No. The app is free to download, shows no ads, and the move reminders are entirely free including their settings. The optional paid unlock only changes how the widget looks, and you can buy it once rather than subscribe.
+**Does Steps Widget require a subscription?** Not to use it. The app is free to download, shows no ads, and the move reminders are entirely free including their settings. The optional Customization subscription only changes how the widget looks — an active subscription is what lets you apply a different style, and one you have already applied keeps working if the subscription lapses.
 
-**Is Steps Widget cheaper than Pedometer++?** Yes, on both its one-time and subscription options. It also shows no ads in its free tier, where Pedometer++ does. Check both App Store listings for current pricing.
+**Is Steps Widget cheaper than Pedometer++?** Yes, comparing the two subscriptions. It also shows no ads in its free tier, where Pedometer++ does. Check both App Store listings for current pricing.
 
 **Which app has better widgets?** Both offer a full set of Home Screen and Lock Screen widgets plus Apple Watch complications. Steps Widget adds StandBy mode support and iOS 18 tinted colour matching. Pedometer++ widgets can show distance, stairs, and other metrics that Steps Widget does not display.
 
@@ -169,7 +169,7 @@ A reasonable setup is Pedometer++ for history, streaks, and weekend walks, with 
 | Different problems   | Pedometer++ is a step tracker. Steps Widget is a move reminder that also shows steps.                                                                                                                                                           |
 | Pedometer++ wins on  | Depth, history, routes, workouts, accessibility, data export, accuracy edge cases, track record, device support                                                                                                                                 |
 | Steps Widget wins on | Activity-aware nudges, control over reminder look and sound, no ads, on-device processing                                                                                                                                                       |
-| Pricing              | Steps Widget has no ads, free reminders, and gates only widget appearance behind an optional one-time unlock or subscription. Pedometer++ has ads in its free tier and gates functional features behind a subscription with no one-time option. |
+| Pricing              | Steps Widget has no ads, free reminders, and gates only the act of applying a widget style behind an optional subscription — a style you already applied survives a lapse. Pedometer++ has ads in its free tier and gates functional features behind a subscription.                     |
 | Accuracy             | Effectively the same source. Pedometer++ adds a device-reconciliation layer that helps when your hands are occupied.                                                                                                                            |
 | Can you run both     | Yes. Both read Apple Health, so there is no conflict and negligible battery cost.                                                                                                                                                               |
 

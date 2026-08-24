@@ -62,9 +62,9 @@ The Watch app is not read-only. From the wrist you can change:
 - **Motion Sensor**
 - **Goal Reminder**
 - Complication style, chart type, and timestamp format for each accessory type
-- The Customization purchase
+- The Customization subscription
 
-Everything syncs with your iPhone. Buy on the Watch and it applies to the phone.
+Everything syncs with your iPhone. Subscribe on the Watch and it applies to the phone.
 
 ## Reminders on your wrist
 

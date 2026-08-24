@@ -43,7 +43,7 @@ If you are on an app not listed here and it works for you, keep it. The goal is 
 | Water and eye-break reminders        | No                                                | Yes                      | No                                              | No                              |
 | App size                             | Very large                                        | Very small               | Small                                           | Built in                        |
 | Data collection declared             | Tracks you across other companies' apps and sites | None                     | Anonymous analytics, not linked to you          | Apple Health                    |
-| Pricing model                        | Subscription                                      | One-time lifetime unlock | Reminders free; paying only restyles the widget | Free                            |
+| Pricing model                        | Subscription                                      | One-time lifetime unlock | Reminders free; a subscription only applies widget styles | Free                            |
 
 ## Moova: best for guided movement breaks
 
@@ -81,7 +81,7 @@ Fixed timers interrupt regardless. Steps Widget runs a model on your iPhone that
 
 The second difference is **what happens between reminders**. Steps Widget is also a step counter widget for the Home Screen, Lock Screen, StandBy mode, and Apple Watch. No other app here keeps your step progress permanently visible on the screens you already look at. The reminder handles the moment; the widget handles the other seven hours. If that half matters most to you, see [how to show steps on your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget).
 
-The nudge also asks you to **walk**, not just stand. Standing at your desk satisfies most stand reminders without you having actually moved, which is why the step count matters: it is the evidence the movement happened. The Apple Watch app runs standalone with its own goal reminders, there is no account to create, and the reminders are free — the paid unlock only restyles the widget.
+The nudge also asks you to **walk**, not just stand. Standing at your desk satisfies most stand reminders without you having actually moved, which is why the step count matters: it is the evidence the movement happened. The Apple Watch app runs standalone with its own goal reminders, there is no account to create, and the reminders are free — the optional subscription only restyles the widget.
 
 **Where it loses:** no guided stretches, no breathing exercises, no water or eye reminders, and no Mac app. Deskly collects less data. Moova does more once you are standing. And Steps Widget requires recent iOS and watchOS releases, so older hardware is excluded where Moova and Deskly reach further back.
 
@@ -113,7 +113,7 @@ Try this first before paying for anything. If you find it too easy to satisfy, t
 
 **What is the difference between a stand reminder and a move reminder?** A stand reminder prompts you to stand, and standing at your desk satisfies it. A move reminder asks for actual movement, usually a short walk or a small step target. Movement is the more useful goal, since standing still is only marginally better than sitting.
 
-**Are these apps free?** All have a free tier. Moova uses a subscription for its full feature set, and Deskly offers a one-time lifetime unlock. Steps Widget keeps the reminders themselves free and only charges to change how the widget looks, as a one-time purchase or a subscription. Apple's built-in stand reminder is completely free. Check each App Store listing for current pricing.
+**Are these apps free?** All have a free tier. Moova uses a subscription for its full feature set, and Deskly offers a one-time lifetime unlock. Steps Widget keeps the reminders themselves free and only charges to change how the widget looks: an active subscription is what lets you apply a different style, and one you have already applied keeps working if it lapses. Apple's built-in stand reminder is completely free. Check each App Store listing for current pricing.
 
 ## Key takeaways
 

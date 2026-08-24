@@ -77,7 +77,7 @@ export function HeroPreview() {
   }, [])
 
   return (
-    <div ref={stageRef} className="phone-stage relative mx-auto w-full max-w-6xl">
+    <div ref={stageRef} className="phone-stage relative mx-auto w-full ">
       <div className="relative -mx-5 min-h-110 sm:min-h-120 lg:min-h-180 overflow-hidden">
         <div className="phone-back absolute bottom-[-10%] left-[-22%] z-10 w-[120%] max-w-[760px]  sm:left-[7%] sm:w-[72%] lg:left-[12%] lg:top-[0%]">
           <Image
@@ -103,17 +103,15 @@ export function HeroPreview() {
           />
         </div>
       </div>
-      <div className="my-14 max-w-2xl">
+      <div className="my-24 max-w-xl">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widget gallery</p>
-        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">
-          Choose the step widget style that fits your day.
-        </h2>
+        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Choose the style that fits your.</h2>
         <p className="mt-5 text-pretty text-lg leading-8 text-[var(--text-muted)]">
-          Minimal step counts, progress rings, hourly charts, and Lock Screen views keep your progress visible across iPhone, Apple Watch, and Mac.
+          Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
         </p>
       </div>
 
-      <div className="relative h-90 overflow-hidden -mx-5">
+      <div className="relative h-100 overflow-hidden -mx-5">
         <div className="phone-grids w-[200%] left-[-50%] sm:left-0 sm:w-full absolute top-[-10%] sm:top-[-240px] z-5 ">
           <Image
             src="/assets/steps-widget-grid.png"

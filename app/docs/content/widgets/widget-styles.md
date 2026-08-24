@@ -2,7 +2,7 @@
 slug: widget-styles
 title: Styling widgets
 metaTitle: Widget Styles, Colours, and Display Options in Steps Widget
-description: Per-widget colour palettes, gradients, appearance, chart type, timestamp format, milestones, and exactly what the Customization purchase covers.
+description: Per-widget colour palettes, gradients, appearance, chart type, timestamp format, milestones, and exactly what the Customization subscription covers.
 order: 2
 updated: 2026-07-28
 readingTime: 5 min read
@@ -58,25 +58,31 @@ Line Chart suits the **Apple Watch** Rectangular complication well. The slot is 
 
 Use Bar Chart when you want to check a specific hour, and Line Chart when you want the overall trend.
 
-## What the purchase covers
+## What the subscription covers
 
 What is free and what is paid:
 
 **Free forever** — goal reminders and every setting behind them, the on-device model and its training, reminder tone, the reminder schedule, your daily goal, Insight, Live Activity, the Apple Watch app, Motion Sensor, the step window settings, and a working widget on every surface.
 
-**Paid** — additional widget styles, colours, and gradient themes.
+**Paid** — applying additional widget styles, colours, and gradient themes.
 
-No feature the app needs to function is behind the paywall. Without the purchase you still get the full reminder system and your step count on every surface. The purchase changes appearance only.
+No feature the app needs to function is behind the paywall. Without the subscription you still get the full reminder system and your step count on every surface. It changes appearance only.
 
-## Restoring a purchase
+## What happens if the subscription lapses
 
-Purchases are tied to your Apple Account, not to an app account — Steps has no accounts. On a new device or after a reinstall, sign in with the same Apple Account and use the restore option in the app.
+**The style you are already using stays.** A lapse does not revert your widgets or take a look away from you — what is on your Home Screen keeps rendering exactly as it did.
 
-Buying on Apple Watch applies to your iPhone and vice versa. One purchase, not one per device.
+What an active subscription buys is the act of **applying a different style**. Switch off, and you keep what you have; resubscribe when you want to change it again.
+
+## Restoring a subscription
+
+The subscription is tied to your Apple Account, not to an app account — Steps has no accounts. On a new device or after a reinstall, sign in with the same Apple Account and use the restore option in the app.
+
+Subscribing on Apple Watch applies to your iPhone and vice versa. One subscription, not one per device.
 
 ## Does changing style affect my data?
 
-No. Styles are presentation only. Your steps live in Apple Health, so switching styles — or letting a subscription lapse — never costs you history. Widgets fall back to a standard style and keep showing the same numbers.
+No. Styles are presentation only. Your steps live in Apple Health, so switching styles — or letting a subscription lapse — never costs you history. Your widgets keep the style they are set to and keep showing the same numbers.
 
 ## The app icon
 

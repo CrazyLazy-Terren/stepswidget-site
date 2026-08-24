@@ -57,14 +57,21 @@ export const metadata: Metadata = {
 }
 
 type Theme = 'dark' | 'light'
-type Accent = 'pink' | 'sky'
+type Accent = 'neutral' | 'pink' | 'sky'
+
+/**
+ * The accent the site renders with.
+ *
+ * Fixed rather than read from the `accent` cookie: the AccentToggle that wrote
+ * that cookie is hidden in the nav, so honouring a stale `pink`/`sky` value
+ * would strand earlier visitors on a palette they have no way to leave. The
+ * `pink` and `sky` rules still exist in globals.css — restore the toggle and
+ * the cookie read together to bring them back.
+ */
+const accent: Accent = 'neutral'
 
 function normalizeTheme(value: string | undefined): Theme {
   return value === 'dark' ? 'dark' : 'light'
-}
-
-function normalizeAccent(value: string | undefined): Accent {
-  return value === 'sky' ? 'sky' : 'pink'
 }
 
 export default async function RootLayout({
@@ -74,7 +81,6 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies()
   const theme = normalizeTheme(cookieStore.get('theme')?.value)
-  const accent = normalizeAccent(cookieStore.get('accent')?.value)
 
   return (
     <html lang="en" className="h-full antialiased" data-theme={theme} data-accent={accent} suppressHydrationWarning>

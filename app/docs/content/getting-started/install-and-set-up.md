@@ -13,7 +13,7 @@ keywords:
   - iPhone pedometer widget install
 ---
 
-Steps is free to download and shows no ads. Setup is four steps: install, allow Health access, set a daily goal, and add a widget. Goal reminders and every setting behind them are free — the optional purchase only changes how widgets look.
+Steps is free to download and shows no ads. Setup is four steps: install, allow Health access, set a daily goal, and add a widget. Goal reminders and every setting behind them are free — the optional subscription only changes how widgets look.
 
 ## Requirements
 
@@ -64,7 +64,7 @@ In **Settings**, turn on **Goal Reminder** and allow notifications when iOS asks
 
 This is the part that changes behaviour. A model on your iPhone projects how many steps you will finish the day with, and sends a reminder only when that projection falls short of your goal — so a day you are already walking stays quiet. [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work) explains the decision in full.
 
-The reminder settings are free, including the schedule and the message tone. Nothing about reminders sits behind the purchase.
+The reminder settings are free, including the schedule and the message tone. Nothing about reminders sits behind the subscription.
 
 ## Do I need an account?
 
@@ -76,7 +76,7 @@ Sign in to iCloud and your settings — goal, reminder preferences, widget style
 
 Yes. It is free to download with no ads at any tier, and the free tier is not time-limited. The whole reminder system costs nothing: the on-device model, the projection, the schedule, the message style, and the Apple Watch reminders.
 
-The optional **Customization** purchase adds widget styles, colours, and gradient themes. It is available as a one-time purchase or a monthly or yearly subscription, and a subscription is never required. Prices are on the App Store listing.
+The optional **Customization** subscription lets you apply additional widget styles, colours, and gradient themes. An active subscription is needed to *change* to a different style; a style you have already applied keeps working if the subscription lapses. Prices are on the App Store listing.
 
 ## What to read next
 

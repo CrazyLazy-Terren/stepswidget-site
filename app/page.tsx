@@ -16,47 +16,71 @@ export const metadata: Metadata = {
   },
 }
 
-const featureCards = [
+const glanceCards = [
   {
-    title: 'It projects how your day will end',
+    title: 'Styled to fit the way you use your phone',
+    eyebrow: 'Widget styles',
+    description: 'Your steps can look at home on your Home Screen. Pick a look that belongs there — light, dark, tinted, and a colour of your own.',
+    image: '/assets/f01.png',
+    // A tall Home Screen capture: anchor the crop to the top so the widgets
+    // stay in frame instead of a centre band of wallpaper.
+    imageClassName: 'object-top',
+    href: '/docs/widgets/widget-gallery',
+    linkLabel: 'Every widget style',
+  },
+  {
+    title: 'On every screen you already look at',
+    eyebrow: 'Home Screen, Lock Screen, Watch, Mac',
+    description: 'Home Screen, Lock Screen, StandBy, Apple Watch, and your Mac. Your steps, always one glance away.',
+    image: '/assets/f02.png',
+    href: '/docs/widgets/widget-gallery',
+    linkLabel: 'Where it can live',
+  },
+]
+
+const nudgeCards = [
+  {
+    title: 'It knows how your day is going to end',
     eyebrow: 'On-device model',
     description:
-      'A model on your iPhone predicts the step count you are heading for. A reminder arrives only when that projection falls short of your goal, so a day you are already walking stays quiet.',
-    image: '/assets/feature-nudges.png',
+      'A model on your iPhone projects the step count you are heading for. A nudge arrives only when that projection falls short of your goal, so a day you are already walking stays quiet.',
+    image: '/assets/f03.png',
     href: '/docs/goal-reminders/how-goal-reminders-work',
     linkLabel: 'How the projection works',
   },
   {
-    title: 'It sounds the way you ask it to',
-    eyebrow: 'Apple Intelligence',
+    title: 'Your day, your way',
+    eyebrow: 'Reminder settings',
     description:
-      'Describe the tone you want in plain language and each reminder is rewritten on device to match. Encouraging, short and direct, or something of your own.',
-    image: '/assets/feature-styles.png',
-    href: '/docs/goal-reminders/reminder-messages',
-    linkLabel: 'Setting the tone',
-  },
-  {
-    title: 'Progress stays one glance away',
-    eyebrow: 'Home Screen, Lock Screen, Watch',
-    description: 'Between reminders your step count sits on the screens you already look at, including your Mac desktop. No fitness app to open.',
-    image: '/assets/feature-every-screen.png',
-    href: '/docs/widgets/widget-gallery',
-    linkLabel: 'Every widget',
+      'Set the day to match your routine. Move the day boundary up to six hours past midnight, or use a rolling 24-hour window for shift work. Local Sunset makes it easier to get a nudge as the light fades. Insight shows a month of real days under a draggable goal line, so the target comes from your own activity.',
+    image: '/assets/f04.png',
+    href: '/docs/goal-reminders/reminder-timing-and-devices',
+    linkLabel: 'Timing and settings',
   },
 ]
 
+const notThis = ['No feeds.', 'No streaks.', 'No guilt.', 'No noise.']
+
 const trustFacts = [
   { label: 'Step data', value: 'Read from Apple Health on device' },
-  { label: 'The model', value: 'Trains and runs on your iPhone' },
+  { label: 'The model', value: 'Trains and runs on your device' },
   { label: 'Account', value: 'None — there is nothing to sign in to' },
-  { label: 'Reminders', value: 'Free, including every setting' },
+  { label: 'Nudges', value: 'Free, including every setting' },
+]
+
+const storyParagraphs = [
+  'Steps started with a simple idea: if you want to move more, make it easier to stay aware of how much you have already moved. That is where the glance came from.',
+  'Step widgets are supposed to make your progress visible, but many feel like something you have to compromise your Home Screen for. I wanted to make one people would actually want to keep there — something that looks like it belongs on their phone. Because when your steps are always in sight, you do not have to remember to check.',
+  'Then came the nudge. Most reminders work on a schedule: every hour, every day, the same notification whether you need it or not. Eventually, you mute them.',
+  'Nudge takes a different approach. It runs quietly on your device and looks at your actual day. When you are on track to fall short of your goal, it speaks up when you actually might need it.',
+  'Steps is built solo, backwards from what seems to actually help people move more — not from what a fitness app is supposed to include.',
 ]
 
 const privacyCards = [
   {
-    title: 'The model stays on your phone',
+    title: 'The model stays on your device',
     description:
-      'Your activity pattern is learned on your iPhone and retrained there. Nothing about your routine is uploaded, and no server is involved in deciding when to remind you.',
+      'Your activity pattern is learned on your iPhone and retrained there. Nothing about your routine is uploaded, and no server is involved in deciding when to nudge you.',
   },
   {
     title: 'Three read-only Health types',
@@ -68,14 +92,14 @@ const privacyCards = [
   },
   {
     title: 'iCloud carries settings only',
-    description: 'Your goal, reminder preferences, and widget styles follow you through your own private iCloud. Your step history stays in Apple Health.',
+    description: 'Your goal, nudge preferences, and widget styles follow you through your own private iCloud. Your step history stays in Apple Health.',
   },
 ]
 
 const watchCards = [
   {
-    title: 'Reminders on your wrist',
-    description: 'Goal reminders run on Apple Watch itself, so a tap still reaches you when your iPhone is in another room.',
+    title: 'Nudges on your wrist',
+    description: 'Goal nudges run on Apple Watch itself, so a tap still reaches you when your iPhone is in another room.',
     image: '/assets/s01.png',
   },
   {
@@ -85,7 +109,7 @@ const watchCards = [
   },
   {
     title: 'Your style, on your wrist',
-    description: 'Pick a look that matches your watch face from the wrist. Styles and purchases stay in sync with your iPhone.',
+    description: 'Pick a look that matches your watch face from the wrist. Styles and your subscription stay in sync with your iPhone.',
     image: '/assets/w03.png',
   },
 ]
@@ -94,17 +118,17 @@ const faqItems = [
   {
     question: 'What is Steps Widget?',
     answer:
-      'Steps Widget is a step counter and goal reminder app for iPhone. A model on your device projects the step count you are heading for, and reminds you when you are on track to miss your daily goal. It also shows your Apple Health steps on the Home Screen, Lock Screen, Apple Watch, and Mac.',
+      'Steps Widget is a step counter and goal reminder app for iPhone. Your steps sit on your Home Screen in a style you choose, and a model on your device projects the step count you are heading for so it can nudge you when you are on track to miss your daily goal. It works on the Home Screen, Lock Screen, Apple Watch, and Mac.',
   },
   {
     question: 'How is this different from an hourly stand reminder?',
     answer:
-      'An hourly reminder fires on a timer no matter what you did. Steps Widget projects your end-of-day total from your own step history and only sends a reminder when that projection falls short of your goal, so hours where you are already walking stay quiet.',
+      'An hourly reminder fires on a timer no matter what you did, which is why most people mute it. Steps Widget projects your end-of-day total from your own step history and only nudges you when that projection falls short of your goal, so hours where you are already walking stay quiet.',
   },
   {
-    question: 'Can I change how the reminders are worded?',
+    question: 'Can I change how the nudges are worded?',
     answer:
-      'Yes. Describe the tone you want in plain language and Apple Intelligence rewrites each reminder on your device to match. A live preview in Settings shows the exact wording your current day would produce. This requires iOS 26 with Apple Intelligence; otherwise you get the standard wording.',
+      'Yes. Describe the tone you want in plain language and Apple Intelligence rewrites each nudge on your device to match. A live preview in Settings shows the exact wording your current day would produce. This requires iOS 26 with Apple Intelligence; otherwise you get the standard wording.',
   },
   {
     question: 'Does the on-device model send my activity anywhere?',
@@ -114,12 +138,12 @@ const faqItems = [
   {
     question: 'What does the app read from Apple Health?',
     answer:
-      'Three read-only types: your step count, your stand hours, and your daily activity summary. It never writes to Apple Health, and it does not request location for step counting. Location is used only if you turn on Local Sunset, which shifts evening reminders earlier.',
+      'Three read-only types: your step count, your stand hours, and your daily activity summary. It never writes to Apple Health, and it does not request location for step counting. Location is used only if you turn on Local Sunset, which shifts evening nudges earlier.',
   },
   {
     question: 'Is Steps Widget free?',
     answer:
-      'The app is free to download with no ads at any tier, and the entire reminder system is free, including the on-device model and every setting behind it. An optional Customization purchase adds extra widget styles and colours, available as a one-time purchase or a subscription.',
+      'The app is free to download with no ads at any tier, and the entire nudge system is free, including the on-device model and every setting behind it. An optional Customization subscription lets you apply extra widget styles and colours. An active subscription is only needed to change to a different style — one you have already applied keeps working if it lapses.',
   },
   {
     question: 'Can I show my step count on the iPhone Lock Screen?',
@@ -133,7 +157,7 @@ const faqItems = [
   {
     question: 'Does Steps Widget support Apple Watch?',
     answer:
-      'Yes. Steps Widget runs on Apple Watch with its own settings and goal reminders, so you are notified even when your iPhone is not nearby. You can change styles and buy the unlock from the wrist, and purchases sync with your iPhone automatically.',
+      'Yes. Steps Widget runs on Apple Watch with its own settings and goal nudges, so you are notified even when your iPhone is not nearby. You can change styles and subscribe from the wrist, and the subscription syncs with your iPhone automatically.',
   },
   {
     question: 'Why is my step widget not updating right away?',
@@ -178,6 +202,48 @@ function SectionHeading({ eyebrow, title, centered = false, children }: { eyebro
   )
 }
 
+type FeatureCard = {
+  title: string
+  eyebrow: string
+  description: string
+  image: string
+  /** Extra classes on the `<Image>`, for cards whose art needs a different crop. */
+  imageClassName?: string
+  href: string
+  linkLabel: string
+}
+
+/** The card used by both the glance and the nudge sections. */
+function FeatureCards({ cards }: { cards: readonly FeatureCard[] }) {
+  return (
+    <div className="mt-14 grid gap-5 sm:grid-cols-2">
+      {cards.map((feature) => (
+        <article
+          key={feature.title}
+          className="flex flex-col rounded-2xl overflow-hidden border border-[color:var(--border)] bg-[var(--surface-1)]  transition duration-300 hover:border-[color:var(--border-strong)]">
+          <div className="relative aspect-[16/9]   bg-[var(--surface-media)]">
+            <Image
+              src={feature.image}
+              alt={`${feature.title} preview`}
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className={`object-cover ${feature.imageClassName ?? ''}`.trim()}
+            />
+          </div>
+          <div className="flex flex-1 flex-col p-6">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
+            <h3 className="mt-6 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
+            <p className="mt-2 flex-1 leading-7 text-[var(--text-muted)]">{feature.description}</p>
+            <ArrowLink href={feature.href} className="mt-5 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+              {feature.linkLabel}
+            </ArrowLink>
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
@@ -186,13 +252,13 @@ export default function Home() {
 
       <PageSection paddingY="top" overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
         <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
-          <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Step counter and goal reminder</p>
+          <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Styled steps. Smart nudges.</p>
           <h1 className="mt-12 text-balance text-center text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">
-            The Nudge at a Glance.
+            The Glance. The Nudge.
           </h1>
           <p className="mt-6 max-w-3xl text-center text-pretty text-lg leading-8 text-[var(--text-muted)]">
-            Stay active enough to be healthy, without starting a new fitness hobby. Since the phone already collects step data, this widget just places that
-            number right on the home screen.
+            <strong>A glance that stays in sight. A nudge when it’s time to move.</strong> Steps live on the screen in a style that belongs there, while an
+            on-device model speaks up only when a little extra motivation is needed.
           </p>
 
           <AppStoreButton className="mt-12" />
@@ -215,35 +281,49 @@ export default function Home() {
       </PageSection>
 
       <PageSection id="features" containerClassName="border-t border-[color:var(--border)] pt-14 pb-0!">
-        <SectionHeading eyebrow="Why hourly timers fail" title="A reminder that knows what you already did." centered>
-          An hourly alarm buzzes whether or not you moved, so it interrupts you when there is nothing to act on and you mute it within a week. Steps Widget
-          decides from a forecast instead.
+        <SectionHeading eyebrow="The glance" title="A glance when you need to know." centered>
+          Your steps are already there — right on your screen, styled to fit your and the wallpaper. Just a quick look at how much you have moved today.
         </SectionHeading>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {featureCards.map((feature) => (
-            <article
-              key={feature.title}
-              className="flex flex-col rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-2 transition duration-300 hover:border-[color:var(--border-strong)]">
-              <div className="relative aspect-[40/27] overflow-hidden rounded-[8px] bg-[var(--surface-media)]">
-                <Image src={feature.image} alt={`${feature.title} preview`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
-                <h3 className="mt-3 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
-                <p className="mt-3 flex-1 leading-7 text-[var(--text-muted)]">{feature.description}</p>
-                <ArrowLink href={feature.href} className="mt-5 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
-                  {feature.linkLabel}
-                </ArrowLink>
-              </div>
-            </article>
+        <FeatureCards cards={glanceCards} />
+      </PageSection>
+
+      <PageSection id="nudge" containerClassName="pt-14 pb-0!">
+        <SectionHeading eyebrow="The nudge" title="A little nudge, when it counts." centered>
+          An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
+        </SectionHeading>
+
+        <FeatureCards cards={nudgeCards} />
+
+        <ul className="mt-14 grid  overflow-hidden rounded-[12px] border border-(--border-strong) sm:grid-cols-4 -p-1">
+          {notThis.map((line) => (
+            <li
+              key={line}
+              className="bg-[var(--surface-1)] sm:border-x border-y border-[color:var(--border)] px-5 py-6 text-center text-lg font-medium tracking-[-0.01em] text-[var(--text-strong)]">
+              {line}
+            </li>
+          ))}
+        </ul>
+      </PageSection>
+
+      <PageSection id="story" containerClassName="grid gap-10 pt-14 lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">The story</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Built backwards.</h2>
+          <ArrowLink href="/about" className="mt-5 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+            About the developer
+          </ArrowLink>
+        </div>
+        <div className="max-w-2xl space-y-5 text-lg leading-8 text-[var(--text-muted)]">
+          {storyParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
       </PageSection>
 
       <PageSection id="watch" containerClassName="border-[color:var(--border)] pt-14">
         <SectionHeading eyebrow="Apple Watch" title="Not required,<br/>but it is the better setup." centered>
-          The Watch counts the walks your phone slept through, delivers reminders as a tap wherever the phone is, and is the only source of the stand hours the
+          The Watch counts the walks your phone slept through, delivers nudges as a tap wherever the phone is, and is the only source of the stand hours the
           chart marks.
         </SectionHeading>
 
@@ -259,12 +339,14 @@ export default function Home() {
 
         <div className="grid gap-5 sm:grid-cols-3">
           {watchCards.map((card) => (
-            <div key={card.title} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5">
-              <div className="relative mb-6 aspect-[40/27] overflow-hidden rounded-[8px] bg-[var(--surface-media)]">
+            <div key={card.title} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] overflow-hidden">
+              <div className="relative  aspect-[40/27]  bg-[var(--surface-media)]">
                 <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
               </div>
-              <h3 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
-              <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+              <div className="p-6 ">
+                <h3 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
+                <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -278,7 +360,7 @@ export default function Home() {
 
       <PageSection id="privacy" containerClassName="border-t border-[color:var(--border)] pt-14">
         <SectionHeading eyebrow="Private by construction" title="Everything happens on your device.">
-          The model that decides when to remind you runs on your iPhone, not on a server. There is no account, no social feed, and nothing to sign in to.
+          The model that decides when to nudge you runs on your iPhone, not on a server. There is no account, no social feed, and nothing to sign in to.
         </SectionHeading>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
@@ -321,13 +403,13 @@ export default function Home() {
       </PageSection>
 
       <PageSection paddingY="bottom" containerClassName=" border-[color:var(--border)] pt-14">
-        <div className="rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-2)] p-8 text-center sm:p-12">
+        <div className="rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-1)] p-8 text-center sm:p-12">
           <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="mx-auto rounded-[18px]" />
           <h2 className="mx-auto mt-7 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
-            Sit less. Move more.
+            The glance. The nudge. That&rsquo;s it.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
-            Free to download, no ads at any tier, and the reminders cost nothing.
+            Your steps when you want to see them, and a nudge when you need to move. Free to download, no ads at any tier, and the nudges cost nothing.
           </p>
           <div className="mt-8 flex justify-center">
             <AppStoreButton />

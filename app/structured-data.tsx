@@ -16,7 +16,7 @@ export const appFacts = {
   legalName: 'CrazyLazy OU',
   appStoreId: '6756297788',
   appStoreUrl: 'https://apps.apple.com/app/apple-store/id6756297788?pt=120739140&ct=website&mt=8',
-  logo: 'https://www.crazylazy.xyz/icon/stepsWidget.png',
+  logo: `${siteUrl}/assets/stepswidget-icon.png`,
   screenshot: 'https://static.crazylazy.xyz/pic/f01.png',
   /** Minimum OS versions as listed on the App Store product page. */
   requirements: {
@@ -26,14 +26,14 @@ export const appFacts = {
     visionos: '2.6',
   },
   features: [
-    'Reminders to get out of your chair and move, sent only after real sitting time',
-    'An on-device model that learns your daily activity pattern and times the nudge around it',
-    'Reminder settings, including how each nudge looks and sounds, all free',
-    'A daily step count that measures whether the movement actually happened',
-    'Step progress on the Home Screen, Lock Screen, StandBy mode, and Apple Watch',
+    'Step widgets styled to match the Home Screen, in light, dark, and tinted looks',
+    'An on-device model that projects your end-of-day step count and nudges you only when you are heading for a miss',
+    'Nudge settings, including how each nudge is worded and sounds, all free',
+    'A daily step count that shows whether the movement actually happened',
+    'Step progress on the Home Screen, Lock Screen, StandBy mode, Apple Watch, and the Mac desktop',
     'Standalone Apple Watch app with its own goal reminders',
     'Apple Health (HealthKit) step data read on device',
-    'Paid widget customisation: styles, colours, and tinted matching for iOS 18 and later',
+    'Optional Customization subscription to apply extra widget styles, colours, and tinted matching for iOS 18 and later',
     'No account, no leaderboard, no social feed',
     'Optional iCloud sync across your own devices',
   ],
@@ -44,21 +44,24 @@ export const appFacts = {
    * stale number in copy or in schema is worse than no number. The App Store
    * listing is the single source of truth for what things cost.
    *
-   * The model in one line: the reminder is free, you pay to restyle the widget.
-   * Nothing that makes the app *work* sits behind the paywall.
+   * The model in one line: the reminder is free, you subscribe to *apply* a new
+   * widget style. Nothing that makes the app *work* sits behind the paywall,
+   * and a style already applied survives a lapsed subscription — only
+   * switching to a different one needs an active subscription.
    */
   pricing: {
     freeToDownload: true,
     adsInFreeTier: false,
     remindersFree: true,
-    paidUnlockCovers: 'widget appearance and styles',
-    hasOneTimeUnlock: true,
+    paidUnlockCovers: 'applying widget styles and colours',
+    hasOneTimeUnlock: false,
     hasSubscription: true,
+    appliedStyleSurvivesLapse: true,
   },
   /** Who the product is actually built for. Drives copy and keyword focus. */
   audience: [
-    'Software developers and other desk-bound knowledge workers',
-    'Remote and hybrid workers who sit through long focus blocks',
+    'People who want their step count on the Home Screen without opening a fitness app',
+    'Software developers, desk workers, and remote knowledge workers who lose whole afternoons to a screen',
     'People who want movement prompts without a fitness app, an account, or social comparison',
   ],
 } as const
@@ -136,12 +139,12 @@ export function applicationSchema() {
     downloadUrl: appFacts.appStoreUrl,
     installUrl: appFacts.appStoreUrl,
     description:
-      'An app that reminds desk workers to get out of the chair and move. An on-device model learns when you have actually been sitting, so the nudge lands at the right moment, and your daily step count from Apple Health is how you see whether the movement happened. Reminders are free; paying customises how the widget looks.',
+      'A step counter with two halves: the glance and the nudge. Your Apple Health steps sit on the Home Screen, Lock Screen, Apple Watch, and Mac in a style you choose, and an on-device model projects the step count you are heading for so it nudges you only when you are on track to miss your goal. Nudges are free; an optional subscription lets you apply extra widget styles.',
     screenshot: appFacts.screenshot,
     featureList: [...appFacts.features],
     audience: {
       '@type': 'Audience',
-      audienceType: 'Desk workers, software developers, and remote knowledge workers who sit for long stretches',
+      audienceType: 'People who want their step count visible on the Home Screen and a movement nudge only on the days they need one',
     },
     // Only the download price is asserted, because it is the one figure that
     // cannot go stale. Paid tiers are described in `featureList` without
@@ -150,7 +153,7 @@ export function applicationSchema() {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
-      category: 'Free download with no ads. Reminders are free; an optional one-time unlock or subscription customises widget appearance.',
+      category: 'Free download with no ads. Reminders are free; an optional subscription applies extra widget styles, and a style already applied keeps working without one.',
       availability: 'https://schema.org/InStock',
     },
     author: { '@id': organizationId },

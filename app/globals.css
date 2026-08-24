@@ -14,13 +14,23 @@
   --border: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.18);
   --header-bg: rgba(5, 5, 6, 0.76);
-  --surface-1: rgba(255, 255, 255, 0.04);
-  --surface-2: rgba(255, 255, 255, 0.06);
-  --surface-3: #101012;
-  --surface-media: #17171a;
-  --surface-window: #121214;
-  --surface-window-inner: #0a0a0b;
-  --surface-metric: linear-gradient(145deg, #18181b, #0e0e10);
+  /*
+   * Surfaces are mixed from --accent-color rather than hard-coded, so a change
+   * of accent carries the whole palette with it. The translucent pair sits over
+   * the page (and over the hero glow); the opaque ones anchor on --page-bg so
+   * each accent keeps its own ground.
+   */
+  --surface-1: color-mix(in oklch, var(--accent-color) 4%, transparent);
+  --surface-2: color-mix(in oklch, var(--accent-color) 6%, transparent);
+  --surface-3: color-mix(in oklch, var(--accent-color) 7%, var(--page-bg));
+  --surface-media: color-mix(in oklch, var(--accent-color) 11%, var(--page-bg));
+  --surface-window: color-mix(in oklch, var(--accent-color) 8%, var(--page-bg));
+  --surface-window-inner: color-mix(in oklch, var(--accent-color) 3%, var(--page-bg));
+  --surface-metric: linear-gradient(
+    145deg,
+    color-mix(in oklch, var(--accent-color) 12%, var(--page-bg)),
+    color-mix(in oklch, var(--accent-color) 5%, var(--page-bg))
+  );
   --control-bg: rgba(255, 255, 255, 0.05);
   --control-active: #ffffff;
   --control-active-text: #070707;
@@ -35,7 +45,7 @@
   );
   --hero-rule: rgba(255, 255, 255, 0.2);
   --progress-track: rgba(255, 255, 255, 0.1);
-  --cta-bg: linear-gradient(135deg, color-mix(in oklch, var(--accent-sky) 14%, transparent), color-mix(in oklch, var(--accent-pink) 12%, transparent));
+  --cta-bg: linear-gradient(135deg, color-mix(in oklch, var(--accent-color) 10%, transparent), color-mix(in oklch, var(--accent-color) 4%, transparent));
   --grid-line: rgba(255, 255, 255, 0.025);
   --soft-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 1%);
   --hero-shadow: 0 50px 140px rgba(0, 0, 0, 0.55);
@@ -48,9 +58,12 @@
   --accent-pink: oklch(76% 0.16 354);
   --accent-green: oklch(87.1% 0.15 154.449);
   --accent-sky: oklch(80.9% 0.105 251.813);
-  --accent-color: var(--accent-pink);
+  /* The default. Barely-warm grey, so labels and links read as emphasis
+     rather than as a brand colour. */
+  --accent-neutral: oklch(85% 0.008 60);
+  --accent-color: var(--accent-neutral);
   --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 18%, transparent);
-  --accent-color-soft: var(--accent-pink-soft);
+  --accent-color-soft: color-mix(in oklch, var(--accent-color) 14%, transparent);
   --accent-green-soft: rgba(52, 211, 153, 0.14);
   --accent-glow: color-mix(in oklch, var(--accent-color) 68%, transparent);
   --accent-soft-glow: color-mix(in oklch, var(--accent-color) 24%, transparent);
@@ -59,6 +72,98 @@
 
 html[data-theme='light'] {
   color-scheme: light;
+  --background: #ffffff;
+  --foreground: #292927;
+  --page-bg: #ffffff;
+  /*
+   * Pulled back from near-black on purpose. Dark-on-light reads heavier than
+   * light-on-dark at the same contrast ratio, so matching the dark theme's
+   * numbers here produces a harsher page than the dark one. These sit at
+   * roughly 0.7x of dark's ratios against their own ground, which is where the
+   * two themes actually *look* alike. Every step is an alpha of --text-strong,
+   * so the ramp stays coherent over a tinted card as well as over the page.
+   */
+  --text-strong: #292927;
+  --text-main: rgba(41, 41, 39, 0.83);
+  --text-muted: rgba(41, 41, 39, 0.69);
+  /* The one step that is not softened: it carries the small uppercase labels,
+     so it holds dark's 4.0 ratio rather than dropping to 0.8x with the rest. */
+  --text-subtle: rgba(41, 41, 39, 0.6);
+  --border: rgba(41, 41, 39, 0.08);
+  --border-strong: rgba(41, 41, 39, 0.19);
+  --header-bg: rgba(255, 255, 255, 0.78);
+  /* Inverted from the dark theme: the page is the lightest thing on screen, so
+     a card is the accent mixed *into* white rather than white laid over it. */
+  --surface-1: color-mix(in oklch, var(--accent-color) 3%, transparent);
+  --surface-2: color-mix(in oklch, var(--accent-color) 5.5%, transparent);
+  --surface-3: color-mix(in oklch, var(--accent-color) 2%, var(--page-bg));
+  --surface-media: color-mix(in oklch, var(--accent-color) 9%, var(--page-bg));
+  --surface-window: color-mix(in oklch, var(--accent-color) 2%, var(--page-bg));
+  --surface-window-inner: color-mix(in oklch, var(--accent-color) 4.5%, var(--page-bg));
+  --surface-metric: linear-gradient(
+    145deg,
+    var(--page-bg),
+    color-mix(in oklch, var(--accent-color) 8%, var(--page-bg))
+  );
+  --control-bg: rgba(41, 41, 39, 0.032);
+  --control-active: #292927;
+  --control-active-text: #ffffff;
+  --button-bg: #292927;
+  --button-text: #ffffff;
+  --app-store-bg: #292927;
+  --hero-glow: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent-color) 14%, transparent),
+    color-mix(in oklch, var(--accent-color) 10%, transparent) 36%,
+    rgba(255, 255, 255, 0)
+  );
+  --hero-rule: rgba(41, 41, 39, 0.14);
+  --progress-track: rgba(41, 41, 39, 0.07);
+  --cta-bg: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--accent-color) 10%, transparent),
+    rgba(255, 255, 255, 0.78) 42%,
+    color-mix(in oklch, var(--accent-color) 8%, transparent)
+  );
+  --grid-line: rgba(41, 41, 39, 0.016);
+  --soft-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 2%);
+
+  --hero-shadow: 0 44px 120px rgba(28, 26, 24, 0.16);
+  --cta-shadow: 0 34px 100px rgba(28, 26, 24, 0.12);
+  --app-shadow: 0 12px 24px color-mix(in oklch, var(--accent-color) 12%, transparent);
+  --app-hover-shadow: 0 12px 56px color-mix(in oklch, var(--accent-color) 16%, transparent);
+  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 22%, transparent);
+  --accent-pink-option: oklch(57% 0.22 7);
+  --accent-sky-option: oklch(54.6% 0.245 262.881);
+  --accent-pink: oklch(57% 0.22 7);
+  --accent-green: oklch(49% 0.14 160);
+  --accent-sky: oklch(0.5535 0.2629 260.39);
+  /* Darker than --text-muted, so an eyebrow or a link still reads as emphasis
+     without carrying a hue — but lighter than --text-strong, so it never
+     out-shouts a heading. */
+  --accent-neutral: oklch(41.8% 0.008 75);
+  --accent-color: var(--accent-neutral);
+  --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 14%, transparent);
+  --accent-color-soft: color-mix(in oklch, var(--accent-color) 10%, transparent);
+  --accent-green-soft: rgba(18, 128, 92, 0.1);
+  --accent-glow: color-mix(in oklch, var(--accent-color) 68%, transparent);
+  --accent-soft-glow: color-mix(in oklch, var(--accent-color) 22%, transparent);
+  --accent-selection: color-mix(in oklch, var(--accent-color) 32%, transparent);
+}
+
+/*
+ * `pink` and `sky` are no longer the default, and the AccentToggle that
+ * selected them is currently hidden in the nav. The rules are kept whole so
+ * unhiding the toggle restores both palettes with no further work — the warm
+ * surfaces below are the ones that used to live in the base blocks above.
+ */
+html[data-accent='pink'] {
+  --cta-bg: linear-gradient(135deg, color-mix(in oklch, var(--accent-sky) 14%, transparent), color-mix(in oklch, var(--accent-pink) 12%, transparent));
+  --accent-color: var(--accent-pink);
+  --accent-color-soft: var(--accent-pink-soft);
+}
+
+html[data-theme='light'][data-accent='pink'] {
   --background: #fffaf7;
   --foreground: #171312;
   --page-bg: #fffaf7;
@@ -69,13 +174,6 @@ html[data-theme='light'] {
   --border: rgba(120, 76, 67, 0.16);
   --border-strong: rgba(120, 76, 67, 0.28);
   --header-bg: rgba(255, 250, 247, 0.78);
-  --surface-1: rgba(255, 255, 255, 0.72);
-  --surface-2: rgba(255, 247, 243, 0.92);
-  --surface-3: #ffffff;
-  --surface-media: #fff3ee;
-  --surface-window: rgba(255, 255, 255, 0.9);
-  --surface-window-inner: #fff7f3;
-  --surface-metric: linear-gradient(145deg, #ffffff, #fff1eb);
   --control-bg: rgba(23, 19, 18, 0.05);
   --control-active: #171312;
   --control-active-text: #ffffff;
@@ -97,38 +195,16 @@ html[data-theme='light'] {
     color-mix(in oklch, var(--accent-pink) 12%, transparent)
   );
   --grid-line: rgba(120, 76, 67, 0.055);
-  --soft-shadow: 0 18px 50px color-mix(in oklch, var(--accent-color) 12%, white 2%);
-
   --hero-shadow: 0 44px 120px rgba(104, 54, 42, 0.18);
   --cta-shadow: 0 34px 100px rgba(104, 54, 42, 0.14);
-  --app-shadow: 0 12px 24px color-mix(in oklch, var(--accent-color) 12%, transparent);
-  --app-hover-shadow: 0 12px 56px color-mix(in oklch, var(--accent-color) 16%, transparent);
-  --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 22%, transparent);
-  --accent-pink-option: oklch(57% 0.22 7);
-  --accent-sky-option: oklch(54.6% 0.245 262.881);
-  --accent-pink: oklch(57% 0.22 7);
-  --accent-green: oklch(49% 0.14 160);
-  --accent-sky: oklch(0.5535 0.2629 260.39);
   --accent-color: var(--accent-pink);
-  --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 14%, transparent);
   --accent-color-soft: var(--accent-pink-soft);
-  --accent-green-soft: rgba(18, 128, 92, 0.1);
-  --accent-glow: color-mix(in oklch, var(--accent-color) 68%, transparent);
-  --accent-soft-glow: color-mix(in oklch, var(--accent-color) 22%, transparent);
-  --accent-selection: color-mix(in oklch, var(--accent-color) 32%, transparent);
 }
 
 html[data-accent='sky'] {
   --background: #03070b;
   --page-bg: #03070b;
   --header-bg: rgba(3, 7, 11, 0.76);
-  --surface-1: rgba(147, 197, 253, 0.045);
-  --surface-2: rgba(147, 197, 253, 0.07);
-  --surface-3: #071017;
-  --surface-media: #0b1822;
-  --surface-window: #0a141c;
-  --surface-window-inner: #050b11;
-  --surface-metric: linear-gradient(145deg, #0d1a24, #061018);
   --control-bg: rgba(147, 197, 253, 0.06);
   --border: rgba(147, 197, 253, 0.1);
   --border-strong: rgba(147, 197, 253, 0.18);
@@ -139,6 +215,7 @@ html[data-accent='sky'] {
     rgba(5, 5, 6, 0)
   );
   --grid-line: rgba(147, 197, 253, 0.025);
+  --cta-bg: linear-gradient(135deg, color-mix(in oklch, var(--accent-sky) 14%, transparent), color-mix(in oklch, var(--accent-pink) 12%, transparent));
   --app-hover-shadow: 0 24px 60px color-mix(in oklch, var(--accent-color) 20%, transparent);
   --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 26%, transparent);
   --accent-color: var(--accent-sky);
@@ -149,13 +226,6 @@ html[data-theme='light'][data-accent='sky'] {
   --background: #f7fbff;
   --page-bg: #f7fbff;
   --header-bg: rgba(247, 251, 255, 0.78);
-  --surface-1: rgba(255, 255, 255, 0.74);
-  --surface-2: rgba(239, 248, 255, 0.94);
-  --surface-3: #ffffff;
-  --surface-media: #eef8ff;
-  --surface-window: rgba(255, 255, 255, 0.9);
-  --surface-window-inner: #f2f9ff;
-  --surface-metric: linear-gradient(145deg, #ffffff, #edf8ff);
   --control-bg: rgba(37, 99, 235, 0.06);
   --border: rgba(37, 99, 235, 0.16);
   --border-strong: rgba(37, 99, 235, 0.28);
@@ -166,6 +236,12 @@ html[data-theme='light'][data-accent='sky'] {
     rgba(255, 250, 247, 0)
   );
   --grid-line: rgba(37, 99, 235, 0.055);
+  --cta-bg: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--accent-sky) 12%, transparent),
+    rgba(255, 255, 255, 0.78) 42%,
+    color-mix(in oklch, var(--accent-pink) 12%, transparent)
+  );
   --app-hover-shadow: 0 24px 60px color-mix(in oklch, var(--accent-color) 16%, transparent);
   --icon-shadow: 0 0 32px color-mix(in oklch, var(--accent-color) 20%, transparent);
   --accent-color: var(--accent-sky);

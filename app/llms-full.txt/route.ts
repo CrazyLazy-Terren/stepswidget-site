@@ -31,7 +31,7 @@ export async function GET() {
     '',
     `- Name: ${appFacts.name} (published by ${appFacts.legalName})`,
     `- Platforms: iOS ${requirements.ios}+, iPadOS ${requirements.ipados}+, watchOS ${requirements.watchos}+, visionOS ${requirements.visionos}+`,
-    '- Price: Free to download with no ads. The reminders are free, including their settings. The optional paid unlock only changes widget appearance, as a one-time Customization purchase or a subscription; a subscription is never required. See the App Store listing for current amounts.',
+    '- Price: Free to download with no ads. The reminders are free, including their settings. The optional Customization subscription only changes widget appearance: an active subscription is required to apply a different style, and a style already applied keeps working after it lapses. There is no one-time purchase. See the App Store listing for current amounts.',
     "- Data handling: Apple Health (HealthKit) read on device. No account, no leaderboard. Optional iCloud sync uses the user's own private iCloud.",
     '- Differentiator: activity-aware move reminders that fire only after real sedentary time',
     `- App Store: ${appFacts.appStoreUrl}`,
