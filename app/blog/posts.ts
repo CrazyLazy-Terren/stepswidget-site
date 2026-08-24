@@ -19,7 +19,13 @@ export type BlogPost = {
   readingTime: string
   order?: number
   keywords: string[]
-  image: string
+  /**
+   * Hero image shown above the post body, as a `/assets/…` path.
+   * Optional: a post that leads with its own inline imagery can omit it rather
+   * than repeat a picture the body already shows. Social cards fall back to
+   * the site-wide OG image, and the primary-image schema node is dropped.
+   */
+  image?: string
   content: string
 }
 
@@ -41,7 +47,7 @@ function parsePostFile(filename: string): BlogPost {
     readingTime: getString(frontMatter, 'readingTime', label),
     order: getOptionalNumber(frontMatter, 'order', label),
     keywords: getStringList(frontMatter, 'keywords', label),
-    image: getString(frontMatter, 'image', label),
+    image: getOptionalString(frontMatter, 'image'),
     content: body,
   }
 }

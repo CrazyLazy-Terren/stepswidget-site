@@ -54,7 +54,7 @@ export default function BlogPage() {
       datePublished: post.date,
       dateModified: post.updated ?? post.date,
       articleSection: post.category,
-      image: [absoluteUrl(post.image)],
+      ...(post.image ? { image: [absoluteUrl(post.image)] } : {}),
       author: { '@id': organizationId },
     })),
   }

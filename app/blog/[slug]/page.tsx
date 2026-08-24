@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { isValidElement, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from '../../arrow'
@@ -6,7 +7,7 @@ import { notFound } from 'next/navigation'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { ContentShell } from '../../content-shell'
-import { siteName } from '../../shared-metadata'
+import { defaultOgImages, siteName } from '../../shared-metadata'
 import {
   JsonLd,
   absoluteUrl,
@@ -25,9 +26,47 @@ import {
 import { extractFaqEntries } from '../extract-faq'
 import { getBlogPost, getBlogPosts } from '../posts'
 
+/** Flattens a heading's rendered children back to the plain text it reads as. */
+function toPlainText(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') {
+    return String(node)
+  }
+
+  if (Array.isArray(node)) {
+    return node.map(toPlainText).join('')
+  }
+
+  if (isValidElement(node)) {
+    return toPlainText((node.props as { children?: ReactNode }).children)
+  }
+
+  return ''
+}
+
+/**
+ * Anchor id for a heading, so posts can link to their own sections with a
+ * `[Jump](#some-heading)` table of contents. Matches the usual GitHub-style
+ * slug: lowercase, punctuation dropped, spaces to hyphens.
+ */
+function headingId(children: ReactNode) {
+  return toPlainText(children)
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+}
+
 const markdownComponents: Components = {
-  h2: ({ children }) => <h2 className="my-8 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h2>,
-  h3: ({ children }) => <h3 className="mt-8 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{children}</h3>,
+  h2: ({ children }) => (
+    <h2 id={headingId(children)} className="my-8 scroll-mt-24 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 id={headingId(children)} className="mt-8 scroll-mt-24 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
+      {children}
+    </h3>
+  ),
   p: ({ children }) => <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold text-[var(--text-strong)]">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
@@ -111,7 +150,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
-  const images = [{ url: post.image, alt: post.title }]
+  // A post without its own hero still needs a social card, so fall back to the
+  // site-wide OG image rather than shipping a link preview with no picture.
+  const images = post.image ? [{ url: post.image, alt: post.title }] : defaultOgImages
 
   return {
     title: post.metaTitle,
@@ -163,8 +204,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.description,
     url,
     mainEntityOfPage: { '@id': url },
-    image: { '@id': `${url}#primaryimage` },
-    thumbnailUrl: absoluteUrl(post.image),
+    // Only claim a primary image when the post actually has one on the page —
+    // pointing `image` at a stock banner the article never shows is the kind of
+    // mismatch structured-data validators flag.
+    ...(post.image
+      ? {
+          image: { '@id': `${url}#primaryimage` },
+          thumbnailUrl: absoluteUrl(post.image),
+        }
+      : {}),
     datePublished: post.date,
     // Falls back to the publish date when a post has never been revised.
     dateModified: post.updated ?? post.date,
@@ -194,7 +242,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // article in isolation still gets the product facts.
     applicationSchema(),
     webPageSchema({ url, name: post.metaTitle, description: post.description, image: post.image }),
-    imageSchema(post.image, `${url}#primaryimage`, `${post.title} hero`),
+    ...(post.image ? [imageSchema(post.image, `${url}#primaryimage`, `${post.title} hero`)] : []),
     articleSchema,
     breadcrumbSchema(
       [
@@ -215,7 +263,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <JsonLd id={`schema-post-${post.slug}`} data={graph} />
       <ContentShell eyebrow={post.category} title={post.title} description={post.description}>
-        <article className="mx-auto max-w-5xl rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6  sm:p-12">
+        <article className="mx-auto max-w-5xl  p-0  sm:p-12">
           <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--text-subtle)]">
             <time dateTime={post.date}>
               {new Intl.DateTimeFormat('en', {
@@ -228,9 +276,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span>{post.readingTime}</span>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-3xl">
-            <Image src={post.image} alt={`${post.title} hero`} width={900} height={600} sizes=" 100vw, 896px" className="h-auto w-full object-cover" priority />
-          </div>
+          {post.image && (
+            <div className="mt-8 overflow-hidden rounded-3xl">
+              <Image src={post.image} alt={`${post.title} hero`} width={900} height={600} sizes=" 100vw, 896px" className="h-auto w-full object-cover" priority />
+            </div>
+          )}
 
           <div className="mt-8">
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
