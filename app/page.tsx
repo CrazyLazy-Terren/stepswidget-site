@@ -80,7 +80,7 @@ const privacyCards = [
   {
     title: 'The model stays on your device',
     description:
-      'Your activity pattern is learned on your iPhone and retrained there. Nothing about your routine is uploaded, and no server is involved in deciding when to nudge you.',
+      'Your activity pattern is learned on your iPhone or Apple Watch and retrained there. Nothing about your routine is uploaded, and no server is involved in deciding when to nudge you.',
   },
   {
     title: 'Three read-only Health types',
@@ -100,7 +100,7 @@ const watchCards = [
   {
     title: 'Nudges on your wrist',
     description: 'Goal nudges run on Apple Watch itself, so a tap still reaches you when your iPhone is in another room.',
-    image: '/assets/s01.png',
+    image: '/assets/w01.png',
   },
   {
     title: 'Steps at a glance',
@@ -109,7 +109,7 @@ const watchCards = [
   },
   {
     title: 'Your style, on your wrist',
-    description: 'Pick a look that matches your watch face from the wrist. Styles and your subscription stay in sync with your iPhone.',
+    description: 'Match your watch face. Your style and settings stay in sync across your devices.',
     image: '/assets/w03.png',
   },
 ]
@@ -252,7 +252,7 @@ export default function Home() {
 
       <PageSection paddingY="top" overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
         <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
-          <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Styled steps. Smart nudges.</p>
+          <p className="mt-12 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Styled steps. Smart nudges.</p>
           <h1 className="mt-12 text-balance text-center text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">
             The Glance. The Nudge.
           </h1>
@@ -327,21 +327,21 @@ export default function Home() {
           chart marks.
         </SectionHeading>
 
-        <div className="relative mx-auto my-14 aspect-[1] max-w-2xl overflow-hidden">
+        <div className="relative mx-auto my-14 aspect-[9/7]  overflow-hidden">
           <Image
             src="/assets/watch_feature.png"
             alt="Steps Widget step counts on two Apple Watch faces alongside iPhone Lock Screen and Home Screen widgets"
             fill
-            sizes="(max-width: 880px) 80vw, 672px"
+            sizes="(max-width: 1280px) 100vw, 1272px"
             className="object-contain"
           />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-3">
           {watchCards.map((card) => (
-            <div key={card.title} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] overflow-hidden">
-              <div className="relative  aspect-[40/27]  bg-[var(--surface-media)]">
-                <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
+            <div key={card.title} className="rounded-4xl border border-[color:var(--border)] bg-[var(--surface-1)] overflow-hidden">
+              <div className="relative  aspect-[3/4]  bg-[var(--surface-media)]">
+                <Image src={card.image} alt={`${card.title} preview`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover object-center" />
               </div>
               <div className="p-6 ">
                 <h3 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
@@ -360,7 +360,7 @@ export default function Home() {
 
       <PageSection id="privacy" containerClassName="border-t border-[color:var(--border)] pt-14">
         <SectionHeading eyebrow="Private by construction" title="Everything happens on your device.">
-          The model that decides when to nudge you runs on your iPhone, not on a server. There is no account, no social feed, and nothing to sign in to.
+          The model that decides when to nudge you runs entirely on your device. No account, no sign-in, no social feed, and no server needed.
         </SectionHeading>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
@@ -409,7 +409,7 @@ export default function Home() {
             The glance. The nudge. That&rsquo;s it.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
-            Your steps when you want to see them, and a nudge when you need to move. Free to download, no ads at any tier, and the nudges cost nothing.
+            See your steps when you want them. Get a nudge when you need to move. Free to download, no ads, and nudges are always free.
           </p>
           <div className="mt-8 flex justify-center">
             <AppStoreButton />

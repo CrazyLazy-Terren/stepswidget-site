@@ -78,7 +78,7 @@ export function HeroPreview() {
 
   return (
     <div ref={stageRef} className="phone-stage relative mx-auto w-full ">
-      <div className="relative -mx-5 min-h-110 sm:min-h-120 lg:min-h-180 overflow-hidden">
+      <div className="relative -mx-5  min-h-110 sm:min-h-120 lg:min-h-180 overflow-hidden">
         <div className="phone-back absolute bottom-[-10%] left-[-22%] z-10 w-[120%] max-w-[760px]  sm:left-[7%] sm:w-[72%] lg:left-[12%] lg:top-[0%]">
           <Image
             src="/assets/iphone-back.png"
@@ -103,7 +103,7 @@ export function HeroPreview() {
           />
         </div>
       </div>
-      <div className="my-24 max-w-xl">
+      <div className="my-24 pt-24 max-w-xl">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widget gallery</p>
         <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Choose the style that fits your.</h2>
         <p className="mt-5 text-pretty text-lg leading-8 text-[var(--text-muted)]">
