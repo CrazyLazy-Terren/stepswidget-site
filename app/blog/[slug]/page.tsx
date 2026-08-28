@@ -57,11 +57,22 @@ function headingId(children: ReactNode) {
 }
 
 const markdownComponents: Components = {
-  h2: ({ children }) => (
-    <h2 id={headingId(children)} className="my-8 scroll-mt-24 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
-      {children}
-    </h2>
-  ),
+  // `id` is only supplied by remark-gfm's auto-generated footnote label; every
+  // other heading gets its slug from its own text. Posts that cite sources use
+  // footnote syntax, so relabel that section "References" rather than the
+  // generic "Footnotes" GitHub uses.
+  h2: ({ children, id }) => {
+    const isFootnoteLabel = id === 'footnote-label'
+
+    return (
+      <h2
+        id={isFootnoteLabel ? 'references' : headingId(children)}
+        className="my-8 scroll-mt-24 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]"
+      >
+        {isFootnoteLabel ? 'References' : children}
+      </h2>
+    )
+  },
   h3: ({ children }) => (
     <h3 id={headingId(children)} className="mt-8 scroll-mt-24 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
       {children}
@@ -70,11 +81,12 @@ const markdownComponents: Components = {
   p: ({ children }) => <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold text-[var(--text-strong)]">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
-  a: ({ href, children }) => {
+  a: ({ href, children, id }) => {
     const isExternal = /^https?:\/\//.test(href ?? '')
     return (
       <a
         href={href}
+        id={id}
         className="font-medium text-[var(--accent-color)] underline underline-offset-2 hover:opacity-80"
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
         {children}
@@ -83,7 +95,11 @@ const markdownComponents: Components = {
   },
   ul: ({ children }) => <ul className="mb-4 ml-5 list-disc space-y-2 text-lg leading-8 text-[var(--text-muted)]">{children}</ul>,
   ol: ({ children }) => <ol className="mb-4 ml-5 list-decimal space-y-2 text-lg leading-8 text-[var(--text-muted)]">{children}</ol>,
-  li: ({ children }) => <li className="pl-1">{children}</li>,
+  li: ({ children, id }) => (
+    <li id={id} className="scroll-mt-24 pl-1">
+      {children}
+    </li>
+  ),
   blockquote: ({ children }) => (
     <blockquote className="my-4 border-l-4 border-[color:var(--border-strong)] pl-4 italic text-[var(--text-muted)]">{children}</blockquote>
   ),
