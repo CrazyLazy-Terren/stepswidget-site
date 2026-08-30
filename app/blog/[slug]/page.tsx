@@ -87,7 +87,7 @@ const markdownComponents: Components = {
       <a
         href={href}
         id={id}
-        className="font-medium text-[var(--accent-color)] underline underline-offset-2 hover:opacity-80"
+        className="font-medium text-[var(--accent-color)] underline underline-offset-2 hover:opacity-80 [&:has(img)]:no-underline"
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
         {children}
       </a>
@@ -122,18 +122,37 @@ const markdownComponents: Components = {
   thead: ({ children }) => <thead className="bg-[var(--surface-media)]">{children}</thead>,
   th: ({ children }) => <th className="border-b border-[color:var(--border)] px-3 py-2 font-semibold text-[var(--text-strong)]">{children}</th>,
   td: ({ children }) => <td className="border-b border-[color:var(--border)] px-3 py-2 text-[var(--text-muted)]">{children}</td>,
-  img: ({ src, alt }) => (
-    <span className="my-4 block overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] shadow-sm">
-      <Image
-        src={typeof src === 'string' ? src : ''}
-        alt={alt ?? ''}
-        width={800}
-        height={500}
-        sizes="(max-width: 768px) 100vw, 800px"
-        className="h-auto w-full object-cover"
-      />
-    </span>
-  ),
+  img: ({ src, alt }) => {
+    const resolved = typeof src === 'string' ? src : ''
+
+    // App icons (`*-icon.*`) are square marks shown inline — usually in a
+    // comparison table — so they skip the full-width media frame that inline
+    // photos get.
+    if (/-icon\.[a-z]+$/i.test(resolved)) {
+      return (
+        <Image
+          src={resolved}
+          alt={alt ?? ''}
+          width={56}
+          height={56}
+          className="inline-block h-14 w-14 rounded-[22%] border border-[color:var(--border)] shadow-sm"
+        />
+      )
+    }
+
+    return (
+      <span className="my-4 block overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] shadow-sm">
+        <Image
+          src={resolved}
+          alt={alt ?? ''}
+          width={800}
+          height={500}
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="h-auto w-full object-cover"
+        />
+      </span>
+    )
+  },
 }
 
 type BlogPostPageProps = {

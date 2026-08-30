@@ -76,6 +76,57 @@ const storyParagraphs = [
   'Steps is built solo, backwards from what seems to actually help people move more — not from what a fitness app is supposed to include.',
 ]
 
+type Review = {
+  /** The review's own title, as left on the App Store. */
+  title: string
+  body: string
+  author: string
+  /** Storefront the review was written in, as shown in App Store Connect. */
+  location: string
+  date: string
+  /** Stars the reviewer left, out of five. */
+  rating: number
+  /** The developer's public reply, where one was given. */
+  reply?: string
+}
+
+/**
+ * Real App Store reviews, quoted verbatim.
+ *
+ * Same rule as the omitted `aggregateRating` in structured-data.tsx: nothing
+ * here is written, tidied, or paraphrased on the app's behalf. Only add an
+ * entry that exists on the live App Store listing, and copy the wording
+ * exactly — including the reviewer's own punctuation.
+ */
+const reviews: readonly Review[] = [
+  {
+    title: 'flawless',
+    body: 'does what it says on the tin. helps me get off my arse !',
+    author: 'scarlet27itsme',
+    location: 'Australia',
+    date: 'Aug 12, 2026',
+    rating: 5,
+  },
+  {
+    title: 'Simple Widgets syncs with Apple Health/Watch',
+    body: 'Was looking for a way to read the step count in Apple Health without opening the Health app - this seems to fit exactly for it.',
+    author: 'Jiandal',
+    location: 'Australia',
+    date: 'Jun 22, 2026',
+    rating: 5,
+    reply: 'I’m glad to hear that! I built one myself since I couldn’t find one that I liked.',
+  },
+  {
+    title: 'Free and simple',
+    body: 'Just wanted a simple widget that shows my count without all the faff that comes with other health apps. Does the job and has plenty of colour and format options in the free version. Thank you',
+    author: 'Alioooo',
+    location: 'United Kingdom',
+    date: 'Apr 17, 2026',
+    rating: 5,
+    reply: 'Thank you! I built this because I couldn’t find one myself. I’m so happy it found its user.',
+  },
+]
+
 const privacyCards = [
   {
     title: 'The model stays on your device',
@@ -211,6 +262,26 @@ type FeatureCard = {
   imageClassName?: string
   href: string
   linkLabel: string
+}
+
+/**
+ * The star row on a review card.
+ *
+ * The count comes from the review itself rather than being hard-coded, so a
+ * future four-star review renders honestly without a code change. The visible
+ * stars are decorative; the rating is announced once as text.
+ */
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <p className="flex items-center gap-0.5 text-[var(--accent-color)]">
+      <span className="sr-only">{`${rating} out of 5 stars`}</span>
+      {Array.from({ length: 5 }, (_, index) => (
+        <svg key={index} viewBox="0 0 24 24" className="size-4" aria-hidden="true" fill={index < rating ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 2.6l2.9 5.88 6.49.95-4.7 4.57 1.11 6.47L12 17.42l-5.8 3.05 1.11-6.47-4.7-4.57 6.49-.95L12 2.6z" strokeLinejoin="round" />
+        </svg>
+      ))}
+    </p>
+  )
 }
 
 /** The card used by both the glance and the nudge sections. */
@@ -376,7 +447,32 @@ export default function Home() {
           How to verify each of these
         </ArrowLink>
       </PageSection>
+      <PageSection id="reviews" containerClassName="border-t border-[color:var(--border)] pt-14">
+        <SectionHeading eyebrow="From the App Store" title="What people actually say." centered>
+          Reviews left on the App Store, quoted as written.
+        </SectionHeading>
 
+        <div className="mt-14 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {reviews.map((review) => (
+            <figure key={review.author} className="rounded-[12px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6">
+              <StarRating rating={review.rating} />
+              <h3 className="mt-4 text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{review.title}</h3>
+              <blockquote className="mt-3 text-lg leading-8 text-[var(--text-muted)]">{review.body}</blockquote>
+
+              {review.reply ? (
+                <div className="mt-6 border-l-2 border-[color:var(--accent-color)] pl-4">
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">Developer reply</p>
+                  <p className="mt-2 leading-7 text-[var(--text-muted)]">{review.reply}</p>
+                </div>
+              ) : null}
+
+              <figcaption className="mt-6 text-sm text-[var(--text-subtle)]">
+                {review.author} &middot; {review.location} &middot; {review.date}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </PageSection>
       <PageSection id="faq" containerClassName="grid gap-10 border-t border-[color:var(--border)] pt-14 lg:grid-cols-[20rem_minmax(0,1fr)]">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">FAQ</p>
