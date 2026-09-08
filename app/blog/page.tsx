@@ -1,10 +1,45 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from '../arrow'
 import { ContentShell } from '../content-shell'
 import { defaultOgImages, siteName } from '../shared-metadata'
 import { JsonLd, absoluteUrl, applicationId, applicationSchema, breadcrumbSchema, organizationId, organizationSchema, websiteSchema } from '../structured-data'
-import { getBlogPosts } from './posts'
+import { type BlogPost, getBlogPosts } from './posts'
+
+/** `2026-09-08` -> `September 8, 2026`. */
+function formatDate(isoDate: string) {
+  return new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(`${isoDate}T00:00:00Z`))
+}
+
+function PostCard({ post }: { post: BlogPost }) {
+  const updatedDate = post.updated ?? post.date
+  return (
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
+      {/* Top corners: category left, updated date right */}
+      <div className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">
+        <span className="text-[var(--accent-color)]">{post.category}</span>
+        <time dateTime={updatedDate}>{formatDate(updatedDate)}</time>
+      </div>
+
+      {/* Center: the content */}
+      <div className="flex flex-col items-start justify-center gap-3 py-10">
+        <h3 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{post.title}</h3>
+        <p className="leading-7 text-[var(--text-muted)]">{post.description}</p>
+      </div>
+
+      {/* Bottom corners: reading time left, Read link right */}
+      <div className="flex items-center justify-between gap-3 text-sm text-[var(--text-subtle)]">
+        <span>{post.readingTime}</span>
+        <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
+          Read <ArrowRight />
+        </span>
+      </div>
+    </Link>
+  )
+}
 
 const title = 'Blog - Steps Widget'
 const description =
@@ -87,6 +122,21 @@ export default function BlogPage() {
     mainEntity: { '@id': `${blogUrl}#postlist` },
   }
 
+  // Newest post gets the highlight treatment; the rest are catalogued by category.
+  const [featuredPost, ...remainingPosts] = blogPosts
+
+  // `blogPosts` is already newest-first, so first-seen order gives category
+  // sections ordered by their freshest post, with posts newest-first inside each.
+  const categorySections: { name: string; posts: BlogPost[] }[] = []
+  for (const post of remainingPosts) {
+    const existing = categorySections.find((section) => section.name === post.category)
+    if (existing) {
+      existing.posts.push(post)
+    } else {
+      categorySections.push({ name: post.category, posts: [post] })
+    }
+  }
+
   return (
     <ContentShell
       eyebrow="Blog"
@@ -110,24 +160,52 @@ export default function BlogPage() {
           ),
         ]}
       />
-      <div className="grid gap-5 lg:grid-cols-3">
-        {blogPosts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6  transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
-            <div className="min-h-[8.75rem]">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{post.category}</p>
-              <h2 className="mt-4 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{post.title}</h2>
+      {featuredPost && (
+        <Link
+          href={`/blog/${featuredPost.slug}`}
+          className="group grid overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-[var(--surface-1)] transition hover:-translate-y-1 hover:border-[color:var(--border-strong)] md:grid-cols-2">
+          {featuredPost.image && (
+            <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:h-full">
+              <Image
+                src={featuredPost.image}
+                alt={`${featuredPost.title} hero`}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+                priority
+              />
             </div>
-            <p className="leading-7 text-[var(--text-muted)]">{post.description}</p>
-            <div className="flex items-center justify-between gap-3 pt-8 text-sm text-[var(--text-subtle)]">
-              <span>{post.readingTime}</span>
+          )}
+          <div className="flex flex-col gap-4 p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Latest · {featuredPost.category}</p>
+            <h2 className="text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">{featuredPost.title}</h2>
+            <p className="leading-7 text-[var(--text-muted)]">{featuredPost.description}</p>
+            <div className="mt-auto flex items-center justify-between gap-3 pt-4 text-sm text-[var(--text-subtle)]">
+              <span>{featuredPost.readingTime}</span>
               <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
                 Read <ArrowRight />
               </span>
             </div>
-          </Link>
+          </div>
+        </Link>
+      )}
+
+      <div className="mt-16 flex flex-col gap-16">
+        {categorySections.map((section) => (
+          <section key={section.name}>
+            <div className="flex items-center gap-4">
+              <h2 className="shrink-0 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{section.name}</h2>
+              <hr className="flex-1 border-0 border-t border-[color:var(--border)]" />
+              <span className="shrink-0 text-xs font-medium tabular-nums text-[var(--text-subtle)]">
+                {section.posts.length} {section.posts.length === 1 ? 'post' : 'posts'}
+              </span>
+            </div>
+            <div className="mt-6 grid gap-5 lg:grid-cols-3">
+              {section.posts.map((post) => (
+                <PostCard key={post.slug} post={post} />
+              ))}
+            </div>
+          </section>
         ))}
       </div>
     </ContentShell>

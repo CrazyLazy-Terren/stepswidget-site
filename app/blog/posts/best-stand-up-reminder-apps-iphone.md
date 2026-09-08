@@ -1,6 +1,6 @@
 ---
 slug: best-stand-up-reminder-apps-iphone
-category: Comparison
+category: Comparisons
 title: Best Stand Up Reminder Apps for iPhone
 metaTitle: Best Stand Up Reminder Apps for iPhone | Steps Widget
 description: An honest comparison of the best stand up and movement reminder apps for iPhone, including Moova, Deskly, Apple Watch stand reminders, and Steps Widget.

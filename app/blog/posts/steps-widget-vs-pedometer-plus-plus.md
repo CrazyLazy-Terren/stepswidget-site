@@ -1,6 +1,6 @@
 ---
 slug: steps-widget-vs-pedometer-plus-plus
-category: Comparison
+category: Comparisons
 title: 'Steps Widget vs Pedometer++: Which iPhone Step App Should You Use?'
 metaTitle: Steps Widget vs Pedometer++ Compared (2026) | Steps Widget
 description: An honest comparison of Steps Widget and Pedometer++ for iPhone, covering move reminders, widgets, pricing, accuracy, and which app is the better pick for you.

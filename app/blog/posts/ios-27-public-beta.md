@@ -1,6 +1,6 @@
 ---
 slug: ios-27-public-beta
-category: iOS updates
+category: Widgets
 title: iOS 27 Public Beta: What It Is and Should You Install It?
 metaTitle: iOS 27 Public Beta Explained: Install Guide and Risks | Steps Widget
 description: The iOS 27 public beta is here. Learn what a public beta is, how to install iOS 27 on your iPhone, what is new, and why beta testing puts your Health data at risk.

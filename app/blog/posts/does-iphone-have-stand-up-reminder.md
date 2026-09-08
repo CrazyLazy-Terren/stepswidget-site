@@ -1,6 +1,6 @@
 ---
 slug: does-iphone-have-stand-up-reminder
-category: iPhone widgets
+category: Widgets
 title: Does the iPhone Have a Stand Up Reminder?
 metaTitle: Does the iPhone Have a Stand Up Reminder? | Steps Widget
 description: No, iPhone has no built-in stand up reminder. Only Apple Watch does. Here is what iOS actually offers, why the workarounds fall short, and what to use instead.
