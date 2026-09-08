@@ -309,6 +309,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </time>
             <span aria-hidden="true">/</span>
             <span>{post.readingTime}</span>
+            {post.updated && post.updated !== post.date && (
+              <>
+                <span aria-hidden="true">/</span>
+                <span>
+                  Updated{' '}
+                  <time dateTime={post.updated}>
+                    {new Intl.DateTimeFormat('en', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric',
+                    }).format(new Date(`${post.updated}T00:00:00Z`))}
+                  </time>
+                </span>
+              </>
+            )}
           </div>
 
           {post.image && (
