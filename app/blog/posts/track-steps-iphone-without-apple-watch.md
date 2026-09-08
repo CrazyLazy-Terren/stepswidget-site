@@ -40,7 +40,7 @@ While checking the Health app is useful for reviewing history, it requires too m
 
 ## Bringing your step count to the Home and Lock Screens
 
-A steps widget lets you see your walking progress every time you wake your iPhone, without opening any apps. Since Steps Widget reads directly from Apple Health, it shows the steps your iPhone sensors have already recorded.
+A steps widget lets you see your walking progress every time you wake your iPhone, without opening any apps. Since Steps Widget reads directly from Apple Health, it shows the steps your iPhone sensors have already recorded — this is how an [Apple Health steps widget](https://stepswidget.app/blog/apple-health-steps-widget) works on any iPhone, with or without a Watch.
 
 You can configure the widget in multiple sizes and styles depending on how much detail you want to see. For example, a small widget can show just the raw step number, while a larger one can display a progress ring towards your daily goal or a chart of your hourly activity.
 

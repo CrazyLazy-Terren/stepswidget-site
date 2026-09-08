@@ -75,4 +75,4 @@ If everything above checks out and steps still are not recording, restart your i
 
 Most people discover broken step tracking days after it happens, because their count is hidden inside the Health app. The easiest safeguard is putting your steps where you already look.
 
-Steps Widget displays your live Apple Health step count on your Home Screen, Lock Screen, and in StandBy mode. If tracking ever stops, you will notice the frozen number the same hour instead of the same week. Setup takes under a minute, requires no account, and your data never leaves your device. Download Steps Widget and keep your step count in sight.
+Steps Widget displays your live [Apple Health step count](https://stepswidget.app/blog/apple-health-steps-widget) on your Home Screen, Lock Screen, and in StandBy mode. If tracking ever stops, you will notice the frozen number the same hour instead of the same week. Setup takes under a minute, requires no account, and your data never leaves your device. Download Steps Widget and keep your step count in sight.

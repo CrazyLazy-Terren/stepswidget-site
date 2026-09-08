@@ -72,7 +72,7 @@ A Home Screen step counter widget is better for visibility during normal phone u
 
 Step count is simple, but it is still health and fitness data. A good iPhone pedometer widget should only ask for the access it needs and should explain why that access matters.
 
-Steps Widget uses Apple Health step data to show your own walking progress in widgets. It is designed around private progress rather than social feeds, public leaderboards, or pressure-based comparisons.
+Steps Widget uses [Apple Health step data](https://stepswidget.app/blog/apple-health-steps-widget) to show your own walking progress in widgets. It is designed around private progress rather than social feeds, public leaderboards, or pressure-based comparisons.
 
 ## Make the Lock Screen a gentle cue
 

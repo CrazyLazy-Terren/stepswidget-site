@@ -20,7 +20,7 @@ keywords:
 
 **Short answer:** iOS has no built-in widget that shows your numeric step count. Install a free step counter app that reads Apple Health, then add it as a Home Screen widget, a Lock Screen widget, and an Apple Watch complication. The whole setup takes about five minutes and costs nothing.
 
-Apple tracks your steps continuously on both your iPhone and your Apple Watch, but it never puts the number in front of you. The built-in Fitness and Activity widgets only show the three rings — Move (active calories), Exercise, and Stand. If you want to see _8,072 steps_ rather than a partially closed red circle, you need a third-party app that connects to Apple Health and ships iOS widgets and watchOS complications.
+Apple tracks your steps continuously on both your iPhone and your Apple Watch, but it never puts the number in front of you. The built-in Fitness and Activity widgets only show the three rings — Move (active calories), Exercise, and Stand. If you want to see _8,072 steps_ rather than a partially closed red circle, you need a third-party app that connects to Apple Health and ships iOS widgets and watchOS complications — see [how an Apple Health steps widget works](https://stepswidget.app/blog/apple-health-steps-widget).
 
 Here is how to set that up on every screen, plus the best genuinely free apps to do it with — no subscriptions, no ads, no account.
 

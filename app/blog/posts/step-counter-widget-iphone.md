@@ -69,7 +69,7 @@ If your step counter widget looks stuck, open Steps Widget once, confirm Apple H
 
 **Can I show steps on my iPhone Lock Screen?** Yes. Use a Lock Screen steps widget, then customize your Lock Screen and add the widget in the widget area. Lock Screen widgets require iOS 16 or later.
 
-**Does Steps Widget use Apple Health?** Yes. Steps Widget reads Apple Health step data with your permission so your daily count can appear in widgets. Your data stays on your device.
+**Does Steps Widget use Apple Health?** Yes. Steps Widget reads Apple Health step data with your permission so your daily count can appear in widgets. Your data stays on your device. See [how an Apple Health steps widget works](https://stepswidget.app/blog/apple-health-steps-widget) for the full picture.
 
 **Do I need an Apple Watch?** No. Your iPhone records steps on its own with built-in sensors, and Apple Watch adds activity data when paired, including steps taken while your phone is left behind.
 

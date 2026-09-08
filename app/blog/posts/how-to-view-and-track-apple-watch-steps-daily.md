@@ -64,7 +64,7 @@ To prevent notification fatigue, you can customize how and when your watch alert
 
 Apple Watch does not offer a native "Steps" complication for its watch faces, only rings. If you want to see your steps on your watch face, you can use third-party apps.
 
-- Apps like Steps Widget, Pedometer++, or StepsApp read your Apple Health step data and provide custom complications.
+- Apps like Steps Widget, Pedometer++, or StepsApp read your [Apple Health step data](https://stepswidget.app/blog/apple-health-steps-widget) and provide custom complications.
 
 - To add a complication, long-press your Apple Watch face, tap Edit, swipe to Complications, select a slot, and choose your step app.
 
