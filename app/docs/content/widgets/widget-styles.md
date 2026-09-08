@@ -4,7 +4,7 @@ title: Styling widgets
 metaTitle: Widget Styles, Colours, and Display Options in Steps Widget
 description: Per-widget colour palettes, gradients, appearance, chart type, timestamp format, milestones, and exactly what the Customization subscription covers.
 order: 2
-updated: 2026-07-28
+updated: 2026-09-08
 readingTime: 5 min read
 keywords:
   - customize iPhone widget
@@ -29,6 +29,8 @@ Each widget type offers three rows of styles:
 | Solid    | System colour plus a set of single-colour treatments, including muted text tones               |
 | Two-tone | A primary and a secondary colour — the number in one, the ring or chart in the other           |
 | Gradient | A gradient background with light text, in themes like Sunrise, Meadow, Dusk, Aurora, and Ocean |
+
+A fourth row appears once you have made styles of your own. **Style from Photo**, in the bottom bar, builds one out of any picture in your library — either as a palette lifted off the photo, or as the photo itself behind the step count. See [Styles from a photo](/docs/widgets/photo-styles).
 
 ## Display options
 
@@ -94,6 +96,7 @@ Yes, through your private iCloud. The Apple Watch keeps its own styles for its t
 
 ## What to read next
 
+- [Styles from a photo](/docs/widgets/photo-styles) — building a style out of one of your own pictures.
 - [The widget gallery](/docs/widgets/widget-gallery) — what each widget shows.
 - [Apple Watch](/docs/widgets/apple-watch) — styling from your wrist.
 - [Privacy and sync](/docs/steps-and-data/privacy-and-sync) — how settings travel.

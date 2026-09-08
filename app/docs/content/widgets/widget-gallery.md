@@ -4,7 +4,7 @@ title: The widget gallery
 metaTitle: Every Steps Widget for iPhone Home and Lock Screen
 description: All eight Steps widgets — Steps Ring, Timeline, Prompt, Goal Progress, Minimal, and the three Lock Screen accessories — plus how adaptive refresh keeps them current.
 order: 1
-updated: 2026-08-10
+updated: 2026-09-08
 readingTime: 6 min read
 keywords:
   - iPhone step widget
@@ -117,5 +117,6 @@ Touch and hold a widget to drag it. Touch and hold and choose **Remove Widget** 
 ## What to read next
 
 - [Styling widgets](/docs/widgets/widget-styles) — colours, charts, timestamps, and the subscription.
+- [Styles from a photo](/docs/widgets/photo-styles) — your own picture as a palette or a background.
 - [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity) — a live count while you walk.
 - [Widget not updating](/docs/troubleshooting/widget-not-updating) — when the number is stale.

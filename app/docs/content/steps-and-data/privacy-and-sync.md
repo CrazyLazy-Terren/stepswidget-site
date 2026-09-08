@@ -4,7 +4,7 @@ title: Privacy and sync
 metaTitle: How Steps Widget Handles Your Health Data
 description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server holding your steps.
 order: 4
-updated: 2026-08-10
+updated: 2026-09-08
 readingTime: 5 min read
 keywords:
   - private step counter
@@ -57,6 +57,8 @@ If you use more than one Apple device, your **settings** follow you — not your
 - Widget styles and display options
 
 This runs through your own private iCloud key-value store, the same account that syncs your Notes. There is no CrazyLazy server involved, which is a different arrangement from the usual model where you create an account and the vendor holds your data.
+
+A photo used in a [style from a photo](/docs/widgets/photo-styles) is too large for that store, so its copy travels through your private iCloud database instead — still your account, still no CrazyLazy server. A style can land on a second device a little before its picture does; the widget draws the style's background colour until it arrives.
 
 Your step _history_ does not sync through Steps, because it does not need to — it lives in Apple Health, and Health syncs between your own devices itself.
 
