@@ -6,27 +6,31 @@ import { cookies } from 'next/headers'
 import { defaultOgImages, siteName, siteUrl } from './shared-metadata'
 import './globals.css'
 
+const title = 'Steps Widget - See Your Steps, Get a Gentle Nudge on iPhone and Apple Watch'
+const description =
+  'See your steps, get a gentle nudge, and move a little more every day. Step counter widgets for iPhone, Apple Watch, and Mac, with reminders at the right moment, not every hour. No workout plans, no account.'
+const shareDescription =
+  'No workout plans, no calorie counting. Just your step count in sight and a gentle nudge at the right moment. Move a little more every day.'
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
-    description:
-    'A step counter that projects how your day will end. An on-device model forecasts your end-of-day step count and reminds you only when you are heading to miss your goal. Apple Health steps on your Home Screen, Lock Screen, Apple Watch, and Mac. Free reminders, no account.',
+  title,
+  description,
   keywords: [
     'Steps Widget',
-    'stand up reminder app',
-    'move reminder app',
-    'sedentary reminder app',
-    'movement reminder app for desk workers',
-    'customizable stand reminder iPhone',
-    'activity aware move reminders',
-    'on-device step reminder app',
-    'get up and move notifications iPhone',
-    'stand up reminder for programmers',
     'iPhone step counter widget',
     'Apple Health steps widget',
     'Lock Screen steps widget',
     'Apple Watch steps widget',
+    'steps widget on Mac',
+    'walk more reminder app',
+    'gentle move reminder iPhone',
+    'reminder to walk more for desk workers',
+    'daily step goal reminder',
+    'healthy walking habit app',
+    'simple step counter no workout plans',
     'pedometer widget for iPhone',
+    'private step counter no account',
   ],
   icons: {
     icon: [
@@ -38,9 +42,8 @@ export const metadata: Metadata = {
     apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
-    description:
-      'An on-device model projects your end-of-day step count and reminds you only when you are heading for a miss. Apple Health steps on iPhone, Apple Watch, and Mac.',
+    title,
+    description: shareDescription,
     url: siteUrl,
     siteName,
     type: 'website',
@@ -49,9 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steps Widget - Step Counter and Goal Reminder for iPhone and Apple Watch',
-    description:
-      'An on-device model projects your end-of-day step count and reminds you only when you are heading for a miss. Apple Health steps on iPhone, Apple Watch, and Mac.',
+    title,
+    description: shareDescription,
     images: defaultOgImages,
   },
 }
