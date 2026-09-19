@@ -3,9 +3,9 @@ title: How to Show Your Steps in iOS StandBy Mode
 metaTitle: Show Step Count in iOS StandBy Mode | Steps Widget
 description: Learn how to add a steps widget to your iPhone StandBy mode screen so you can track your daily step count at your desk without unlocking your phone.
 date: '2026-07-11'
+updated: '2026-07-14'
 slug: show-steps-standby-mode-ios
 category: Widgets
-readingTime: 5 min read
 
 keywords:
   - show steps standby mode ios

@@ -6,7 +6,6 @@ date: '2026-09-04'
 updated: '2026-09-04'
 slug: how-to-set-a-realistic-daily-step-goal
 category: Fitness Habits
-readingTime: 8 min read
 
 keywords:
   - how to set a realistic step goal

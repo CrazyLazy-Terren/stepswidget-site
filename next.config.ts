@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
     unoptimized: process.env.NODE_ENV === 'development',
     remotePatterns: [{ protocol: 'https', hostname: '*.supabase.co' }],
   },
+  async redirects() {
+    return [
+      // The iOS 27 public beta post was rewritten for the public release.
+      { source: '/blog/ios-27-public-beta', destination: '/blog/ios-27', permanent: true },
+      { source: '/blog/posts/ios-27-public-beta', destination: '/blog/posts/ios-27', permanent: true },
+    ]
+  },
   async rewrites() {
     return [
       {

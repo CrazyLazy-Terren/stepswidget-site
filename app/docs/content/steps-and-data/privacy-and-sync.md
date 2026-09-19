@@ -14,7 +14,7 @@ keywords:
   - iCloud sync settings
 ---
 
-Step data is health data. It shows when you leave home, how long you sit still, and roughly what your day looks like — which is why Steps is built so that none of it has to go anywhere.
+Step data is health data. It shows when you leave home, how long you sit still, and roughly what your day looks like — which is why the app is built so that none of it has to go anywhere.
 
 ## What the app reads
 
@@ -60,7 +60,7 @@ This runs through your own private iCloud key-value store, the same account that
 
 A photo used in a [style from a photo](/docs/widgets/photo-styles) is too large for that store, so its copy travels through your private iCloud database instead — still your account, still no CrazyLazy server. A style can land on a second device a little before its picture does; the widget draws the style's background colour until it arrives.
 
-Your step _history_ does not sync through Steps, because it does not need to — it lives in Apple Health, and Health syncs between your own devices itself.
+Your step _history_ does not sync through the app, because it does not need to — it lives in Apple Health, and Health syncs between your own devices itself.
 
 ### How conflicts resolve
 
@@ -70,7 +70,7 @@ Future timestamps are clamped, so a device with a wrong clock cannot win every m
 
 ### If you do not use iCloud
 
-Everything works. Steps Widget stops carrying settings between devices and nothing else changes — no features are gated on being signed in.
+Everything works. The app stops carrying settings between devices and nothing else changes — no features are gated on being signed in.
 
 ## Why no leaderboard?
 
@@ -86,7 +86,7 @@ Two checks you can run yourself, without taking anyone's word for it.
 
 **What it does in the background.** Open **Settings › Battery**, last 10 days. An app quietly running GPS or syncing to a server has a battery signature that is hard to hide. A well-behaved step widget sits at or near the bottom of the list.
 
-**Whether it kept a copy.** Revoke the step permission in Health and open Steps. The count goes to zero, because the app reads your steps rather than accumulating them — there is no private history to fall back on. See [Connect Apple Health](/docs/getting-started/connect-apple-health).
+**Whether it kept a copy.** Revoke the step permission in Health and open the app. The count goes to zero, because it reads your steps rather than accumulating them — there is no private history to fall back on. See [Connect Apple Health](/docs/getting-started/connect-apple-health).
 
 ## Does the app work offline?
 

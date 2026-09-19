@@ -46,7 +46,7 @@ Motion Sensor uses no GPS and no network. The motion coprocessor is a low-power 
 Two things do cost something, and both are deliberate:
 
 - A running **Live Activity** updates about once a second, which is why it is a manual action you start and stop.
-- Frequent step changes could trigger constant widget reloads. Steps throttles those instead — a widget reload needs at least **200 steps** of change and at least **60 seconds** since the last one, because background reloads draw from a limited daily budget.
+- Frequent step changes could trigger constant widget reloads. The app throttles those instead — a widget reload needs at least **200 steps** of change and at least **60 seconds** since the last one, because background reloads draw from a limited daily budget.
 
 To check on your own device, open **Settings › Battery** and look at the last 10 days. A step widget should sit near the bottom of the list.
 

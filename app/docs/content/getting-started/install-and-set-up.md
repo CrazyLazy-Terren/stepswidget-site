@@ -24,7 +24,7 @@ Steps is free to download and shows no ads. Setup is four steps: install, allow 
 | Apple Watch      | watchOS 11.6    |
 | Apple Vision Pro | visionOS 2.6    |
 
-An Apple Watch is **not required, but recommended**. iPhone counts steps on its own and Steps reads them through Apple Health. A Watch is on your wrist, so it catches the walks your phone missed, delivers reminders as a tap, and lights up the stand dots in the rectangular widget — see [Apple Watch](/docs/widgets/apple-watch).
+An Apple Watch is **not required, but recommended**. iPhone counts steps on its own and the app reads them through Apple Health. A Watch is on your wrist, so it catches the walks your phone missed, delivers reminders as a tap, and lights up the stand dots in the rectangular widget — see [Apple Watch](/docs/widgets/apple-watch).
 
 Two features need a newer OS than the minimum: reminder rewriting needs iOS 26 with Apple Intelligence, and Live Activities need a device with the Dynamic Island to show the compact view. Everything else works on iOS 18.6.
 
@@ -38,7 +38,7 @@ Two features need a newer OS than the minimum: reminder rewriting needs iOS 26 w
 
 ## Step 2: Allow Health access
 
-On first launch Steps shows **Requesting Health Access** and asks to read your step count. Tap **Allow**.
+On first launch the app shows **Requesting Health Access** and asks to read your step count. Tap **Allow**.
 
 It requests three read-only Health types and nothing else — step count, plus your stand hours and daily activity summary so the hourly chart can mark the hours you stood. It never writes to Health. [Connect Apple Health](/docs/getting-started/connect-apple-health) has the detail, including how to grant access later if you declined.
 
@@ -72,7 +72,7 @@ No. There is no account, no sign-in, and no password, because there is no server
 
 Sign in to iCloud and your settings — goal, reminder preferences, widget styles — follow you across your own devices through your private iCloud. See [Privacy and sync](/docs/steps-and-data/privacy-and-sync).
 
-## Is Steps free?
+## Is Steps Widget free?
 
 Yes. It is free to download with no ads at any tier, and the free tier is not time-limited. The whole reminder system costs nothing: the on-device model, the projection, the schedule, the message style, and the Apple Watch reminders.
 

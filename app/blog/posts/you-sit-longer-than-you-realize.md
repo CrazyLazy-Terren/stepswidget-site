@@ -6,7 +6,6 @@ date: '2026-08-29'
 updated: '2026-08-29'
 slug: you-sit-longer-than-you-realize
 category: Fitness Habits
-readingTime: 10 min read
 
 keywords:
   - active couch potato phenomenon

@@ -16,7 +16,7 @@ image: /assets/blog-stand-reminders-not-working.jpg
 
 Before troubleshooting, rule out the two most likely explanations. Neither is a fault.
 
-**You are on track.** Steps does not fire on a timer. A model projects your end-of-day total and only sends a reminder when that projection falls short of your goal, so a day of normal walking produces no reminders. See [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work).
+**You are on track.** The app does not fire on a timer. A model projects your end-of-day total and only sends a reminder when that projection falls short of your goal, so a day of normal walking produces no reminders. See [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work).
 
 **Another device is sending them.** With reminders on across an iPhone, iPad, and Watch, only one device sends. Open **Settings** and look under the Goal Reminder toggle: if another device is elected, it shows **Device: <name>**. If that device is in a drawer, you will not see reminders.
 
@@ -62,7 +62,7 @@ Also confirm **Do Not Disturb** is not left on from Control Centre. Focus modes 
 
 ## 5. One per hour
 
-Steps sends at most one reminder per clock hour. If you already had one, the next is at least an hour away even if your projection gets worse.
+The app sends at most one reminder per clock hour. If you already had one, the next is at least an hour away even if your projection gets worse.
 
 ## 6. If your routine just changed
 

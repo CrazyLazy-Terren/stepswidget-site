@@ -5,7 +5,6 @@ title: Why Is My iPhone Not Counting Steps? 7 Fixes That Work
 metaTitle: iPhone Not Counting Steps? 7 Fixes That Work | Steps Widget
 description: iPhone not counting steps? Learn the most common causes, from disabled Motion and Fitness tracking to Health permissions, and fix your step counter in minutes.
 date: 2026-07-12
-readingTime: 5 min read
 keywords:
   - why is my iphone not counting steps
   - iphone not counting steps

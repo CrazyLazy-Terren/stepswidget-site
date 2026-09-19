@@ -6,7 +6,6 @@ metaTitle: Steps Widget vs Pedometer++ Compared (2026) | Steps Widget
 description: An honest comparison of Steps Widget and Pedometer++ for iPhone. Pedometer++ is built for workouts, walks, and routes; Steps Widget is built to keep you active through an ordinary day, with your steps in sight and a gentle nudge when you are falling behind.
 date: 2026-07-25
 updated: 2026-09-14
-readingTime: 11 min read
 keywords:
   - steps widget vs pedometer++
   - pedometer++ alternative

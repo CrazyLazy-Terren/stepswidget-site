@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
-import { getOptionalNumber, getOptionalString, getString, getStringList, splitFrontMatter } from '../front-matter'
+import { estimateReadingTime, getOptionalNumber, getOptionalString, getString, getStringList, splitFrontMatter } from '../front-matter'
 
 export type BlogPost = {
   slug: string
@@ -16,6 +16,7 @@ export type BlogPost = {
    * answer engines both weight recency.
    */
   updated?: string
+  /** Computed from the body's word count; not authored in front matter. */
   readingTime: string
   order?: number
   keywords: string[]
@@ -44,7 +45,7 @@ function parsePostFile(filename: string): BlogPost {
     description: getString(frontMatter, 'description', label),
     date: getString(frontMatter, 'date', label),
     updated: getOptionalString(frontMatter, 'updated'),
-    readingTime: getString(frontMatter, 'readingTime', label),
+    readingTime: estimateReadingTime(body),
     order: getOptionalNumber(frontMatter, 'order', label),
     keywords: getStringList(frontMatter, 'keywords', label),
     image: getOptionalString(frontMatter, 'image'),

@@ -35,13 +35,13 @@ If you want a genuinely live number, that is what [Motion Sensor](/docs/steps-an
 
 ## My Live Activity has stopped moving
 
-Expected, and not a fault. The app pushes those updates itself, so they stop as soon as iOS suspends it — pocket the phone and the count freezes at its last value. Open Steps again and it resumes and catches up. See [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity).
+Expected, and not a fault. The app pushes those updates itself, so they stop as soon as iOS suspends it — pocket the phone and the count freezes at its last value. Open it again and it resumes and catches up. See [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity).
 
 ## 1. Open the app once
 
-Opening Steps gives it a foreground moment to read current Health data and hand fresh values to the widget system. This resolves a large share of cases, particularly after an iOS update or a restart.
+Opening the app gives it a foreground moment to read current Health data and hand fresh values to the widget system. This resolves a large share of cases, particularly after an iOS update or a restart.
 
-> **Note:** Do not force-quit Steps as a habit. Swiping an app away from the App Switcher makes iOS block its background refresh until you open it again — force-quitting makes widget staleness _more_ likely, not less.
+> **Note:** Do not force-quit the app as a habit. Swiping an app away from the App Switcher makes iOS block its background refresh until you open it again — force-quitting makes widget staleness _more_ likely, not less.
 
 ## 2. Check Health permission
 
@@ -93,7 +93,7 @@ Usually the **iPhone** is the one behind, and the reason is the direction the da
 
 The Watch is worn, so it is the device that actually captures the steps — including every walk you took without your phone. Those steps then have to sync to Apple Health and be merged there before the iPhone can show them. The Watch reads its own count directly; the iPhone reads the merged result at the end of that chain, so it trails by design.
 
-If the **complication itself** is stale rather than the number, watchOS budgets complication refreshes the same way iOS budgets widgets. Raise your wrist and open Steps on the Watch once. See [Apple Watch](/docs/widgets/apple-watch).
+If the **complication itself** is stale rather than the number, watchOS budgets complication refreshes the same way iOS budgets widgets. Raise your wrist and open the app on the Watch once. See [Apple Watch](/docs/widgets/apple-watch).
 
 ## The widget shows zero all day
 

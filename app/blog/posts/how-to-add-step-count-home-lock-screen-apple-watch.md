@@ -6,7 +6,6 @@ metaTitle: 'Add Steps to Home Screen, Lock Screen & Apple Watch (Free)'
 description: 'Put your daily step count on the iPhone Home Screen, Lock Screen, and Apple Watch face. Step-by-step setup plus the best 100% free apps, no subscription.'
 date: 2026-08-24
 updated: 2026-08-24
-readingTime: 15 min read
 keywords:
   - add step count to home screen
   - how to show step count on iphone and apple watch
@@ -16,6 +15,7 @@ keywords:
   - free apple watch steps widget
   - step counter app no subscription
   - free step tracker widget without ads
+image: /assets/blog-favorite-home-widget.jpg
 ---
 
 **Short answer:** iOS has no built-in widget that shows your numeric step count. Install a free step counter app that reads Apple Health, then add it as a Home Screen widget, a Lock Screen widget, and an Apple Watch complication. The whole setup takes about five minutes and costs nothing.

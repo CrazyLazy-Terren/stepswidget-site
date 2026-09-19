@@ -5,7 +5,6 @@ description: Learn how to use iOS 18 tinted widgets to color-match your step cou
 date: '2026-07-13'
 slug: ios-18-tinted-steps-widgets
 category: Widgets
-readingTime: 4 min read
 keywords:
   - ios 18 tinted widgets
   - color match widgets ios 18

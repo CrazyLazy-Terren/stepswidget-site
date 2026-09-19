@@ -27,7 +27,7 @@ The evening cutoff exists because a reminder at midnight cannot be acted on.
 
 ## One per hour, at most
 
-Steps sends at most **one reminder per hour**, tracked per clock hour. Even if you spend an hour well over the threshold, you get one message about it.
+The app sends at most **one reminder per hour**, tracked per clock hour. Even if you spend an hour well over the threshold, you get one message about it.
 
 In practice a typical behind-schedule day produces a handful of reminders, not a stream — the projection improves as soon as you walk, which drops the risk below the threshold and stops the reminders on its own.
 
@@ -43,7 +43,7 @@ Settings shows the hour it will use, for example _"Uses your location to send re
 
 ## Only one device sends
 
-If you have an iPhone, an iPad, and an Apple Watch all running Steps with reminders on, you get **one** reminder — not three.
+If you have an iPhone, an iPad, and an Apple Watch all running the app with reminders on, you get **one** reminder — not three.
 
 When the device you are holding is not the sender, Settings shows which one is, under the Goal Reminder toggle: **Device: Apple Watch**.
 
@@ -59,7 +59,7 @@ Whichever one is with you. In practice:
 
 ## Does a reminder interrupt a call or a meeting?
 
-Not if a Focus mode is active and Steps is not on its allowed list — iOS suppresses it, which is normally what you want. A suppressed reminder is not treated as a completed one; the projection is unchanged, so the next hour can try again.
+Not if a Focus mode is active and the app is not on its allowed list — iOS suppresses it, which is normally what you want. A suppressed reminder is not treated as a completed one; the projection is unchanged, so the next hour can try again.
 
 If you want reminders to survive a Focus, add Steps Widget to that Focus's allowed apps in **Settings › Focus**. Focus modes sync between iPhone and Apple Watch by default, so a Focus on the phone also silences the wrist.
 

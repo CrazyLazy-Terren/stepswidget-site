@@ -4,7 +4,7 @@ import { defaultOgImages, siteName } from '../shared-metadata'
 import { JsonLd, absoluteUrl, applicationSchema, breadcrumbSchema, organizationId, organizationSchema } from '../structured-data'
 
 const title = 'About - Steps Widget'
-const description = 'Steps Widget is a move reminder app built by a developer who kept losing whole afternoons to a screen. Nudges you control, all on device.'
+const description = 'Steps Widget is a step counter with goal reminders, built by a developer who kept losing whole afternoons to a screen. Nudges only when your day is falling short, all on device.'
 
 export const metadata: Metadata = {
   title,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: 'A nudge has to earn the interruption',
-    description: 'Most stand reminders get muted because they fire on a timer and sound like an alarm. This one is timed around what you actually did.',
+    description: 'Most stand reminders get muted because they fire on a timer and sound like an alarm. This one only speaks up when your day is heading short of your goal.',
   },
   {
     title: 'Glance first',
@@ -43,7 +43,7 @@ const values = [
   },
   {
     title: 'On device, not on a server',
-    description: 'The model that learns your activity pattern runs on your iPhone. Apple Health data is read with permission and stays local.',
+    description: 'The model that forecasts your day learns from your own step history and runs on your iPhone. Apple Health data is read with permission and stays local.',
   },
 ]
 
@@ -83,8 +83,9 @@ export default function AboutPage() {
               never picked. I turned them all off within a fortnight.
             </p>
             <p>
-              So Steps Widget works differently. Your iPhone learns your real activity pattern, so the nudge comes after you have actually been sitting. It asks
-              you to walk rather than just stand up. And your step count is there to show you it happened, which is the part that makes it stick.
+              So Steps Widget works differently. Your iPhone learns your own daily pattern and projects where your step count is heading, so the nudge only
+              comes when your day is falling short, while there is still time to walk. It asks you to walk rather than just stand up. And your step count is
+              there to show you it happened, which is the part that makes it stick.
             </p>
           </div>
         </section>

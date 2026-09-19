@@ -90,7 +90,7 @@ Forecasting forward also means the reminder arrives while you can still do somet
 
 ## Why does it ask for movement rather than standing?
 
-Standing up satisfies most stand reminders without you having gone anywhere. Steps measures steps, so the only way to change the projection is to take some. The app does read your Apple Watch stand hours, but only to mark them in the hourly chart as context.
+Standing up satisfies most stand reminders without you having gone anywhere. The app measures steps, so the only way to change the projection is to take some. It does read your Apple Watch stand hours, but only to mark them in the hourly chart as context.
 
 ## Under the hood
 

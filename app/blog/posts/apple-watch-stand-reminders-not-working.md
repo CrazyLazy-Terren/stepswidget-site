@@ -1,11 +1,11 @@
 ---
 title: How to Fix Apple Watch Stand Reminders Not Working
 metaTitle: Fix Apple Watch Stand Reminders Not Working | Steps Widget
-description: Troubleshoot why your Apple Watch is not sending stand reminders and learn how to get reliable movement alerts on your iPhone and Watch.
+description: Troubleshoot why your Apple Watch is not sending stand reminders, and what to use instead if you want movement reminders that respond to your day.
 date: '2026-07-07'
+updated: '2026-09-19'
 slug: apple-watch-stand-reminders-not-working
 category: Troubleshooting
-readingTime: 5 min read
 
 keywords:
   - apple watch stand reminders not working
@@ -62,14 +62,14 @@ If the settings all look correct, a stale connection between your iPhone and App
 
 While you are at it, check for updates in the Watch app under **General > Software Update**. Stand reminder bugs have been fixed in several watchOS point releases over the years, and mismatched iOS and watchOS versions can cause notification delivery issues.
 
-## A More Reliable Alternative: Steps Widget Smart Nudges
+## A Different Approach: Steps Widget Goal Reminders
 
 If the built-in reminder is not working for you even after these fixes, it may be worth switching approach entirely. We compared the main options in [the best stand up reminder apps for iPhone](https://stepswidget.app/blog/best-stand-up-reminder-apps-iphone), including where other apps beat Steps Widget. If you are wondering whether your iPhone can cover this without the Watch, see [does the iPhone have a stand up reminder](https://stepswidget.app/blog/does-iphone-have-stand-up-reminder).
 
 If native Apple Watch reminders continue to be inconsistent, or if you find yourself ignoring them because they buzz at inconvenient times, it may be time to try a different approach.
 
-Unlike the native watchOS notifications that run on a rigid 50-minute timer, **Steps Widget** offers smart movement alerts that sync directly with Apple Health on your iPhone:
+Unlike the native watchOS reminder, which fires on the clock whenever it has not seen you stand, **Steps Widget** bases its reminders on your Apple Health step count:
 
-- **Activity-Aware Alerts**: Steps Widget checks if you've already hit your steps for the hour. If you have been moving, the app resets its timer and stays silent, avoiding unnecessary interruptions.
+- **Goal-Based Reminders**: A model on your iPhone projects where your step count will end the day. You only get a reminder when that projection falls short of your daily goal, at most once an hour, and it tells you how many steps you need. On a day you are on track, it stays silent. See [how goal reminders work](https://stepswidget.app/docs/goal-reminders/how-goal-reminders-work).
 - **Glanceable Progress**: You can add a Steps Widget directly to your iPhone Home Screen or Lock Screen, giving you a quick visual indicator of your progress without needing to wait for a wrist buzz.
-- **Works Without a Watch**: If you take your watch off to charge, Steps Widget can still monitor your movement using your iPhone's built-in sensors, keeping your tracking consistent.
+- **Works Without a Watch**: If you take your watch off to charge, Steps Widget still counts your steps from your iPhone's built-in sensors, keeping your tracking consistent.

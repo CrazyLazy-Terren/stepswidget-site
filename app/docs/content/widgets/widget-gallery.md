@@ -74,13 +74,13 @@ As many as you like, in any combination. Each widget remembers its own style and
 
 ## Smart Stacks
 
-Dragging one widget onto another of the same size creates a stack you can swipe through. Steps reports a relevance score to iOS so it surfaces itself in a Smart Stack at useful moments — when you have been moving in the last couple of hours, and when you are between 70% and just past your goal.
+Dragging one widget onto another of the same size creates a stack you can swipe through. The app reports a relevance score to iOS so it surfaces itself in a Smart Stack at useful moments — when you have been moving in the last couple of hours, and when you are between 70% and just past your goal.
 
 That said, with **Smart Rotate** on, iOS decides what is showing when you glance. If seeing your progress reliably is the point, give the widget a dedicated slot.
 
 ## Adaptive widget updates
 
-Widgets do not refresh on a fixed timer. Steps varies how often it asks iOS to redraw, based on how likely the number is to have changed and how likely you are to look at it.
+Widgets do not refresh on a fixed timer. The app varies how often it asks iOS to redraw, based on how likely the number is to have changed and how likely you are to look at it.
 
 |        | iPhone                 | Apple Watch            |
 | ------ | ---------------------- | ---------------------- |
@@ -97,7 +97,7 @@ It weighs the current hour _and the next one_, so the widget speeds up ahead of 
 
 The Watch has the wider range because its refresh budget is tighter. Spending less on quiet stretches leaves more for the moments you actually raise your wrist.
 
-> **Note:** These are requests, not guarantees — iOS grants widget reloads from a daily budget and can delay any of them to save power. Steps also skips reloads that would change nothing visible: a redraw needs at least 200 steps of change and at least 60 seconds since the last one.
+> **Note:** These are requests, not guarantees — iOS grants widget reloads from a daily budget and can delay any of them to save power. The app also skips reloads that would change nothing visible: a redraw needs at least 200 steps of change and at least 60 seconds since the last one.
 
 ## Can I put the widget on my Mac?
 

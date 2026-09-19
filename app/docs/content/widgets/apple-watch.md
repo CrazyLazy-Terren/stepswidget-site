@@ -51,7 +51,7 @@ Faces each keep their own complications, so a work face with the ring prominent 
 
 They answer different questions and coexist happily. The Activity rings track Move, Exercise, and Stand as Apple defines them — and Stand credit is awarded for standing up for a minute, which you can earn without going anywhere. A step count against your own goal measures whether you walked.
 
-Steps reads your stand hours too, and the **Rectangular** layout is where they appear: a row of dots along the bottom of the chart, one per hour, brighter for the hours you stood. Stand hours are a Watch measurement, so on an iPhone alone the row never lights.
+The app reads your stand hours too, and the **Rectangular** layout is where they appear: a row of dots along the bottom of the chart, one per hour, brighter for the hours you stood. Stand hours are a Watch measurement, so on an iPhone alone the row never lights.
 
 ## Settings on the wrist
 
@@ -70,7 +70,7 @@ Everything syncs with your iPhone. Subscribe on the Watch and it applies to the 
 
 The Watch is usually the best device to send your goal reminders. A wrist tap arrives whether or not your phone is nearby, and in a meeting or a shared office it registers without a sound or a screen lighting up.
 
-You will not get duplicate reminders across devices. Steps elects a single sending device from iCloud heartbeats, and when the Watch is elected the iPhone stays quiet. Settings shows which device is currently sending. Details in [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
+You will not get duplicate reminders across devices. The app elects a single sending device from iCloud heartbeats, and when the Watch is elected the iPhone stays quiet. Settings shows which device is currently sending. Details in [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
 
 > **Note:** The Watch cannot fetch weather data, so if **Local Sunset** is on it reads the sunset hour the iPhone last saved to iCloud. Reminder rewriting with Apple Intelligence is iPhone-only; Watch reminders use the templated wording.
 

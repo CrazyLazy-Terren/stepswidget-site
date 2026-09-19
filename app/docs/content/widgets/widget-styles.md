@@ -78,7 +78,7 @@ What an active subscription buys is the act of **applying a different style**. S
 
 ## Restoring a subscription
 
-The subscription is tied to your Apple Account, not to an app account — Steps has no accounts. On a new device or after a reinstall, sign in with the same Apple Account and use the restore option in the app.
+The subscription is tied to your Apple Account, not to an app account, since there are none. On a new device or after a reinstall, sign in with the same Apple Account and use the restore option in the app.
 
 Subscribing on Apple Watch applies to your iPhone and vice versa. One subscription, not one per device.
 

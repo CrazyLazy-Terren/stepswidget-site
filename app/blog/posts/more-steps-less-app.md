@@ -6,7 +6,6 @@ date: '2026-09-11'
 updated: '2026-09-11'
 slug: more-steps-less-app
 category: Behind the App
-readingTime: 6 min read
 image: /assets/blog-more-steps-less-app.jpg
 
 keywords:

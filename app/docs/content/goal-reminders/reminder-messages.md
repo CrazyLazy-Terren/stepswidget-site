@@ -20,7 +20,7 @@ The wording of each reminder is yours to set: describe the tone you want in plai
 
 In **Settings**, under the Goal Reminder section, there is a text field: **How should reminder messages sound?**
 
-Write whatever you like. Steps also offers six one-tap suggestions:
+Write whatever you like. The app also offers six one-tap suggestions:
 
 - Encouraging and upbeat
 - Short and direct
@@ -39,7 +39,7 @@ The preview uses the same pipeline as a real reminder: the same projection, mess
 
 ## What the rewrite does and does not change
 
-Steps builds the message first — from your projection, your remaining steps, and the hours left — and then asks the model to restyle it while keeping the meaning. The instruction is literally *"Rewrite this reminder. Keep the meaning. Follow this style."*
+The app builds the message first — from your projection, your remaining steps, and the hours left — and then asks the model to restyle it while keeping the meaning. The instruction is literally *"Rewrite this reminder. Keep the meaning. Follow this style."*
 
 The numbers are preserved. A rewrite changes how *"1,900 steps in 3h — a short walk gets you there"* reads, but it does not change the step count or the time remaining.
 
@@ -57,7 +57,7 @@ If any of those is missing, you get the templated messages instead. They carry t
 
 ## Which language do reminders use?
 
-Steps picks the first of your preferred languages that the on-device model supports, and generates in that. The templated fallback copy is localized too, so reminders are in your language either way.
+The app picks the first of your preferred languages that the on-device model supports, and generates in that. The templated fallback copy is localized too, so reminders are in your language either way.
 
 ## Choosing the alert itself
 

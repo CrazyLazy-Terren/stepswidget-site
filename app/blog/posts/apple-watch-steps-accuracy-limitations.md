@@ -5,7 +5,6 @@ title: "Apple Watch Steps: How Accurate Is Apple's Wrist Tracker?"
 metaTitle: "Apple Watch Steps: Tracking Accuracy & Limitations | Steps Widget"
 description: "How accurate are Apple Watch steps? Learn the science behind wrist-based step tracking, common undercounting/overcounting scenarios, and optimization tips."
 date: '2026-07-23'
-readingTime: 5 min read
 order: 15
 keywords:
   - Apple Watch steps

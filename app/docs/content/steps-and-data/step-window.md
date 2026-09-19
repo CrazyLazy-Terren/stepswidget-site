@@ -23,7 +23,7 @@ If you are often awake past midnight, the default boundary splits your evening i
 
 The picker shows real times in your locale — 12:00 AM through 6:00 AM — and the app explains it in one line: *"Steps before this time count toward yesterday."*
 
-This shifts everything consistently: the widgets, the goal, Insight, and the reminder model's sense of how much day you have left. It does not change what Apple Health stores, only the window Steps reads.
+This shifts everything consistently: the widgets, the goal, Insight, and the reminder model's sense of how much day you have left. It does not change what Apple Health stores, only the window the app reads.
 
 It also slides the reminder window. Reminders run from the 11th to the 23rd hour of your day, so a day starting at 3:00 AM moves them from 11:00–23:00 to 14:00–02:00. See [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
 
@@ -58,7 +58,7 @@ Yes. Both travel through your iCloud, and the iPhone also pushes them straight t
 
 ## Does changing the window lose data?
 
-No. Your steps are in Apple Health and untouched. Changing the window changes which slice Steps reads and redraws, and switching back restores the old view exactly. Widgets reload right away.
+No. Your steps are in Apple Health and untouched. Changing the window changes which slice the app reads and redraws, and switching back restores the old view exactly. Widgets reload right away.
 
 ## What to read next
 

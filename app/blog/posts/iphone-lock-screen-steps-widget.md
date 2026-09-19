@@ -5,7 +5,6 @@ title: How to Show Steps on Your iPhone Lock Screen
 metaTitle: Show Steps on iPhone Lock Screen | Steps Widget
 description: Learn how to show steps on your iPhone Lock Screen, what a good Lock Screen steps widget should display, and why iOS updates widgets on its own timing.
 date: 2026-06-28
-readingTime: 6 min read
 keywords:
   - Lock Screen steps widget
   - show steps on iPhone Lock Screen

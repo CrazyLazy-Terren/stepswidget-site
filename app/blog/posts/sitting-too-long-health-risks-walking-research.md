@@ -6,7 +6,6 @@ date: '2026-08-28'
 updated: '2026-08-29'
 slug: sitting-too-long-health-risks-walking-research
 category: Fitness Habits
-readingTime: 12 min read
 
 keywords:
   - sitting too long health risks
