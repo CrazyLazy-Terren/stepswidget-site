@@ -13,6 +13,7 @@ import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema
 export const metadata: Metadata = {
   alternates: {
     canonical: '/',
+    languages: { en: '/', es: '/es', 'x-default': '/' },
   },
 }
 
@@ -531,6 +532,9 @@ export default function Home() {
             </Link>
             <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
               Privacy
+            </Link>
+            <Link href="/es" hrefLang="es" lang="es" className="transition hover:text-[var(--text-strong)]">
+              Español
             </Link>
           </div>
         </div>

@@ -47,6 +47,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 1.0,
+      alternates: { languages: { en: baseUrl, es: `${baseUrl}/es` } },
+    },
+    {
+      url: `${baseUrl}/es`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+      alternates: { languages: { en: baseUrl, es: `${baseUrl}/es` } },
     },
     {
       url: `${baseUrl}/about`,

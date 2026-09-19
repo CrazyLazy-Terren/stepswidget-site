@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { cookies } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import { defaultOgImages, siteName, siteUrl } from './shared-metadata'
 import './globals.css'
 
@@ -83,9 +83,11 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies()
   const theme = normalizeTheme(cookieStore.get('theme')?.value)
+  // Set by proxy.ts for the Spanish landing page; every other route is English.
+  const lang = (await headers()).get('x-site-lang') === 'es' ? 'es' : 'en'
 
   return (
-    <html lang="en" className="h-full antialiased" data-theme={theme} data-accent={accent} suppressHydrationWarning>
+    <html lang={lang} className="h-full antialiased" data-theme={theme} data-accent={accent} suppressHydrationWarning>
       <head>
         <meta name="apple-itunes-app" content="app-id=6756297788, affiliate-data=pt=120739140&ct=website" />
       </head>

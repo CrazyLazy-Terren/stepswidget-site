@@ -6,6 +6,16 @@ type ToggleProps = {
   compact?: boolean
 }
 
+/** Visible and accessible text for the theme toggle, per page language. */
+const themeLabels = {
+  en: { toggle: 'Toggle theme', group: 'Theme', light: 'Light', dark: 'Dark', use: { light: 'Use light theme', dark: 'Use dark theme' } },
+  es: { toggle: 'Cambiar tema', group: 'Tema', light: 'Claro', dark: 'Oscuro', use: { light: 'Usar tema claro', dark: 'Usar tema oscuro' } },
+}
+
+type ThemeToggleProps = ToggleProps & {
+  lang?: keyof typeof themeLabels
+}
+
 const preferenceCookieMaxAge = 60 * 60 * 24 * 365
 
 function savePreference(name: 'theme' | 'accent', value: Theme | Accent) {
@@ -44,14 +54,16 @@ function ThemeIcon({ option }: { option: Theme }) {
   return <Moon className="size-5" />
 }
 
-export function ThemeToggle({ compact = false }: ToggleProps) {
+export function ThemeToggle({ compact = false, lang = 'en' }: ThemeToggleProps) {
+  const labels = themeLabels[lang]
+
   if (compact) {
     return (
       <button
         type="button"
         onClick={toggleTheme}
         className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
-        aria-label="Toggle theme">
+        aria-label={labels.toggle}>
         <span className="theme-icon-light">
           <ThemeIcon option="light" />
         </span>
@@ -65,7 +77,7 @@ export function ThemeToggle({ compact = false }: ToggleProps) {
   return (
     <div
       className="grid grid-cols-2 rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] p-1 text-xs font-semibold shadow-[var(--soft-shadow)]"
-      aria-label="Theme">
+      aria-label={labels.group}>
       {(['light', 'dark'] as const).map((option) => (
         <button
           key={option}
@@ -77,8 +89,8 @@ export function ThemeToggle({ compact = false }: ToggleProps) {
               ? 'inline-flex size-7 items-center justify-center rounded-full leading-none text-[var(--text-muted)] transition hover:text-[var(--text-strong)]'
               : 'inline-flex items-center rounded-full px-3 py-2 leading-none text-[var(--text-muted)] transition hover:text-[var(--text-strong)]'
           }
-          aria-label={`Use ${option} theme`}>
-          {compact ? <ThemeIcon option={option} /> : option === 'light' ? 'Light' : 'Dark'}
+          aria-label={labels.use[option]}>
+          {compact ? <ThemeIcon option={option} /> : labels[option]}
         </button>
       ))}
     </div>
