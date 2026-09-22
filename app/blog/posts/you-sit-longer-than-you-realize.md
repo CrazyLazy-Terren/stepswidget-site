@@ -97,7 +97,7 @@ Knowing you are at 2,500 steps at 10 PM is useless. Knowing you are at 2,500 ste
 
 At 2 PM the whole afternoon is still ahead. A ten-minute walk for coffee, one flight of stairs, a lap of the building — each adds a few hundred to a couple of thousand steps, at the point in the day when your metabolism has been idling longest.
 
-The shift that matters is from *retrospective tracking* to **forward-looking pacing**: not what you have done, but where you are heading.
+The shift that matters is from *retrospective tracking* to **forward-looking pacing**: not what you have done, but where you are heading. See [how to tell if you will hit your step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) for calculating your pace by mid-afternoon.
 
 ## Four things that actually work
 
@@ -153,7 +153,7 @@ This is the problem [Steps Widget](https://stepswidget.app) was built for — th
 
 Nothing here is medical advice, and none of it replaces a conversation with your doctor if you have an existing condition.
 
-Related reading: [what sitting all day does to your body and what walking fixes](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) covers the dose-response evidence in full, [how goal reminders work](https://stepswidget.app/docs/goal-reminders/how-goal-reminders-work) explains the forecasting behind the nudges, or see [how to add step widgets to your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget).
+Related reading: [will I hit my step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) on how to read your mid-afternoon pace and calculate required walking minutes, [what sitting all day does to your body and what walking fixes](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) covers the dose-response evidence in full, [how goal reminders work](https://stepswidget.app/docs/goal-reminders/how-goal-reminders-work) explains the forecasting behind the nudges, or see [how to add step widgets to your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget).
 
 [^1]: Prince SA, Cardilli L, Reed JL, et al. **A comparison of self-reported and device measured sedentary behaviour in adults: a systematic review and meta-analysis.** *International Journal of Behavioral Nutrition and Physical Activity.* 2020;17:31. doi:[10.1186/s12966-020-00938-3](https://ijbnpa.biomedcentral.com/articles/10.1186/s12966-020-00938-3)
 

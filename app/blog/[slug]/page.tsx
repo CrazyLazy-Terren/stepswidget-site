@@ -6,6 +6,9 @@ import { ArrowRight } from '../../arrow'
 import { notFound } from 'next/navigation'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
 import { ContentShell } from '../../content-shell'
 import { defaultOgImages, siteName } from '../../shared-metadata'
 import {
@@ -67,14 +70,13 @@ const markdownComponents: Components = {
     return (
       <h2
         id={isFootnoteLabel ? 'references' : headingId(children)}
-        className="my-8 scroll-mt-24 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]"
-      >
+        className="my-8 scroll-mt-24 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
         {isFootnoteLabel ? 'References' : children}
       </h2>
     )
   },
   h3: ({ children }) => (
-    <h3 id={headingId(children)} className="mt-8 scroll-mt-24 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
+    <h3 id={headingId(children)} className="my-8 scroll-mt-24 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
       {children}
     </h3>
   ),
@@ -142,14 +144,7 @@ const markdownComponents: Components = {
 
     return (
       <span className="my-4 block overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] shadow-sm">
-        <Image
-          src={resolved}
-          alt={alt ?? ''}
-          width={800}
-          height={500}
-          sizes="(max-width: 768px) 100vw, 800px"
-          className="h-auto w-full object-cover"
-        />
+        <Image src={resolved} alt={alt ?? ''} width={800} height={500} sizes="(max-width: 768px) 100vw, 800px" className="h-auto w-full object-cover" />
       </span>
     )
   },
@@ -328,12 +323,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {post.image && (
             <div className="mt-8 overflow-hidden rounded-3xl">
-              <Image src={post.image} alt={`${post.title} hero`} width={900} height={600} sizes=" 100vw, 896px" className="h-auto w-full object-cover" priority />
+              <Image
+                src={post.image}
+                alt={`${post.title} hero`}
+                width={900}
+                height={600}
+                sizes=" 100vw, 896px"
+                className="h-auto w-full object-cover"
+                priority
+              />
             </div>
           )}
 
           <div className="mt-8">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
               {post.content}
             </ReactMarkdown>
           </div>

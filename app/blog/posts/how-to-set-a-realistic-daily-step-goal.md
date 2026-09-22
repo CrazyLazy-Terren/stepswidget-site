@@ -69,7 +69,7 @@ Most people check their steps once, at night. At 10 PM, seeing 3,200 steps is a 
 Two ways to make that concrete:
 
 - **Break the goal into the day.** An 8,000-step goal is roughly 1,000 steps an hour across an eight-hour window, or about 250 steps every 30 minutes. Hitting a small hourly target is far less daunting than staring at the daily one, and it spreads walking across the day, which the research on [breaking up sitting](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) supports over one long evening session.
-- **Let the app do the projection.** A good step app forecasts your end-of-day total from your pace so far and your own history, and tells you when that projection is falling short — while there are still hours to act on it. That is forward-looking pacing instead of retrospective tracking.
+- **Let the app do the projection.** A good step app forecasts your end-of-day total from your pace so far and your own history, and tells you when that projection is falling short — while there are still hours to act on it. See [how to tell if you will hit your step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) for reading your afternoon pace. That is forward-looking pacing instead of retrospective tracking.
 
 ## How Steps Widget handles this
 
@@ -104,7 +104,7 @@ Changing the goal is never destructive — your steps live in Apple Health untou
 | Should it change? | Yes, seasonally — lower a goal you always miss, raise one you clear by noon |
 | How do I stay on pace? | Split it into an hourly target, or let the app project your day and nudge you by mid-afternoon |
 
-Related reading: [you sit longer than you realize](https://stepswidget.app/blog/you-sit-longer-than-you-realize) on why an afternoon pace check beats a nightly one, [what sitting all day does to your body](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) for the dose-response evidence in full, or [how to add a steps widget to your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget) to keep the number where you already look.
+Related reading: [will I hit my step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) on reading your afternoon pace and converting deficits into walking minutes, [you sit longer than you realize](https://stepswidget.app/blog/you-sit-longer-than-you-realize) on why an afternoon pace check beats a nightly one, [what sitting all day does to your body](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) for the dose-response evidence in full, or [how to add a steps widget to your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget) to keep the number where you already look.
 
 [^1]: On the origin of the 10,000-step target: the figure comes from the 1965 Yamasa *manpo-kei* pedometer marketing campaign in Japan, not from research. See [Popular Science's account](https://www.popsci.com/story/health/10000-steps-evidence-study/), quoting Harvard epidemiologist I-Min Lee.
 

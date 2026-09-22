@@ -51,8 +51,8 @@ The goal is the number everything else measures against: the progress ring in ev
 ## Step 4: Add a widget
 
 1. Touch and hold an empty area of the Home Screen until the icons jiggle.
-2. Tap **Edit**, then **Add Widget**.
-3. Search for **Steps Widget**.
+2. Tap **Edit** or the **customize icon** in iOS 27, then tap **Add Widget**.
+3. Search for **Steps**.
 4. Pick one of the widgets — **Steps Ring**, **Steps Timeline**, **Steps Prompt**, **Goal Progress**, or **Steps Minimal**.
 5. Tap **Add Widget**, drag it into place, tap **Done**.
 
@@ -76,7 +76,7 @@ Sign in to iCloud and your settings — goal, reminder preferences, widget style
 
 Yes. It is free to download with no ads at any tier, and the free tier is not time-limited. The whole reminder system costs nothing: the on-device model, the projection, the schedule, the message style, and the Apple Watch reminders.
 
-The optional **Customization** subscription lets you apply additional widget styles, colours, and gradient themes. An active subscription is needed to *change* to a different style; a style you have already applied keeps working if the subscription lapses. Prices are on the App Store listing.
+The optional **Customization** subscription lets you apply additional widget styles, colours, and gradient themes. An active subscription is needed to _change_ to a different style; a style you have already applied keeps working if the subscription lapses. Prices are on the App Store listing.
 
 ## What to read next
 

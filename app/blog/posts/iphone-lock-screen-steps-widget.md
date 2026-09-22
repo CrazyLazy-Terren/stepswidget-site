@@ -77,4 +77,4 @@ Steps Widget uses [Apple Health step data](https://stepswidget.app/blog/apple-he
 
 The best reason to put steps on your iPhone Lock Screen is not to stare at the number all day. It is to make the next small choice easier.
 
-When your step count is visible, movement becomes easier to remember. A short walk can become the natural next thing instead of something you notice too late at night.
+When your step count is visible, movement becomes easier to remember. A short walk can become the natural next thing instead of something you notice too late at night. See [how to tell if you will hit your step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) for reading your pace before evening.

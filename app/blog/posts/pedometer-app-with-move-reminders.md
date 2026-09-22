@@ -49,7 +49,7 @@ The fastest way to kill a reminder habit is notification fatigue. If an app buzz
 - **Goal-based nudges.** Alerts that trigger only when you are behind your pace for that time of day. If you are already on track, the app stays silent.
 - **A frequency cap.** Even when you are behind, one nudge an hour is enough. An app that repeats itself every few minutes gets muted.
 
-**Pro Tip:** _Start with a goal you already hit on most ordinary days, then adjust. With goal-based reminders, the goal is what sets the cadence: too high and you get nudged every afternoon, too low and you never hear from the app. See [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal)._
+**Pro Tip:** _Start with a goal you already hit on most ordinary days, then adjust. With goal-based reminders, the goal is what sets the cadence: too high and you get nudged every afternoon, too low and you never hear from the app. See [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal) and [how to check if you will hit your step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today)._
 
 ## Add glanceable visual reminders
 
