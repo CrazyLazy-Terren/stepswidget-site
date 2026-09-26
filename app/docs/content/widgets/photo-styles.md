@@ -4,7 +4,7 @@ title: Styles from a photo
 metaTitle: Make a Widget Style from Your Own Photo in Steps Widget
 description: Turn any picture into a widget style — either as a colour palette lifted from the photo, or as the photo itself behind your step count.
 order: 3
-updated: 2026-09-08
+updated: 2026-09-26
 readingTime: 7 min read
 keywords:
   - photo widget iPhone
@@ -16,9 +16,9 @@ keywords:
 Steps Widget can create a widget style from your own photos, so it matches your wallpaper—or just your vibe. When you pick a photo, the app gives you two ways to turn it into a style.
 
 - **Colors Palette** — the colours are lifted off the photo and applied to the normal widget design. No picture is shown.
-- **Background Image** — the picture itself sits behind your step count.
+- **Background** — the picture itself sits behind your step count.
 
-A style you make this way is saved, syncs to your other devices, and can be reused on any widget.
+A style you make this way is saved, syncs to your other devices, can be reused on any widget, and can be [shared with someone else](/docs/widgets/share-a-style) as a single image.
 
 ## Opening the editor
 
@@ -31,7 +31,16 @@ Then, in the bottom bar:
 
 ## Picking the photo
 
-The picker is your normal photo library. RAW files from a camera work: it asks iOS for a compatible transcode rather than the original sensor data, which is what makes a Sony or Canon frame importable at all.
+A new style starts on a screen showing what each mode does, with two ways in:
+
+- **Select Photo** opens your photo library.
+- **Files** opens the Files browser, for a picture saved to iCloud Drive, a USB drive, or another app's folder rather than to Photos.
+
+Both accept RAW files from a camera: the app asks iOS for a compatible transcode rather than the original sensor data, which is what makes a Sony or Canon frame importable at all.
+
+You can also start from outside the app. Open an image in Files, Mail, or AirDrop and choose **Steps** under **Open in**, and the editor opens with that picture loaded.
+
+If the picture is a [shared style card](/docs/widgets/share-a-style), the editor recognises it and sets up the sender's style rather than starting from scratch.
 
 Two things can go wrong, and they say different things because you can do different things about them:
 
@@ -58,7 +67,7 @@ Two preview tiles sit above the row — one light, one dark — so you can see b
 
 Reopening a saved style shows the full colour picker below the palettes. Colours you set by hand outrank the palette selection.
 
-## Background Image
+## Background
 
 This tab puts the picture behind the widget and gives you four controls.
 
@@ -68,7 +77,9 @@ This tab puts the picture behind the widget and gives you four controls.
 
 A freshly picked photo opens at roughly the size it would be as _wallpaper_, centred. That is deliberate: at that scale the widget reads as a hole cut in your Home Screen rather than as a thumbnail of the picture. Zoom in from there if you want a detail instead.
 
-How far you can zoom is capped by the photo's own resolution, so the widget is always cutting a crop down rather than enlarging one.
+If you would rather not pinch, the **zoom slider** under the preview does the same thing.
+
+How far you can zoom is capped by the photo's own resolution, so the widget is always cutting a crop down rather than enlarging one. A small photo may not zoom at all, in which case the slider is greyed out.
 
 ### Foreground
 
@@ -103,7 +114,7 @@ The same applies on the Home Screen when you tint your icons and widgets, and in
 
 For anything you want on the Lock Screen or the wrist, **Colors Palette** is the mode that survives the trip. See [Apple Watch](/docs/widgets/apple-watch), which keeps its own styles anyway.
 
-## Saving, sharing, and reusing a style
+## Saving and reusing a style
 
 Tapping the checkmark files the style and puts it on the widget you opened the editor from.
 
@@ -114,7 +125,9 @@ Because a style can be worn by several widgets at once, editing one asks what yo
 - **Change All Widgets** — updates the style itself, and every widget wearing it follows.
 - **Duplicate for This Widget** — files a copy and changes only the widget you are looking at, leaving the others alone.
 
-The trash button deletes a style. The confirmation says how many widgets are using it; those go back to their default look. You can keep up to 60 styles.
+The trash button deletes a style. The confirmation says how many widgets use it; those go back to their default look. You can keep up to 60 styles.
+
+To send a style to someone else, use **Share Style** on the main screen — see [Sharing a photo style](/docs/widgets/share-a-style).
 
 ## Sync and privacy
 
@@ -132,6 +145,7 @@ A style already on a widget keeps rendering if the subscription lapses, photogra
 
 ## What to read next
 
+- [Sharing a photo style](/docs/widgets/share-a-style) — sending a style as an image, and opening one you received.
 - [Styling widgets](/docs/widgets/widget-styles) — the built-in palettes, display options, and what the subscription covers.
 - [The widget gallery](/docs/widgets/widget-gallery) — which widget shows what.
 - [Privacy and sync](/docs/steps-and-data/privacy-and-sync) — how settings travel between devices.

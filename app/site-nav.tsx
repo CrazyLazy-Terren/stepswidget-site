@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { appStoreUrl } from './app-store'
+import { MobileMenu } from './mobile-menu'
 import { ThemeToggle } from './theme-toggle'
 
 type SiteNavProps = {
@@ -82,13 +83,15 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
         </div>
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle compact />
-          <details className="group relative">
-            <summary className="flex size-9 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">
-              <span className="sr-only">Open navigation menu</span>
+          <MobileMenu
+            summary={
+              <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">
+                <span className="sr-only">Open navigation menu</span>
 
-              <Menu className="size-5 group-open:hidden" />
-              <X className="hidden size-5 group-open:block" />
-            </summary>
+                <Menu className="size-5 group-open:hidden" />
+                <X className="hidden size-5 group-open:block" />
+              </summary>
+            }>
             <div className="absolute right-0 top-full z-50 mt-3 w-[calc(100vw-2.5rem)] max-w-sm rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-3)] p-3 shadow-[var(--soft-shadow)] backdrop-blur-xl">
               <div className="grid gap-1">
                 <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Product</p>
@@ -96,7 +99,7 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[12px] px-3 py-2.5 text-sm font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
+                    className="rounded-[12px] px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
                     {item.label}
                   </Link>
                 ))}
@@ -104,7 +107,7 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[12px] px-3 py-2.5 text-sm font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
+                    className="rounded-[12px] px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
                     {item.label}
                   </Link>
                 ))}
@@ -114,12 +117,12 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   href={appStoreUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-2.5 text-sm font-semibold leading-none text-[var(--button-text)] transition hover:opacity-90">
+                  className="flex items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-3.5 text-base font-semibold leading-none text-[var(--button-text)] transition hover:opacity-90">
                   Get app
                 </a>
               </div>
             </div>
-          </details>
+          </MobileMenu>
         </div>
       </nav>
     </header>

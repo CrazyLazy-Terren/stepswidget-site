@@ -4,7 +4,7 @@ title: How goal reminders work
 metaTitle: Set Up and Tune Goal Reminders in Steps Widget
 description: Turn on goal reminders, read what each message is telling you, and tune the four settings that change when and how they arrive.
 order: 1
-updated: 2026-08-10
+updated: 2026-09-26
 readingTime: 5 min read
 keywords:
   - goal reminder
@@ -39,7 +39,9 @@ There are four, chosen from how your day is tracking. Two of them are for inform
 | **Steady pace** | On track, with a figure to go | Keep the rhythm; no change needed |
 | **Push now** | Heading for a miss | Take a walk — the message carries how many steps and how long you have |
 
-Only the states that actually need your attention get delivered. The other two exist because the same wording drives the **Preview** in Settings, where you can see what your current day would produce.
+Two of them arrive as notifications: **Push now** when the projection says you are heading for a miss, and **Goal hit** once a day when you cross the line. **Strong lead** and **Steady pace** are never sent; they are the line the widgets show under your count, and what Siri adds when you [ask for today's steps](/docs/steps-and-data/siri-and-shortcuts).
+
+Every one of these titles and messages can be rewritten in your own words — see [Reminder messages](/docs/goal-reminders/reminder-messages).
 
 ## Why it went quiet
 
@@ -62,7 +64,7 @@ Four settings change the behaviour, and all of them are free:
 | **Daily Goal** | The target the projection is measured against | Reminders feel too frequent or too rare |
 | **Start of Day** | When your day begins, which slides the reminder window with it | You are regularly up past midnight |
 | **Local Sunset** | Lowers the bar for an evening reminder, tracking real sunset | You want a firmer nudge once it is dark |
-| **Reminder tone** | The wording, rewritten on device | The phrasing grates, or you want it blunter |
+| **Reminder messages** | The wording of every title and message | The phrasing grates, or you want it blunter |
 
 **Start with the goal.** It is the single most effective lever. Reminders come from the gap between your projection and your goal, so a goal set too high produces a stream of Push now messages you will end up muting, and one you clear by noon produces near-silence. [Set your daily goal](/docs/getting-started/set-your-daily-goal) covers picking a number against a month of your own days.
 
@@ -100,6 +102,6 @@ The exact thresholds, the reminder window, and how one device is elected to send
 
 ## What to read next
 
-- [Reminder messages](/docs/goal-reminders/reminder-messages) — set the tone, on device.
+- [Reminder messages](/docs/goal-reminders/reminder-messages) — write the messages in your own words.
 - [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices) — hours, sunset, and which device sends.
 - [Reminders not arriving](/docs/troubleshooting/reminders-not-arriving) — when nothing fires.

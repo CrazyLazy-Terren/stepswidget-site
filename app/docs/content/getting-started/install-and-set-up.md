@@ -26,7 +26,7 @@ Steps is free to download and shows no ads. Setup is four steps: install, allow 
 
 An Apple Watch is **not required, but recommended**. iPhone counts steps on its own and the app reads them through Apple Health. A Watch is on your wrist, so it catches the walks your phone missed, delivers reminders as a tap, and lights up the stand dots in the rectangular widget — see [Apple Watch](/docs/widgets/apple-watch).
 
-Two features need a newer OS than the minimum: reminder rewriting needs iOS 26 with Apple Intelligence, and Live Activities need a device with the Dynamic Island to show the compact view. Everything else works on iOS 18.6.
+Two features need a newer OS than the minimum: restyling your reminder messages with Apple Intelligence needs iOS 26, and Live Activities need a device with the Dynamic Island to show the compact view. Everything else works on iOS 18.6.
 
 ## Step 1: Install and open once
 

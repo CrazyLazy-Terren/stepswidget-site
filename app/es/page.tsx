@@ -287,17 +287,17 @@ export default function SpanishHome() {
       <footer className={`border-t border-[color:var(--border)] py-8 ${pageGutter}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[var(--text-subtle)] sm:flex-row sm:items-center sm:justify-between">
           <p>La documentación y el blog están en inglés.</p>
-          <div className="flex gap-5">
-            <Link href="/docs" hrefLang="en" className="transition hover:text-[var(--text-strong)]">
+          <div className="-my-2 flex flex-wrap gap-x-5">
+            <Link href="/docs" hrefLang="en" className="py-2 transition hover:text-[var(--text-strong)]">
               Documentación
             </Link>
-            <Link href="/blog" hrefLang="en" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/blog" hrefLang="en" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
-            <Link href="/privacy" hrefLang="en" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/privacy" hrefLang="en" className="py-2 transition hover:text-[var(--text-strong)]">
               Privacidad
             </Link>
-            <Link href="/" hrefLang="en" lang="en" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/" hrefLang="en" lang="en" className="py-2 transition hover:text-[var(--text-strong)]">
               English
             </Link>
           </div>

@@ -5,7 +5,7 @@ title: Best Stand Up Reminder Apps for iPhone
 metaTitle: Best Stand Up Reminder Apps for iPhone | Steps Widget
 description: An honest comparison of the best stand up and movement reminder apps for iPhone, including Moova, Deskly, Apple Watch stand reminders, and Steps Widget.
 date: 2026-07-25
-updated: 2026-08-30
+updated: 2026-09-26
 keywords:
   - best stand up reminder app iphone
   - movement reminder app
@@ -49,7 +49,7 @@ If you are on an app not listed here and it works for you, keep it. The goal is 
 | How reminders are timed              | Schedule, plus experimental step-aware timing     | Schedule you set         | On-device forecast of your end-of-day total     | Hourly, if no standing detected |
 | Guided stretches and exercises       | Yes, extensive                                    | No                       | No                                              | No                              |
 | Breathing and mindfulness            | Yes                                               | No                       | No                                              | No                              |
-| Reminder tone or personality options | Sound options                                     | Four written tones       | Free-text tone, rewritten on device             | No                              |
+| Reminder tone or personality options | Sound options                                     | Four written tones       | Fully editable wording, optional on-device restyle | No                              |
 | Step counter widgets                 | Walking-break pedometer                           | No                       | Yes, Home Screen, Lock Screen, StandBy, Watch   | No                              |
 | Apple Watch                          | Yes                                               | Yes                      | Yes, standalone with its own reminders          | Native                          |
 | Water and eye-break reminders        | No                                                | Yes                      | No                                              | No                              |
@@ -88,11 +88,11 @@ Deskly is the opposite of Moova. It is tiny, it is calm, and its App Store priva
 
 It covers more than standing. It reminds you about water, eye breaks, and stretching, has an **overtime mode** designed for genuine late-night work, and offers weekly insights into your habits.
 
-Its most interesting idea is **tone**. You choose how Deskly talks to you: Neutral, Honest, Humorous, or Gentle. Steps Widget attacks the same problem from the other end — you describe the tone you want in your own words and Apple Intelligence rewrites each reminder on device to match. Ours is more flexible; Deskly's four fixed tones have the real advantage of working on any device, with no Apple Intelligence requirement and no iOS 26.
+Its most interesting idea is **tone**. You choose how Deskly talks to you: Neutral, Honest, Humorous, or Gentle. Steps Widget attacks the same problem from the other end — you rewrite every reminder in your own words, and on iOS 26 with Apple Intelligence you can describe a voice and have them restyled on device. Ours is more flexible; Deskly's four fixed tones have the real advantage of being ready with no writing at all.
 
 Deskly also targets exactly the audience Steps Widget was built for — its own listing names office workers, programmers, remote employees, and people working overtime. Its paid tier is a one-time lifetime unlock rather than a subscription.
 
-**Where it beats Steps Widget:** zero data collection, water and eye-break reminders, a Mac app, and reminder tones that work on hardware ours will not run on. If your priority is the most private, least demanding reminder available, Deskly is a better fit than we are.
+**Where it beats Steps Widget:** zero data collection, water and eye-break reminders, a Mac app, ready-made reminder tones with nothing to write, and support for hardware ours will not run on. If your priority is the most private, least demanding reminder available, Deskly is a better fit than we are.
 
 **The trade-off:** Deskly's reminders are scheduled, not activity-aware. It does not read your step data, so it will prompt you at the set time whether or not you just walked around the block. It is also genuinely new — released in February 2026, still on version 1.1, last updated in May, and carrying a handful of ratings — so there is not yet much evidence of how it holds up or how actively it is maintained.
 
@@ -110,9 +110,9 @@ It also adapts without being told to. When your routine shifts — a new commute
 
 The second difference is **what happens between reminders**. Steps Widget is also a step counter widget for the Home Screen, Lock Screen, StandBy mode, and Apple Watch. No other app here keeps your step progress permanently visible on the screens you already look at. The reminder handles the moment; the widget handles the other seven hours. If that half matters most to you, see [how to show steps on your iPhone Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget).
 
-The nudge also asks you to **walk**, not just stand. Standing at your desk satisfies most stand reminders without you having actually moved, and standing is the one thing that cannot change a step projection — only steps can. You can also describe how the reminders should sound in your own words, and Apple Intelligence rewrites each one on device to match, numbers intact. The Apple Watch app runs standalone with its own goal reminders, there is no account to create, and the reminders are free — the optional subscription only restyles the widget.
+The nudge also asks you to **walk**, not just stand. Standing at your desk satisfies most stand reminders without you having actually moved, and standing is the one thing that cannot change a step projection — only steps can. You can also rewrite every reminder in your own words, with placeholders that keep the numbers intact. The Apple Watch app runs standalone with its own goal reminders, there is no account to create, and the reminders are free — the optional subscription only restyles the widget.
 
-**Where it loses:** no guided stretches, no breathing exercises, no water or eye reminders, and no Mac app. Deskly collects less data. Moova does more once you are standing. Steps Widget requires recent iOS and watchOS releases, so older hardware is excluded where Moova and Deskly reach further back, and the on-device rewriting needs iOS 26 with Apple Intelligence — without it the reminders arrive unstyled. It is also the wrong tool if you want a break every hour regardless: a forecast that says you are on pace will leave you alone, which is the point, but it is not a break timer.
+**Where it loses:** no guided stretches, no breathing exercises, no water or eye reminders, and no Mac app. Deskly collects less data. Moova does more once you are standing. Steps Widget requires recent iOS and watchOS releases, so older hardware is excluded where Moova and Deskly reach further back, and the optional Apple Intelligence restyle of your reminder wording needs iOS 26. It is also the wrong tool if you want a break every hour regardless: a forecast that says you are on pace will leave you alone, which is the point, but it is not a break timer.
 
 ## Apple Watch stand reminders: free, and possibly enough
 

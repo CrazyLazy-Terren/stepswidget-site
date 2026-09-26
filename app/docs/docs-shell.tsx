@@ -36,12 +36,12 @@ function DocsNavList({ activeSection, activeSlug }: { activeSection?: string; ac
           <div key={section.slug}>
             <Link
               href={`/docs/${section.slug}`}
-              className={`block text-xs font-medium uppercase tracking-[0.14em] transition ${
+              className={`block py-1.5 text-xs font-medium uppercase tracking-[0.14em] transition lg:py-0 ${
                 isActiveSection ? 'text-[var(--accent-color)]' : 'text-[var(--text-subtle)] hover:text-[var(--text-strong)]'
               }`}>
               {section.title}
             </Link>
-            <ul className="mt-3 grid">
+            <ul className="mt-1.5 grid lg:mt-3">
               {docs.map((doc) => {
                 const isActive = isActiveSection && doc.slug === activeSlug
 
@@ -50,7 +50,7 @@ function DocsNavList({ activeSection, activeSlug }: { activeSection?: string; ac
                     <Link
                       href={docPath(doc)}
                       aria-current={isActive ? 'page' : undefined}
-                      className={`block border-l py-1.5 pl-3 transition ${
+                      className={`block border-l py-2.5 pl-3 transition lg:py-1.5 ${
                         isActive
                           ? 'border-l-[color:var(--accent-color)] font-medium text-[var(--text-strong)]'
                           : 'border-l-[color:var(--border)] text-[var(--text-muted)] hover:border-l-[color:var(--text-subtle)] hover:text-[var(--text-strong)]'
@@ -100,14 +100,14 @@ export function DocsShell({ activeSection, activeSlug, children }: DocsShellProp
           <Link href="/" className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
             Steps Widget
           </Link>
-          <div className="flex gap-5">
-            <Link href="/blog" className="transition hover:text-[var(--text-strong)]">
+          <div className="-my-2 flex flex-wrap gap-x-5">
+            <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
-            <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
               Privacy
             </Link>
-            <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/terms" className="py-2 transition hover:text-[var(--text-strong)]">
               Terms
             </Link>
           </div>
@@ -129,7 +129,7 @@ export function DocsBreadcrumb({ trail }: { trail: { name: string; href?: string
             </span>
           )}
           {crumb.href ? (
-            <Link href={crumb.href} className="transition hover:text-[var(--text-strong)]">
+            <Link href={crumb.href} className="py-2 transition hover:text-[var(--text-strong)]">
               {crumb.name}
             </Link>
           ) : (

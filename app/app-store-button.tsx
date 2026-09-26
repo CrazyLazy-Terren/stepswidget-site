@@ -24,14 +24,16 @@ type AppStoreButtonProps = {
   label?: string
   /** Which language's badge artwork to show. */
   lang?: keyof typeof badges
+  /** Overrides the default listing link, e.g. to attribute installs to a campaign. */
+  href?: string
 }
 
-export function AppStoreButton({ className = '', label = 'Download Steps Widget on the App Store', lang = 'en' }: AppStoreButtonProps) {
+export function AppStoreButton({ className = '', label = 'Download Steps Widget on the App Store', lang = 'en', href = appStoreUrl }: AppStoreButtonProps) {
   const badge = badges[lang]
 
   return (
     <a
-      href={appStoreUrl}
+      href={href}
       target="_blank"
       rel="noreferrer"
       className={`group inline-flex items-center justify-center rounded-[14px] transition hover:-translate-y-0.5 hover:shadow-(--hero-glow) ${className}`}

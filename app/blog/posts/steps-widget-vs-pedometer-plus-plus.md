@@ -5,7 +5,7 @@ title: 'Steps Widget vs Pedometer++: Which iPhone Step App Should You Use?'
 metaTitle: Steps Widget vs Pedometer++ Compared (2026) | Steps Widget
 description: An honest comparison of Steps Widget and Pedometer++ for iPhone. Pedometer++ is built for workouts, walks, and routes; Steps Widget is built to keep you active through an ordinary day, with your steps in sight and a gentle nudge when you are falling behind.
 date: 2026-07-25
-updated: 2026-09-14
+updated: 2026-09-26
 keywords:
   - steps widget vs pedometer++
   - pedometer++ alternative
@@ -32,7 +32,7 @@ This post is written by the developer of Steps Widget, so treat the verdict acco
 | Made by                              | CrazyLazy OU                                                   | Cross Forward, Inc.                                                 |
 | Focus                                | Keeping you active through an ordinary day                     | Workouts, walks, hikes, and detailed step tracking                  |
 | Goal reminders                       | Yes, from an on-device projection of your end-of-day steps     | Not listed in its feature documentation                             |
-| Custom reminder wording              | Yes, rewritten on device by Apple Intelligence (iOS 26)        | Not applicable                                                      |
+| Custom reminder wording              | Yes, fully editable; optional Apple Intelligence restyle (iOS 26) | Not applicable                                                      |
 | Home Screen widgets                  | Yes, in light, dark, tinted, colour, and photo styles          | Yes                                                                 |
 | Lock Screen widgets                  | Yes                                                            | Yes                                                                 |
 | StandBy mode                         | Yes                                                            | Not documented                                                      |
@@ -90,7 +90,7 @@ So Steps Widget does two jobs, and on most days you never open it for either.
 
 **It is personalised from day one.** On first launch the model trains on up to a year of your own Apple Health step history, so there is no warm-up week. When your routine changes, such as a new commute, it retrains on its own.
 
-**You set the tone.** Describe how reminders should sound, for example _gentle and supportive_ or _short and direct_, and Apple Intelligence rewrites each one on your device. A live preview shows exactly what today would produce. This needs iOS 26 with Apple Intelligence; otherwise you get the standard wording, with the same numbers.
+**You set the tone.** Every reminder title and message is editable, with placeholders that keep the live numbers in. On iOS 26 with Apple Intelligence you can also describe a voice, for example _a sports coach who gives quick pep talks_, and the on-device model restyles the lot for you to review before saving. Without it you edit the words yourself; nothing else changes.
 
 **Everything runs on device.** The model trains and runs on your iPhone, and Apple Health is read with permission. Nothing about your activity is uploaded. There is no account and no leaderboard. Only your settings, like your goal and widget styles, sync through your own private iCloud.
 

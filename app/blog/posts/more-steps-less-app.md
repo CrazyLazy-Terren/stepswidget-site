@@ -3,7 +3,7 @@ title: 'More Steps, Less App: A Step Counter That Wants You to Close It'
 metaTitle: 'More Steps, Less App: The Minimalist Step Counter | Steps Widget'
 description: Most fitness apps measure success by time spent on screen. Steps Widget is built on the opposite bet — a calm, minimalist iPhone step counter designed to get out of your way so you can spend more time walking.
 date: '2026-09-11'
-updated: '2026-09-11'
+updated: 2026-09-26
 slug: more-steps-less-app
 category: Behind the App
 image: /assets/blog-more-steps-less-app.jpg
@@ -83,7 +83,7 @@ The widget styles receive equal care. A widget that clashes with your aesthetic 
 There are only a few reasons to open Steps Widget, and each one takes under a minute:
 
 - **Setting an achievable goal.** [Insight](https://stepswidget.app/docs/steps-and-data/insight) visualizes your last month of real activity beneath an interactive goal slider, helping you choose a target you can realistically maintain. Learn more about choosing your target in [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal).
-- **Customizing notification tone.** Describe your preferred coaching tone in plain words, and on supported iOS devices Apple Intelligence rewrites your nudges locally to match your personality. See [Reminder messages](https://stepswidget.app/docs/goal-reminders/reminder-messages).
+- **Writing your own reminders.** Rewrite every nudge in your own words, or describe a coaching voice and, on supported iOS devices, let Apple Intelligence restyle them on device for you to review. See [Reminder messages](https://stepswidget.app/docs/goal-reminders/reminder-messages).
 - **Choosing a new widget look.** Pick a theme or accent color, then return to your Home Screen to enjoy the glance.
 
 A visit that lasts 30 seconds and leaves you alone for the rest of the week is the app succeeding at its purpose.

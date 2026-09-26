@@ -30,17 +30,17 @@ export function ContentShell({ eyebrow, title, description, children }: ContentS
           <Link href="/" className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
             Steps Widget
           </Link>
-          <div className="flex gap-5">
-            <Link href="/docs" className="transition hover:text-[var(--text-strong)]">
+          <div className="-my-2 flex flex-wrap gap-x-5">
+            <Link href="/docs" className="py-2 transition hover:text-[var(--text-strong)]">
               Docs
             </Link>
-            <Link href="/blog" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
-            <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
               Privacy
             </Link>
-            <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/terms" className="py-2 transition hover:text-[var(--text-strong)]">
               Terms
             </Link>
           </div>

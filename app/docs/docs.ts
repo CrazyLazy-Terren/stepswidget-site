@@ -73,7 +73,7 @@ export const docSections: DocSection[] = [
   {
     slug: 'steps-and-data',
     title: 'Steps and data',
-    description: 'Where your step count comes from, how to reshape the day it measures, and what stays on your device.',
+    description: 'Where your step count comes from, how to reshape the day it measures, asking Siri for it, and what stays on your device.',
     order: 4,
   },
   {

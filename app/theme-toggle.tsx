@@ -62,7 +62,7 @@ export function ThemeToggle({ compact = false, lang = 'en' }: ThemeToggleProps) 
       <button
         type="button"
         onClick={toggleTheme}
-        className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
+        className="flex size-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
         aria-label={labels.toggle}>
         <span className="theme-icon-light">
           <ThemeIcon option="light" />

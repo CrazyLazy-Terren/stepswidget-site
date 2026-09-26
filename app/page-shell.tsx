@@ -20,10 +20,12 @@ export const pageGutter = 'px-5 sm:px-6 lg:px-8'
 /** Outer content width. */
 export const pageMaxWidth = 'max-w-7xl'
 
+// Tighter on phones, where 96px between sections reads as dead space rather
+// than breathing room. The top value still has to clear the fixed nav.
 const paddingYClass = {
-  default: 'py-24',
-  top: 'pt-24',
-  bottom: 'pb-24',
+  default: 'pt-20 pb-16 sm:py-24',
+  top: 'pt-20 sm:pt-24',
+  bottom: 'pb-16 sm:pb-24',
   none: '',
 } as const
 
@@ -34,7 +36,7 @@ type PageSectionProps = {
   /** Extra classes on the inner content container. */
   containerClassName?: string
   /**
-   * Which edges get the standard 96px rhythm. Split out rather than left to
+   * Which edges get the standard rhythm (96px, less on phones). Split out rather than left to
    * `className` because two competing Tailwind padding utilities resolve by
    * stylesheet order, not by the order they appear in the string.
    */

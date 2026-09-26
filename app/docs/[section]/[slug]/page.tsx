@@ -190,18 +190,27 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
 
             {toc.length > 2 && (
-              <nav aria-label="On this page" className="mt-8 border-b border-[color:var(--border)] pb-6 xl:hidden">
-                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">On this page</p>
-                <ul className="mt-3 grid gap-2 text-sm">
-                  {toc.map((entry) => (
-                    <li key={entry.id}>
-                      <a href={`#${entry.id}`} className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
-                        {entry.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              // Collapsed below xl: a dozen headings listed in full would push
+              // the first paragraph off a phone screen.
+              <details className="group mt-8 border-y border-[color:var(--border)] xl:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 py-3 text-sm font-medium text-[var(--text-strong)]">
+                  On this page
+                  <svg className="size-4 text-[var(--text-subtle)] transition group-open:rotate-45" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </summary>
+                <nav aria-label="On this page" className="border-t border-[color:var(--border)] py-3">
+                  <ul className="grid text-sm">
+                    {toc.map((entry) => (
+                      <li key={entry.id}>
+                        <a href={`#${entry.id}`} className="block py-2 text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+                          {entry.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </details>
             )}
 
             <div className="mt-4">

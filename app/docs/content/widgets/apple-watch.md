@@ -3,7 +3,7 @@ slug: apple-watch
 title: Apple Watch
 metaTitle: Steps Widget for Apple Watch - Complications and Reminders
 description: The standalone Watch app, its three complication styles, the settings you can change from the wrist, and why the Watch is the best device to send reminders.
-order: 4
+order: 5
 updated: 2026-08-10
 readingTime: 5 min read
 keywords:
@@ -72,7 +72,7 @@ The Watch is usually the best device to send your goal reminders. A wrist tap ar
 
 You will not get duplicate reminders across devices. The app elects a single sending device from iCloud heartbeats, and when the Watch is elected the iPhone stays quiet. Settings shows which device is currently sending. Details in [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices).
 
-> **Note:** The Watch cannot fetch weather data, so if **Local Sunset** is on it reads the sunset hour the iPhone last saved to iCloud. Reminder rewriting with Apple Intelligence is iPhone-only; Watch reminders use the templated wording.
+> **Note:** The Watch cannot fetch weather data, so if **Local Sunset** is on it reads the sunset hour the iPhone last saved to iCloud. Reminder messages you edit on the iPhone sync to the Watch, so a reminder from the wrist uses your wording too.
 
 ## Health access on the Watch
 

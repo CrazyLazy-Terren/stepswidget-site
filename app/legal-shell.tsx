@@ -53,11 +53,11 @@ export function LegalShell({ eyebrow, title, description, updated, sections }: L
             <Link href="/" className="font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
               Back to Steps Widget
             </Link>
-            <div className="flex gap-4">
-              <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
+            <div className="-my-2 flex flex-wrap gap-x-5">
+              <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
                 Privacy
               </Link>
-              <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
+              <Link href="/terms" className="py-2 transition hover:text-[var(--text-strong)]">
                 Terms
               </Link>
             </div>

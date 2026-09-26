@@ -180,7 +180,7 @@ const faqItems = [
   {
     question: 'Can I change how the nudges are worded?',
     answer:
-      'Yes. Describe the tone you want in plain language and Apple Intelligence rewrites each nudge on your device to match. A live preview in Settings shows the exact wording your current day would produce. This requires iOS 26 with Apple Intelligence; otherwise you get the standard wording.',
+      'Yes. Settings › Edit Messages lets you rewrite every reminder title and message in your own words, with placeholders that fill in your remaining steps and hours. On iOS 26 with Apple Intelligence you can also describe a voice, such as a sports coach, and the on-device model restyles them all for you to review before saving.',
   },
   {
     question: 'Does the on-device model send my activity anywhere?',
@@ -517,23 +517,23 @@ export default function Home() {
       <footer className={`border-t border-[color:var(--border)] py-8 ${pageGutter}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[var(--text-subtle)] sm:flex-row sm:items-center sm:justify-between">
           <SiteLogo textOnly={true} />
-          <div className="flex gap-5">
-            <Link href="/docs" className="transition hover:text-[var(--text-strong)]">
+          <div className="-my-2 flex flex-wrap gap-x-5">
+            <Link href="/docs" className="py-2 transition hover:text-[var(--text-strong)]">
               Docs
             </Link>
-            <Link href="/blog" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
-            <Link href="/about" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/about" className="py-2 transition hover:text-[var(--text-strong)]">
               About
             </Link>
-            <Link href="/terms" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/terms" className="py-2 transition hover:text-[var(--text-strong)]">
               Terms
             </Link>
-            <Link href="/privacy" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
               Privacy
             </Link>
-            <Link href="/es" hrefLang="es" lang="es" className="transition hover:text-[var(--text-strong)]">
+            <Link href="/es" hrefLang="es" lang="es" className="py-2 transition hover:text-[var(--text-strong)]">
               Español
             </Link>
           </div>

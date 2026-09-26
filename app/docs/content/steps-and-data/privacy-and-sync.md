@@ -3,7 +3,7 @@ slug: privacy-and-sync
 title: Privacy and sync
 metaTitle: How Steps Widget Handles Your Health Data
 description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server holding your steps.
-order: 4
+order: 5
 updated: 2026-09-08
 readingTime: 5 min read
 keywords:
@@ -28,7 +28,7 @@ There is one location exception, and it is opt-in: **Local Sunset** uses your lo
 
 The model that decides when to remind you runs and _trains_ on your iPhone. It trains against your existing Apple Health step history, read at training time — it does not build a separate copy of your activity to learn from. Your pattern, the thing that makes the reminders feel personal, never leaves the phone.
 
-Reminder rewriting is the same story: Apple Intelligence runs the rewrite on device, so your step counts, your goal, and your tone instruction are not sent to a server — not ours, and not Apple's.
+Restyling your reminder messages with Apple Intelligence is the same story: the rewrite runs on Apple's on-device model, so your wording and your style description are not sent to a server — not ours, and not Apple's. Siri requests are answered the same way, by the app reading Health on your device.
 
 Your step counts are read from Health on the device, drawn on the device, and that is the end of the journey.
 
@@ -53,7 +53,7 @@ If you use more than one Apple device, your **settings** follow you — not your
 
 - Daily goal
 - Last 24-Hour and Start of Day
-- Goal Reminder on/off, reminder tone, Local Sunset
+- Goal Reminder on/off, your reminder messages, Local Sunset
 - Widget styles and display options
 
 This runs through your own private iCloud key-value store, the same account that syncs your Notes. There is no CrazyLazy server involved, which is a different arrangement from the usual model where you create an account and the vendor holds your data.

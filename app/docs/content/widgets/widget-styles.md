@@ -30,7 +30,7 @@ Each widget type offers three rows of styles:
 | Two-tone | A primary and a secondary colour — the number in one, the ring or chart in the other           |
 | Gradient | A gradient background with light text, in themes like Sunrise, Meadow, Dusk, Aurora, and Ocean |
 
-A fourth row appears once you have made styles of your own. **Style from Photo**, in the bottom bar, builds one out of any picture in your library — either as a palette lifted off the photo, or as the photo itself behind the step count. See [Styles from a photo](/docs/widgets/photo-styles).
+A fourth row appears once you have made styles of your own. **Style from Photo**, in the bottom bar, builds one out of any picture in your library — either as a palette lifted off the photo, or as the photo itself behind the step count. See [Styles from a photo](/docs/widgets/photo-styles), and [Sharing a photo style](/docs/widgets/share-a-style) to send one to someone else.
 
 ## Display options
 
@@ -64,7 +64,7 @@ Use Bar Chart when you want to check a specific hour, and Line Chart when you wa
 
 What is free and what is paid:
 
-**Free forever** — goal reminders and every setting behind them, the on-device model and its training, reminder tone, the reminder schedule, your daily goal, Insight, Live Activity, the Apple Watch app, Motion Sensor, the step window settings, and a working widget on every surface.
+**Free forever** — goal reminders and every setting behind them, the on-device model and its training, your reminder messages, the reminder schedule, your daily goal, Insight, Live Activity, the Apple Watch app, Motion Sensor, the step window settings, and a working widget on every surface.
 
 **Paid** — applying additional widget styles, colours, and gradient themes.
 

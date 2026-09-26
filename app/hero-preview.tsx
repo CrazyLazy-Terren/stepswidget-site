@@ -103,7 +103,7 @@ export function HeroPreview() {
           />
         </div>
       </div>
-      <div className="my-24 pt-24 max-w-xl">
+      <div className="my-16 pt-8 max-w-xl sm:my-24 sm:pt-24">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widget gallery</p>
         <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Choose the style that fits your.</h2>
         <p className="mt-5 text-pretty text-lg leading-8 text-[var(--text-muted)]">
