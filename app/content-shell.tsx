@@ -7,21 +7,28 @@ type ContentShellProps = {
   eyebrow: string
   title: string
   description: string
+  /**
+   * Replaces the standard glow-backed header, for a page whose title sits on
+   * its own artwork. It still receives the page's title, so pass that through.
+   */
+  hero?: ReactNode
   children: ReactNode
 }
 
-export function ContentShell({ eyebrow, title, description, children }: ContentShellProps) {
+export function ContentShell({ eyebrow, title, description, hero, children }: ContentShellProps) {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
       <SiteNav fixed />
 
-      <PageSection
-        paddingY="top"
-        overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
-        <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">{title}</h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
-      </PageSection>
+      {hero ?? (
+        <PageSection
+          paddingY="top"
+          overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">{eyebrow}</p>
+          <h1 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">{title}</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
+        </PageSection>
+      )}
 
       <PageSection paddingY="default">{children}</PageSection>
 
