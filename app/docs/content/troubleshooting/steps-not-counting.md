@@ -4,7 +4,7 @@ title: Steps not counting
 metaTitle: Fix an iPhone That Is Not Counting Steps
 description: Work through the recording chain — motion tracking, Health permission, data sources, and where you carry the phone — when your count stays at zero or reads low.
 order: 2
-updated: 2026-08-10
+updated: 2026-10-01
 readingTime: 6 min read
 keywords:
   - iPhone not counting steps
@@ -42,6 +42,8 @@ HealthKit denies access silently: an app without permission is told the data doe
 2. Tap **Steps Widget**.
 3. Turn on the step, stand hour, and activity summary types.
 4. Open the app once so it can read the newly available data.
+
+**Permissions already on but still zero?** Re-authorize. In the same screen, tap **Turn Off All**, then **Turn On All**, and open the app again. This resets a permission grant that looks correct but has stopped delivering data — most often after an iOS update or restoring from a backup. If that does not help, restart the iPhone; it clears a stuck connection between Health and the app.
 
 ## 4. Are you carrying the phone?
 
