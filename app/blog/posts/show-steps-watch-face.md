@@ -1,17 +1,22 @@
 ---
 slug: show-steps-watch-face
 category: Apple Watch
-title: How to Show Steps on Your Apple Watch Face
-metaTitle: Show Steps on Your Apple Watch Face | Steps Widget
-description: Apple Watch does not show your step count on the watch face by default. Learn how to add a step complication using a third-party app like Steps Widget.
+title: 'How to Show Steps on Your Apple Watch Face (Add a Step Complication)'
+metaTitle: 'How to Add a Step Counter to Your Apple Watch Face | Steps Widget'
+description: Apple Watch has no native steps complication, so your step count never appears on the watch face by default. Here is how to add one with a third-party app, and which complication slots work best.
 date: 2026-07-21
+updated: '2026-10-07'
 keywords:
+  - how to show steps on apple watch
+  - how to add step counter to apple watch face
+  - how to get steps on apple watch face
+  - apple watch face that shows steps
+  - how to put steps on apple watch face
+  - step count on apple watch face
+  - how to add steps to apple watch face
   - show steps on apple watch face
   - apple watch step complication
-  - apple watch steps widget
   - step counter apple watch face
-  - add steps to watch face
-  - apple watch complication setup
 image: /assets/blog-user-setting-up-apple-watch-step-counter-app.jpg
 ---
 
@@ -26,6 +31,13 @@ Here's the basic process:
 - Choose your preferred complication style and save
 
 Once set up, your step count appears directly on your watch face, updated throughout the day. Apple Watch’s built-in Activity complication only displays Move, Exercise, and Stand goals—step counts cannot be shown natively and require a third-party app complication.
+
+> **Quick Answer: Putting a Step Count on Your Watch Face**
+> 1. **There is no native option.** watchOS ships no steps complication; Apple's Activity complication shows only the three rings.
+> 2. **Install a step app on both devices** — the iPhone app usually installs the Watch app automatically, and you must grant Health access on the Watch separately.
+> 3. **Touch and hold the face → Edit → Complications**, tap a slot, and choose the app.
+> 4. **Pick the slot for the job:** a circular slot suits a count with a progress ring; a wide rectangular slot can hold a small chart of your day.
+> 5. **Modular and Infograph faces** offer the most and largest slots, so they give step data the most room.
 
 ## How to install a step counter app on your iPhone and Apple Watch
 
@@ -110,6 +122,22 @@ Adding a complication does draw slightly more power since the watch face refresh
 If you want a step count complication that stays private and looks good without a complicated setup, [Steps Widget](https://stepswidget.app) is worth a look. It reads your Apple Health data locally, so nothing leaves your device. There are no social feeds, no challenges, and no subscription required to get the core experience.
 
 You get multiple complication styles for your Apple Watch face, plus widget options for your iPhone [Home Screen and Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget), so your step count is visible wherever you check. Download Steps Widget from the App Store and add the complication to your watch face in under five minutes.
+
+## Frequently asked questions
+
+**How do I show steps on my Apple Watch?** Add a third-party step app's complication to your watch face: touch and hold the face, tap Edit, swipe to Complications, tap a slot, and choose the app. Your raw step count is also in the Activity app, below the three rings.
+
+**How do I add a step counter to my Apple Watch face?** Install a step counter app on your iPhone, make sure its Watch app is installed and has Health permission on the Watch itself, then edit your watch face and assign it to a complication slot.
+
+**Is there an Apple Watch face that shows steps?** No face shows steps on its own — the step count comes from the complication you add, not from the face. Faces with more and larger slots, such as Modular and Infograph, give it the most room.
+
+**Why is there no built-in steps complication?** Apple's Activity complications are built around the Move, Exercise, and Stand rings rather than raw step counts, so a step count on the face always comes from a third-party app.
+
+**Why is my step complication not in the list?** The Watch app is probably not installed. Open the Watch app on your iPhone, go to My Watch › Available Apps, and install it — then open it once on the Watch so the complication registers.
+
+**Why does my watch face step count lag behind the Health app?** Complications refresh on a budget set by watchOS rather than live, so a few minutes behind is normal. See [how your iPhone and Apple Watch count and sync steps](https://stepswidget.app/blog/how-iphone-apple-watch-count-and-sync-steps).
+
+**Can I set a step goal on my Apple Watch?** Not natively — the rings track calories, exercise minutes, and stand hours. A third-party app supplies a step goal; see [how to set a step goal on Apple Watch](https://stepswidget.app/blog/apple-watch-step-goal).
 
 ## Key Takeaways
 
