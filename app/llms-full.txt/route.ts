@@ -1,6 +1,6 @@
 import { headers } from 'next/headers'
-import { getBlogPosts } from '../blog/posts'
-import { docPath, getDocTree } from '../docs/docs'
+import { getBlogPosts } from '../(en)/blog/posts'
+import { docPath, getDocTree } from '../(en)/docs/docs'
 import { appFacts } from '../structured-data'
 
 export const dynamic = 'force-dynamic'

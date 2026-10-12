@@ -24,7 +24,7 @@ function savePreference(name: 'theme' | 'accent', value: Theme | Accent) {
   try {
     window.localStorage.setItem(name, value)
   } catch {
-    // Cookies drive server rendering; localStorage is only kept for older visits.
+    // The inline script in site-document.tsx reads the cookie; localStorage is only kept for older visits.
   }
 }
 

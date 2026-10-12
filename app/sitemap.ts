@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
-import { getBlogPosts } from './blog/posts'
-import { docPath, getDocTree, getDocs } from './docs/docs'
+import { getBlogPosts } from './(en)/blog/posts'
+import { docPath, getDocTree, getDocs } from './(en)/docs/docs'
 
 export const dynamic = 'force-dynamic'
 
