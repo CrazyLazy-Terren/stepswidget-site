@@ -11,7 +11,7 @@ keywords:
   - ios 18 custom color widgets
   - tinted step counter widget
   - aesthetic home screen ios 18
-image: /assets/blog-tinted-widgets.jpg
+image: /assets/blog-tinted-widgets.webp
 ---
 
 With the release of iOS 18, Apple introduced some of the most significant design updates to the iPhone Home Screen in years. Alongside placing apps anywhere on the grid, users can now apply a **custom color tint** across all app icons and widgets.
@@ -56,3 +56,6 @@ To get the most out of your customized Home Screen, combine your tinted steps wi
 - **Wallpaper First**: Select a minimal, high-quality wallpaper. Abstract gradients, dark textures, and simple nature scenes work best for tinted icon layouts.
 - **Use Widget Stacks**: Stack your tinted steps widget with other utility widgets (like calendar or battery). You can swipe through them when needed, keeping your screen clutter-free.
 - **Hide App Labels**: In the iOS 18 customization sheet, select **Large** icons. This hides app titles below your icons and widgets, creating a cleaner, more fluid visual grid.
+
+For more styling techniques, including extracting palettes directly from your wallpaper, check out our guide on [styles from a photo](/docs/widgets/photo-styles) and the complete reference for [styling widgets](/docs/widgets/widget-styles).
+

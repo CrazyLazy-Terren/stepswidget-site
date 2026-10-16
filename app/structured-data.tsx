@@ -113,8 +113,17 @@ export function websiteSchema() {
     url: siteUrl,
     inLanguage: 'en-US',
     publisher: { '@id': organizationId },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteUrl}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 }
+
 
 /**
  * The most important node on the site: it tells search engines and language

@@ -16,7 +16,7 @@ keywords:
   - simple step counter iphone
   - stay active app iphone
   - daily activity app vs workout tracker
-image: /assets/blog-vs-pedometer.jpg
+image: /assets/blog-vs-pedometer.webp
 ---
 
 **Short answer:** the two apps focus on different parts of your day. Pedometer++ is built around the activity you set out to do: workouts, walks, hikes, and routes, with over a decade of development behind its stats, maps, and history. Steps Widget is built around everything in between. Its job is to keep you active on an ordinary day of work, meetings, and life, by keeping your step count in sight and sending a gentle nudge when the day is heading to miss your goal.

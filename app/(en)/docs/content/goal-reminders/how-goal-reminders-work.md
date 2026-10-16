@@ -11,7 +11,7 @@ keywords:
   - step goal notification
   - set up reminders iPhone
   - tune step reminders
-image: /assets/feature-nudges.png
+image: /assets/feature-nudges.webp
 ---
 
 Steps reminds you from a forecast rather than a timer. It projects the step count you are heading for and only speaks up when that projection falls short of your goal — so on a day you are already walking enough, you hear nothing.
@@ -105,3 +105,6 @@ The exact thresholds, the reminder window, and how one device is elected to send
 - [Reminder messages](/docs/goal-reminders/reminder-messages) — write the messages in your own words.
 - [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices) — hours, sunset, and which device sends.
 - [Reminders not arriving](/docs/troubleshooting/reminders-not-arriving) — when nothing fires.
+- [Will I hit my step goal today?](/blog/will-i-hit-my-step-goal-today) — how daily pace forecasting compares with fixed timers.
+- [Best stand up reminder apps for iPhone](/blog/best-stand-up-reminder-apps-iphone) — comparing active movement alerts with passive stand timers.
+

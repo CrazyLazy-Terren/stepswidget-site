@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, Search as SearchIcon, X } from 'lucide-react'
 import { appStoreUrl } from './app-store'
 import { MobileMenu } from './mobile-menu'
+import { SearchTrigger } from './search-dialog'
 import { ThemeToggle } from './theme-toggle'
 
 type SiteNavProps = {
@@ -44,8 +45,7 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
 
 export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
   return (
-    <header
-      className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl py-2 sm:py-0 px-5 sm:px-6 lg:px-8`}>
+    <header className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] py-2 sm:py-0 px-6 lg:px-8`}>
       <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4`}>
         <SiteLogo />
         <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-strong)] md:flex">
@@ -54,12 +54,12 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
               Product
               <span className="size-1.5 rotate-45 border-b border-r border-current opacity-60 transition group-hover:opacity-100" />
             </Link>
-            <div className="pointer-events-none absolute left-1/2 top-[80%] z-50 w-40 -translate-x-1/2 translate-y-2 rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-3)] p-1.5 opacity-0 shadow-[var(--soft-shadow)] backdrop-blur-xl transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <div className="pointer-events-none absolute left-1/2 top-[80%] z-50 w-40 -translate-x-1/2 translate-y-2 rounded-lg border border-[color:var(--border)] bg-[var(--page-bg)] bg-[image:linear-gradient(var(--surface-1),var(--surface-1))] p-1.5 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
               {productLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block rounded-[10px] px-3 py-2 text-md text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
+                  className="block rounded-lg px-3 py-2 text-md text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--text-strong)]">
                   {item.label}
                 </Link>
               ))}
@@ -71,35 +71,36 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
             </Link>
           ))}
         </div>
-        <div className="hidden flex-wrap items-center justify-end gap-2 md:flex">
+        <div className="hidden flex-wrap items-center justify-end gap-3 md:flex">
+          <SearchTrigger />
           <ThemeToggle />
-          {/* <a
-            href={appStoreUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-2.5 text-sm font-semibold leading-none text-[var(--button-text)] transition hover:opacity-90 sm:inline-flex">
-            Get app
-          </a> */}
         </div>
         <div className="flex items-center gap-2 md:hidden">
+          <SearchTrigger compact />
           <ThemeToggle compact />
           <MobileMenu
             summary={
-              <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:border-[color:var(--border-strong)]">
+              <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) transition hover:border-[color:var(--border-strong)]">
                 <span className="sr-only">Open navigation menu</span>
 
                 <Menu className="size-5 group-open:hidden" />
                 <X className="hidden size-5 group-open:block" />
               </summary>
             }>
-            <div className="absolute right-0 top-full z-50 mt-3 w-[calc(100vw-2.5rem)] max-w-sm rounded-[22px] border border-[color:var(--border)] bg-[var(--surface-3)] p-3 shadow-[var(--soft-shadow)] backdrop-blur-xl">
+            <div className="absolute right-0 top-full z-50 mt-3 w-[calc(100vw-3rem)] max-w-sm rounded-lg border border-[color:var(--border)] bg-[var(--page-bg)] bg-[image:linear-gradient(var(--surface-1),var(--surface-1))] p-3">
               <div className="grid gap-1">
+                <Link
+                  href="/search"
+                  className="flex items-center gap-2 rounded-lg bg-[var(--surface-1)] px-3 py-2.5 text-base font-medium text-[var(--text-strong)] transition hover:bg-[var(--surface-2)]">
+                  <SearchIcon className="size-4 text-[var(--accent-color)]" />
+                  Search
+                </Link>
                 <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Product</p>
                 {productLinks.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[12px] px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
+                    className="rounded-lg px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--text-strong)]">
                     {item.label}
                   </Link>
                 ))}
@@ -107,7 +108,7 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[12px] px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-1)] hover:text-[var(--text-strong)]">
+                    className="rounded-lg px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--text-strong)]">
                     {item.label}
                   </Link>
                 ))}

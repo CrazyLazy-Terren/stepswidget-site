@@ -6,7 +6,7 @@ date: '2026-10-05'
 updated: '2026-10-05'
 slug: see-step-count-without-opening-health-app
 category: Widgets
-image: /assets/blog-steps.jpg
+image: /assets/blog-steps.webp
 
 keywords:
   - see step count without opening health app

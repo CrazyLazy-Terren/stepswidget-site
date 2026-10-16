@@ -6,7 +6,7 @@ date: '2026-10-07'
 updated: '2026-10-07'
 slug: apple-watch-not-counting-steps
 category: Troubleshooting
-image: /assets/blog-apple-watch-steps-accuracy.jpg
+image: /assets/blog-apple-watch-steps-accuracy.webp
 
 keywords:
   - apple watch not counting steps
@@ -161,4 +161,5 @@ More on what a wrist sensor can and cannot see is in [how accurate is the Apple 
 | Count low but present | Arm held still, wrong health details, or never calibrated |
 | Sudden jump in total | Normal — a backlog syncing after the devices reconnected |
 
-Related reading: [why is my iPhone not counting steps](https://stepswidget.app/blog/iphone-not-counting-steps) for the phone-side version of this checklist, [does the Apple Watch count steps](https://stepswidget.app/blog/how-to-view-and-track-apple-watch-steps-daily) for where the number lives, and [how your iPhone and Apple Watch count and sync steps](https://stepswidget.app/blog/how-iphone-apple-watch-count-and-sync-steps) for the full pipeline.
+Related reading: [why is my iPhone not counting steps](/blog/iphone-not-counting-steps) for the phone-side version of this checklist, [how your iPhone and Apple Watch count and sync steps](/blog/how-iphone-apple-watch-count-and-sync-steps) for the full pipeline, and the official [steps not counting troubleshooting doc](/docs/troubleshooting/steps-not-counting) or [Apple Watch widget guide](/docs/widgets/apple-watch).
+

@@ -77,3 +77,6 @@ Open Apple's **Shortcuts** app, tap **+**, and search for **Steps**. Three backg
 - [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work) — how the on-device projection works.
 - [The step window](/docs/steps-and-data/step-window) — how day boundaries and rolling 24-hour windows work.
 - [Connect Apple Health](/docs/getting-started/connect-apple-health) — troubleshooting Health data permissions.
+- [Track steps without Apple Watch](/blog/track-steps-iphone-without-apple-watch) — using iPhone sensors and Siri for everyday tracking.
+- [See your step count without opening Health](/blog/see-step-count-without-opening-health-app) — glanceable step counts on lock screen, widgets, and voice.
+

@@ -11,21 +11,27 @@ import type { ReactNode } from 'react'
  * two content columns 32px out of alignment.
  *
  * Change a value here and it moves everywhere. Do not hand-roll
- * `px-5 sm:px-6 lg:px-8` in a page.
+ * `px-6 lg:px-8` in a page.
  */
 
 /** Horizontal gutter. Also used by footers and the nav so they align with content. */
-export const pageGutter = 'px-5 sm:px-6 lg:px-8'
+export const pageGutter = 'px-6 lg:px-8'
 
 /** Outer content width. */
 export const pageMaxWidth = 'max-w-7xl'
 
-// Tighter on phones, where 96px between sections reads as dead space rather
-// than breathing room. The top value still has to clear the fixed nav.
+// Two values only: 96px at the page's top and bottom edge, 64px from one
+// section to the next. Sections pad their top edge alone, so a stack of them
+// never doubles the gap. The 96px top also clears the fixed nav.
 const paddingYClass = {
-  default: 'pt-20 pb-16 sm:py-24',
-  top: 'pt-20 sm:pt-24',
-  bottom: 'pb-16 sm:pb-24',
+  /** A page that is a single section. */
+  default: 'py-24',
+  /** The first section on a page. */
+  top: 'pt-24',
+  /** Any section after the first. */
+  section: 'pt-20',
+  /** The last section on a page. */
+  bottom: 'pt-20 pb-24',
   none: '',
 } as const
 
@@ -36,7 +42,7 @@ type PageSectionProps = {
   /** Extra classes on the inner content container. */
   containerClassName?: string
   /**
-   * Which edges get the standard rhythm (96px, less on phones). Split out rather than left to
+   * Where this section sits on the page, which sets its vertical rhythm. Split out rather than left to
    * `className` because two competing Tailwind padding utilities resolve by
    * stylesheet order, not by the order they appear in the string.
    */

@@ -111,17 +111,14 @@ const markdownComponents: Components = {
     if (isBlock) {
       return <code className={className}>{children}</code>
     }
-    return <code className="rounded bg-[var(--surface-media)] px-1.5 py-0.5 font-mono text-sm text-[var(--text-strong)]">{children}</code>
+    return <code className="rounded-lg px-1.5 py-0.5 font-mono text-sm text-[var(--text-strong)]">{children}</code>
   },
-  pre: ({ children }) => (
-    <pre className="my-4 overflow-x-auto rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] p-4 font-mono text-sm">{children}</pre>
-  ),
+  pre: ({ children }) => <pre className="my-4 overflow-x-auto rounded-lg border border-[color:var(--border)] p-4 font-mono text-sm">{children}</pre>,
   table: ({ children }) => (
-    <div className="my-4 overflow-x-auto rounded-2xl border border-[color:var(--border)]">
+    <div className="my-4 overflow-x-auto rounded-lg border border-[color:var(--border)]">
       <table className="w-full border-collapse text-left text-sm">{children}</table>
     </div>
   ),
-  thead: ({ children }) => <thead className="bg-[var(--surface-media)]">{children}</thead>,
   th: ({ children }) => <th className="border-b border-[color:var(--border)] px-3 py-2 font-semibold text-[var(--text-strong)]">{children}</th>,
   td: ({ children }) => <td className="border-b border-[color:var(--border)] px-3 py-2 text-[var(--text-muted)]">{children}</td>,
   img: ({ src, alt }) => {
@@ -132,18 +129,12 @@ const markdownComponents: Components = {
     // photos get.
     if (/-icon\.[a-z]+$/i.test(resolved)) {
       return (
-        <Image
-          src={resolved}
-          alt={alt ?? ''}
-          width={56}
-          height={56}
-          className="inline-block h-14 w-14 rounded-[22%] border border-[color:var(--border)] shadow-sm"
-        />
+        <Image src={resolved} alt={alt ?? ''} width={56} height={56} className="inline-block h-14 w-14 rounded-[22%] border border-[color:var(--border)]" />
       )
     }
 
     return (
-      <span className="my-4 block overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-media)] shadow-sm">
+      <span className="my-4 block overflow-hidden rounded-lg border border-[color:var(--border)]">
         <Image src={resolved} alt={alt ?? ''} width={800} height={500} sizes="(max-width: 768px) 100vw, 800px" className="h-auto w-full object-cover" />
       </span>
     )
@@ -322,7 +313,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {post.image && (
-            <div className="mt-8 overflow-hidden rounded-3xl">
+            <div className="mt-8 overflow-hidden rounded-lg">
               <Image
                 src={post.image}
                 alt={`${post.title} hero`}
@@ -343,15 +334,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {recommendedPosts.length > 0 && (
             <section className="mt-12 border-t border-[color:var(--border)] pt-8">
               <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Recommended posts</h2>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {recommendedPosts.map((recommended) => (
                   <Link
                     key={recommended.slug}
                     href={`/blog/${recommended.slug}`}
-                    className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5 transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
+                    className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6 transition hover:border-[color:var(--border-strong)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{recommended.category}</p>
-                    <h3 className="mt-3 text-lg font-semibold leading-6 tracking-[-0.01em] text-[var(--text-strong)]">{recommended.title}</h3>
-                    <div className="flex items-center justify-between gap-3 pt-5 text-sm text-[var(--text-subtle)]">
+                    <h3 className="mt-4 text-lg font-semibold leading-6 tracking-[-0.01em] text-[var(--text-strong)]">{recommended.title}</h3>
+                    <div className="flex items-center justify-between gap-3 pt-6 text-sm text-[var(--text-subtle)]">
                       <span>{recommended.readingTime}</span>
                       <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
                         Read <ArrowRight />
@@ -369,9 +360,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Back to list
           </Link>
           <Link href="/" className="">
-            <div className="mt-10 rounded-[20px] border border-[color:var(--border)] bg-[var(--surface-1)] p-5">
+            <div className="mt-10 rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Try Steps Widget</p>
-              <p className="mt-3 leading-7 text-[var(--text-muted)]">
+              <p className="mt-4 leading-7 text-[var(--text-muted)]">
                 Keep your daily steps visible on iPhone, Lock Screen, Home Screen, and Apple Watch with a private Apple Health step counter widget.
               </p>
             </div>

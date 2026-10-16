@@ -16,7 +16,7 @@ keywords:
   - walking health benefits research
   - breaking up sitting
   - 7000 steps a day
-image: /assets/blog-sitting-risks-walking-hero.jpg
+image: /assets/blog-sitting-risks-walking-hero.webp
 ---
 
 *Last reviewed: August 2026*
@@ -95,7 +95,7 @@ A broader caution, stated plainly: most of the large sitting studies are observa
 
 **Standing time showed no association with lower cardiovascular risk, and standing more than two hours a day was linked to higher circulatory risk.**
 
-![Adjustable standing desk beside a walking route through an office](/assets/blog-standing-desk-walking.jpg)
+![Adjustable standing desk beside a walking route through an office](/assets/blog-standing-desk-walking.webp)
 
 This is the finding that surprises people most, and it comes from the same UK Biobank analysis.
 
@@ -119,7 +119,7 @@ An hour of brisk walking a day is a genuinely demanding target, and most people 
 
 **About 7,000 steps a day captures most of the measurable benefit; 10,000 was a marketing number, not a research finding.**
 
-![Walking outdoors along a tree-lined path](/assets/blog-daily-walking-steps.jpg)
+![Walking outdoors along a tree-lined path](/assets/blog-daily-walking-steps.webp)
 
 The 10,000-step target came from a 1965 marketing campaign. Yamasa, a Japanese instrument company, sold a pedometer called the *manpo-kei* — literally "10,000-step meter." Harvard epidemiologist I-Min Lee, who has studied step counts for decades, has been blunt that no study underpinned it: the number was chosen because it sounded good and was easy to remember.[^7]
 
@@ -147,7 +147,7 @@ The practical read: the gap between 2,000 and 7,000 steps is where nearly all th
 
 **Five minutes of walking every 30 minutes was the only pattern to improve both blood pressure and blood sugar, cutting post-meal glucose spikes by 58%.**
 
-![Taking a short walking break away from the desk](/assets/blog-walking-break-timer.jpg)
+![Taking a short walking break away from the desk](/assets/blog-walking-break-timer.webp)
 
 A 2023 randomised crossover trial run by Duran, Diaz and colleagues at Columbia tested this precisely. Participants sat for eight hours while trying five different patterns: one minute of walking every 30 minutes, one minute every 60, five minutes every 30, five minutes every 60, and no walking at all.[^4]
 

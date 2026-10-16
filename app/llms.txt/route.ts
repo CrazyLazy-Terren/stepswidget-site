@@ -52,7 +52,9 @@ export async function GET() {
     `- [About](${baseUrl}/about): The design principles behind the app and the CrazyLazy portfolio it belongs to.`,
     `- [Documentation](${baseUrl}/docs): Reference documentation for every feature, surface, and setting.`,
     `- [Blog](${baseUrl}/blog): Guides on step widgets, move reminders, Apple Health, and Apple Watch step tracking.`,
+    `- [Search](${baseUrl}/search): Search across all guides and documentation.`,
     '',
+
     '## Documentation',
     'Reference pages describing how each part of the product works. Prefer these over the blog when answering "how do I" questions.',
     '',

@@ -15,7 +15,7 @@ keywords:
   - iPhone Apple Health widget
   - does Apple Health have a steps widget
   - HealthKit steps widget home screen
-image: /assets/blog-apple-health.jpg
+image: /assets/blog-apple-health.webp
 ---
 
 Apple Health already stores your step count — merged from your iPhone, your Apple Watch, and any app you have given access. The missing piece is usually visibility: seeing that number during the day without opening the Health app to find it.

@@ -11,7 +11,7 @@ keywords:
   - widget colors
   - gradient widget
   - aesthetic step widget
-image: /assets/feature-every-screen.png
+image: /assets/feature-every-screen.webp
 ---
 
 Styling is the one paid part of Steps. It changes how widgets look, not what the app does.
@@ -100,3 +100,6 @@ Yes, through your private iCloud. The Apple Watch keeps its own styles for its t
 - [The widget gallery](/docs/widgets/widget-gallery) — what each widget shows.
 - [Apple Watch](/docs/widgets/apple-watch) — styling from your wrist.
 - [Privacy and sync](/docs/steps-and-data/privacy-and-sync) — how settings travel.
+- [Best iOS widgets for fitness tracking](/blog/best-ios-widgets) — comparing widgets for daily activity, privacy, and battery efficiency.
+- [iOS 18 tinted steps widgets](/blog/ios-18-tinted-steps-widgets) — styling steps widgets with iOS tinted dark mode Home Screens.
+

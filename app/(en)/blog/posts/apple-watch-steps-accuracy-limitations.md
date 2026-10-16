@@ -12,7 +12,7 @@ keywords:
   - how accurate is apple watch steps
   - apple watch overcounting steps
   - apple watch not counting steps stroller
-image: /assets/blog-apple-watch-steps-accuracy.jpg
+image: /assets/blog-apple-watch-steps-accuracy.webp
 ---
 
 A common question among fitness enthusiasts is: how accurate are Apple Watch steps? While we rely on our smartwatches to track daily movement, the technology behind wrist-based tracking has unique characteristics.
@@ -63,4 +63,5 @@ Knowing the accuracy of your Apple Watch steps is only half the battle. The othe
 
 - **Steps Widget** solves this by reading your Apple Health step data and placing your daily steps as a clean progress ring or stat block directly on your iPhone Home Screen, Lock Screen, and Watch face complications.
 
-- Having this number visible at a glance provides a constant, quiet nudge to close your daily goal, without needing to dig through menus.
+- Having this number visible at a glance provides a constant, quiet nudge to close your daily goal, without needing to dig through menus. Learn how to configure watch face complications in our [Apple Watch documentation](/docs/widgets/apple-watch), and see our guide on [how to set a step goal on Apple Watch](/blog/apple-watch-step-goal).
+

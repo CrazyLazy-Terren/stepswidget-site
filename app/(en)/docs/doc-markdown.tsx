@@ -44,7 +44,7 @@ function toText(node: ReactNode): string {
 function AnchoredHeading({ level, children }: { level: 2 | 3; children: ReactNode }) {
   const id = slugifyHeading(toText(children))
   const Tag = level === 2 ? 'h2' : 'h3'
-  const size = level === 2 ? 'mt-12 text-2xl' : 'mt-9 text-xl'
+  const size = level === 2 ? 'mt-12 text-2xl' : 'mt-10 text-xl'
 
   return (
     <Tag id={id} className={`group scroll-mt-28 ${size} mb-4 font-semibold tracking-[-0.01em] text-[var(--text-strong)]`}>
@@ -61,7 +61,7 @@ function AnchoredHeading({ level, children }: { level: 2 | 3; children: ReactNod
 export const docMarkdownComponents: Components = {
   h2: ({ children }) => <AnchoredHeading level={2}>{children}</AnchoredHeading>,
   h3: ({ children }) => <AnchoredHeading level={3}>{children}</AnchoredHeading>,
-  p: ({ children }) => <p className="mb-5 leading-7 text-[var(--text-muted)] last:mb-0">{children}</p>,
+  p: ({ children }) => <p className="mb-6 leading-7 text-[var(--text-muted)] last:mb-0">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold text-[var(--text-strong)]">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
   a: ({ href, children }) => {
@@ -75,14 +75,14 @@ export const docMarkdownComponents: Components = {
       </a>
     )
   },
-  ul: ({ children }) => <ul className="mb-5 ml-5 list-disc space-y-2 leading-7 text-[var(--text-muted)] marker:text-[var(--accent-color)]">{children}</ul>,
+  ul: ({ children }) => <ul className="mb-6 ml-5 list-disc space-y-2 leading-7 text-[var(--text-muted)] marker:text-[var(--accent-color)]">{children}</ul>,
   ol: ({ children }) => (
-    <ol className="mb-5 ml-5 list-decimal space-y-3 leading-7 text-[var(--text-muted)] marker:font-semibold marker:text-[var(--accent-color)]">{children}</ol>
+    <ol className="mb-6 ml-5 list-decimal space-y-4 leading-7 text-[var(--text-muted)] marker:font-semibold marker:text-[var(--accent-color)]">{children}</ol>
   ),
   li: ({ children }) => <li className="pl-1">{children}</li>,
   // Blockquotes are the callout primitive: `> **Note:** ...` in the markdown.
   blockquote: ({ children }) => (
-    <div className="my-6 rounded-[4px] border border-[color:var(--border)] border-l-4 border-l-[color:var(--accent-color)] bg-[var(--surface-media)] px-5 py-4 [&_p]:mb-2 [&_p:last-child]:mb-0">
+    <div className="my-6 rounded-lg border border-[color:var(--border)] border-l-4 border-l-[color:var(--accent-color)] px-6 py-4 [&_p]:mb-2 [&_p:last-child]:mb-0">
       {children}
     </div>
   ),
@@ -91,11 +91,9 @@ export const docMarkdownComponents: Components = {
     if (className) {
       return <code className={className}>{children}</code>
     }
-    return <code className="rounded bg-[var(--surface-media)] px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--text-strong)]">{children}</code>
+    return <code className="rounded-lg px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--text-strong)]">{children}</code>
   },
-  pre: ({ children }) => (
-    <pre className="my-6 overflow-x-auto rounded-[4px] bg-[var(--surface-media)] p-4 font-mono text-sm leading-6">{children}</pre>
-  ),
+  pre: ({ children }) => <pre className="my-6 overflow-x-auto rounded-lg p-4 font-mono text-sm leading-6">{children}</pre>,
   table: ({ children }) => (
     <div className="my-6 overflow-x-auto">
       <table className="w-full border-collapse text-left text-sm">{children}</table>
@@ -111,7 +109,7 @@ export const docMarkdownComponents: Components = {
     <td className="border-b border-[color:var(--border)] px-0 py-3 pr-6 align-top leading-6 text-[var(--text-muted)] last:pr-0">{children}</td>
   ),
   img: ({ src, alt }) => (
-    <span className="my-6 block overflow-hidden rounded-[4px] bg-[var(--surface-media)]">
+    <span className="my-6 block overflow-hidden rounded-lg">
       <Image
         src={typeof src === 'string' ? src : ''}
         alt={alt ?? ''}

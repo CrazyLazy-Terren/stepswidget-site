@@ -6,7 +6,7 @@ date: '2026-10-06'
 updated: '2026-10-06'
 slug: japanese-walking-interval-walking-steps
 category: Fitness Habits
-image: /assets/blog-japanese-walking.jpg
+image: /assets/blog-japanese-walking.webp
 
 keywords:
   - japanese walking

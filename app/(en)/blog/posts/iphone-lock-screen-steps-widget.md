@@ -13,7 +13,7 @@ keywords:
   - pedometer widget for iPhone
   - Apple Health Lock Screen widget
   - steps on Lock Screen
-image: /assets/blog-lock-screen.jpg
+image: /assets/blog-lock-screen.webp
 ---
 
 Yes, you can show steps on your iPhone Lock Screen with a compatible steps widget. The key is using an app that supports Lock Screen widgets and can read your Apple Health step data with permission.
@@ -77,4 +77,5 @@ Steps Widget uses [Apple Health step data](https://stepswidget.app/blog/apple-he
 
 The best reason to put steps on your iPhone Lock Screen is not to stare at the number all day. It is to make the next small choice easier.
 
-When your step count is visible, movement becomes easier to remember. A short walk can become the natural next thing instead of something you notice too late at night. See [how to tell if you will hit your step goal today](https://stepswidget.app/blog/will-i-hit-my-step-goal-today) for reading your pace before evening.
+When your step count is visible, movement becomes easier to remember. A short walk can become the natural next thing instead of something you notice too late at night. See our guide on [how to tell if you will hit your step goal today](/blog/will-i-hit-my-step-goal-today), or explore [the widget gallery](/docs/widgets/widget-gallery) to compare Lock Screen, Home Screen, and StandBy widget styles.
+

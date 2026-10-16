@@ -13,7 +13,7 @@ keywords:
   - how to get stand reminders on watch
   - stand reminder app iphone
   - movement reminder not working
-image: /assets/blog-stand-reminders-not-working.jpg
+image: /assets/blog-stand-reminders-not-working.webp
 ---
 
 One of the most useful features of the Apple Watch is the hourly stand reminder. It is designed to buzz your wrist at 50 minutes past the hour if you have been sitting, encouraging you to stand up and move around for at least one minute.

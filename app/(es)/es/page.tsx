@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AppStoreButton } from '../../app-store-button'
 import { PageSection, pageGutter } from '../../page-shell'
+import { SectionHeading } from '../../section-heading'
 import { SiteLogo } from '../../site-nav'
 import { ThemeToggle } from '../../theme-toggle'
 import { defaultOgImages, siteName, siteUrl } from '../../shared-metadata'
@@ -70,7 +71,7 @@ const features = [
     eyebrow: 'Estilos de widget',
     title: 'Con un estilo que encaja en tu pantalla',
     description: 'Claro, oscuro, tintado o con un color propio. Tus pasos se ven como si siempre hubieran estado ahí.',
-    image: '/assets/f01.png',
+    image: '/assets/f01.webp',
     // A tall Home Screen capture: keep the widgets in frame, as on the English page.
     imageClassName: 'object-top',
   },
@@ -78,21 +79,21 @@ const features = [
     eyebrow: 'Inicio, bloqueo, Watch y Mac',
     title: 'En cada pantalla que ya miras',
     description: 'Pantalla de inicio, pantalla de bloqueo, StandBy, Apple Watch y tu Mac. Tus pasos, siempre a un vistazo.',
-    image: '/assets/f02.png',
+    image: '/assets/f02.webp',
   },
   {
     eyebrow: 'Modelo en el dispositivo',
     title: 'Sabe cómo va a terminar tu día',
     description:
       'Un modelo en tu iPhone calcula cuántos pasos llevarás al final del día. Solo te avisa si esa previsión no llega a tu meta, así que un día en el que ya caminas se queda en silencio.',
-    image: '/assets/f03.png',
+    image: '/assets/f03.webp',
   },
   {
     eyebrow: 'Ajustes',
     title: 'Tu día, a tu manera',
     description:
       'Mueve el inicio del día hasta seis horas después de medianoche, recibe el aviso antes cuando se pone el sol y elige tu meta viendo un mes de tus propios días.',
-    image: '/assets/f04.png',
+    image: '/assets/f04.webp',
   },
 ]
 
@@ -100,17 +101,17 @@ const watchCards = [
   {
     title: 'Avisos en tu muñeca',
     description: 'Los avisos de meta funcionan en el propio Apple Watch, así que te llegan aunque el iPhone esté en otra habitación.',
-    image: '/assets/w01.png',
+    image: '/assets/w01.webp',
   },
   {
     title: 'Tus pasos de un vistazo',
     description: 'Tres estilos de complicación para cualquier esfera. La rectangular marca junto al gráfico las horas en que estuviste de pie.',
-    image: '/assets/w02.png',
+    image: '/assets/w02.webp',
   },
   {
     title: 'Tu estilo, también en la muñeca',
     description: 'Combínalo con tu esfera. Tu estilo y tus ajustes se sincronizan entre tus dispositivos.',
-    image: '/assets/w03.png',
+    image: '/assets/w03.webp',
   },
 ]
 
@@ -155,7 +156,7 @@ export default function SpanishHome() {
         ]}
       />
 
-      <header className={`border-b border-[color:var(--border)] bg-[var(--header-bg)] backdrop-blur-xl ${pageGutter}`}>
+      <header className={`border-b border-[color:var(--border)] bg-[var(--header-bg)] ${pageGutter}`}>
         <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 py-4">
           <SiteLogo />
           <div className="flex items-center gap-4">
@@ -172,8 +173,8 @@ export default function SpanishHome() {
         </nav>
       </header>
 
-      <PageSection paddingY="top" overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+      <PageSection paddingY="top">
+        <div className="mx-auto flex max-w-3xl flex-col items-start">
           <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widgets de pasos para iPhone y Apple Watch</p>
           <h1 className="mt-10 text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
             Tus pasos, a la vista. Un aviso, cuando hace falta.
@@ -186,8 +187,8 @@ export default function SpanishHome() {
         </div>
       </PageSection>
 
-      <PageSection paddingY="top" containerClassName="border-t border-[color:var(--border)] pt-10">
-        <dl className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+      <PageSection paddingY="section">
+        <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {trustFacts.map((fact) => (
             <div key={fact.label}>
               <dt className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{fact.label}</dt>
@@ -197,11 +198,11 @@ export default function SpanishHome() {
         </dl>
       </PageSection>
 
-      <PageSection paddingY="top" containerClassName="border-t border-[color:var(--border)] pt-14">
-        <div className="grid gap-5 sm:grid-cols-2">
+      <PageSection paddingY="section">
+        <div className="grid gap-6 sm:grid-cols-2">
           {features.map((feature) => (
-            <article key={feature.title} className="flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[var(--surface-1)]">
-              <div className="relative aspect-[16/9] bg-[var(--surface-media)]">
+            <article key={feature.title} className="flex flex-col overflow-hidden rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)]">
+              <div className="relative aspect-[16/9]">
                 <Image
                   src={feature.image}
                   alt=""
@@ -220,21 +221,15 @@ export default function SpanishHome() {
         </div>
       </PageSection>
 
-      <PageSection id="watch" paddingY="top" containerClassName="border-t border-[color:var(--border)] pt-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Apple Watch</p>
-          <h2 className="mt-10 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
-            No es imprescindible, pero es la mejor combinación.
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
-            El Watch cuenta los paseos que el teléfono no vio, te avisa con un toque en la muñeca esté donde esté el iPhone y es lo único que registra las horas
-            de pie que marca el gráfico.
-          </p>
-        </div>
+      <PageSection id="watch" paddingY="section">
+        <SectionHeading eyebrow="Apple Watch" title="No es imprescindible, pero es la mejor combinación.">
+          El Watch cuenta los paseos que el teléfono no vio, te avisa con un toque en la muñeca esté donde esté el iPhone y es lo único que registra las horas de
+          pie que marca el gráfico.
+        </SectionHeading>
 
-        <div className="relative mx-auto my-14 aspect-[9/7] overflow-hidden">
+        <div className="relative mx-auto my-12 aspect-[9/7] overflow-hidden">
           <Image
-            src="/assets/watch_feature.png"
+            src="/assets/watch_feature.webp"
             alt="Pasos de Steps Widget en dos esferas del Apple Watch junto a los widgets de la pantalla de bloqueo y de inicio del iPhone"
             fill
             sizes="(max-width: 1280px) 100vw, 1272px"
@@ -242,43 +237,45 @@ export default function SpanishHome() {
           />
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-3">
           {watchCards.map((card) => (
-            <div key={card.title} className="overflow-hidden rounded-4xl border border-[color:var(--border)] bg-[var(--surface-1)]">
-              <div className="relative aspect-[3/4] bg-[var(--surface-media)]">
+            <div key={card.title} className="overflow-hidden rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)]">
+              <div className="relative aspect-[3/4]">
                 <Image src={card.image} alt="" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover object-center" />
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{card.title}</h3>
-                <p className="mt-3 leading-7 text-[var(--text-muted)]">{card.description}</p>
+                <p className="mt-4 leading-7 text-[var(--text-muted)]">{card.description}</p>
               </div>
             </div>
           ))}
         </div>
       </PageSection>
 
-      <PageSection id="faq" paddingY="top" containerClassName="grid gap-10 border-t border-[color:var(--border)] pt-14 lg:grid-cols-[20rem_minmax(0,1fr)]">
-        <h2 className="text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Preguntas frecuentes</h2>
-        <div>
+      <PageSection id="faq" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <SectionHeading eyebrow="FAQ" title="Preguntas frecuentes." />
+        </div>
+        <div className="lg:col-span-7 lg:mt-6">
           {faqItems.map((item) => (
-            <div key={item.question} className="border-b border-[color:var(--border)] py-5">
+            <div key={item.question} className="border-b border-[color:var(--border)] py-6">
               <h3 className="font-medium text-[var(--text-strong)]">{item.question}</h3>
-              <p className="mt-3 max-w-2xl leading-7 text-[var(--text-muted)]">{item.answer}</p>
+              <p className="mt-4 max-w-2xl leading-7 text-[var(--text-muted)]">{item.answer}</p>
             </div>
           ))}
         </div>
       </PageSection>
 
-      <PageSection containerClassName="pt-14">
-        <div className="rounded-[16px] border border-[color:var(--border)] bg-[var(--surface-1)] p-8 text-center sm:p-12">
-          <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="mx-auto rounded-[18px]" />
-          <h2 className="mx-auto mt-7 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
+      <PageSection paddingY="bottom">
+        <div className="rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-8 sm:p-12">
+          <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="rounded-[22%]" />
+          <h2 className="mt-8 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
             Muévete un poco más cada día.
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
             Descarga gratuita, sin anuncios y con avisos siempre gratis. La app está disponible en español.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex">
             <AppStoreButton label={appStoreLabel} lang="es" />
           </div>
         </div>
@@ -287,7 +284,7 @@ export default function SpanishHome() {
       <footer className={`border-t border-[color:var(--border)] py-8 ${pageGutter}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[var(--text-subtle)] sm:flex-row sm:items-center sm:justify-between">
           <p>La documentación y el blog están en inglés.</p>
-          <div className="-my-2 flex flex-wrap gap-x-5">
+          <div className="-my-2 flex flex-wrap gap-x-6">
             <Link href="/docs" hrefLang="en" className="py-2 transition hover:text-[var(--text-strong)]">
               Documentación
             </Link>

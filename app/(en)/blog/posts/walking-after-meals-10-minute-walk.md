@@ -6,7 +6,7 @@ date: '2026-09-30'
 updated: '2026-09-30'
 slug: walking-after-meals-10-minute-walk
 category: Fitness Habits
-image: /assets/blog-walking.jpg
+image: /assets/blog-walking.webp
 
 keywords:
   - walking after meals

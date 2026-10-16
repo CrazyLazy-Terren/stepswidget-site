@@ -242,7 +242,7 @@ export function DocFeedback({ section, slug, title, path }: DocFeedbackProps) {
               type="button"
               onClick={() => vote(option.value)}
               aria-pressed={rating === option.value}
-              className={`h-10 rounded-[3px] border px-5 text-sm transition sm:h-8 sm:px-4 ${
+              className={`h-10 rounded-lg border px-5 text-sm transition sm:h-8 sm:px-4 ${
                 rating === option.value
                   ? 'border-[color:var(--accent-color)] font-medium text-[var(--text-strong)]'
                   : 'border-[color:var(--border)] text-[var(--text-muted)] hover:border-[color:var(--border-strong)] hover:text-[var(--text-strong)]'
@@ -253,9 +253,7 @@ export function DocFeedback({ section, slug, title, path }: DocFeedbackProps) {
         </div>
       </div>
 
-      {rating && !formOpen && !sent && (
-        <p className="mt-3 text-sm text-[var(--text-subtle)]">You rated this page already. Pick either button to add a note.</p>
-      )}
+      {rating && !formOpen && !sent && <p className="mt-3 text-sm text-[var(--text-subtle)]">You rated this page already. Pick either button to add a note.</p>}
 
       {rating && formOpen && !sent && (
         <form onSubmit={submitNote} className="mt-5 max-w-xl">
@@ -269,14 +267,18 @@ export function DocFeedback({ section, slug, title, path }: DocFeedbackProps) {
             value={note}
             maxLength={maxNoteLength}
             onChange={(event) => setNote(event.target.value)}
-            placeholder={rating === 'helpful' ? 'A step you would like spelled out, an example that would help…' : 'A wrong step, an outdated screenshot, a question this page left open…'}
-            className="mt-2 block w-full resize-y rounded-[3px] border border-[color:var(--border)] bg-[var(--surface-1)] p-3 text-base leading-6 sm:text-sm text-[var(--text-strong)] outline-none transition placeholder:text-[var(--text-subtle)] focus:border-[color:var(--accent-color)]"
+            placeholder={
+              rating === 'helpful'
+                ? 'A step you would like spelled out, an example that would help…'
+                : 'A wrong step, an outdated screenshot, a question this page left open…'
+            }
+            className="mt-2 block w-full resize-y rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-3 text-base leading-6 sm:text-sm text-[var(--text-strong)] outline-none transition placeholder:text-[var(--text-subtle)] focus:border-[color:var(--accent-color)]"
           />
           <div className="mt-3 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
             <button
               type="submit"
               disabled={note.trim().length === 0}
-              className="inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-[3px] bg-[var(--button-bg)] px-4 text-sm sm:h-9 font-medium text-[var(--button-text)] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40">
+              className="inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-lg bg-[var(--button-bg)] px-4 text-sm sm:h-9 font-medium text-[var(--button-text)] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40">
               Send feedback
             </button>
             <p className="text-xs text-[var(--text-subtle)]">Sent anonymously. Do not include personal details — we cannot reply.</p>

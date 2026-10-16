@@ -4,7 +4,16 @@ import Link from 'next/link'
 import { ArrowRight } from '../../arrow'
 import { ContentShell } from '../../content-shell'
 import { defaultOgImages, siteName } from '../../shared-metadata'
-import { JsonLd, absoluteUrl, applicationId, applicationSchema, breadcrumbSchema, organizationId, organizationSchema, websiteSchema } from '../../structured-data'
+import {
+  JsonLd,
+  absoluteUrl,
+  applicationId,
+  applicationSchema,
+  breadcrumbSchema,
+  organizationId,
+  organizationSchema,
+  websiteSchema,
+} from '../../structured-data'
 import { type BlogPost, getBlogPosts } from './posts'
 
 /** `2026-09-08` -> `September 8, 2026`. */
@@ -17,7 +26,7 @@ function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 transition hover:-translate-y-1 hover:border-[color:var(--border-strong)]">
+      className="group grid h-full grid-rows-[auto_minmax(0,1fr)_auto] rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6 transition hover:border-[color:var(--border-strong)]">
       {/* Top corners: category left, updated date right */}
       <div className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">
         <span className="text-[var(--accent-color)]">{post.category}</span>
@@ -25,7 +34,7 @@ function PostCard({ post }: { post: BlogPost }) {
       </div>
 
       {/* Center: the content */}
-      <div className="flex flex-col items-start justify-center gap-3 py-10">
+      <div className="flex flex-col items-start justify-center gap-4 py-10">
         <h3 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{post.title}</h3>
         <p className="leading-7 text-[var(--text-muted)]">{post.description}</p>
       </div>
@@ -163,7 +172,7 @@ export default function BlogPage() {
       {featuredPost && (
         <Link
           href={`/blog/${featuredPost.slug}`}
-          className="group grid overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-[var(--surface-1)] transition hover:-translate-y-1 hover:border-[color:var(--border-strong)] md:grid-cols-2">
+          className="group grid overflow-hidden rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] transition hover:border-[color:var(--border-strong)] md:grid-cols-2">
           {featuredPost.image && (
             <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:h-full">
               <Image
@@ -200,7 +209,7 @@ export default function BlogPage() {
                 {section.posts.length} {section.posts.length === 1 ? 'post' : 'posts'}
               </span>
             </div>
-            <div className="mt-6 grid gap-5 lg:grid-cols-3">
+            <div className="mt-6 grid gap-6 lg:grid-cols-3">
               {section.posts.map((post) => (
                 <PostCard key={post.slug} post={post} />
               ))}

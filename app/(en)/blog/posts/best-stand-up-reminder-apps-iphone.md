@@ -13,7 +13,7 @@ keywords:
   - stand up reminder for desk workers
   - break reminder app iphone
   - move reminder app
-image: /assets/blog-stand-reminders.jpg
+image: /assets/blog-stand-reminders.webp
 ---
 
 *Features verified against App Store listings in July 2026. Last updated August 2026.*
@@ -44,7 +44,7 @@ If you are on an app not listed here and it works for you, keep it. The goal is 
 
 |                                      | Moova                                             | Deskly                   | Steps Widget                                    | Apple Watch built-in            |
 | ------------------------------------ | ------------------------------------------------- | ------------------------ | ----------------------------------------------- | ------------------------------- |
-| App icon | [![Moova app icon](/assets/moova-icon.jpg)](https://apps.apple.com/us/app/moova-movement-break-reminder/id1518522560) | [![Deskly app icon](/assets/deskly-icon.jpg)](https://apps.apple.com/us/app/deskly-stand-up-reminder/id6759477914) | [![Steps Widget app icon](/assets/stepswidget-icon.png)](https://apps.apple.com/us/app/steps-widget-activity-alerts/id6756297788) | Built into watchOS |
+| App icon | [![Moova app icon](/assets/moova-icon.webp)](https://apps.apple.com/us/app/moova-movement-break-reminder/id1518522560) | [![Deskly app icon](/assets/deskly-icon.webp)](https://apps.apple.com/us/app/deskly-stand-up-reminder/id6759477914) | [![Steps Widget app icon](/assets/stepswidget-icon.png)](https://apps.apple.com/us/app/steps-widget-activity-alerts/id6756297788) | Built into watchOS |
 | Core idea                            | Guided movement breaks                            | Calm, minimal reminders  | End-of-day step forecast plus a step widget     | Hourly stand prompt             |
 | How reminders are timed              | Schedule, plus experimental step-aware timing     | Schedule you set         | On-device forecast of your end-of-day total     | Hourly, if no standing detected |
 | Guided stretches and exercises       | Yes, extensive                                    | No                       | No                                              | No                              |

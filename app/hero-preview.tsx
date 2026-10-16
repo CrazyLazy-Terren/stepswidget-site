@@ -1,13 +1,16 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
+import { IPhoneMockup } from './iphone-mockup'
+import { SectionHeading } from './section-heading'
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
 }
 
-export function HeroPreview() {
+/** `intro` is the hero copy: beside the phones on desktop, above them on smaller screens. */
+export function HeroPreview({ intro }: { intro: ReactNode }) {
   const stageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -23,10 +26,11 @@ export function HeroPreview() {
       frame = 0
 
       const setLayerOffsets = (progress: number) => {
-        stage.style.setProperty('--hero-front-x', `${(progress * 52).toFixed(2)}px`)
-        stage.style.setProperty('--hero-front-y', `${(progress * 52).toFixed(2)}px`)
-        stage.style.setProperty('--hero-back-x', `${(progress * -64).toFixed(2)}px`)
-        stage.style.setProperty('--hero-back-y', `${(progress * 28).toFixed(2)}px`)
+        // The phones spread apart as the stage scrolls up through the viewport.
+        stage.style.setProperty('--hero-front-x', `${(progress * 40).toFixed(2)}px`)
+        stage.style.setProperty('--hero-front-y', `${(progress * 24).toFixed(2)}px`)
+        stage.style.setProperty('--hero-back-x', `${(progress * -40).toFixed(2)}px`)
+        stage.style.setProperty('--hero-back-y', `${(progress * -24).toFixed(2)}px`)
         stage.style.setProperty('--hero-grids-y', `${(progress * -1024).toFixed(2)}px`)
       }
 
@@ -57,7 +61,9 @@ export function HeroPreview() {
     updateParallax()
     window.addEventListener('scroll', requestUpdate, { passive: true })
     window.addEventListener('resize', requestUpdate)
-    window.visualViewport?.addEventListener('scroll', requestUpdate, { passive: true })
+    window.visualViewport?.addEventListener('scroll', requestUpdate, {
+      passive: true,
+    })
     window.visualViewport?.addEventListener('resize', requestUpdate)
     document.addEventListener('scroll', requestUpdate, { passive: true })
     reducedMotion.addEventListener('change', requestUpdate)
@@ -77,41 +83,38 @@ export function HeroPreview() {
   }, [])
 
   return (
-    <div ref={stageRef} className="phone-stage relative mx-auto w-full ">
-      <div className="relative -mx-5  min-h-110 sm:min-h-120 lg:min-h-180 overflow-hidden">
-        <div className="phone-back absolute bottom-[-10%] left-[-22%] z-10 w-[120%] max-w-[760px]  sm:left-[7%] sm:w-[72%] lg:left-[12%] lg:top-[0%]">
-          <Image
-            src="/assets/iphone-back.png"
-            alt="Steps Widget Lock Screen preview behind the Home Screen phone"
-            width={1035}
-            height={1035}
-            sizes="(max-width: 768px) 88vw, 720px"
-            className="h-auto w-full "
-            priority
-          />
-        </div>
+    <div ref={stageRef} className="phone-stage relative w-full">
+      <div className="grid items-center gap-6 lg:grid-cols-12">
+        <div className="lg:col-span-5">{intro}</div>
 
-        <div className="phone-front absolute bottom-[-34%] right-[-25%] z-10 w-[120%] max-w-[760px] sm:bottom-[-32%] sm:right-[5%] sm:w-[72%]  lg:bottom-[-25%] lg:left-[32%] lg:w-[64%]">
-          <Image
-            src="/assets/iphone-front.png"
-            alt="Steps Widget Home Screen preview in front"
-            width={2226}
-            height={2226}
-            sizes="(max-width: 768px) 88vw, 720px"
-            className="h-auto w-full "
-            priority
-          />
+        {/* The phones bleed to the screen edge on phones; on desktop they fill their seven columns. */}
+        <div className="relative -mx-6 mt-10 h-[32rem] overflow-hidden sm:h-[37rem] lg:col-span-7 lg:mx-0 lg:mt-0 lg:h-[48rem]">
+          <div className="phone-back absolute left-1/2 top-8 w-52 sm:w-64 lg:w-80">
+            <IPhoneMockup
+              src="/assets/home-screen-widgets.webp"
+              alt="iPhone Home Screen with five Steps widgets in different styles, each showing 8,072 steps"
+              sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 320px"
+              eager
+            />
+          </div>
+          <div className="phone-front absolute left-1/2 top-24 w-52 sm:w-64 lg:w-80">
+            <IPhoneMockup
+              src="/assets/lock-screen-goal-hit.webp"
+              alt="iPhone Lock Screen with a Goal hit notification and three step widgets showing 8,072 steps"
+              sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 320px"
+              eager
+            />
+          </div>
         </div>
       </div>
-      <div className="my-16 pt-8 max-w-xl sm:my-24 sm:pt-24">
-        <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">Widget gallery</p>
-        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-4xl">Choose the style that fits your.</h2>
-        <p className="mt-5 text-pretty text-lg leading-8 text-[var(--text-muted)]">
+      {/* Padding, not margin, so it adds to the eyebrow's own margin the way a PageSection does. */}
+      <div className="pt-16">
+        <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
           Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
-        </p>
+        </SectionHeading>
       </div>
 
-      <div className="relative h-100 overflow-hidden -mx-5">
+      <div className="relative -mx-6 mt-12 h-100 overflow-hidden lg:-mx-8">
         <div className="phone-grids w-[200%] left-[-50%] sm:left-0 sm:w-full absolute top-[-10%] sm:top-[-240px] z-5 ">
           <Image
             src="/assets/steps-widget-grid.png"

@@ -11,7 +11,7 @@ keywords:
   - custom notification text iPhone
   - Apple Intelligence reminder
   - personalized step reminder
-image: /assets/f03.png
+image: /assets/f03.webp
 ---
 
 Every word a goal reminder says can be rewritten. The app ships with its own copy, and you can replace any title or message with yours — the numbers still fill in, and your version is what arrives on your Lock Screen and your wrist, and what the widgets show under your count.

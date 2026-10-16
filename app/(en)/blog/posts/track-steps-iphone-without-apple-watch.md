@@ -13,7 +13,7 @@ keywords:
   - iphone step counter widget
   - apple health steps widget
   - step tracker no apple watch
-image: /assets/blog-track-no-watch.jpg
+image: /assets/blog-track-no-watch.webp
 ---
 
 You do not need to wear an Apple Watch or carry a separate fitness band to track your daily steps. Your iPhone is already capable of counting steps on its own.
@@ -73,4 +73,5 @@ Because your iPhone is only counting steps when you carry it, you can follow a f
 
 ## Simple, watch-free fitness tracking
 
-You do not need expensive accessories or complicated fitness setups to stay active. By leveraging the sensors already in your iPhone and displaying your progress with Steps Widget, you can build a consistent walking habit in a quiet, private, and simple way.
+You do not need expensive accessories or complicated fitness setups to stay active. By leveraging the sensors already in your iPhone and displaying your progress with Steps Widget, you can build a consistent walking habit in a quiet, private, and simple way. See our guide on [how to set a realistic daily step goal](/blog/how-to-set-a-realistic-daily-step-goal), read the [install and set up guide](/docs/getting-started/install-and-set-up), and learn about how day boundaries work in [the step window](/docs/steps-and-data/step-window).
+

@@ -6,7 +6,7 @@ date: '2026-10-07'
 updated: '2026-10-07'
 slug: how-many-steps-is-a-mile
 category: Fitness Habits
-image: /assets/blog-daily-walking-steps.jpg
+image: /assets/blog-daily-walking-steps.webp
 
 keywords:
   - how many steps is a mile

@@ -62,7 +62,7 @@ export function ThemeToggle({ compact = false, lang = 'en' }: ThemeToggleProps) 
       <button
         type="button"
         onClick={toggleTheme}
-        className="flex size-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) shadow-[var(--soft-shadow)] transition hover:text-[var(--text-strong)]"
+        className="flex size-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) transition hover:text-[var(--text-strong)]"
         aria-label={labels.toggle}>
         <span className="theme-icon-light">
           <ThemeIcon option="light" />
@@ -76,7 +76,7 @@ export function ThemeToggle({ compact = false, lang = 'en' }: ThemeToggleProps) 
 
   return (
     <div
-      className="grid grid-cols-2 rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] p-1 text-xs font-semibold shadow-[var(--soft-shadow)]"
+      className="grid grid-cols-2 rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] p-1 text-xs font-semibold"
       aria-label={labels.group}>
       {(['light', 'dark'] as const).map((option) => (
         <button
@@ -103,7 +103,7 @@ export function AccentToggle({ compact = false }: ToggleProps) {
       <button
         type="button"
         onClick={toggleAccent}
-        className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] shadow-[var(--soft-shadow)] transition hover:opacity-85"
+        className="flex size-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] transition hover:opacity-85"
         aria-label="Toggle accent color">
         <span className="accent-icon-pink size-5 rounded-full bg-[var(--accent-pink-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
         <span className="accent-icon-sky size-5 rounded-full bg-[var(--accent-sky-option)] shadow-[inset_0_0_0_1px_rgba(125,125,125,0.128)]" />
@@ -113,7 +113,7 @@ export function AccentToggle({ compact = false }: ToggleProps) {
 
   return (
     <div
-      className={`grid grid-cols-2 gap-1 rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] shadow-[var(--soft-shadow)] ${compact ? 'p-1' : ''}`}
+      className={`grid grid-cols-2 gap-1 rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] ${compact ? 'p-1' : ''}`}
       aria-label="Accent color">
       {(['pink', 'sky'] as const).map((option) => (
         <button

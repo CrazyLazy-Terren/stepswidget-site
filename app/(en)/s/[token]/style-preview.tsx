@@ -15,7 +15,7 @@ import type { BackgroundRecipe, PaletteRecipe, ShareRecipe } from './share-code'
  * (https://unsplash.com/photos/Kt5hRENuotI), via Lorem Picsum.
  */
 
-const photo = { src: '/assets/shared-style-sample.jpg', width: 2800, height: 1867 }
+const photo = { src: '/assets/shared-style-sample.webp', width: 2800, height: 1867 }
 
 /** Six colours clustered from the sample photo, heaviest first. */
 const samplePalette = ['514947', '7A502D', 'F4B442', 'FEE9BC']
@@ -32,7 +32,7 @@ function isLight(hex: string) {
 
 /** The widget's square. A size container, so everything inside scales with it. */
 const widgetFrame =
-  'relative aspect-square w-44 overflow-hidden rounded-[22%] shadow-[0_24px_60px_rgba(0,0,0,0.5)] ring-2 ring-white/85 [container-type:size] sm:w-64 lg:w-72'
+  'relative aspect-square w-44 overflow-hidden rounded-[22%] ring-2 ring-white/85 [container-type:size] sm:w-64 lg:w-72'
 
 /**
  * The widget a Background style makes: the square window onto the photo the
@@ -78,7 +78,7 @@ function BackgroundWidget({ recipe }: { recipe: BackgroundRecipe }) {
 /** The widget a Colors Palette style makes, and the colours it came from. */
 function PaletteWidget({ recipe }: { recipe: PaletteRecipe }) {
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-6">
       {/* <div className={widgetFrame} style={{ backgroundColor: recipe.hint }}>
         <WidgetFace color={isLight(recipe.hint) ? '#111111' : '#FFFFFF'} />
       </div> */}
@@ -115,7 +115,7 @@ export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHer
   return (
     <PageSection
       paddingY="none"
-      className="overflow-hidden bg-black pb-12 pt-24 sm:pb-24 sm:pt-36"
+      className="overflow-hidden bg-black py-24"
       overlay={
         <div aria-hidden="true" className="absolute inset-0">
           <Image src={photo.src} alt="" fill sizes="100vw" className="object-cover" priority />
@@ -130,13 +130,13 @@ export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHer
       containerClassName="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
       <div className="text-center lg:text-left">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/80">{eyebrow}</p>
-        <h1 className="mx-auto mt-3 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:mt-4 sm:text-6xl lg:mx-0">
+        <h1 className="mx-auto mt-4 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:mt-4 sm:text-6xl lg:mx-0">
           {title}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-white/85 sm:mt-6 sm:text-lg sm:leading-8 lg:mx-0">{description}</p>
 
         {cta && (
-          <div className="mt-7 flex flex-col items-center gap-3 lg:hidden">
+          <div className="mt-8 flex flex-col items-center gap-4 lg:hidden">
             {cta}
             <a href="#steps" className="py-2 text-sm font-medium text-white/85 underline-offset-4 hover:underline">
               Already have the app? See the steps
@@ -148,7 +148,7 @@ export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHer
       {/* First on a phone: the style is the hook, the explanation follows it. */}
       <figure className="-order-1 flex flex-col items-center lg:order-none">
         {shown.mode === 'palette' ? <PaletteWidget recipe={shown} /> : <BackgroundWidget recipe={shown} />}
-        <figcaption className="mt-4 max-w-72 text-center text-xs leading-5 text-white/85 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)] lg:mt-5">{caption}</figcaption>
+        <figcaption className="mt-4 max-w-72 text-center text-xs leading-5 text-white/85 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)] lg:mt-6">{caption}</figcaption>
       </figure>
     </PageSection>
   )

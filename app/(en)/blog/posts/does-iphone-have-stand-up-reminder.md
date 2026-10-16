@@ -13,7 +13,7 @@ keywords:
   - iphone move reminder
   - sedentary reminder iphone
   - iphone reminder to stand up
-image: /assets/blog-iphone-stand-reminder.jpg
+image: /assets/blog-iphone-stand-reminder.webp
 ---
 
 **No. The iPhone has no built-in stand up reminder.** That feature belongs to Apple Watch, which sends a "Time to Stand" notification at 50 minutes past the hour if it has not detected you standing. On an iPhone alone, nothing in iOS will tell you to get out of your chair.
@@ -101,4 +101,5 @@ If you already own one, use it. If you do not, you are not missing much here. Mo
 | Do Clock or Reminders alarms work?              | They fire, but on a timer, so they ignore movement you already did.                               |
 | What actually works on iPhone?                  | A third-party app reading your Apple Health step data, nudging you based on what you really did.  |
 
-The short version: your iPhone knows you have been sitting, it just has no built-in way to say so. Apple gave that job to the Watch. If you do not wear one, a step-aware app is the way to close the gap.
+The short version: your iPhone knows you have been sitting, it just has no built-in way to say so. Apple gave that job to the Watch. If you do not wear one, a step-aware app is the way to close the gap. See [how goal reminders work](/docs/goal-reminders/how-goal-reminders-work) for how forecast-based movement reminders function on iPhone, or read our guide on [best stand up reminder apps for iPhone](/blog/best-stand-up-reminder-apps-iphone).
+

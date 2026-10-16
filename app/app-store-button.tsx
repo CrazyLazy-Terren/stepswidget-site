@@ -36,7 +36,7 @@ export function AppStoreButton({ className = '', label = 'Download Steps Widget 
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`group inline-flex items-center justify-center rounded-[14px] transition hover:-translate-y-0.5 hover:shadow-(--hero-glow) ${className}`}
+      className={`group inline-flex items-center justify-center rounded-[14px] transition ${className}`}
       aria-label={label}
       onClick={() => sendGTMEvent({ event: 'app_store_download' })}>
       <Image

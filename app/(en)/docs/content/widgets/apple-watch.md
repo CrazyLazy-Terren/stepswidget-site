@@ -11,7 +11,7 @@ keywords:
   - watchOS complication steps
   - show steps on watch face
   - Apple Watch goal reminder
-image: /assets/watch_feature.png
+image: /assets/watch_feature.webp
 ---
 
 Steps runs on Apple Watch as a real app with its own settings, its own complication styles, and its own reminder delivery — not as a remote control for your phone. Requires watchOS 11.6 or later.
@@ -99,3 +99,7 @@ It should not be noticeable. It reads step data watchOS is already recording for
 - [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices) — which device sends.
 - [Styling widgets](/docs/widgets/widget-styles) — the palettes, shared with iPhone.
 - [The step window](/docs/steps-and-data/step-window) — settings you can change from the wrist.
+- [How to set a step goal on Apple Watch](/blog/apple-watch-step-goal) — setting daily step targets without native Activity app support.
+- [Apple Watch steps accuracy and limitations](/blog/apple-watch-steps-accuracy-limitations) — understanding wrist motion detection and calibration.
+- [How to show steps on Apple Watch face](/blog/show-steps-watch-face) — step count complications on Infograph, Modular, and Simple faces.
+

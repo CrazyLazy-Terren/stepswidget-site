@@ -93,22 +93,24 @@ export default function DocsIndexPage() {
           <h1 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">
             Everything Steps Widget does, explained.
           </h1>
-          <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">
+          <p className="mt-6 text-lg leading-8 text-[var(--text-muted)]">
             Reference pages for every feature, surface, and setting. Start at the top if the app is new to you, or jump straight to the page you need.
           </p>
-          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 text-sm">
             <Link
               href="/docs/getting-started/install-and-set-up"
-              className="inline-flex h-9 items-center rounded-[4px] bg-[var(--button-bg)] px-4 font-medium text-[var(--button-text)] transition hover:opacity-90">
+              className="inline-flex h-9 items-center rounded-lg bg-[var(--button-bg)] px-4 font-medium text-[var(--button-text)] transition hover:opacity-90">
               Start here
             </Link>
-            <ArrowLink href="/blog" className="font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">Read the blog instead</ArrowLink>
+            <ArrowLink href="/blog" className="font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+              Read the blog instead
+            </ArrowLink>
           </div>
         </header>
 
         <div className="grid gap-14 border-t border-[color:var(--border)] pt-12">
           {tree.map(({ section, docs: sectionDocs }) => (
-            <section key={section.slug} className="grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-10">
+            <section key={section.slug} className="grid gap-6 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-10">
               <div>
                 <h2 className="text-lg font-semibold tracking-[-0.01em] text-[var(--text-strong)]">
                   <Link href={`/docs/${section.slug}`} className="transition hover:text-[var(--accent-color)]">

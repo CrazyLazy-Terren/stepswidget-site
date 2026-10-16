@@ -12,7 +12,7 @@ keywords:
   - app that reminds me to walk
   - get up and move notifications iPhone
   - hourly steps reminder app
-image: /assets/blog-walking-reminders.jpg
+image: /assets/blog-walking-reminders.webp
 ---
 
 > Comparing specific apps? See [the best stand up reminder apps for iPhone](https://stepswidget.app/blog/best-stand-up-reminder-apps-iphone) for the main options ranked honestly, or [Steps Widget vs Pedometer++](https://stepswidget.app/blog/steps-widget-vs-pedometer-plus-plus) for a head-to-head with a dedicated step tracker.

@@ -6,7 +6,7 @@ date: '2026-10-06'
 updated: '2026-10-06'
 slug: do-walking-pad-steps-count
 category: Fitness Habits
-image: /assets/blog-walking-pad.jpg
+image: /assets/blog-walking-pad.webp
 
 keywords:
   - do walking pad steps count

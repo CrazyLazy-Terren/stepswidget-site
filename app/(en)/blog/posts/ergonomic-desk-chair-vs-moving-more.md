@@ -6,7 +6,7 @@ date: '2026-10-05'
 updated: '2026-10-05'
 slug: ergonomic-desk-chair-vs-moving-more
 category: Fitness Habits
-image: /assets/blog-standing-desk.jpg
+image: /assets/blog-standing-desk.webp
 
 keywords:
   - ergonomic desk setup

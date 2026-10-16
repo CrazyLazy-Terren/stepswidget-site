@@ -20,14 +20,14 @@ export default function BlogPostSourcesPage() {
       eyebrow="Markdown sources"
       title="Blog source files."
       description="Browse the editable Markdown files that power the Steps Widget blog. Use the public blog pages for the reader-facing versions.">
-      <div className="grid gap-5">
+      <div className="grid gap-6">
         {blogPosts.map((post) => (
-          <article key={post.slug} className="rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 shadow-[var(--soft-shadow)]">
+          <article key={post.slug} className="rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{post.category}</p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{post.title}</h2>
-                <p className="mt-3 max-w-3xl leading-7 text-[var(--text-muted)]">{post.description}</p>
+                <h2 className="mt-4 text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{post.title}</h2>
+                <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">{post.description}</p>
               </div>
               <p className="shrink-0 text-sm text-[var(--text-subtle)]">{post.readingTime}</p>
             </div>

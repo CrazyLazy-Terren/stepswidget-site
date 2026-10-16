@@ -13,7 +13,7 @@ keywords:
   - does step tracker use battery
   - battery friendly step counter widget
   - iphone steps widget battery
-image: /assets/blog-battery-drain.jpg
+image: /assets/blog-battery-drain.webp
 ---
 
 Adding widgets to your iPhone Home Screen or Lock Screen is a great way to monitor your daily goals at a glance. However, many users hesitate to add step trackers or fitness widgets out of a common concern: **battery drain**.
@@ -61,4 +61,5 @@ Open **Settings > Battery** and scroll to the battery usage list, then switch to
 - **Direct Apple Health Integration**: The app requests permission to read steps from Apple Health. This means it uses the step data your iPhone has already gathered using its low-power coprocessor, requiring no additional battery power to count steps.
 - **Privacy-First Design**: Since there are no social feeds, logins, or server syncing, Steps Widget doesn't drain your battery with constant background network requests. Your data stays on your device.
 
-By choosing a step tracker widget that works with iOS's native health database and avoids resource-heavy features like GPS, you can keep your steps visible all day without worrying about your battery.
+By choosing a step tracker widget that works with iOS's native health database and avoids resource-heavy features like GPS, you can keep your steps visible all day without worrying about your battery. Learn more about our on-device architecture in [privacy and sync](/docs/steps-and-data/privacy-and-sync), or browse our battery-efficient complication and display options in [the widget gallery](/docs/widgets/widget-gallery).
+

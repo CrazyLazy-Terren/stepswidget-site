@@ -15,7 +15,7 @@ keywords:
   - prevent sitting too long
   - move more at work
   - get up and move notifications iPhone
-image: /assets/blog-smart-reminders.jpg
+image: /assets/blog-smart-reminders.webp
 ---
 
 If you work a desk job, you know the hourly stand-up buzz. Your watch or phone taps you, tells you it is time to move, and you glance down mid-task or mid-meeting, swipe it away, and keep sitting. A week later you have turned the reminders off entirely.

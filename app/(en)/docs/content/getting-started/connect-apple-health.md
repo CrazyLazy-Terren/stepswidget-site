@@ -84,3 +84,6 @@ One exception: the current window's numbers are cached in the shared app group s
 - [Set your daily goal](/docs/getting-started/set-your-daily-goal) — the target everything measures against.
 - [Steps not counting](/docs/troubleshooting/steps-not-counting) — the full checklist when the number stays at zero.
 - [Motion Sensor and Live Activity](/docs/steps-and-data/motion-sensor-and-live-activity) — counts that update while you walk.
+- [How iPhone and Apple Watch count and sync steps](/blog/how-iphone-apple-watch-count-and-sync-steps) — how Apple Health reconciles data from multiple devices.
+- [See your step count without opening Health](/blog/see-step-count-without-opening-health-app) — glanceable step counts across widgets and complications.
+

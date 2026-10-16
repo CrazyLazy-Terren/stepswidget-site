@@ -28,7 +28,7 @@ function DocsNavList({ activeSection, activeSlug }: { activeSection?: string; ac
   const tree = getDocTree()
 
   return (
-    <nav aria-label="Documentation" className="grid gap-8 text-sm">
+    <nav aria-label="Documentation" className="grid gap-6 text-sm">
       {tree.map(({ section, docs }) => {
         const isActiveSection = section.slug === activeSection
 
@@ -41,7 +41,7 @@ function DocsNavList({ activeSection, activeSlug }: { activeSection?: string; ac
               }`}>
               {section.title}
             </Link>
-            <ul className="mt-1.5 grid lg:mt-3">
+            <ul className="mt-1.5 grid lg:mt-4">
               {docs.map((doc) => {
                 const isActive = isActiveSection && doc.slug === activeSlug
 
@@ -100,7 +100,7 @@ export function DocsShell({ activeSection, activeSlug, children }: DocsShellProp
           <Link href="/" className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
             Steps Widget
           </Link>
-          <div className="-my-2 flex flex-wrap gap-x-5">
+          <div className="-my-2 flex flex-wrap gap-x-6">
             <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>

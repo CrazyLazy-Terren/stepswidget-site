@@ -15,7 +15,7 @@ keywords:
   - free apple watch steps widget
   - step counter app no subscription
   - free step tracker widget without ads
-image: /assets/blog-favorite-home-widget.jpg
+image: /assets/blog-favorite-home-widget.webp
 ---
 
 **Short answer:** iOS has no built-in widget that shows your numeric step count. Install a free step counter app that reads Apple Health, then add it as a Home Screen widget, a Lock Screen widget, and an Apple Watch complication. The whole setup takes about five minutes and costs nothing.
@@ -56,7 +56,7 @@ Whichever you choose, the setup steps below are identical — every one of these
 
 Adding a step counter widget to your Home Screen gives you the number every time you unlock your phone — which, for most people, is the difference between noticing a 3,000-step day at lunchtime and noticing it at bedtime.
 
-![Two iPhone Home Screen step counter widgets on a wallpaper: one showing 4,050 steps with an hourly bar chart, the other a goal reminder reading "Push now"](/assets/feature-styles.png)
+![Two iPhone Home Screen step counter widgets on a wallpaper: one showing 4,050 steps with an hourly bar chart, the other a goal reminder reading "Push now"](/assets/feature-styles.webp)
 
 ### Step-by-Step Setup:
 
@@ -100,7 +100,7 @@ The inline slot is the one to prioritize. It costs you no widget real estate, si
 
 The Apple Watch counts steps automatically with its built-in accelerometer, but the native Activity complication shows only the Move/Exercise/Stand rings. To get the actual number on your wrist, add a step complication from a free third-party app.
 
-![Two Apple Watch faces showing step complications: one reading 8,082 steps with distance and pace, the other a step graph complication at 8,913 steps](/assets/w02.png)
+![Two Apple Watch faces showing step complications: one reading 8,082 steps with distance and pace, the other a step graph complication at 8,913 steps](/assets/w02.webp)
 
 ### Method A: Directly on Your Apple Watch
 

@@ -6,7 +6,7 @@ date: '2026-10-04'
 updated: '2026-10-04'
 slug: how-iphone-apple-watch-count-and-sync-steps
 category: Apple Watch
-image: /assets/blog-workspace-showing-apple-watch-and-iphone-syncing-step-data.jpg
+image: /assets/blog-workspace-showing-apple-watch-and-iphone-syncing-step-data.webp
 
 keywords:
   - how does iphone count steps

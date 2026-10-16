@@ -6,7 +6,7 @@ date: '2026-09-22'
 updated: '2026-09-22'
 slug: will-i-hit-my-step-goal-today
 category: Fitness Habits
-image: /assets/blog-step-goal-forecast.jpg
+image: /assets/blog-step-goal-forecast.webp
 
 keywords:
   - will i hit my step goal today

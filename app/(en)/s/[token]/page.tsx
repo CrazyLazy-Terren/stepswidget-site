@@ -72,12 +72,12 @@ export default async function SharedStylePage({ params }: SharedStylePageProps) 
         />
       }>
       <div className="grid gap-20">
-        <ol id="steps" className="grid gap-5 lg:grid-cols-4">
+        <ol id="steps" className="grid gap-6 lg:grid-cols-4">
           {steps.map((step, index) => (
             <li
               key={step.heading}
-              className="grid grid-cols-[auto_minmax(0,1fr)] content-start gap-3 rounded-[24px] lg:grid-cols-1 border border-[color:var(--border)] bg-[var(--surface-1)] px-6 pt-6 pb-8 shadow-[var(--soft-shadow)]">
-              <div className="flex flex-col gap-3">
+              className="grid grid-cols-[auto_minmax(0,1fr)] content-start gap-4 rounded-lg lg:grid-cols-1 border border-[color:var(--border)] bg-[var(--surface-1)] px-6 pt-6 pb-8">
+              <div className="flex flex-col gap-4">
                 <h3 className="flex items-center gap-3 text-xl font-semibold text-[var(--text-strong)]">
                   <span className="flex  h-9 w-9 items-center justify-center rounded-full bg-[var(--text-strong)] text-md font-semibold text-background">
                     {index + 1}
@@ -90,24 +90,24 @@ export default async function SharedStylePage({ params }: SharedStylePageProps) 
           ))}
         </ol>
         {/* Phones get this button in the hero instead. */}
-        <div className="hidden flex-col items-center gap-4 lg:flex">
+        <div className="hidden flex-col items-start gap-4 lg:flex">
           <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">Don&apos;t have the app yet?</h2>
-          <p className="max-w-md text-center leading-7 text-[var(--text-muted)]">
+          <p className="max-w-md leading-7 text-[var(--text-muted)]">
             Install it on the iPhone you want the widget on, then follow the steps above. It is free, and it reads your step count from Apple Health.
           </p>
           <AppStoreButton className="" href={styleShareAppStoreUrl} label="Download Steps Widget on the App Store" />
         </div>
       </div>
 
-      <div className="mt-16 rounded-[24px] border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
+      <div className="mt-16 rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
         <h2 className="text-xl font-semibold text-[var(--text-strong)]">If the image opens as a plain photo</h2>
-        <p className="mt-3 max-w-3xl leading-7 text-[var(--text-muted)]">
+        <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">
           The app needs the original card. A screenshot of it, or a copy with the bottom strip cropped off, no longer carries the style, so ask for the image
           itself to be sent again. Applying a style to a widget needs the Customization subscription; opening and saving the style is free.
         </p>
         <Link
           href="/docs/widgets/share-a-style"
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent-color)] transition hover:translate-x-1">
+          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent-color)] transition hover:translate-x-1">
           How style sharing works <ArrowRight />
         </Link>
       </div>

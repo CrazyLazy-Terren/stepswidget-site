@@ -13,7 +13,7 @@ keywords:
   - apple health not tracking steps
   - fix iphone step tracking
   - motion and fitness tracking iphone
-image: /assets/blog-iphone-not-counting-steps.jpg
+image: /assets/blog-iphone-not-counting-steps.webp
 ---
 
 You walked all morning, checked your phone, and the step count reads zero. It is a common frustration, and in almost every case the fix takes less than five minutes.
@@ -74,4 +74,5 @@ If everything above checks out and steps still are not recording, restart your i
 
 Most people discover broken step tracking days after it happens, because their count is hidden inside the Health app. The easiest safeguard is putting your steps where you already look.
 
-Steps Widget displays your live [Apple Health step count](https://stepswidget.app/blog/apple-health-steps-widget) on your Home Screen, Lock Screen, and in StandBy mode. If tracking ever stops, you will notice the frozen number the same hour instead of the same week. Setup takes under a minute, requires no account, and your data never leaves your device. Download Steps Widget and keep your step count in sight.
+Steps Widget displays your live [Apple Health step count](/blog/apple-health-steps-widget) on your Home Screen, Lock Screen, and in StandBy mode. If tracking ever stops, you will notice the frozen number the same hour instead of the same week. For step-by-step diagnostic checklists, see the [steps not counting troubleshooting guide](/docs/troubleshooting/steps-not-counting) and [connecting Apple Health](/docs/getting-started/connect-apple-health). Setup takes under a minute, requires no account, and your data never leaves your device. Download Steps Widget and keep your step count in sight.
+

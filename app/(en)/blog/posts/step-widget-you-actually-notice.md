@@ -6,7 +6,7 @@ date: '2026-10-04'
 updated: '2026-10-04'
 slug: step-widget-you-actually-notice
 category: Widgets
-image: /assets/blog-aesthetic-steps.jpg
+image: /assets/blog-aesthetic-steps.webp
 
 keywords:
   - aesthetic step widget

@@ -20,16 +20,14 @@ export function LegalShell({ eyebrow, title, description, updated, sections }: L
     <>
       <SiteNav />
       <main className="min-h-screen bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
-        <PageSection
-          paddingY="top"
-          overlay={<div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-55 bg-[image:var(--hero-glow)]" />}>
+        <PageSection paddingY="top">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent-color)]">{eyebrow}</p>
           <h1 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">{title}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
-          <p className="mt-5 text-sm font-medium text-[var(--text-subtle)]">Last updated: {updated}</p>
+          <p className="mt-6 text-sm font-medium text-[var(--text-subtle)]">Last updated: {updated}</p>
         </PageSection>
 
-        <PageSection>
+        <PageSection paddingY="bottom">
           <article className="max-w-3xl">
             <div className="space-y-10">
               {sections.map((section) => (
@@ -53,7 +51,7 @@ export function LegalShell({ eyebrow, title, description, updated, sections }: L
             <Link href="/" className="font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
               Back to Steps Widget
             </Link>
-            <div className="-my-2 flex flex-wrap gap-x-5">
+            <div className="-my-2 flex flex-wrap gap-x-6">
               <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
                 Privacy
               </Link>

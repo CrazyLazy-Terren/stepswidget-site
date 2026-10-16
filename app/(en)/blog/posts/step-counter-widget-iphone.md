@@ -13,7 +13,7 @@ keywords:
   - pedometer widget for iPhone
   - Home Screen step counter
   - Apple Health steps widget
-image: /assets/blog-step-counter.jpg
+image: /assets/blog-step-counter.webp
 ---
 
 Looking for a step counter widget for iPhone usually means one thing: your iPhone already has useful step data, but it is too easy to miss during the day.
@@ -78,4 +78,5 @@ If your step counter widget looks stuck, open Steps Widget once, confirm Apple H
 
 A step counter widget should help you notice progress, not turn movement into pressure. The goal is to make walking easier to remember while you still have time to do something about it.
 
-Steps Widget keeps the focus on private, visible progress: your steps, your screen, your pace.
+Steps Widget keeps the focus on private, visible progress: your steps, your screen, your pace. Ready to set it up? Follow our 5-minute [install and set up guide](/docs/getting-started/install-and-set-up), browse all widget formats in [the widget gallery](/docs/widgets/widget-gallery), and learn [how to set a realistic daily step goal](/blog/how-to-set-a-realistic-daily-step-goal).
+

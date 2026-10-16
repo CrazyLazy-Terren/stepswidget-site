@@ -133,13 +133,13 @@ export default async function DocSectionPage({ params }: DocSectionPageProps) {
 
         <header className="mb-10 mt-6 max-w-2xl">
           <h1 className="text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">{section.title}</h1>
-          <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">{section.description}</p>
+          <p className="mt-6 text-lg leading-8 text-[var(--text-muted)]">{section.description}</p>
         </header>
 
         <ol className="grid border-t border-[color:var(--border)]">
           {docs.map((doc, index) => (
             <li key={doc.slug} className="border-b border-[color:var(--border)]">
-              <Link href={docPath(doc)} className="group flex gap-5 py-5">
+              <Link href={docPath(doc)} className="group flex gap-6 py-6">
                 <span className="w-5 shrink-0 pt-0.5 font-mono text-sm text-[var(--text-subtle)]">{String(index + 1).padStart(2, '0')}</span>
                 <span className="min-w-0 flex-1">
                   <span className="flex items-baseline gap-2">

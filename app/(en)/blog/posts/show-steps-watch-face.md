@@ -17,7 +17,7 @@ keywords:
   - show steps on apple watch face
   - apple watch step complication
   - step counter apple watch face
-image: /assets/blog-user-setting-up-apple-watch-step-counter-app.jpg
+image: /assets/blog-user-setting-up-apple-watch-step-counter-app.webp
 ---
 
 Apple Watch does not display your step count on the watch face by default. The built-in Activity app [tracks steps accurately](https://support.apple.com/guide/watch/track-daily-activity-apd3bf6d85a6/watchos) in the background but only surfaces Move, Exercise, and Stand goals through its native complications. To show your step count on the watch face, you need a third-party app that reads your Apple Health step data and provides a watch face complication.
@@ -77,7 +77,7 @@ Watch face styles like Modular and Infograph offer more and larger complication 
 
 **Pro Tip:** _If you want your step count always visible, choose a watch face with a large center or top complication slot. Modular is particularly good for this since it dedicates significant screen space to complications._
 
-![Close-up of Apple Watch displaying step complication](/assets/blog-close-up-of-apple-watch-displaying-step-complication.jpg)
+![Close-up of Apple Watch displaying step complication](/assets/blog-close-up-of-apple-watch-displaying-step-complication.webp)
 
 ## Popular apps that display steps on your Apple Watch face
 
@@ -103,7 +103,7 @@ Your Apple Watch collects step data continuously and syncs it to the iPhone Heal
 
 Third-party step counter apps read this data directly from Apple Health rather than collecting it independently. That means the step count you see on your watch face complication matches what you see inside the Health app. One thing to keep in mind: third-party complications may update with a slight delay due to Apple's background refresh limits, so the number on your watch face might lag a few minutes behind your actual step count.
 
-![Workspace showing Apple Watch and iPhone syncing step data](/assets/blog-workspace-showing-apple-watch-and-iphone-syncing-step-data.jpg)
+![Workspace showing Apple Watch and iPhone syncing step data](/assets/blog-workspace-showing-apple-watch-and-iphone-syncing-step-data.webp)
 
 To check your steps inside the Health app directly, open Health on your iPhone, tap Browse, then Activity, then Steps.
 
@@ -121,7 +121,7 @@ Adding a complication does draw slightly more power since the watch face refresh
 
 If you want a step count complication that stays private and looks good without a complicated setup, [Steps Widget](https://stepswidget.app) is worth a look. It reads your Apple Health data locally, so nothing leaves your device. There are no social feeds, no challenges, and no subscription required to get the core experience.
 
-You get multiple complication styles for your Apple Watch face, plus widget options for your iPhone [Home Screen and Lock Screen](https://stepswidget.app/blog/iphone-lock-screen-steps-widget), so your step count is visible wherever you check. Download Steps Widget from the App Store and add the complication to your watch face in under five minutes.
+You get multiple complication styles for your Apple Watch face, plus widget options for your iPhone [Home Screen and Lock Screen](/blog/iphone-lock-screen-steps-widget), so your step count is visible wherever you check. See the [Apple Watch documentation](/docs/widgets/apple-watch) for all supported complication shapes, and the [widget gallery](/docs/widgets/widget-gallery) for Home Screen designs. Download Steps Widget from the App Store and add the complication to your watch face in under five minutes.
 
 ## Frequently asked questions
 
@@ -135,9 +135,10 @@ You get multiple complication styles for your Apple Watch face, plus widget opti
 
 **Why is my step complication not in the list?** The Watch app is probably not installed. Open the Watch app on your iPhone, go to My Watch › Available Apps, and install it — then open it once on the Watch so the complication registers.
 
-**Why does my watch face step count lag behind the Health app?** Complications refresh on a budget set by watchOS rather than live, so a few minutes behind is normal. See [how your iPhone and Apple Watch count and sync steps](https://stepswidget.app/blog/how-iphone-apple-watch-count-and-sync-steps).
+**Why does my watch face step count lag behind the Health app?** Complications refresh on a budget set by watchOS rather than live, so a few minutes behind is normal. See [how your iPhone and Apple Watch count and sync steps](/blog/how-iphone-apple-watch-count-and-sync-steps).
 
-**Can I set a step goal on my Apple Watch?** Not natively — the rings track calories, exercise minutes, and stand hours. A third-party app supplies a step goal; see [how to set a step goal on Apple Watch](https://stepswidget.app/blog/apple-watch-step-goal).
+**Can I set a step goal on my Apple Watch?** Not natively — the rings track calories, exercise minutes, and stand hours. A third-party app supplies a step goal; see [how to set a step goal on Apple Watch](/blog/apple-watch-step-goal).
+
 
 ## Key Takeaways
 

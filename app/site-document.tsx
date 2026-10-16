@@ -15,7 +15,7 @@ export const baseMetadata: Metadata = {
       { url: '/assets/favicon-144x144.png', sizes: '144x144', type: 'image/png' },
       { url: '/assets/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: [{ url: '/assets/stepswidget-icon.png', sizes: '1024x1024', type: 'image/png' }],
+    apple: [{ url: '/assets/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 }
 

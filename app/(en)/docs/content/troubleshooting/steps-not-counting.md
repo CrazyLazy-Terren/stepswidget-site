@@ -11,7 +11,7 @@ keywords:
   - steps missing Apple Health
   - step counter not working
   - iPhone pedometer not working
-image: /assets/blog-iphone-not-counting-steps.jpg
+image: /assets/blog-iphone-not-counting-steps.webp
 ---
 
 The cause is almost never the hardware. The iPhone's motion coprocessor is extremely reliable — it is nearly always a switch somewhere between the sensor and the widget. The checks below are ordered by how often they turn out to be the answer.
@@ -100,3 +100,6 @@ That is Apple Health's roughly hourly sync cadence, not a fault — the steps ar
 - [Widget not updating](/docs/troubleshooting/widget-not-updating) — data exists but the widget is stale.
 - [Connect Apple Health](/docs/getting-started/connect-apple-health) — permissions in full.
 - [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity) — fresher numbers.
+- [Apple Watch not counting steps? 8 fixes](/blog/apple-watch-not-counting-steps) — dedicated wrist-tracking checklist and sensor troubleshooting.
+- [iPhone not counting steps: troubleshooting guide](/blog/iphone-not-counting-steps) — hardware sensor settings and calibration checks.
+

@@ -6,7 +6,7 @@ date: '2026-09-11'
 updated: 2026-09-26
 slug: more-steps-less-app
 category: Behind the App
-image: /assets/blog-more-steps-less-app.jpg
+image: /assets/blog-more-steps-less-app.webp
 
 keywords:
   - more steps less app
@@ -46,7 +46,7 @@ So the question behind every design decision in [Steps Widget](https://stepswidg
 
 Strip a daily pedometer down to what genuinely changes human behavior and there are only two essential jobs left.
 
-![Steps Widget displayed across iPhone Home Screen, Lock Screen, StandBy, and Apple Watch](/assets/f02.png)
+![Steps Widget displayed across iPhone Home Screen, Lock Screen, StandBy, and Apple Watch](/assets/f02.webp)
 
 ### 1. The glance
 
@@ -70,7 +70,7 @@ A short list of features Steps Widget intentionally excludes, and why:
 
 ## Why "less app" requires more on-device intelligence
 
-![Subtle on-device smart step reminders and pace forecasting on iPhone](/assets/f03.png)
+![Subtle on-device smart step reminders and pace forecasting on iPhone](/assets/f03.webp)
 
 A minimalist interface is not the same as a simplistic app. The engineering effort simply shifts behind the scenes where it does not distract you.
 

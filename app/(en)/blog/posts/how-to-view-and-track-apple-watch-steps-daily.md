@@ -18,7 +18,7 @@ keywords:
   - how to track steps on apple watch
   - where to see steps on apple watch
   - apple watch step counter
-image: /assets/blog-view-track-steps-daily.jpg
+image: /assets/blog-view-track-steps-daily.webp
 ---
 
 **Yes, your Apple Watch counts steps** — automatically, all day, without you starting anything. The confusion is not whether it tracks them. It is that Apple does not consider steps the headline number, so the count is tucked several scrolls below the Activity rings and absent from the watch face entirely.
@@ -116,7 +116,8 @@ Finding your step count is step one. Acting on it while the day is still open is
 
 A count you have to go looking for gets checked at night, when the day is over. A count on your watch face gets checked dozens of times, in daylight, while a walk is still possible.
 
-[Steps Widget](https://stepswidget.app) exists for that gap: complications on your watch face in three styles, the same merged Health total on your iPhone Home and Lock Screens, and a forecast that projects where your day is heading and only speaks up when it is falling short — delivered as a wrist tap, since only one of your devices is elected to send. Nothing leaves your device, and there is no account.
+[Steps Widget](https://stepswidget.app) exists for that gap: complications on your watch face in three styles, the same merged Health total on your iPhone Home and Lock Screens, and a forecast that projects where your day is heading and only speaks up when it is falling short — delivered as a wrist tap, since only one of your devices is elected to send. Read the [Apple Watch documentation](/docs/widgets/apple-watch) and learn [how goal reminders work](/docs/goal-reminders/how-goal-reminders-work). Nothing leaves your device, and there is no account.
+
 
 ## Frequently asked questions
 

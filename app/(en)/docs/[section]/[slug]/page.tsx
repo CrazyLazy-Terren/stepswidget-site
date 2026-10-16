@@ -150,18 +150,12 @@ export default async function DocPage({ params }: DocPageProps) {
       <DocsShell activeSection={doc.section.slug} activeSlug={doc.slug}>
         <div className="grid gap-12 xl:grid-cols-[minmax(0,44rem)_12rem]">
           <article className="min-w-0">
-            <DocsBreadcrumb
-              trail={[
-                { name: 'Docs', href: '/docs' },
-                { name: doc.section.title, href: `/docs/${doc.section.slug}` },
-                { name: doc.title },
-              ]}
-            />
+            <DocsBreadcrumb trail={[{ name: 'Docs', href: '/docs' }, { name: doc.section.title, href: `/docs/${doc.section.slug}` }, { name: doc.title }]} />
 
             <header className="mt-6 border-b border-[color:var(--border)] pb-8">
               <h1 className="text-balance text-4xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl">{doc.title}</h1>
-              <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">{doc.description}</p>
-              <div className="mt-5 flex flex-wrap items-center gap-2 text-sm text-[var(--text-subtle)]">
+              <p className="mt-6 text-lg leading-8 text-[var(--text-muted)]">{doc.description}</p>
+              <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-[var(--text-subtle)]">
                 <span>{doc.readingTime}</span>
                 <span aria-hidden="true" className="opacity-50">
                   /
@@ -176,7 +170,7 @@ export default async function DocPage({ params }: DocPageProps) {
             </header>
 
             {doc.image && (
-              <div className="mt-8 overflow-hidden rounded-[4px] bg-[var(--surface-media)]">
+              <div className="mt-8 overflow-hidden rounded-lg">
                 <Image
                   src={doc.image}
                   alt={`${doc.title} illustration`}
@@ -249,7 +243,7 @@ export default async function DocPage({ params }: DocPageProps) {
               </p>
               <Link
                 href="/"
-                className="mt-5 inline-flex h-9 items-center rounded-[3px] bg-[var(--button-bg)] px-4 text-sm font-medium text-[var(--button-text)] transition hover:opacity-90">
+                className="mt-6 inline-flex h-9 items-center rounded-lg bg-[var(--button-bg)] px-4 text-sm font-medium text-[var(--button-text)] transition hover:opacity-90">
                 See how it works
               </Link>
             </div>

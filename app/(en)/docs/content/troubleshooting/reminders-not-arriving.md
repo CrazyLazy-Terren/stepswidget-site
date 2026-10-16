@@ -11,7 +11,7 @@ keywords:
   - goal reminder not firing
   - iPhone focus mode notifications
   - scheduled summary notifications
-image: /assets/blog-stand-reminders-not-working.jpg
+image: /assets/blog-stand-reminders-not-working.webp
 ---
 
 Before troubleshooting, rule out the two most likely explanations. Neither is a fault.
@@ -98,3 +98,6 @@ Two broader steps remain. Restart the iPhone, which clears the notification sche
 - [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work) — the projection and thresholds.
 - [Reminder timing and devices](/docs/goal-reminders/reminder-timing-and-devices) — hours, sunset, device election.
 - [Reminder messages](/docs/goal-reminders/reminder-messages) — tone and alert style.
+- [Fix Apple Watch stand reminders not working](/blog/apple-watch-stand-reminders-not-working) — resolving watchOS alert failures and mute states.
+- [Does iPhone have a stand up reminder?](/blog/does-iphone-have-stand-up-reminder) — how iPhone handles sedentary reminders without a watch.
+

@@ -6,7 +6,7 @@ date: '2026-10-07'
 updated: '2026-10-07'
 slug: apple-watch-step-goal
 category: Apple Watch
-image: /assets/blog-close-up-of-apple-watch-displaying-step-complication.jpg
+image: /assets/blog-close-up-of-apple-watch-displaying-step-complication.webp
 
 keywords:
   - step goal apple watch

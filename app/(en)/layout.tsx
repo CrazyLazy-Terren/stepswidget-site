@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SearchDialog } from '../search-dialog'
 import { defaultOgImages, siteName, siteUrl } from '../shared-metadata'
 import { SiteDocument, baseMetadata } from '../site-document'
 
@@ -50,5 +51,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <SiteDocument lang="en">{children}</SiteDocument>
+  return (
+    <SiteDocument lang="en">
+      {children}
+      <SearchDialog />
+    </SiteDocument>
+  )
 }
+

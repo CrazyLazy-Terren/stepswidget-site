@@ -14,7 +14,7 @@ keywords:
   - ios 27 health data
   - ios 27 widgets not working
   - downgrade ios 27 to ios 26
-image: /assets/blog-ios-27-beta.jpg
+image: /assets/blog-ios-27-beta.webp
 ---
 
 Apple released iOS 27 to everyone on September 14, 2026, after two months of public beta. It runs on every iPhone that ran iOS 26, from the iPhone 11 and the second-generation iPhone SE onward, so if your phone got last year's update, it gets this one too.

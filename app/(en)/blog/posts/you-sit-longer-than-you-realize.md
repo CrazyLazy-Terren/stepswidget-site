@@ -15,7 +15,7 @@ keywords:
   - how much do desk workers sit
   - step pace forecasting
   - breaking up daytime sedentary hours
-image: /assets/blog-sit-longer-hero.jpg
+image: /assets/blog-sit-longer-hero.webp
 ---
 
 *Last reviewed: August 2026*
@@ -59,7 +59,7 @@ So the story that daytime sitting is something work does to you, and the weekend
 
 **Meeting the exercise guidelines does not neutralise the risk of sitting the rest of the day.**
 
-![Split view showing a vigorous evening workout alongside a sedentary daytime desk setup](/assets/blog-active-couch-potato.jpg)
+![Split view showing a vigorous evening workout alongside a sedentary daytime desk setup](/assets/blog-active-couch-potato.webp)
 
 Plenty of health-conscious people hold an insurance policy in their heads: *"I sit for work, but I run four miles in the evening, so I'm covered."*
 
@@ -89,7 +89,7 @@ Because of **awareness lag**. Most people check their step count at the end of t
 
 At 10 PM that number is a **post-mortem**. The day is done, you are tired, and no one is realistically heading out for a 45-minute walk.
 
-![Person checking their iPhone widget and taking an afternoon walking break](/assets/blog-afternoon-pace-check.jpg)
+![Person checking their iPhone widget and taking an afternoon walking break](/assets/blog-afternoon-pace-check.webp)
 
 ### Why mid-afternoon is the decisive moment
 

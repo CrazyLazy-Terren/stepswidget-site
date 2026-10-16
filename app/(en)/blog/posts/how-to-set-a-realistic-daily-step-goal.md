@@ -15,7 +15,7 @@ keywords:
   - how many steps should i aim for
   - adjustable step goal
   - step goal by age
-image: /assets/blog-daily-walking-steps.jpg
+image: /assets/blog-daily-walking-steps.webp
 ---
 
 A step goal only works if two things are true at once: you can reach it on an ordinary day, and reaching it still requires you to get up. Miss on either side and the number stops doing its job.

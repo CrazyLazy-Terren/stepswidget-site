@@ -13,7 +13,7 @@ keywords:
   - standby mode steps widget
   - ios standby mode pedometer
   - add step counter standby mode
-image: /assets/blog-standby-mode-steps.jpg
+image: /assets/blog-standby-mode-steps.webp
 ---
 
 iOS StandBy mode transforms your iPhone into a smart glanceable display when it is charging on its side. It is perfect for displaying clocks, weather forecasts, and calendar events while sitting at your desk or sleeping on your nightstand.
@@ -66,4 +66,5 @@ Having your step counter visible in StandBy mode is especially helpful for offic
 
 Instead of picking up your phone, unlocking it, and navigating to a health app—which often leads to getting distracted by social media or email—you can see your movement progress with a simple glance to the side.
 
-Because Steps Widget offers curated, color-matched themes (such as Sky Blue, Accent Pink, or automatic Dark Mode matching), your step counter can blend seamlessly with your desk decor and wallpaper colors, even when your phone is locked and charging.
+Because Steps Widget offers curated, color-matched themes (such as Sky Blue, Accent Pink, or automatic Dark Mode matching), your step counter can blend seamlessly with your desk decor and wallpaper colors, even when your phone is locked and charging. Explore all StandBy widget formats in [the widget gallery](/docs/widgets/widget-gallery) and learn how to customize palettes in [styling widgets](/docs/widgets/widget-styles).
+
