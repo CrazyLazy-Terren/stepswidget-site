@@ -258,17 +258,17 @@ type PhoneFeature = {
   linkLabel?: string
 }
 
-/** Features told by a screenshot: each phone centred in its half of the grid, its copy below. */
+/** Features told by a screenshot: each phone sits on its half's left grid line, with its copy below on the same edge. */
 function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
   return (
     <div className="mt-12 grid gap-12 sm:grid-cols-2 sm:gap-6">
       {features.map((feature) => (
         <article key={feature.title} className="flex flex-col">
-          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="mx-auto w-full max-w-72" sizes="(max-width: 640px) 80vw, 288px" />
-          <div className="mt-8 flex flex-1 flex-col">
+          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="w-full max-w-80" sizes="(max-width: 640px) 80vw, 320px" />
+          <div className="mt-8 flex max-w-md flex-1 flex-col">
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
             <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
-            <p className="mt-2 max-w-xl leading-7 text-[var(--text-muted)]">{feature.description}</p>
+            <p className="mt-2 leading-7 text-[var(--text-muted)]">{feature.description}</p>
             {feature.href ? (
               <ArrowLink href={feature.href} className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
                 {feature.linkLabel}
@@ -412,7 +412,7 @@ export default function Home() {
         <FeatureCards cards={glanceCards} />
       </PageSection>
 
-      <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
+      <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
           <SectionHeading eyebrow="Photo styles" title="Make the widget yours.">
             Turn any photo into a style: the picture itself behind your step count, or its colours lifted onto the widget. Then set tone, blur and foreground
@@ -471,13 +471,13 @@ export default function Home() {
       </PageSection>
 
       <PageSection id="story" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
           <SectionHeading eyebrow="The story" title="Built Backwards." />
           <ArrowLink href="/about" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
             About the developer
           </ArrowLink>
         </div>
-        <div className="max-w-2xl space-y-6 text-lg leading-8 text-[var(--text-muted)] lg:col-span-7 lg:mt-12">
+        <div className="max-w-2xl space-y-6 text-lg leading-8 text-[var(--text-muted)] lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-12">
           {storyParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -565,13 +565,13 @@ export default function Home() {
         </div>
       </PageSection>
       <PageSection id="faq" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
           <SectionHeading eyebrow="FAQ" title="Questions, Answered." />
           <ArrowLink href="/docs" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
             Full documentation
           </ArrowLink>
         </div>
-        <div className="lg:col-span-7 lg:mt-6">
+        <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-6">
           {faqItems.map((item) => (
             <details key={item.question} className="disclosure group border-b border-[color:var(--border)] py-6">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
