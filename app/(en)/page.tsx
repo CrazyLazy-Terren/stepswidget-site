@@ -5,6 +5,7 @@ import { ArrowLink } from '../arrow'
 import { AppStoreButton } from '../app-store-button'
 import { HeroPreview } from '../hero-preview'
 import { IPhoneCarousel } from '../iphone-carousel'
+import { IPhoneMockup } from '../iphone-mockup'
 import { PageSection, pageGutter } from '../page-shell'
 import { SectionHeading } from '../section-heading'
 import { SiteLogo, SiteNav } from '../site-nav'
@@ -67,7 +68,8 @@ const shareCards = [
     eyebrow: 'Style sharing',
     description:
       'Send a photo with its style recipe attached. Anyone with Steps can open it, or scan the code, to recreate the widget with the same framing, tone and colour.',
-    image: '/assets/f06.webp',
+    image: '/assets/share-style.webp',
+    imageAlt: 'Share Style screen: a photo with its style recipe and a QR code to recreate the widget',
     href: '/docs/widgets/share-a-style',
     linkLabel: 'How sharing works',
   },
@@ -76,9 +78,10 @@ const shareCards = [
     eyebrow: 'New · iMessage app',
     description:
       'Drop today’s count into a conversation. Friends who have Steps tap to add theirs, and the bubble becomes the day’s ranking. The board travels inside the message itself, with no account and no server.',
-    image: '/assets/f07.webp',
+    image: '/assets/imessage-ranking.webp',
+    imageAlt: "Messages conversation with Today's Step Ranking: five friends' step counts, ranked",
   },
-]
+] satisfies PhoneFeature[]
 
 const notThis = ['No feeds.', 'No streaks.', 'No guilt.', 'No noise.']
 
@@ -244,6 +247,40 @@ const faqItems = [
   },
 ]
 
+type PhoneFeature = {
+  title: string
+  eyebrow: string
+  description: string
+  /** A full-screen iPhone screenshot. */
+  image: string
+  imageAlt: string
+  href?: string
+  linkLabel?: string
+}
+
+/** Features told by a screenshot: each phone centred in its half of the grid, its copy below. */
+function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
+  return (
+    <div className="mt-12 grid gap-12 sm:grid-cols-2 sm:gap-6">
+      {features.map((feature) => (
+        <article key={feature.title} className="flex flex-col">
+          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="mx-auto w-full max-w-72" sizes="(max-width: 640px) 80vw, 288px" />
+          <div className="mt-8 flex flex-1 flex-col">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
+            <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
+            <p className="mt-2 max-w-xl leading-7 text-[var(--text-muted)]">{feature.description}</p>
+            {feature.href ? (
+              <ArrowLink href={feature.href} className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+                {feature.linkLabel}
+              </ArrowLink>
+            ) : null}
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+
 type FeatureCard = {
   title: string
   eyebrow: string
@@ -375,6 +412,25 @@ export default function Home() {
         <FeatureCards cards={glanceCards} />
       </PageSection>
 
+      <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <SectionHeading eyebrow="Photo styles" title="Make the widget yours.">
+            Turn any photo into a style: the picture itself behind your step count, or its colours lifted onto the widget. Then set tone, blur and foreground
+            until the numbers read clearly. Making a style is free; applying one is part of the Customization subscription, and a style already on a widget
+            keeps working if it lapses.
+          </SectionHeading>
+          <ArrowLink href="/docs/widgets/photo-styles" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+            Styles from a photo
+          </ArrowLink>
+        </div>
+        <IPhoneMockup
+          src="/assets/style-editor-dark.webp"
+          alt="Photo style editor: a mountain photo behind an 8,072-step widget, with Tone, Blur and Foreground controls"
+          className="mx-auto w-full max-w-96 lg:col-span-7 lg:mt-12"
+          sizes="(max-width: 720px) 80vw, 384px"
+        />
+      </PageSection>
+
       <PageSection id="nudge" paddingY="section">
         <SectionHeading eyebrow="The nudge" title="When It Counts.">
           An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
@@ -411,7 +467,7 @@ export default function Home() {
           Send a widget look to a friend, or turn today&rsquo;s count into a ranking right inside a conversation.
         </SectionHeading>
 
-        <FeatureCards cards={shareCards} />
+        <PhoneFeatures features={shareCards} />
       </PageSection>
 
       <PageSection id="story" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">

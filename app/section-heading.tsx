@@ -36,7 +36,7 @@ export function SectionHeading({ eyebrow, title, children }: { eyebrow: string; 
       <h2 className={`mt-2 text-3xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-5xl ${hasManualBreak ? '' : 'text-balance'}`}>
         {withLineBreaks(title)}
       </h2>
-      {children ? <p className="mt-12 text-lg leading-8 text-[var(--text-muted)]">{children}</p> : null}
+      {children ? <p className="mt-8 text-lg leading-8 text-[var(--text-muted)]">{children}</p> : null}
     </div>
   )
 }
