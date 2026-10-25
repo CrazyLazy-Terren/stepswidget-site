@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      // iOS reads this to open /invite links (shared Steps cards) in the app.
+      {
+        source: '/.well-known/apple-app-site-association',
+        destination: '/api/apple-app-site-association',
+      },
       {
         source: '/:key([a-f0-9]{32}).txt',
         destination: '/api/indexnow-key/:key',
