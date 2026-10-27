@@ -71,16 +71,22 @@ export const docSections: DocSection[] = [
     order: 3,
   },
   {
+    slug: 'sharing',
+    title: 'Sharing steps',
+    description: 'Swap cards with a friend, see each other’s steps side by side, and how it stays private.',
+    order: 4,
+  },
+  {
     slug: 'steps-and-data',
     title: 'Steps and data',
     description: 'Where your step count comes from, how to reshape the day it measures, asking Siri for it, and what stays on your device.',
-    order: 4,
+    order: 5,
   },
   {
     slug: 'troubleshooting',
     title: 'Troubleshooting',
     description: 'Fixes for a widget that will not update, missing steps, and reminders that never arrive.',
-    order: 5,
+    order: 6,
   },
 ]
 

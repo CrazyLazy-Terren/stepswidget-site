@@ -2,9 +2,9 @@
 slug: privacy-and-sync
 title: Privacy and sync
 metaTitle: How Steps Widget Handles Your Health Data
-description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server holding your steps.
+description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server that can read your steps.
 order: 5
-updated: 2026-09-08
+updated: 2026-10-25
 readingTime: 5 min read
 keywords:
   - private step counter
@@ -30,20 +30,20 @@ The model that decides when to remind you runs and _trains_ on your iPhone. It t
 
 Restyling your reminder messages with Apple Intelligence is the same story: the rewrite runs on Apple's on-device model, so your wording and your style description are not sent to a server — not ours, and not Apple's. Siri requests are answered the same way, by the app reading Health on your device.
 
-Your step counts are read from Health on the device, drawn on the device, and that is the end of the journey.
+Your step counts are read from Health on the device, drawn on the device, and that is the end of the journey, unless you choose to [walk with a friend](/docs/sharing/walk-with-a-friend). Then today's steps go to them, sealed so that only their phone can read them. [Private by design](/docs/sharing/private-by-design) has the full picture.
 
 ## What there is no such thing as
 
 Several categories of risk are absent by construction rather than by policy:
 
-|                            |                |
-| -------------------------- | -------------- |
-| Account or sign-in         | Does not exist |
-| Password to be breached    | Does not exist |
-| Server holding your steps  | Does not exist |
-| Public leaderboard         | Does not exist |
-| Social feed or friend list | Does not exist |
-| Ads, at any tier           | Does not exist |
+|                                 |                |
+| ------------------------------- | -------------- |
+| Account or sign-in              | Does not exist |
+| Password to be breached         | Does not exist |
+| Server that can read your steps | Does not exist |
+| Public leaderboard              | Does not exist |
+| Social feed or public profile   | Does not exist |
+| Ads, at any tier                | Does not exist |
 
 You cannot leak a database that was never assembled. That is a stronger guarantee than careful handling, because careful handling is a commitment and this is a property of the design.
 
