@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import type { CSSProperties, ReactNode } from 'react'
-import closedFrame from '../public/assets/iPhone Duo - Night Sky - Outer Closed Portrait.png'
-import openFrame from '../public/assets/iPhone Duo - Night Sky - Inner Open Landscape.png'
+import closedFrame from '../public/assets/iPhone Duo - Night Sky - Outer Closed Portrait.webp'
+import openFrame from '../public/assets/iPhone Duo - Night Sky - Inner Open Landscape.webp'
 
 export type DuoPose = 'closed' | 'open'
 
