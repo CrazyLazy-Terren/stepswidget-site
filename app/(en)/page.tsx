@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLink } from '../arrow'
 import { AppStoreButton } from '../app-store-button'
+import { DuoDemo } from '../duo-demo'
 import { HeroPreview } from '../hero-preview'
 import { IPhoneCarousel } from '../iphone-carousel'
 import { IPhoneMockup } from '../iphone-mockup'
@@ -264,8 +265,7 @@ function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
     <div className="mt-12 grid gap-12 sm:grid-cols-2 sm:gap-6">
       {features.map((feature) => (
         <article key={feature.title} className="flex flex-col">
-          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="w-full max-w-80" sizes="(max-width: 640px) 80vw, 320px" />
-          <div className="mt-8 flex max-w-md flex-1 flex-col">
+          <div className="flex max-w-md flex-1 flex-col">
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
             <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
             <p className="mt-2 leading-7 text-[var(--text-muted)]">{feature.description}</p>
@@ -275,6 +275,7 @@ function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
               </ArrowLink>
             ) : null}
           </div>
+          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="w-full max-w-80 mt-8 " sizes="(max-width: 640px) 80vw, 320px" />
         </article>
       ))}
     </div>
@@ -470,6 +471,16 @@ export default function Home() {
         <PhoneFeatures features={shareCards} />
       </PageSection>
 
+      <PageSection id="iphone-duo" paddingY="section">
+        <SectionHeading eyebrow="iPhone Duo" title="Adopt for the Fold.">
+          Steps Widget adapts seamlessly to the iPhone Duo's unique foldable display, ensuring your content is always presented optimally, whether folded,
+          half-folded, or fully open.
+        </SectionHeading>
+        <ArrowLink href="/blog/iphone-duo-layout" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+          How I adapted Steps for iPhone Duo
+        </ArrowLink>
+        <DuoDemo className="mx-auto mt-12 w-full max-w-3xl" />
+      </PageSection>
       <PageSection id="story" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
         <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
           <SectionHeading eyebrow="The story" title="Built Backwards." />

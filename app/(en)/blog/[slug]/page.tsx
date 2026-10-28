@@ -10,6 +10,9 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import { ContentShell } from '../../../content-shell'
+import { DuoDemo } from '../../../duo-demo'
+import { DuoShots } from '../../../duo-shots'
+import { isDuoShotsName } from '../../../duo-shots-names'
 import { defaultOgImages, siteName } from '../../../shared-metadata'
 import {
   JsonLd,
@@ -59,6 +62,8 @@ function headingId(children: ReactNode) {
     .replace(/\s+/g, '-')
 }
 
+const duoDemoSrc = '/demos/iphone-duo'
+
 const markdownComponents: Components = {
   // `id` is only supplied by remark-gfm's auto-generated footnote label; every
   // other heading gets its slug from its own text. Posts that cite sources use
@@ -80,7 +85,19 @@ const markdownComponents: Components = {
       {children}
     </h3>
   ),
-  p: ({ children }) => <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>,
+  p: ({ node, children }) => {
+    // `![…](/demos/iphone-duo)` alone on a line embeds the live demo, and
+    // `/demos/iphone-duo/<name>` one of the post's section demos. Checked here
+    // rather than in `img`: a demo is block content, which a <p> can't hold.
+    const only = node?.children.length === 1 ? node.children[0] : undefined
+    if (only?.type === 'element' && only.tagName === 'img' && typeof only.properties.src === 'string') {
+      const src = only.properties.src
+      if (src === duoDemoSrc) return <DuoDemo className="my-10" />
+      const name = src.startsWith(`${duoDemoSrc}/`) ? src.slice(duoDemoSrc.length + 1) : ''
+      if (isDuoShotsName(name)) return <DuoShots name={name} />
+    }
+    return <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>
+  },
   strong: ({ children }) => <strong className="font-semibold text-[var(--text-strong)]">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
   a: ({ href, children, id }) => {
