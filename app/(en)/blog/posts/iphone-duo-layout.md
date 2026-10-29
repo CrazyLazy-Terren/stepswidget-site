@@ -5,7 +5,7 @@ title: 'Designing for the Fold: How I Adapted Steps Widget for iPhone Duo'
 metaTitle: 'iPhone Duo Widgets: Designing for the Fold | Steps Widget'
 description: iPhone Duo is a phone when folded and two pages when open. How Steps Widget adapts to both, from the new side bar to layouts that split at the fold.
 date: 2026-10-28
-image: /assets/blog-iphone-duo-layout.webp
+image: /assets/blog-iphone-duo-sketch-accent.webp
 keywords:
   - iphone duo
   - iphone duo apps
