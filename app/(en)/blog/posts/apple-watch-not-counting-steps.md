@@ -1,7 +1,7 @@
 ---
 title: 'Apple Watch Not Counting Steps? 8 Fixes That Work'
 metaTitle: 'Apple Watch Not Counting Steps: How to Fix It | Steps Widget'
-description: Steps missing, stuck at zero, or not showing on your watch face? Work through the chain from wrist fit to Health permissions to the complication itself, ordered by how often each one turns out to be the cause.
+description: Steps missing, stuck at zero, or not on your watch face? Check wrist fit, Health permissions, and the complication, in order of how often each is the cause.
 date: '2026-10-07'
 updated: '2026-10-07'
 slug: apple-watch-not-counting-steps

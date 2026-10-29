@@ -1,6 +1,6 @@
 ---
 title: 'iOS 18 Tinted Widgets: How to Color-Match Your Step Counter'
-metaTitle: iOS 18 Tinted Steps Widget & Color Customization | Steps Widget
+metaTitle: 'iOS 18 Tinted Steps Widget & Custom Colors | Steps Widget'
 description: Learn how to use iOS 18 tinted widgets to color-match your step counter with your wallpaper and design a unified, aesthetic Home Screen.
 date: '2026-07-13'
 slug: ios-18-tinted-steps-widgets

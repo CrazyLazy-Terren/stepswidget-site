@@ -2,9 +2,10 @@
 slug: walk-with-a-friend-share-steps
 category: Behind the App
 title: 'Walk With Me: Share Your Steps With a Friend, Side by Side'
-metaTitle: 'Share Steps With a Friend on iPhone, Side by Side | Steps Widget'
-description: Walk with a friend in Steps Widget. Swap cards, see each other's day hour by hour, and put the two of you on your Home Screen, with no account, no feed and no leaderboard.
+metaTitle: 'Share Steps With a Friend on iPhone | Steps Widget'
+description: Walk with a friend in Steps Widget. Swap cards, see each other's day hour by hour, and put you both on your Home Screen. No account, no feed, no leaderboard.
 date: 2026-10-28
+image: /assets/blog-walk-with-a-friend.webp
 keywords:
   - share steps with friends iphone
   - walk with a friend app

@@ -1,7 +1,7 @@
 ---
 title: 'How Your iPhone and Apple Watch Count Steps (and How They Sync)'
-metaTitle: 'How iPhone and Apple Watch Count and Sync Steps | Steps Widget'
-description: The full path a step takes — from the sensor in your pocket or on your wrist, into Apple Health, across your devices, and out to the widget on your screen — and how long each hop takes.
+metaTitle: 'How iPhone & Apple Watch Count and Sync Steps | Steps Widget'
+description: The path a step takes, from the sensor on your wrist or in a pocket into Apple Health, across your devices, and onto your widget, and how long each hop takes.
 date: '2026-10-04'
 updated: '2026-10-04'
 slug: how-iphone-apple-watch-count-and-sync-steps

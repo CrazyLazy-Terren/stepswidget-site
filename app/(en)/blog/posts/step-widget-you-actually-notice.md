@@ -1,7 +1,7 @@
 ---
 title: 'Why You Stopped Noticing Your Step Widget and How to Get It Back'
 metaTitle: 'Make a Step Widget You Actually Notice | Steps Widget'
-description: A step widget only changes behaviour while you still see it. Here is why widgets go invisible after a few weeks, where to place one, how to match it to your wallpaper, and when to change its look on purpose.
+description: A step widget only changes behaviour while you still see it. Why widgets go invisible within weeks, where to place one, and when to change its look on purpose.
 date: '2026-10-04'
 updated: '2026-10-04'
 slug: step-widget-you-actually-notice

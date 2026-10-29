@@ -1,7 +1,7 @@
 ---
 title: 'Japanese Walking: What It Is, and What Your Step Count Cannot See'
-metaTitle: 'Japanese Walking (Interval Walking): The Method and the Evidence | Steps Widget'
-description: Three minutes brisk, three minutes easy, five times over. Here is where interval walking came from, what the trials actually found, how to judge the intensity without a lab — and why a step goal cannot measure any of it.
+metaTitle: 'Japanese Walking: The Method and the Evidence | Steps Widget'
+description: Three minutes brisk, three minutes easy, five times over. Where interval walking came from, what the trials found, and why a step goal cannot measure it.
 date: '2026-10-06'
 updated: '2026-10-06'
 slug: japanese-walking-interval-walking-steps

@@ -1,7 +1,7 @@
 ---
 title: 'How Many Steps Is a Mile? (And a Kilometre)'
 metaTitle: 'How Many Steps Is a Mile? Charts by Height | Steps Widget'
-description: About 2,000 to 2,500 steps for most people, but your height moves the number by hundreds. Here is the conversion by height and pace, what 10,000 steps works out to, and how to turn a step gap into minutes of walking.
+description: About 2,000 to 2,500 steps for most people, but height shifts it by hundreds. The conversion by height and pace, and what 10,000 steps works out to in miles.
 date: '2026-10-07'
 updated: '2026-10-07'
 slug: how-many-steps-is-a-mile

@@ -1,7 +1,7 @@
 ---
 title: 'Ergonomic Chairs, Standing Desks, and Wrist Rests: What They Actually Fix'
-metaTitle: 'What Ergonomic Gear Fixes — and What It Cannot | Steps Widget'
-description: A good chair, a standing desk, and a wrist rest solve a real problem: the strain of holding one position. They do not solve the other problem, which is holding it for nine hours. Here is which is which.
+metaTitle: 'Ergonomic Desk Chair vs Moving More | Steps Widget'
+description: A good chair and a standing desk fix the strain of holding one position. They do not fix holding it for nine hours. Here is which problem each one solves.
 date: '2026-10-05'
 updated: '2026-10-05'
 slug: ergonomic-desk-chair-vs-moving-more

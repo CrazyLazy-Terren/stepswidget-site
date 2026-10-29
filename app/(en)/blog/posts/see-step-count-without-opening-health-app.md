@@ -1,7 +1,7 @@
 ---
 title: 'How to See Your Step Count Without Opening the Health App'
 metaTitle: 'See Your Steps Without Opening the Health App | Steps Widget'
-description: Your iPhone is already counting your steps. Here are seven places that number can appear — from asking Siri to a Lock Screen widget — so you can check it in a second instead of digging through the Health app.
+description: Your iPhone already counts your steps. Seven places that number can show up, from Siri to a Lock Screen widget, so you can check it without opening Health.
 date: '2026-10-05'
 updated: '2026-10-05'
 slug: see-step-count-without-opening-health-app

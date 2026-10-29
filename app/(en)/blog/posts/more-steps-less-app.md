@@ -1,7 +1,7 @@
 ---
 title: 'More Steps, Less App: A Step Counter That Wants You to Close It'
-metaTitle: 'More Steps, Less App: The Minimalist Step Counter | Steps Widget'
-description: Most fitness apps measure success by time spent on screen. Steps Widget is built on the opposite bet — a calm, minimalist iPhone step counter designed to get out of your way so you can spend more time walking.
+metaTitle: 'Minimalist Step Counter: More Steps, Less App | Steps Widget'
+description: 'Most fitness apps measure success by time on screen. Steps Widget makes the opposite bet: a calm iPhone step counter that gets out of your way so you walk more.'
 date: '2026-09-11'
 updated: 2026-09-26
 slug: more-steps-less-app

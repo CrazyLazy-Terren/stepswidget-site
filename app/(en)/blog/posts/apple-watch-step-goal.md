@@ -1,7 +1,7 @@
 ---
 title: 'How to Set a Step Goal on Apple Watch (and Why There Is No Native One)'
 metaTitle: 'How to Set a Step Goal on Apple Watch | Steps Widget'
-description: The Apple Watch has no built-in step goal — the rings track calories, exercise minutes, and stand hours instead. Here is what you can change natively, and how to get a real step target on your wrist.
+description: Apple Watch has no built-in step goal; its rings track calories, exercise, and stand hours. What you can change, and how to get a step target on your wrist.
 date: '2026-10-07'
 updated: '2026-10-07'
 slug: apple-watch-step-goal

@@ -1,7 +1,7 @@
 ---
 title: You Sit Longer Than You Realize
-metaTitle: 'You Sit Longer Than You Realize: The Active Couch Potato Fix | Steps Widget'
-description: People underestimate their sitting by about 1.7 hours a day, and office workers average 10.6. Why an evening workout cannot undo it, and why noticing your pace by mid-afternoon is what changes the day. Every claim cited.
+metaTitle: 'Active Couch Potato: You Sit Longer Than You Realize'
+description: People underestimate their sitting by 1.7 hours a day; office workers average 10.6. Why an evening workout cannot undo it, and what does. Every claim cited.
 date: '2026-08-29'
 updated: '2026-08-29'
 slug: you-sit-longer-than-you-realize

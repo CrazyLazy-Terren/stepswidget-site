@@ -1,7 +1,7 @@
 ---
 title: Why Hourly Stand Up Reminders Fail (and How to Use Smart Movement Alerts)
-metaTitle: Why Stand Up Reminders Fail & How Smart Alerts Help | Steps Widget
-description: Discover why standard hourly stand-up alarms fail for desk workers, and how activity-aware reminders, including ones that forecast your day against your step goal, only nudge you when a walk would change the outcome.
+metaTitle: 'Smart Stand Up Reminders for Desk Jobs | Steps Widget'
+description: Why hourly stand-up alarms fail desk workers, and how reminders that forecast your day against your step goal nudge you only when a walk would change it.
 date: '2026-07-07'
 updated: '2026-09-19'
 slug: smart-stand-up-reminders-desk-job
