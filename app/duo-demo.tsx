@@ -9,9 +9,15 @@ const SCREENSHOTS: Record<DuoPose, string> = {
   open: '/duo/home-open.webp',
 }
 
-const captions: Record<DuoPose, string> = {
-  closed: 'Folded: one column, with the toolbar in the vertical bar beside it.',
-  open: 'Open: the widget and every style at full size, with its options a tap away in the side bar.',
+const captions: Record<'en' | 'es', Record<DuoPose, string>> = {
+  en: {
+    closed: 'Folded: one column, with the toolbar in the vertical bar beside it.',
+    open: 'Open: the widget and every style at full size, with its options a tap away in the side bar.',
+  },
+  es: {
+    closed: 'Plegado: una columna, con la barra de herramientas vertical al lado.',
+    open: 'Abierto: el widget y cada estilo a tamaño completo, con sus opciones a un toque en la barra lateral.',
+  },
 }
 
 /**
@@ -19,10 +25,12 @@ const captions: Record<DuoPose, string> = {
  * holds still while hovered or focused, and never moves for people who prefer
  * reduced motion; the switch below changes pose either way.
  */
-export function DuoDemo({ className = '', interval = 4500 }: { className?: string; interval?: number }) {
+export function DuoDemo({ className = '', interval = 4500, lang = 'en' }: { className?: string; interval?: number; lang?: 'en' | 'es' }) {
   const [pose, setPose] = useState<DuoPose>('closed')
   const [paused, setPaused] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
+
+  const activeCaptions = captions[lang]
 
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -45,6 +53,11 @@ export function DuoDemo({ className = '', interval = 4500 }: { className?: strin
       shown ? 'opacity-100 scale-100' : 'pointer-events-none opacity-0 scale-[0.96]'
     }`
 
+  const ariaLabel =
+    lang === 'es'
+      ? `Pantalla de inicio de Steps en iPhone Duo, ${pose === 'closed' ? 'plegado' : 'abierto'}. ${activeCaptions[pose]}`
+      : `Steps home screen on iPhone Duo, ${pose === 'closed' ? 'folded' : 'open'}. ${activeCaptions[pose]}`
+
   return (
     <figure
       className={`not-prose ${className}`.trim()}
@@ -57,7 +70,7 @@ export function DuoDemo({ className = '', interval = 4500 }: { className?: strin
         className="relative w-full"
         style={{ aspectRatio: '3093 / 2247' }}
         role="img"
-        aria-label={`Steps home screen on iPhone Duo, ${pose === 'closed' ? 'folded' : 'open'}. ${captions[pose]}`}>
+        aria-label={ariaLabel}>
         <div className={layer(pose === 'closed')} style={{ left: '24.56%', width: '50.89%', top: '1.18%' }} aria-hidden>
           <DuoMockup pose="closed" src={SCREENSHOTS.closed} sizes="(max-width: 640px) 45vw, 360px" />
         </div>
@@ -77,11 +90,11 @@ export function DuoDemo({ className = '', interval = 4500 }: { className?: strin
               className={`rounded-full px-4 py-1.5 transition ${
                 pose === option ? 'bg-[var(--control-active)] text-[var(--control-active-text)]' : 'text-[var(--text-muted)] hover:text-[var(--text-strong)]'
               }`}>
-              {option === 'closed' ? 'Folded' : 'Open'}
+              {option === 'closed' ? (lang === 'es' ? 'Plegado' : 'Folded') : lang === 'es' ? 'Abierto' : 'Open'}
             </button>
           ))}
         </div>
-        <figcaption className="text-center text-sm text-[var(--text-muted)]">{captions[pose]}</figcaption>
+        <figcaption className="text-center text-sm text-[var(--text-muted)]">{activeCaptions[pose]}</figcaption>
       </div>
     </figure>
   )

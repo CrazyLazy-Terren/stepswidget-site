@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLink } from '../arrow'
 import { AppStoreButton } from '../app-store-button'
 import { DuoDemo } from '../duo-demo'
+import { DuoMockup } from '../duo-mockup'
 import { HeroPreview } from '../hero-preview'
 import { IPhoneCarousel } from '../iphone-carousel'
 import { IPhoneMockup } from '../iphone-mockup'
@@ -75,12 +76,15 @@ const shareCards = [
     linkLabel: 'How sharing works',
   },
   {
-    title: 'Today’s step ranking, in Messages',
-    eyebrow: 'New · iMessage app',
+    title: 'Walk with a friend, side by side',
+    eyebrow: 'New · Walk with me',
     description:
-      'Drop today’s count into a conversation. Friends who have Steps tap to add theirs, and the bubble becomes the day’s ranking. The board travels inside the message itself, with no account and no server.',
-    image: '/assets/imessage-ranking.webp',
-    imageAlt: "Messages conversation with Today's Step Ranking: five friends' step counts, ranked",
+      'Swap cards with someone you know and see each other’s day, hour by hour, right on your Home Screen. It only starts when you both say yes, and everything is sealed on your iPhone so only their phone can read it.',
+    image: '/assets/walk-with-me/intro-duo.webp',
+    imageAlt: 'Walking with Me on iPhone Duo: a Side by Side widget comparing two people’s days, hour by hour, above Your Name Card',
+    device: 'duo',
+    href: '/blog/walk-with-a-friend-share-steps',
+    linkLabel: 'Walking together',
   },
 ] satisfies PhoneFeature[]
 
@@ -252,9 +256,11 @@ type PhoneFeature = {
   title: string
   eyebrow: string
   description: string
-  /** A full-screen iPhone screenshot. */
+  /** A full-screen iPhone screenshot: 1320×2868, or 1398×2034 for `duo`. */
   image: string
   imageAlt: string
+  /** The frame to show it in. Defaults to iPhone; `duo` is iPhone Duo folded. */
+  device?: 'duo'
   href?: string
   linkLabel?: string
 }
@@ -275,7 +281,11 @@ function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
               </ArrowLink>
             ) : null}
           </div>
-          <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="w-full max-w-80 mt-8 " sizes="(max-width: 640px) 80vw, 320px" />
+          {feature.device === 'duo' ? (
+            <DuoMockup pose="closed" src={feature.image} alt={feature.imageAlt} className="w-full max-w-80 mt-8" sizes="(max-width: 640px) 80vw, 320px" />
+          ) : (
+            <IPhoneMockup src={feature.image} alt={feature.imageAlt} className="w-full max-w-80 mt-8 " sizes="(max-width: 640px) 80vw, 320px" />
+          )}
         </article>
       ))}
     </div>
@@ -465,7 +475,7 @@ export default function Home() {
 
       <PageSection id="share" paddingY="section">
         <SectionHeading eyebrow="Sharing" title="Share Your Style. Compare Your Steps.">
-          Send a widget look to a friend, or turn today&rsquo;s count into a ranking right inside a conversation.
+          Send a widget look to a friend, or walk with one, side by side on your Home Screen.
         </SectionHeading>
 
         <PhoneFeatures features={shareCards} />

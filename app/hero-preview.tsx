@@ -10,7 +10,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 /** `intro` is the hero copy: beside the phones on desktop, above them on smaller screens. */
-export function HeroPreview({ intro }: { intro: ReactNode }) {
+export function HeroPreview({ intro, galleryHeading }: { intro: ReactNode; galleryHeading?: ReactNode }) {
   const stageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -109,9 +109,11 @@ export function HeroPreview({ intro }: { intro: ReactNode }) {
       </div>
       {/* Padding, not margin, so it adds to the eyebrow's own margin the way a PageSection does. */}
       <div className="pt-16">
-        <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
-          Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
-        </SectionHeading>
+        {galleryHeading ?? (
+          <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
+            Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
+          </SectionHeading>
+        )}
       </div>
 
       <div className="relative -mx-6 mt-12 h-100 overflow-hidden lg:-mx-8">

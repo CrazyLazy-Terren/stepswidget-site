@@ -11,6 +11,7 @@ import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import { ContentShell } from '../../../content-shell'
 import { DuoDemo } from '../../../duo-demo'
+import { DuoMockup } from '../../../duo-mockup'
 import { DuoShots } from '../../../duo-shots'
 import { isDuoShotsName } from '../../../duo-shots-names'
 import { defaultOgImages, siteName } from '../../../shared-metadata'
@@ -95,6 +96,17 @@ const markdownComponents: Components = {
       if (src === duoDemoSrc) return <DuoDemo className="my-10" />
       const name = src.startsWith(`${duoDemoSrc}/`) ? src.slice(duoDemoSrc.length + 1) : ''
       if (isDuoShotsName(name)) return <DuoShots name={name} />
+      // `![alt](/assets/…-duo.webp "caption")`: a folded iPhone Duo screenshot,
+      // shown in its frame rather than as a full-width photo.
+      if (src.endsWith('-duo.webp')) {
+        const caption = typeof only.properties.title === 'string' ? only.properties.title : undefined
+        return (
+          <figure className="my-10">
+            <DuoMockup pose="closed" src={src} alt={String(only.properties.alt ?? '')} className="mx-auto w-full max-w-96" sizes="288px" />
+            {caption ? <figcaption className="mt-4 text-center text-sm text-[var(--text-muted)]">{caption}</figcaption> : null}
+          </figure>
+        )
+      }
     }
     return <p className="mb-4 text-lg leading-8 text-[var(--text-muted)] last:mb-0">{children}</p>
   },

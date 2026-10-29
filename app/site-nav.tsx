@@ -9,6 +9,7 @@ import { ThemeToggle } from './theme-toggle'
 type SiteNavProps = {
   fixed?: boolean
   maxWidth?: '6xl' | '7xl'
+  lang?: 'en' | 'es'
 }
 
 const maxWidthClass = {
@@ -16,7 +17,7 @@ const maxWidthClass = {
   '7xl': 'max-w-7xl',
 }
 
-const productLinks = [
+const productLinksEn = [
   { href: '/', label: 'Overview' },
   { href: '/#features', label: 'Features' },
   { href: '/#watch', label: 'Apple Watch' },
@@ -24,15 +25,29 @@ const productLinks = [
   { href: '/#faq', label: 'FAQ' },
 ]
 
-const navLinks = [
+const productLinksEs = [
+  { href: '/es', label: 'Resumen' },
+  { href: '/es#features', label: 'Funciones' },
+  { href: '/es#watch', label: 'Apple Watch' },
+  { href: '/es#privacy', label: 'Privacidad' },
+  { href: '/es#faq', label: 'FAQ' },
+]
+
+const navLinksEn = [
   { href: '/docs', label: 'Docs' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ]
 
-export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
+const navLinksEs = [
+  { href: '/docs', label: 'Docs' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'Acerca de' },
+]
+
+export function SiteLogo({ textOnly = false, href }: { textOnly?: boolean; href?: string }) {
   return (
-    <Link href="/" className="flex items-center gap-3">
+    <Link href={href ?? '/'} className="flex items-center gap-3">
       {!textOnly && (
         <div className="relative size-8 ">
           <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="size-full object-cover" priority />
@@ -43,15 +58,20 @@ export function SiteLogo({ textOnly = false }: { textOnly?: boolean }) {
   )
 }
 
-export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
+export function SiteNav({ fixed = false, maxWidth = '7xl', lang = 'en' }: SiteNavProps) {
+  const isEs = lang === 'es'
+  const productLinks = isEs ? productLinksEs : productLinksEn
+  const navLinks = isEs ? navLinksEs : navLinksEn
+  const homeHref = isEs ? '/es' : '/'
+
   return (
     <header className={`${fixed ? 'fixed inset-x-0 top-0 z-50' : ''} border-b border-[color:var(--border)] bg-[var(--header-bg)] py-2 sm:py-0 px-6 lg:px-8`}>
       <nav className={`mx-auto flex w-full ${maxWidthClass[maxWidth]} items-center justify-between gap-4`}>
-        <SiteLogo />
+        <SiteLogo href={homeHref} />
         <div className="hidden items-center gap-7 text-md font-medium text-[var(--text-strong)] md:flex">
           <div className="group relative py-5">
-            <Link className="inline-flex items-center gap-1 transition hover:text-[var(--text-muted)]" href="/">
-              Product
+            <Link className="inline-flex items-center gap-1 transition hover:text-[var(--text-muted)]" href={homeHref}>
+              {isEs ? 'Producto' : 'Product'}
               <span className="size-1.5 rotate-45 border-b border-r border-current opacity-60 transition group-hover:opacity-100" />
             </Link>
             <div className="pointer-events-none absolute left-1/2 top-[80%] z-50 w-40 -translate-x-1/2 translate-y-2 rounded-lg border border-[color:var(--border)] bg-[var(--page-bg)] bg-[image:linear-gradient(var(--surface-1),var(--surface-1))] p-1.5 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
@@ -73,15 +93,21 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
         </div>
         <div className="hidden flex-wrap items-center justify-end gap-3 md:flex">
           <SearchTrigger />
-          <ThemeToggle />
+
+          <ThemeToggle lang={lang} />
+          {isEs && (
+            <Link href="/" hrefLang="en" lang="en" className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+              English
+            </Link>
+          )}
         </div>
         <div className="flex items-center gap-2 md:hidden">
           <SearchTrigger compact />
-          <ThemeToggle compact />
+          <ThemeToggle compact lang={lang} />
           <MobileMenu
             summary={
               <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[color:var(--border)] bg-[var(--control-bg)] text-(--text-muted) transition hover:border-[color:var(--border-strong)]">
-                <span className="sr-only">Open navigation menu</span>
+                <span className="sr-only">{isEs ? 'Abrir menú de navegación' : 'Open navigation menu'}</span>
 
                 <Menu className="size-5 group-open:hidden" />
                 <X className="hidden size-5 group-open:block" />
@@ -93,9 +119,9 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   href="/search"
                   className="flex items-center gap-2 rounded-lg bg-[var(--surface-1)] px-3 py-2.5 text-base font-medium text-[var(--text-strong)] transition hover:bg-[var(--surface-2)]">
                   <SearchIcon className="size-4 text-[var(--accent-color)]" />
-                  Search
+                  {isEs ? 'Buscar' : 'Search'}
                 </Link>
-                <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">Product</p>
+                <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-color)]">{isEs ? 'Producto' : 'Product'}</p>
                 {productLinks.map((item) => (
                   <Link
                     key={item.href}
@@ -112,6 +138,15 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                     {item.label}
                   </Link>
                 ))}
+                {isEs && (
+                  <Link
+                    href="/"
+                    hrefLang="en"
+                    lang="en"
+                    className="rounded-lg px-3 py-3 text-base font-medium text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--text-strong)]">
+                    English
+                  </Link>
+                )}
               </div>
               <div className="mt-3 border-t border-[color:var(--border)] pt-3">
                 <a
@@ -119,7 +154,7 @@ export function SiteNav({ fixed = false, maxWidth = '7xl' }: SiteNavProps) {
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center rounded-full bg-[var(--button-bg)] px-4 py-3.5 text-base font-semibold leading-none text-[var(--button-text)] transition hover:opacity-90">
-                  Get app
+                  {isEs ? 'Obtener app' : 'Get app'}
                 </a>
               </div>
             </div>
