@@ -6,7 +6,8 @@ import { BLOG_BASE_PATH, SITE_NAME } from './constants';
 import { blog } from './lib/blog-client';
 import { paginate, parsePage } from './pagination';
 
-export const revalidate = 86400;
+// Rendered per request: articles change in BabyLoveGrowth, not at build time.
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: SITE_NAME,

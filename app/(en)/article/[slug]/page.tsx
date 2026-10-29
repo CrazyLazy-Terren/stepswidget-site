@@ -9,12 +9,8 @@ import { formatDate } from '../format';
 import { blog } from '../lib/blog-client';
 import '../blog-content.css';
 
-export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const articles = await blog.getAllArticles();
-  return articles.map((article) => ({ slug: article.slug }));
-}
+// Rendered per request: articles change in BabyLoveGrowth, not at build time.
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,

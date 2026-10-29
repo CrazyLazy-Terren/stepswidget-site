@@ -1,7 +1,8 @@
 import { BLOG_BASE_PATH, SITE_URL } from '../constants';
 import { blog } from '../lib/blog-client';
 
-export const revalidate = 86400;
+// Rendered per request: articles change in BabyLoveGrowth, not at build time.
+export const dynamic = 'force-dynamic';
 
 function escapeXml(value: string): string {
   return value

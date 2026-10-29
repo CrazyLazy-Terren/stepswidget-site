@@ -8,12 +8,8 @@ import { BLOG_BASE_PATH } from '../../constants';
 import { blog } from '../../lib/blog-client';
 import { paginate, parsePage } from '../../pagination';
 
-export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const tags = await blog.getTags();
-  return tags.map((tag) => ({ slug: tag.slug }));
-}
+// Rendered per request: articles change in BabyLoveGrowth, not at build time.
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,
