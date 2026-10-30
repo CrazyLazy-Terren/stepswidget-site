@@ -97,6 +97,20 @@ function Sheets() {
   )
 }
 
+function Dialog() {
+  return (
+    <Frame caption="Half-folded: the confirmation dialog rises on the left page and leaves the photo style controls on the right untouched.">
+      <DuoMockup
+        pose="open"
+        src="/duo/photo-style-dialog-half-folded.webp"
+        alt="Photo style editor on the half-folded iPhone Duo, with the confirmation dialog for a shared style on the left page and the tone, blur and foreground controls on the right"
+        sizes="(max-width: 640px) 90vw, 720px"
+        className="mx-auto w-full max-w-3xl"
+      />
+    </Frame>
+  )
+}
+
 // Both frames at one physical scale: the closed frame is 1574px wide, the open one 3093px.
 function Space() {
   return (
@@ -118,7 +132,7 @@ function Space() {
   )
 }
 
-const DEMOS: Record<DuoShotsName, () => React.JSX.Element> = { folded: Folded, open: Open, sheets: Sheets, space: Space }
+const DEMOS: Record<DuoShotsName, () => React.JSX.Element> = { folded: Folded, open: Open, sheets: Sheets, dialog: Dialog, space: Space }
 
 /** One of the iPhone Duo post's section demos, embedded as `![…](/demos/iphone-duo/<name>)`. */
 export function DuoShots({ name }: { name: DuoShotsName }) {

@@ -37,15 +37,17 @@ On iPhone Duo, toolbars can leave the top and bottom of the screen and gather in
 
 ![Steps Widget folded on iPhone Duo, with its controls in the side bar](/demos/iphone-duo/folded)
 
-Most of our controls moved there without any work: Settings, sharing, the photo style button, and Save. The rest needed attention.
+I extended the widget, background, and image to the edge of the toolbar using `.ignoresSafeArea(edges: .trailing)`. Most of our controls moved there without any work: Settings, sharing, the photo style button, and Save.
 
-- **The style menu and its divider** used to sit side by side. In the vertical bar they now stack, with the divider turning horizontal, so the group still reads as one unit.
+Others need attention:
+
+- **The style menu and its divider** used to sit side by side. In the vertical bar they now stack, with the divider turning horizontal.
 - **Reset** only appears after you change a style. We asked the system to prefer the side bar for it, so it appears in the same column as Save instead of somewhere unexpected.
 - **The photo style editor's tabs** move into the bar as well, and switching between Colors Palette and Background now slides the content up and down instead of sideways, to follow the direction the tabs are laid out in.
 
 ## Open: not just a bigger page
 
-When you open iPhone Duo, the fold runs straight through the middle of the screen. We treat it as a gutter between two pages rather than a line across one big canvas, and each screen in the app decides what belongs on each side.
+When you open iPhone Duo, the fold runs straight through the middle of the screen. I treat it as a extended canvas rather than a line across one big canvas.
 
 ![Steps Widget screens on the open iPhone Duo](/demos/iphone-duo/open)
 
@@ -53,7 +55,9 @@ When you open iPhone Duo, the fold runs straight through the middle of the scree
 - **Settings:** the settings list stays on the left and whatever you open from it, like Insight, reminder messages or the app icon, appears on the right. The two columns meet exactly at the fold.
 - **Photo styles:** the preview of your widget on one page, the palettes, tone, blur and colour controls on the other. You can drag the picture into place and see the result without anything covering it.
 
-The pages are not a fixed fifty-fifty split I hard-coded. The app reads where the fold actually is and sizes the first column to end there, so the layout lines up with the hardware rather than with a guess.
+When the hinge transitions to the half-folded state, I shift the main content to the right, where the primary interaction takes place.
+
+![The Steps Widget home screen as iPhone Duo folds and unfolds](/duo/home-half-fold.mp4)
 
 ## Sheets, dialogs and the crease
 
@@ -64,6 +68,8 @@ That is the right instinct, but it was not always the right half for us. In **In
 ![Settings and Insight on the open iPhone Duo, with Insight's month selector at the bottom](/demos/iphone-duo/sheets)
 
 My confirmation dialogs, the cards that ask whether to save or discard your changes, follow the same rule as the system's: they rise on one page and stay there.
+
+![The photo style editor on the half-folded iPhone Duo, with a confirmation dialog on the left page](/demos/iphone-duo/dialog)
 
 I also changed how the photo style editor opens. As a sheet on the open display it became a small card floating in the middle of the screen, cut off from the side bar. It now opens full screen, so it gets the same bar and the same two-page layout as the rest of the app.
 

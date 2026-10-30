@@ -96,6 +96,25 @@ const markdownComponents: Components = {
       if (src === duoDemoSrc) return <DuoDemo className="my-10" />
       const name = src.startsWith(`${duoDemoSrc}/`) ? src.slice(duoDemoSrc.length + 1) : ''
       if (isDuoShotsName(name)) return <DuoShots name={name} />
+      // `![alt](/….mp4 "caption")`: a short screen recording, looped silently like a GIF.
+      if (src.endsWith('.mp4')) {
+        const caption = typeof only.properties.title === 'string' ? only.properties.title : undefined
+        return (
+          <figure className="my-10">
+            <video
+              src={src}
+              aria-label={String(only.properties.alt ?? '')}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full rounded-lg"
+            />
+            {caption ? <figcaption className="mt-4 text-center text-sm text-[var(--text-muted)]">{caption}</figcaption> : null}
+          </figure>
+        )
+      }
       // `![alt](/assets/…-duo.webp "caption")`: a folded iPhone Duo screenshot,
       // shown in its frame rather than as a full-width photo.
       if (src.endsWith('-duo.webp')) {
