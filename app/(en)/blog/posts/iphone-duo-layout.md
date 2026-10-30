@@ -88,7 +88,7 @@ If you are adapting your own app, these were the pieces that did the most work f
 }
 ```
 
-Our main lesson: design each screen as two halves first, then check that it still works as one. It is much easier than taking a single-column layout and deciding where to cut it.
+My main lesson: Design content as reusable components first, then arrange them for different devices.
 
 ## Does Steps Widget support iPhone Duo?
 
