@@ -67,11 +67,11 @@ That is the right instinct, but it was not always the right half for us. In **In
 
 ![Settings and Insight on the open iPhone Duo, with Insight's month selector at the bottom](/demos/iphone-duo/sheets)
 
-My confirmation dialogs, the cards that ask whether to save or discard your changes, follow the same rule as the system's: they rise on one page and stay there.
+I also changed how the photo style editor opens. As a sheet on the open display it became a small card floating in the middle of the screen, cut off from the side bar. It now opens full screen, so it gets the same bar and the same two-page layout as the rest of the app.
+
+My confirmation dialogs, the cards that ask whether to save or discard your changes, follow the same rule as the system's: it move to one side when the device is half-folded.
 
 ![The photo style editor on the half-folded iPhone Duo, with a confirmation dialog on the left page](/demos/iphone-duo/dialog)
-
-I also changed how the photo style editor opens. As a sheet on the open display it became a small card floating in the middle of the screen, cut off from the side bar. It now opens full screen, so it gets the same bar and the same two-page layout as the rest of the app.
 
 ## Built a system, not on device type
 
