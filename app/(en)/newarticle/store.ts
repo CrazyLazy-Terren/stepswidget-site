@@ -28,17 +28,49 @@ export type NewArticleSummary = Omit<NewArticle, 'content_html' | 'content_markd
 
 export const NEW_ARTICLE_BASE_PATH = '/newarticle';
 
-// Articles live in a DynamoDB table keyed by `slug`. Credentials and region come
-// from the standard AWS env vars (AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY).
+// Articles live in a DynamoDB table keyed by `slug`. On Vercel, credentials come from
+// ARTICLES_AWS_* (the runtime sets its own AWS_* vars); locally, the default AWS chain.
 const TABLE = process.env.ARTICLES_DYNAMODB_TABLE;
-// Without a table (local dev), articles are kept on disk instead.
+const REGION = process.env.ARTICLES_AWS_REGION ?? process.env.AWS_REGION ?? 'us-east-1';
+const ACCESS_KEY_ID = process.env.ARTICLES_AWS_ACCESS_KEY_ID;
+const SECRET_ACCESS_KEY = process.env.ARTICLES_AWS_SECRET_ACCESS_KEY;
+// Without a table (local dev only), articles are kept on disk instead.
 const LOCAL_DIR = path.join(process.cwd(), '.data', 'newarticle');
+
+export function log(message: string, details?: Record<string, unknown>): void {
+  console.log(`[newarticle] ${message}`, details ? JSON.stringify(details) : '');
+}
+
+// What the store is wired to, without secrets; logged by the webhook on each request.
+export function storeConfig(): Record<string, unknown> {
+  return {
+    backend: TABLE ? 'dynamodb' : 'local-disk',
+    table: TABLE ?? null,
+    region: REGION,
+    credentials: ACCESS_KEY_ID && SECRET_ACCESS_KEY ? 'ARTICLES_AWS_*' : 'default AWS chain',
+    nodeEnv: process.env.NODE_ENV,
+  };
+}
+
+// Vercel's filesystem is read-only, so a missing table there must fail loudly.
+function assertWritableBackend(): void {
+  if (!TABLE && process.env.VERCEL) {
+    throw new Error('ARTICLES_DYNAMODB_TABLE is not set in this Vercel environment, so articles cannot be saved');
+  }
+}
 
 let documentClient: DynamoDBDocumentClient | undefined;
 function db(): DynamoDBDocumentClient {
-  documentClient ??= DynamoDBDocumentClient.from(new DynamoDBClient({}), {
-    marshallOptions: { removeUndefinedValues: true },
-  });
+  documentClient ??= DynamoDBDocumentClient.from(
+    new DynamoDBClient({
+      region: REGION,
+      credentials:
+        ACCESS_KEY_ID && SECRET_ACCESS_KEY
+          ? { accessKeyId: ACCESS_KEY_ID, secretAccessKey: SECRET_ACCESS_KEY }
+          : undefined,
+    }),
+    { marshallOptions: { removeUndefinedValues: true } }
+  );
   return documentClient;
 }
 
@@ -72,12 +104,17 @@ export function postDate(article: NewArticleSummary): string {
 }
 
 export async function saveArticle(article: NewArticle): Promise<void> {
+  assertWritableBackend();
+  const body = JSON.stringify(article);
+  log('saving article', { slug: article.slug, id: article.id, status: article.status, bytes: Buffer.byteLength(body) });
   if (TABLE) {
     await db().send(new PutCommand({ TableName: TABLE, Item: article }));
+    log('saved to DynamoDB', { slug: article.slug, table: TABLE });
     return;
   }
   await fs.mkdir(LOCAL_DIR, { recursive: true });
   await fs.writeFile(path.join(LOCAL_DIR, `${article.slug}.json`), JSON.stringify(article, null, 2));
+  log('saved to local disk', { slug: article.slug, dir: LOCAL_DIR });
 }
 
 export async function getArticle(slug: string): Promise<NewArticle | null> {
