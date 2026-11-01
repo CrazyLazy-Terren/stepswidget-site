@@ -5,7 +5,7 @@ import { SiteDocument, baseMetadata } from '../site-document'
 
 const title = 'Steps Widget - See Your Steps, Get a Gentle Nudge on iPhone and Apple Watch'
 const description =
-  'See your steps, get a gentle nudge, and move a little more every day. Step counter widgets for iPhone, Apple Watch, and Mac, with reminders at the right moment, not every hour. No workout plans, no account.'
+  'Track steps with customizable iPhone, Apple Watch, and Mac widgets. Get timely, on-device nudges only when needed—no account required. See how it works.'
 const shareDescription =
   'No workout plans, no calorie counting. Just your step count in sight and a gentle nudge at the right moment. Move a little more every day.'
 
@@ -58,4 +58,3 @@ export default function RootLayout({
     </SiteDocument>
   )
 }
-

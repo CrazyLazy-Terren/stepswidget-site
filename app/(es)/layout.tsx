@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { SearchDialog } from '../search-dialog'
-import { SiteDocument, baseMetadata } from '../site-document'
+import { SearchDialog } from '@/app/search-dialog'
+import { SiteDocument, baseMetadata } from '@/app/site-document'
 
 // The Spanish landing page sets its own title and copy.
 export const metadata: Metadata = baseMetadata

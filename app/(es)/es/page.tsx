@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLink } from '../../arrow'
-import { AppStoreButton } from '../../app-store-button'
-import { DuoDemo } from '../../duo-demo'
-import { HeroPreview } from '../../hero-preview'
-import { IPhoneCarousel } from '../../iphone-carousel'
-import { IPhoneMockup } from '../../iphone-mockup'
-import { PageSection, pageGutter } from '../../page-shell'
-import { SectionHeading } from '../../section-heading'
-import { SiteLogo, SiteNav } from '../../site-nav'
-import { defaultOgImages, siteName, siteUrl } from '../../shared-metadata'
-import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema, websiteId, type FaqEntry } from '../../structured-data'
+import { ArrowLink } from '@/app/arrow'
+import { AppStoreButton } from '@/app/app-store-button'
+import { DuoDemo } from '@/app/duo-demo'
+import { HeroPreview } from '@/app/hero-preview'
+import { IPhoneCarousel } from '@/app/iphone-carousel'
+import { IPhoneMockup } from '@/app/iphone-mockup'
+import { PageSection, pageGutter } from '@/app/page-shell'
+import { SectionHeading } from '@/app/section-heading'
+import { SiteLogo, SiteNav } from '@/app/site-nav'
+import { defaultOgImages, siteName, siteUrl } from '@/app/shared-metadata'
+import { JsonLd, applicationSchema, faqSchema, organizationSchema, websiteSchema, websiteId, type FaqEntry } from '@/app/structured-data'
 
 const title = 'Steps Widget: ve tus pasos y recibe un aviso amable en iPhone y Apple Watch'
 const description =
@@ -515,7 +515,7 @@ export default function SpanishHome() {
           Steps Widget se adapta de forma fluida a la pantalla plegable única del iPhone Duo, garantizando que tu contenido se vea siempre de forma óptima, ya
           esté plegado, semiabierto o abierto por completo.
         </SectionHeading>
-        <ArrowLink href="/blog/iphone-duo-layout" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+        <ArrowLink href="/es/blog/iphone-duo-layout" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
           Cómo adapté Steps para iPhone Duo
         </ArrowLink>
         <DuoDemo lang="es" className="mx-auto mt-12 w-full max-w-3xl" />
@@ -659,7 +659,7 @@ export default function SpanishHome() {
             <Link href="/docs" className="py-2 transition hover:text-[var(--text-strong)]">
               Documentación
             </Link>
-            <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
+            <Link href="/es/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
             <Link href="/about" className="py-2 transition hover:text-[var(--text-strong)]">

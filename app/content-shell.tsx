@@ -7,6 +7,7 @@ type ContentShellProps = {
   eyebrow: string
   title: string
   description: string
+  lang?: 'en' | 'es'
   /**
    * Replaces the standard glow-backed header, for a page whose title sits on
    * its own artwork. It still receives the page's title, so pass that through.
@@ -15,10 +16,12 @@ type ContentShellProps = {
   children: ReactNode
 }
 
-export function ContentShell({ eyebrow, title, description, hero, children }: ContentShellProps) {
+export function ContentShell({ eyebrow, title, description, hero, children, lang = 'en' }: ContentShellProps) {
+  const isEs = lang === 'es'
+
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
-      <SiteNav fixed />
+      <SiteNav fixed lang={lang} />
 
       {hero ?? (
         <PageSection paddingY="top">
@@ -34,22 +37,27 @@ export function ContentShell({ eyebrow, title, description, hero, children }: Co
 
       <footer className={`border-t border-[color:var(--border)] py-8 ${pageGutter}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[var(--text-subtle)] sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
+          <Link href={isEs ? '/es' : '/'} className="text-[var(--text-muted)] transition hover:text-[var(--text-strong)]">
             Steps Widget
           </Link>
           <div className="-my-2 flex flex-wrap gap-x-6">
             <Link href="/docs" className="py-2 transition hover:text-[var(--text-strong)]">
-              Docs
+              {isEs ? 'Documentación' : 'Docs'}
             </Link>
-            <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
+            <Link href={isEs ? '/es/blog' : '/blog'} className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
             <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
-              Privacy
+              {isEs ? 'Privacidad' : 'Privacy'}
             </Link>
             <Link href="/terms" className="py-2 transition hover:text-[var(--text-strong)]">
-              Terms
+              {isEs ? 'Términos' : 'Terms'}
             </Link>
+            {isEs && (
+              <Link href="/" hrefLang="en" lang="en" className="py-2 transition hover:text-[var(--text-strong)]">
+                English
+              </Link>
+            )}
           </div>
         </div>
       </footer>

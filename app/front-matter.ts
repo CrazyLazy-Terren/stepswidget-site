@@ -117,17 +117,18 @@ export function getOptionalNumber(frontMatter: FrontMatter, key: string, label: 
 const WORDS_PER_MINUTE = 230
 
 /**
- * Estimates reading time from a Markdown body, formatted as `N min read`.
+ * Estimates reading time from a Markdown body, formatted as `N min read` (or `N min de lectura` for Spanish).
  *
  * Link targets, image paths, HTML tags, and table rules are stripped first so
  * URLs and markup do not count as words.
  */
-export function estimateReadingTime(markdown: string) {
+export function estimateReadingTime(markdown: string, lang: 'en' | 'es' = 'en') {
   const prose = markdown
     .replace(/\]\([^)]*\)/g, ']')
     .replace(/<[^>]+>/g, ' ')
     .replace(/^\s*\|?[\s:|-]+\|?\s*$/gm, ' ')
   const words = prose.split(/\s+/).filter((token) => /[\p{L}\p{N}]/u.test(token)).length
+  const minutes = Math.max(1, Math.ceil(words / WORDS_PER_MINUTE))
 
-  return `${Math.max(1, Math.ceil(words / WORDS_PER_MINUTE))} min read`
+  return lang === 'es' ? `${minutes} min de lectura` : `${minutes} min read`
 }

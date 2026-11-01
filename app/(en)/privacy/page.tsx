@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { LegalShell } from "../../legal-shell";
 import { defaultOgImages, siteName } from "../../shared-metadata";
+import {
+  JsonLd,
+  absoluteUrl,
+  applicationId,
+  applicationSchema,
+  breadcrumbSchema,
+  organizationId,
+  organizationSchema,
+  websiteSchema,
+  websiteId,
+} from "../../structured-data";
 
 const title = "Privacy Policy - Steps Widget";
 const description =
@@ -116,14 +127,51 @@ const sections = [
   },
 ];
 
+const pageUrl = absoluteUrl("/privacy");
+
 export default function PrivacyPage() {
   return (
-    <LegalShell
-      eyebrow="Privacy"
-      title="Privacy Policy"
-      description="Steps Widget is built around private, glanceable step tracking. This policy follows CrazyLazy's app privacy terms while clarifying how Steps Widget uses Apple Health step data."
-      updated="June 28, 2026"
-      sections={sections}
-    />
+    <>
+      <JsonLd
+        id="schema-privacy"
+        data={[
+          organizationSchema(),
+          websiteSchema(),
+          applicationSchema(),
+          {
+            "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
+            url: pageUrl,
+            name: title,
+            headline: "Privacy Policy",
+            description,
+            inLanguage: "en-US",
+            dateModified: "2026-06-28",
+            isPartOf: { "@id": websiteId },
+            about: { "@id": applicationId },
+            publisher: { "@id": organizationId },
+            breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+            mentions: [
+              { "@type": "Organization", name: "Apple" },
+              { "@type": "Thing", name: "Apple Health" },
+            ],
+          },
+          breadcrumbSchema(
+            [
+              { name: "Home", path: "/" },
+              { name: "Privacy Policy", path: "/privacy" },
+            ],
+            `${pageUrl}#breadcrumb`,
+          ),
+        ]}
+      />
+      <LegalShell
+        eyebrow="Privacy"
+        title="Privacy Policy"
+        description="Steps Widget is built around private, glanceable step tracking. This policy follows CrazyLazy's app privacy terms while clarifying how Steps Widget uses Apple Health step data."
+        updated="June 28, 2026"
+        sections={sections}
+      />
+    </>
   );
 }

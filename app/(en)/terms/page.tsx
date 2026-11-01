@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { LegalShell } from "../../legal-shell";
 import { defaultOgImages, siteName } from "../../shared-metadata";
+import {
+  JsonLd,
+  absoluteUrl,
+  applicationId,
+  applicationSchema,
+  breadcrumbSchema,
+  organizationId,
+  organizationSchema,
+  websiteId,
+  websiteSchema,
+} from "../../structured-data";
 
 const title = "Terms and Conditions - Steps Widget";
 const description =
@@ -140,14 +151,47 @@ const sections = [
   },
 ];
 
+const pageUrl = absoluteUrl("/terms");
+
 export default function TermsPage() {
   return (
-    <LegalShell
-      eyebrow="Terms"
-      title="Terms and Conditions"
-      description="These terms follow CrazyLazy's app terms while clarifying expectations for Steps Widget, Apple Health permissions, widgets, notifications, and App Store distribution."
-      updated="June 28, 2026"
-      sections={sections}
-    />
+    <>
+      <JsonLd
+        id="schema-terms"
+        data={[
+          organizationSchema(),
+          websiteSchema(),
+          applicationSchema(),
+          {
+            "@type": "WebPage",
+            "@id": `${pageUrl}#webpage`,
+            url: pageUrl,
+            name: title,
+            headline: "Terms and Conditions",
+            description,
+            inLanguage: "en-US",
+            dateModified: "2026-06-28",
+            isPartOf: { "@id": websiteId },
+            about: { "@id": applicationId },
+            publisher: { "@id": organizationId },
+            breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+          },
+          breadcrumbSchema(
+            [
+              { name: "Home", path: "/" },
+              { name: "Terms and Conditions", path: "/terms" },
+            ],
+            `${pageUrl}#breadcrumb`,
+          ),
+        ]}
+      />
+      <LegalShell
+        eyebrow="Terms"
+        title="Terms and Conditions"
+        description="These terms follow CrazyLazy's app terms while clarifying expectations for Steps Widget, Apple Health permissions, widgets, notifications, and App Store distribution."
+        updated="June 28, 2026"
+        sections={sections}
+      />
+    </>
   );
 }

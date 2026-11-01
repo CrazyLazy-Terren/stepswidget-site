@@ -41,7 +41,7 @@ const navLinksEn = [
 
 const navLinksEs = [
   { href: '/docs', label: 'Docs' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/es/blog', label: 'Blog' },
   { href: '/about', label: 'Acerca de' },
 ]
 
