@@ -11,9 +11,10 @@
     "compress-images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1161.0",
+    "@aws-sdk/lib-dynamodb": "^3.1161.0",
     "@next/third-parties": "^16.2.10",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/blob": "^2.8.2",
     "@vercel/speed-insights": "^2.0.0",
     "babylovegrowth-next-js-blog": "^0.2.4",
     "google": "link:@next/third-parties/google",

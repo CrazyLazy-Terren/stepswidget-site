@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { get, list, put } from '@vercel/blob';
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, GetCommand, PutCommand, ScanCommand } from '@aws-sdk/lib-dynamodb';
 
 // One article as delivered by the postarticle webhook.
 export type NewArticle = {
@@ -22,51 +23,70 @@ export type NewArticle = {
   received_at: string;
 };
 
+// What the index page needs: everything but the article bodies.
+export type NewArticleSummary = Omit<NewArticle, 'content_html' | 'content_markdown'>;
+
 export const NEW_ARTICLE_BASE_PATH = '/newarticle';
 
-const PREFIX = 'newarticle/';
-// Without a Blob token (local dev), articles are kept on disk instead.
+// Articles live in a DynamoDB table keyed by `slug`. Credentials and region come
+// from the standard AWS env vars (AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY).
+const TABLE = process.env.ARTICLES_DYNAMODB_TABLE;
+// Without a table (local dev), articles are kept on disk instead.
 const LOCAL_DIR = path.join(process.cwd(), '.data', 'newarticle');
-const blobEnabled = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+
+let documentClient: DynamoDBDocumentClient | undefined;
+function db(): DynamoDBDocumentClient {
+  documentClient ??= DynamoDBDocumentClient.from(new DynamoDBClient({}), {
+    marshallOptions: { removeUndefinedValues: true },
+  });
+  return documentClient;
+}
+
+const SUMMARY_FIELDS = [
+  'id',
+  'title',
+  'slug',
+  'meta_description',
+  'created_at',
+  'published_at',
+  'image_url',
+  'alt_text',
+  'tags',
+  'author',
+  '#status',
+  'is_update',
+  'received_at',
+];
 
 export function isValidSlug(slug: string): boolean {
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug);
 }
 
-export function isPublished(article: NewArticle): boolean {
+export function isPublished(article: NewArticleSummary): boolean {
   return article.status?.toLowerCase() !== 'draft';
 }
 
 // The post date: when it went live, falling back to when it was written.
-export function postDate(article: NewArticle): string {
+export function postDate(article: NewArticleSummary): string {
   return article.published_at ?? article.created_at ?? article.received_at;
 }
 
 export async function saveArticle(article: NewArticle): Promise<void> {
-  const body = JSON.stringify(article, null, 2);
-  if (blobEnabled()) {
-    await put(`${PREFIX}${article.slug}.json`, body, {
-      access: 'private',
-      contentType: 'application/json',
-      addRandomSuffix: false,
-      allowOverwrite: true,
-    });
+  if (TABLE) {
+    await db().send(new PutCommand({ TableName: TABLE, Item: article }));
     return;
   }
   await fs.mkdir(LOCAL_DIR, { recursive: true });
-  await fs.writeFile(path.join(LOCAL_DIR, `${article.slug}.json`), body);
+  await fs.writeFile(path.join(LOCAL_DIR, `${article.slug}.json`), JSON.stringify(article, null, 2));
 }
 
 export async function getArticle(slug: string): Promise<NewArticle | null> {
   if (!isValidSlug(slug)) {
     return null;
   }
-  if (blobEnabled()) {
-    const result = await get(`${PREFIX}${slug}.json`, { access: 'private', useCache: false });
-    if (!result || result.statusCode !== 200) {
-      return null;
-    }
-    return (await new Response(result.stream).json()) as NewArticle;
+  if (TABLE) {
+    const { Item } = await db().send(new GetCommand({ TableName: TABLE, Key: { slug } }));
+    return (Item as NewArticle | undefined) ?? null;
   }
   try {
     return JSON.parse(await fs.readFile(path.join(LOCAL_DIR, `${slug}.json`), 'utf8')) as NewArticle;
@@ -75,28 +95,37 @@ export async function getArticle(slug: string): Promise<NewArticle | null> {
   }
 }
 
-async function listSlugs(): Promise<string[]> {
-  if (blobEnabled()) {
-    const slugs: string[] = [];
-    let cursor: string | undefined;
+async function listSummaries(): Promise<NewArticleSummary[]> {
+  if (TABLE) {
+    const items: NewArticleSummary[] = [];
+    let startKey: Record<string, unknown> | undefined;
     do {
-      const page = await list({ prefix: PREFIX, cursor });
-      slugs.push(...page.blobs.map((blob) => blob.pathname.slice(PREFIX.length, -'.json'.length)));
-      cursor = page.hasMore ? page.cursor : undefined;
-    } while (cursor);
-    return slugs;
+      const page = await db().send(
+        new ScanCommand({
+          TableName: TABLE,
+          ProjectionExpression: SUMMARY_FIELDS.join(', '),
+          // `status` is a DynamoDB reserved word.
+          ExpressionAttributeNames: { '#status': 'status' },
+          ExclusiveStartKey: startKey,
+        })
+      );
+      items.push(...((page.Items ?? []) as NewArticleSummary[]));
+      startKey = page.LastEvaluatedKey;
+    } while (startKey);
+    return items;
   }
   try {
-    return (await fs.readdir(LOCAL_DIR)).filter((file) => file.endsWith('.json')).map((file) => file.slice(0, -5));
+    const files = (await fs.readdir(LOCAL_DIR)).filter((file) => file.endsWith('.json'));
+    const articles = await Promise.all(files.map((file) => getArticle(file.slice(0, -5))));
+    return articles.filter((article): article is NewArticle => article !== null);
   } catch {
     return [];
   }
 }
 
 // Published articles, newest post date first.
-export async function getAllArticles(): Promise<NewArticle[]> {
-  const articles = await Promise.all((await listSlugs()).map(getArticle));
-  return articles
-    .filter((article): article is NewArticle => article !== null && isPublished(article))
+export async function getAllArticles(): Promise<NewArticleSummary[]> {
+  return (await listSummaries())
+    .filter(isPublished)
     .sort((a, b) => postDate(b).localeCompare(postDate(a)));
 }
