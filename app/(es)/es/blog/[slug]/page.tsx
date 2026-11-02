@@ -213,6 +213,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       languages: {
         en: `/blog/${post.slug}`,
         es: `/es/blog/${post.slug}`,
+        'x-default': `/blog/${post.slug}`,
       },
     },
     openGraph: {

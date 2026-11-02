@@ -32,6 +32,7 @@ import {
 } from '../../../structured-data'
 import { extractFaqEntries } from '../extract-faq'
 import { getBlogPost, getBlogPosts } from '../posts'
+import { getEsBlogPost } from '@/app/(es)/es/blog/posts'
 
 /** Flattens a heading's rendered children back to the plain text it reads as. */
 function toPlainText(node: ReactNode): string {
@@ -229,6 +230,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     keywords: post.keywords,
     alternates: {
       canonical: `/blog/${post.slug}`,
+      // Only translated posts get hreflang; the Spanish page links back here,
+      // so this side has to return the tag or search engines ignore the pair.
+      ...(getEsBlogPost(post.slug) && {
+        languages: {
+          en: `/blog/${post.slug}`,
+          es: `/es/blog/${post.slug}`,
+          'x-default': `/blog/${post.slug}`,
+        },
+      }),
     },
     openGraph: {
       title: post.metaTitle,

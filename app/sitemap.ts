@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
 import { getBlogPosts } from './(en)/blog/posts'
+import { getEsBlogPosts } from './(es)/es/blog/posts'
 import { docPath, getDocTree, getDocs } from './(en)/docs/docs'
 
 export const dynamic = 'force-dynamic'
@@ -11,12 +12,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const protocol = host.includes('localhost') ? 'http' : 'https'
   const baseUrl = `${protocol}://${host}`
 
-  // Dynamic routes (blog posts)
+  // Dynamic routes (blog posts). A translated post lists both language
+  // versions on each entry so the hreflang pair is reciprocal.
+  const esBlogPosts = getEsBlogPosts()
+  const translatedSlugs = new Set(esBlogPosts.map((post) => post.slug))
+  const postLanguages = (slug: string) => ({
+    languages: { en: `${baseUrl}/blog/${slug}`, es: `${baseUrl}/es/blog/${slug}` },
+  })
+
   const blogUrls = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(`${post.updated ?? post.date}T00:00:00Z`),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+    ...(translatedSlugs.has(post.slug) && { alternates: postLanguages(post.slug) }),
+  }))
+
+  const esBlogUrls = esBlogPosts.map((post) => ({
+    url: `${baseUrl}/es/blog/${post.slug}`,
+    lastModified: new Date(`${post.updated ?? post.date}T00:00:00Z`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+    alternates: postLanguages(post.slug),
   }))
 
   // Documentation: section index pages plus one entry per doc page.
@@ -73,6 +90,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,
+      alternates: { languages: { en: `${baseUrl}/blog`, es: `${baseUrl}/es/blog` } },
+    },
+    {
+      url: `${baseUrl}/es/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: { languages: { en: `${baseUrl}/blog`, es: `${baseUrl}/es/blog` } },
     },
     {
       url: `${baseUrl}/docs`,
@@ -95,5 +120,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  return [...staticUrls, ...docSectionUrls, ...docUrls, ...blogUrls]
+  return [...staticUrls, ...docSectionUrls, ...docUrls, ...blogUrls, ...esBlogUrls]
 }
