@@ -80,9 +80,8 @@ const shareCards = [
     eyebrow: 'New · Walk with me',
     description:
       'Swap cards with someone you know and see each other’s day, hour by hour, right on your Home Screen. It only starts when you both say yes, and everything is sealed on your iPhone so only their phone can read it.',
-    image: '/assets/walk-with-me/intro-duo.webp',
-    imageAlt: 'Walking with Me on iPhone Duo: a Side by Side widget comparing two people’s days, hour by hour, above Your Name Card',
-    device: 'duo',
+    image: '/assets/walk-with-me/intro.webp',
+    imageAlt: 'Walking with Me on iPhone: a Side by Side widget comparing two people’s days, hour by hour, above the private-by-design explainer',
     href: '/blog/walk-with-a-friend-share-steps',
     linkLabel: 'Walking together',
   },
@@ -272,7 +271,7 @@ function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
       {features.map((feature) => (
         <article key={feature.title} className="flex flex-col">
           <div className="flex max-w-md flex-1 flex-col">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
+            {/* <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p> */}
             <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
             <p className="mt-2 leading-7 text-[var(--text-muted)]">{feature.description}</p>
             {feature.href ? (
@@ -448,16 +447,6 @@ export default function Home() {
         </SectionHeading>
 
         <FeatureCards cards={nudgeCards} />
-
-        <ul className="mt-12 grid overflow-hidden rounded-lg border border-(--border-strong) sm:grid-cols-4 -p-1">
-          {notThis.map((line) => (
-            <li
-              key={line}
-              className="bg-[var(--surface-1)] sm:border-x border-y border-[color:var(--border)] px-6 py-6 text-lg font-medium tracking-[-0.01em] text-[var(--text-strong)]">
-              {line}
-            </li>
-          ))}
-        </ul>
       </PageSection>
 
       <PageSection id="reminder-messages" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
