@@ -662,6 +662,9 @@ export default function SpanishHome() {
             <Link href="/es/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
+            <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
+              Medios
+            </Link>
             <Link href="/about" className="py-2 transition hover:text-[var(--text-strong)]">
               Acerca de
             </Link>

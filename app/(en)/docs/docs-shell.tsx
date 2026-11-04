@@ -104,6 +104,9 @@ export function DocsShell({ activeSection, activeSlug, children }: DocsShellProp
             <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
+            <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
+              Media
+            </Link>
             <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
               Privacy
             </Link>

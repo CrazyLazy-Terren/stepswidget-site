@@ -52,6 +52,9 @@ export function LegalShell({ eyebrow, title, description, updated, sections }: L
               Back to Steps Widget
             </Link>
             <div className="-my-2 flex flex-wrap gap-x-6">
+              <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
+                Media
+              </Link>
               <Link href="/privacy" className="py-2 transition hover:text-[var(--text-strong)]">
                 Privacy
               </Link>

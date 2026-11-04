@@ -617,6 +617,9 @@ export default function Home() {
             <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
+            <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
+              Media
+            </Link>
             <Link href="/about" className="py-2 transition hover:text-[var(--text-strong)]">
               About
             </Link>
