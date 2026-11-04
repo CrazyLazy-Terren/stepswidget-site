@@ -1,7 +1,7 @@
 ---
 title: 'Do Walking Pad Steps Count? How Under-Desk Treadmills Show Up in Apple Health'
 metaTitle: 'Do Walking Pad Steps Count on iPhone & Apple Watch?'
-description: An under-desk treadmill can add thousands of steps a day, but only if something on your body counts them. Which setups count walking pad steps, and which don't.
+description: Walking pad steps only count if something on your body counts them. See which setups get your under-desk treadmill steps into Apple Health, and which miss them.
 date: '2026-10-06'
 updated: '2026-10-06'
 slug: do-walking-pad-steps-count

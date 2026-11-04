@@ -3,7 +3,7 @@ slug: step-counter-widget-iphone
 category: Widgets
 title: Best Step Counter Widget for iPhone: Home Screen and Lock Screen Steps
 metaTitle: Best Step Counter Widget for iPhone | Steps Widget
-description: Compare iPhone step counter widgets for Home Screen, Lock Screen, Apple Health, and Apple Watch so daily steps stay visible without extra noise.
+description: A good step counter widget keeps daily steps visible without extra noise. Compare iPhone options for Home Screen, Lock Screen, Apple Health, and Apple Watch.
 date: 2026-06-28
 keywords:
   - step counter widget iPhone

@@ -3,7 +3,7 @@ slug: step-counter-widget-iphone
 category: Widgets
 title: 'El mejor widget de contador de pasos para iPhone: pasos en la pantalla de inicio y de bloqueo'
 metaTitle: 'El mejor widget de contador de pasos para iPhone | Steps Widget'
-description: 'Compara widgets de contador de pasos para pantalla de inicio, pantalla de bloqueo, Apple Health y Apple Watch para ver tus pasos diarios sin distracciones.'
+description: 'Un buen widget mantiene tus pasos diarios a la vista sin distracciones. Compara opciones en pantalla de inicio, de bloqueo, Apple Health y Apple Watch.'
 date: 2026-06-28
 keywords:
   - widget de pasos iPhone

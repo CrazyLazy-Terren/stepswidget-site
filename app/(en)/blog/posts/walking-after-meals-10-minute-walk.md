@@ -1,7 +1,7 @@
 ---
 title: 'Walking After Meals: Does a 10-Minute Walk Really Help?'
 metaTitle: 'Walking After Meals: What 10 Minutes Does | Steps Widget'
-description: A short walk after eating lowers post-meal blood sugar more than the same walk at other times. What the research shows, how soon and how long to walk, and when.
+description: A short walk after eating lowers post-meal blood sugar more than the same walk at other times. See what research shows, how soon to go, and how long to walk.
 date: '2026-09-30'
 updated: '2026-09-30'
 slug: walking-after-meals-10-minute-walk

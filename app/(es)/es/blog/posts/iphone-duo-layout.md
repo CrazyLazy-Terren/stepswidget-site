@@ -3,7 +3,7 @@ slug: iphone-duo-layout
 category: Detrás de la app
 title: 'Diseñar para el plegable: cómo adapté Steps Widget para iPhone Duo'
 metaTitle: 'Widgets para iPhone Duo: diseñar para el plegable | Steps Widget'
-description: 'iPhone Duo es un teléfono plegado y dos páginas al abrirse. Cómo se adapta Steps Widget a ambos formatos, desde la nueva barra lateral hasta vistas divididas.'
+description: 'iPhone Duo es un teléfono al plegarlo y dos páginas al abrirlo. Mira cómo se adapta Steps Widget a ambos, desde la nueva barra lateral hasta vistas divididas.'
 date: 2026-10-28
 image: /assets/blog-iphone-duo-sketch-accent.webp
 keywords:

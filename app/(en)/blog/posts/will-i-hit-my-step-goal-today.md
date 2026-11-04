@@ -1,7 +1,7 @@
 ---
 title: 'Will I Hit My Step Goal Today? How to Tell by Mid-Afternoon'
 metaTitle: 'Will I Hit My Step Goal Today? Pace by Hour | Steps Widget'
-description: Wondering if you will hit your step goal today? Calculate your pace by mid-afternoon, see benchmark step counts by hour, and turn the gap into walking minutes.
+description: You can tell by mid-afternoon whether you will hit today's step goal. Get benchmark step counts by hour, check your pace, and turn the gap into walking minutes.
 date: '2026-09-22'
 updated: '2026-09-22'
 slug: will-i-hit-my-step-goal-today

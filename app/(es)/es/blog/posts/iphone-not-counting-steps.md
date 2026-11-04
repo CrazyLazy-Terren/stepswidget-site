@@ -3,7 +3,7 @@ slug: iphone-not-counting-steps
 category: Solución de problemas
 title: '¿Por qué mi iPhone no cuenta los pasos? 7 soluciones que funcionan'
 metaTitle: '¿iPhone no cuenta los pasos? 7 soluciones | Steps Widget'
-description: '¿Tu iPhone no registra los pasos? Descubre las causas más habituales, desde ajustes de privacidad hasta permisos de Salud, y soluciónalo en pocos minutos.'
+description: '¿Tu iPhone no cuenta los pasos? Casi siempre es Condición y movimiento o el permiso de Salud apagado. Prueba 7 soluciones y recupera tu conteo en minutos.'
 date: 2026-07-12
 keywords:
   - porque mi iphone no cuenta pasos

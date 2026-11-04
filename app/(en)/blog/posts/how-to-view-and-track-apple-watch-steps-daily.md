@@ -3,7 +3,7 @@ slug: how-to-view-and-track-apple-watch-steps-daily
 category: Apple Watch
 title: 'Does the Apple Watch Count Steps? How to See Your Step Count'
 metaTitle: 'Apple Watch Steps: How to Check Them Daily | Steps Widget'
-description: Your Apple Watch counts steps automatically, but Apple buries the number under the Activity rings. Where to find it on the watch, iPhone, and watch face.
+description: Your Apple Watch counts steps automatically, but Apple buries the number under the rings. See where to find it on the watch, on iPhone, and on the watch face.
 date: '2026-07-23'
 updated: '2026-10-07'
 order: 14

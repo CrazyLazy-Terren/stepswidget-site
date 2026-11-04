@@ -3,7 +3,7 @@ slug: how-to-add-step-count-home-lock-screen-apple-watch
 category: Fitness Habits
 title: 'How to Add Step Count to Home Screen, Lock Screen, and Apple Watch (Best Free Apps)'
 metaTitle: 'Add Steps to Home Screen, Lock Screen & Apple Watch (Free)'
-description: 'Put your daily step count on the iPhone Home Screen, Lock Screen, and Apple Watch face. Step-by-step setup plus the best 100% free apps, no subscription.'
+description: Your daily step count can live on the iPhone Home Screen, Lock Screen, and Apple Watch face. Get step-by-step setup and the best free apps, no subscription.
 date: 2026-08-24
 updated: 2026-08-24
 keywords:

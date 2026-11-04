@@ -1,7 +1,7 @@
 ---
 title: Pedometer Apps with Move Reminders: How to Stay Active on iPhone
 metaTitle: Best Pedometer Apps with Move Reminders for iPhone
-description: How move reminders on iPhone work, from inactivity alerts to goal-based nudges, and how to set them up to break up desk days and hit your daily step goal.
+description: iPhone move reminders range from inactivity alerts to goal-based nudges. See how each works and how to use them to break up desk days and hit your step goal.
 date: '2026-07-07'
 updated: '2026-09-19'
 slug: pedometer-app-with-move-reminders

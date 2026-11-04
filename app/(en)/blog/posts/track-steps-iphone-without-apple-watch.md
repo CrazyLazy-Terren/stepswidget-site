@@ -3,7 +3,7 @@ slug: track-steps-iphone-without-apple-watch
 category: Widgets
 title: How to Track Steps on iPhone Without an Apple Watch
 metaTitle: Track Steps on iPhone Without Apple Watch | Steps Widget
-description: Learn how to track steps on your iPhone without an Apple Watch using built-in sensors, Apple Health, and a private steps widget for your Home and Lock Screens.
+description: Your iPhone counts steps with built-in sensors, no Apple Watch needed. See how to track them with Apple Health and a private Home and Lock Screen widget.
 date: 2026-07-02
 keywords:
   - track steps on iphone without apple watch

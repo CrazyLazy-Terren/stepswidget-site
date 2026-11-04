@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { GoogleTagManager } from '@next/third-parties/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { siteUrl } from './shared-metadata'
@@ -39,6 +39,14 @@ const accent: Accent = 'neutral'
  * cookie on the server would make every route render per request. ThemeToggle
  * writes the cookie this reads.
  */
+const gtmId = 'GTM-KKL76RP3'
+
+/**
+ * Starts the GTM data layer straight away so `sendGTMEvent` calls and the
+ * `gtm.start` timestamp are queued from the first moment.
+ */
+const gtmInitScript = `(function(w,l){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'})})(window,'dataLayer')`
+
 const themeScript = `(function(){try{if(/(?:^|; )theme=dark(?:;|$)/.test(document.cookie))document.documentElement.setAttribute("data-theme","dark")}catch(e){}})()`
 
 /**
@@ -55,7 +63,14 @@ export function SiteDocument({ lang, children }: Readonly<{ lang: 'en' | 'es'; c
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <meta name="apple-itunes-app" content="app-id=6756297788, affiliate-data=pt=120739140&ct=website" />
       </head>
-      <GoogleTagManager gtmId="GTM-KKL76RP3" />
+      {/*
+        GTM and the tags it fires (TikTok pixel among them) were most of the
+        page's main-thread blocking time. The container itself loads once the
+        browser is idle after `load`; events queued in `dataLayer` before then
+        are replayed when it arrives, so nothing is lost for visitors who stay.
+      */}
+      <Script id="gtm-init" dangerouslySetInnerHTML={{ __html: gtmInitScript }} />
+      <Script id="gtm" src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`} strategy="lazyOnload" />
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />

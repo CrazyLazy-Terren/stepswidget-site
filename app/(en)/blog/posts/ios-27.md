@@ -3,7 +3,7 @@ slug: ios-27
 category: Widgets
 title: 'iOS 27 Is Out: Should You Update, and What Happens to Your Steps?'
 metaTitle: 'iOS 27 Update: Steps, Health Data & Widgets | Steps Widget'
-description: iOS 27 is out for iPhone 11 and later. What is new, which iPhones get Siri AI, how to update safely, and what it means for your Health step history and widgets.
+description: iOS 27 is out for iPhone 11 and later. See what is new, which iPhones get Siri AI, how to update safely, and what happens to your step history and widgets.
 date: 2026-07-14
 updated: 2026-09-19
 keywords:

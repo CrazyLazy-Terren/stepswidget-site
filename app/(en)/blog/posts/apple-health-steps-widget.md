@@ -3,7 +3,7 @@ slug: apple-health-steps-widget
 category: Privacy & Performance
 title: Apple Health Steps Widget for iPhone and Apple Watch
 metaTitle: 'Apple Health Steps Widget for iPhone & Watch | Steps Widget'
-description: Put your Apple Health step count on the iPhone Home Screen, Lock Screen, StandBy, and Apple Watch with a private widget that reads HealthKit. No extra tracker.
+description: Apple Health counts your steps but keeps the number inside the app. See how to put it on your Home Screen, Lock Screen, StandBy, and Apple Watch, privately.
 date: 2026-06-28
 updated: '2026-09-08'
 keywords:

@@ -1,7 +1,7 @@
 ---
 title: How to Fix Apple Watch Stand Reminders Not Working
 metaTitle: Fix Apple Watch Stand Reminders Not Working | Steps Widget
-description: Troubleshoot why your Apple Watch is not sending stand reminders, and what to use instead if you want movement reminders that respond to your day.
+description: Apple Watch stand reminders can go quiet for a few fixable reasons. See why yours stopped, how to turn them back on, and a reminder that responds to your day.
 date: '2026-07-07'
 updated: '2026-09-19'
 slug: apple-watch-stand-reminders-not-working

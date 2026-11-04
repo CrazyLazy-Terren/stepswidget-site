@@ -1,7 +1,7 @@
 ---
 title: Will a Steps Widget Drain Your iPhone Battery?
 metaTitle: Does a Steps Widget Drain iPhone Battery? | Steps Widget
-description: Learn how iPhone steps widgets update, why some pedometer apps drain battery, and how to track steps efficiently using low-power motion sensors.
+description: Whether a steps widget drains your battery depends on how it gets its data. See how widgets update, why some pedometer apps drain power, and which to choose.
 date: '2026-07-07'
 updated: '2026-07-14'
 slug: steps-widget-iphone-battery-drain

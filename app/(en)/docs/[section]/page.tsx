@@ -33,17 +33,18 @@ export async function generateMetadata({ params }: DocSectionPageProps): Promise
     return { title: 'Documentation - Steps Widget' }
   }
 
-  const title = `${section.title} - Steps Widget Docs`
+  const title = section.metaTitle ?? `${section.title} - Steps Widget Docs`
+  const description = section.metaDescription ?? section.description
 
   return {
     title,
-    description: section.description,
+    description,
     alternates: {
       canonical: `/docs/${section.slug}`,
     },
     openGraph: {
       title,
-      description: section.description,
+      description,
       url: `/docs/${section.slug}`,
       siteName,
       type: 'website',
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: DocSectionPageProps): Promise
     twitter: {
       card: 'summary_large_image',
       title,
-      description: section.description,
+      description,
       images: defaultOgImages,
     },
   }
@@ -80,8 +81,8 @@ export default async function DocSectionPage({ params }: DocSectionPageProps) {
     '@type': 'CollectionPage',
     '@id': url,
     url,
-    name: `${section.title} - Steps Widget Docs`,
-    description: section.description,
+    name: section.metaTitle ?? `${section.title} - Steps Widget Docs`,
+    description: section.metaDescription ?? section.description,
     inLanguage: 'en-US',
     isPartOf: { '@id': `${absoluteUrl('/')}#website` },
     breadcrumb: { '@id': `${url}#breadcrumb` },

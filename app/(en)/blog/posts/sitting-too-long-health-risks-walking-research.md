@@ -1,7 +1,7 @@
 ---
 title: What Sitting All Day Does to Your Body, and What Walking Actually Fixes
 metaTitle: 'Sitting Too Long: Health Risks & What Walking Fixes'
-description: What research shows about prolonged sitting, the health problems linked to it, and how many steps and walking breaks the evidence supports. Every claim cited.
+description: Walking breaks help reduce the health risks of sitting too long. See how many steps to aim for and the tested schedule for breaking up long sitting safely.
 date: '2026-08-28'
 updated: '2026-08-29'
 slug: sitting-too-long-health-risks-walking-research

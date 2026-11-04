@@ -25,6 +25,13 @@ export type DocSection = {
   description: string
   /** Lower sorts first in the sidebar. */
   order: number
+  /**
+   * Search-result title and snippet for the section page, when the on-page
+   * title and description are too short for them (aim for 45–60 and 150–160
+   * characters). Fall back to `${title} - Steps Widget Docs` and `description`.
+   */
+  metaTitle?: string
+  metaDescription?: string
 }
 
 export type Doc = {
@@ -57,36 +64,54 @@ export const docSections: DocSection[] = [
     title: 'Getting started',
     description: 'Install Steps, grant Health access, and set the daily goal everything else is measured against.',
     order: 1,
+    metaTitle: 'Get Started with Steps Widget: Apple Health & Daily Goal',
+    metaDescription:
+      'Install Steps Widget on iPhone, connect Apple Health, set your daily step goal, add a widget, and turn on goal reminders. About five minutes, start to finish.',
   },
   {
     slug: 'goal-reminders',
     title: 'Goal reminders',
     description: 'The on-device model that projects your end-of-day steps, when it decides to nudge you, and how the message gets written.',
     order: 2,
+    metaTitle: 'Goal Reminders in Steps Widget: How the Forecast Nudges You',
+    metaDescription:
+      'How Steps Widget projects your end-of-day steps on device, when a goal reminder fires, which device sends it, and how to write the messages in your own words.',
   },
   {
     slug: 'widgets',
     title: 'Widgets',
     description: 'Every widget in the gallery, how to style each one, and the Lock Screen, StandBy, Live Activity, and Apple Watch surfaces.',
     order: 3,
+    metaTitle: 'Steps Widget Guide: Home Screen, Lock Screen & Apple Watch',
+    metaDescription:
+      'Every Steps Widget for the Home Screen, Lock Screen, and Apple Watch, plus colour palettes, styles made from your own photos, and sharing a style with a friend.',
   },
   {
     slug: 'sharing',
     title: 'Sharing steps',
     description: 'Swap cards with a friend, see each other’s steps side by side, and how it stays private.',
     order: 4,
+    metaTitle: 'Share Your Steps with a Friend Privately in Steps Widget',
+    metaDescription:
+      'Swap cards with a friend in Steps Widget, see each other’s steps side by side right on your Home Screen, and learn why nobody else can read them, including us.',
   },
   {
     slug: 'steps-and-data',
     title: 'Steps and data',
     description: 'Where your step count comes from, how to reshape the day it measures, asking Siri for it, and what stays on your device.',
     order: 5,
+    metaTitle: 'Steps and Data in Steps Widget: Apple Health, Siri & Privacy',
+    metaDescription:
+      'Where Steps Widget gets your count from Apple Health, Motion Sensor mode, the step window, monthly Insight, Siri and Shortcuts, and what stays on your device.',
   },
   {
     slug: 'troubleshooting',
     title: 'Troubleshooting',
     description: 'Fixes for a widget that will not update, missing steps, and reminders that never arrive.',
     order: 6,
+    metaTitle: 'Steps Widget Troubleshooting: Widgets, Steps & Reminders',
+    metaDescription:
+      'Fix a widget that will not update, an iPhone that is not counting steps, or goal reminders that never arrive, with clear checks for each part of the chain.',
   },
 ]
 

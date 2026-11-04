@@ -3,7 +3,7 @@ slug: show-steps-watch-face
 category: Apple Watch
 title: 'How to Show Steps on Your Apple Watch Face (Add a Step Complication)'
 metaTitle: 'Add a Step Counter to Your Apple Watch Face | Steps Widget'
-description: Apple Watch has no native steps complication, so steps never show on the watch face. How to add one with a third-party app, and which slots work best.
+description: Apple Watch has no native steps complication, so your steps never show on the watch face. See how to add one with a third-party app, and which slots work best.
 date: 2026-07-21
 updated: '2026-10-07'
 keywords:

@@ -3,7 +3,7 @@ slug: track-steps-iphone-without-apple-watch
 category: Widgets
 title: 'Cómo contar pasos en iPhone sin un Apple Watch'
 metaTitle: 'Contar pasos en iPhone sin Apple Watch | Steps Widget'
-description: 'Aprende a registrar tus pasos en el iPhone sin un Apple Watch gracias a sus sensores integrados, Apple Health y un widget privado para tus pantallas.'
+description: 'Tu iPhone cuenta pasos con sus sensores integrados, sin un Apple Watch. Descubre cómo seguirlos con Apple Health y un widget privado para tus pantallas.'
 date: 2026-07-02
 keywords:
   - contar pasos iphone sin apple watch

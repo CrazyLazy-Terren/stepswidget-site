@@ -50,7 +50,7 @@ export function SiteLogo({ textOnly = false, href }: { textOnly?: boolean; href?
     <Link href={href ?? '/'} className="flex items-center gap-3">
       {!textOnly && (
         <div className="relative size-8 ">
-          <Image src="/assets/stepswidget-icon.png" alt="" width={80} height={80} className="size-full object-cover" priority />
+          <Image src="/assets/stepswidget-icon.png" alt="Steps Widget app icon" width={80} height={80} className="size-full object-cover" priority />
         </div>
       )}
       <span className="text-md font-semibold tracking-[-0.0125em] text-[var(--text-strong)]">Steps Widget</span>

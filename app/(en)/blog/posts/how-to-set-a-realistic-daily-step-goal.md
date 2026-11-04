@@ -1,7 +1,7 @@
 ---
 title: How to Set a Realistic Daily Step Goal (and Adjust It as the Day Goes)
 metaTitle: How to Set a Realistic Daily Step Goal | Steps Widget
-description: Pick a daily step goal you will actually hit, set against your own history rather than a round number, and read your pace while there is still time to act.
+description: A step goal works best when set against your own history, not a round number. See how to pick one you will hit, and read your pace while there is time to act.
 date: '2026-09-04'
 updated: '2026-09-04'
 slug: how-to-set-a-realistic-daily-step-goal

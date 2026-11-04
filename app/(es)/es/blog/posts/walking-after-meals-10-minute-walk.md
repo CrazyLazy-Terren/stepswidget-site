@@ -1,7 +1,7 @@
 ---
 title: 'Caminar después de comer: ¿realmente ayuda un paseo de 10 minutos?'
 metaTitle: 'Caminar después de comer: beneficios de 10 minutos | Steps Widget'
-description: 'Un paseo corto tras comer reduce los picos de glucosa más que caminar a otras horas. Qué dice la ciencia, cuándo salir a caminar y cuánto tiempo es necesario.'
+description: 'Un paseo corto tras comer reduce los picos de glucosa más que caminar a otras horas. Descubre qué dice la ciencia, cuándo salir y cuánto tiempo caminar.'
 date: '2026-09-30'
 updated: '2026-09-30'
 slug: walking-after-meals-10-minute-walk
