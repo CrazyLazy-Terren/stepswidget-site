@@ -102,4 +102,3 @@ If you already own one, use it. If you do not, you are not missing much here. Mo
 | What actually works on iPhone?                  | A third-party app reading your Apple Health step data, nudging you based on what you really did.  |
 
 The short version: your iPhone knows you have been sitting, it just has no built-in way to say so. Apple gave that job to the Watch. If you do not wear one, a step-aware app is the way to close the gap. See [how goal reminders work](/docs/goal-reminders/how-goal-reminders-work) for how forecast-based movement reminders function on iPhone, or read our guide on [best stand up reminder apps for iPhone](/blog/best-stand-up-reminder-apps-iphone).
-

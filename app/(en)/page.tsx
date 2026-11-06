@@ -445,7 +445,9 @@ export default function Home() {
         <SectionHeading eyebrow="The nudge" title="When It Counts.">
           An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
         </SectionHeading>
-
+        <ArrowLink href="/tools/step-goal-calculator" className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+          Not sure what goal to set? Try the step goal calculator
+        </ArrowLink>
         <FeatureCards cards={nudgeCards} />
       </PageSection>
 
@@ -616,6 +618,9 @@ export default function Home() {
             </Link>
             <Link href="/blog" className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
+            </Link>
+            <Link href="/tools/step-goal-calculator" className="py-2 transition hover:text-[var(--text-strong)]">
+              Step goal calculator
             </Link>
             <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
               Media

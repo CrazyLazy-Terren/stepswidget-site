@@ -32,6 +32,8 @@ Open your step history for the last two weeks and find your typical day — not 
 
 That is the whole method. A goal chosen this way is reachable often enough to stay meaningful, and demanding enough to change behaviour.
 
+If you are walking for something specific — losing weight, keeping it off, recovering after surgery — the [step goal calculator](/tools/step-goal-calculator) sets a target from the research behind that goal and builds a week-by-week ramp from your current average.
+
 If your app lets you test a target against your real history before you commit, use that. In Steps Widget, [Insight](https://stepswidget.app/docs/steps-and-data/insight) shows a month of your daily bars with a goal line you can drag: move it to 7,500 and you can see whether that would have meant clearing the goal five times last month or eighteen. Choosing against a month of your own days beats guessing at a round number every time.
 
 ## What the research actually supports

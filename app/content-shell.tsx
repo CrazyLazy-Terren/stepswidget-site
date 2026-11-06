@@ -47,6 +47,11 @@ export function ContentShell({ eyebrow, title, description, hero, children, lang
             <Link href={isEs ? '/es/blog' : '/blog'} className="py-2 transition hover:text-[var(--text-strong)]">
               Blog
             </Link>
+            {!isEs && (
+              <Link href="/tools/step-goal-calculator" className="py-2 transition hover:text-[var(--text-strong)]">
+                Step goal calculator
+              </Link>
+            )}
             <Link href="/media" className="py-2 transition hover:text-[var(--text-strong)]">
               {isEs ? 'Medios' : 'Media'}
             </Link>

@@ -170,7 +170,7 @@ None of this is medical advice.
 | What is not?                  | Hard endpoints like mortality — the volume research covers that ground, not this |
 | What does my step count show? | About 3,000 steps, and nothing at all about the intensity                        |
 
-Related reading: [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal) for the volume side of the equation, [walking after meals](https://stepswidget.app/blog/walking-after-meals-10-minute-walk) for a different case where timing beats duration, and [what sitting all day does to your body](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) for why neither replaces simply sitting less.
+Related reading: [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal) for the volume side of the equation, the [step goal calculator](https://stepswidget.app/tools/step-goal-calculator) to put a number on it, [walking after meals](https://stepswidget.app/blog/walking-after-meals-10-minute-walk) for a different case where timing beats duration, and [what sitting all day does to your body](https://stepswidget.app/blog/sitting-too-long-health-risks-walking-research) for why neither replaces simply sitting less.
 
 [^1]: Nemoto K, Gen-no H, Masuki S, Okazaki K, Nose H. **Effects of high-intensity interval walking training on physical fitness and blood pressure in middle-aged and older people.** _Mayo Clinic Proceedings._ 2007;82(7):803–811. doi:[10.4065/82.7.803](https://doi.org/10.4065/82.7.803)
 

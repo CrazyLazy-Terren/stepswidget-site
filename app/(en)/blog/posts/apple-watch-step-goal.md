@@ -106,7 +106,7 @@ Find your typical day over the last two weeks — not your best, not your worst,
 
 For context, the research points lower than the famous figure: a 2025 meta-analysis in *The Lancet Public Health* found the benefit curve bending sharply between 5,000 and 7,000 steps a day and flattening after, which puts a sensible health-oriented range at roughly **6,000 to 8,500**. The 10,000 figure came from a 1965 Japanese pedometer's brand name, not a study.
 
-The full method, including how to adjust it seasonally, is in [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal).
+The full method, including how to adjust it seasonally, is in [how to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal). If you are walking for something specific, such as losing weight or recovering after surgery, the [step goal calculator](https://stepswidget.app/tools/step-goal-calculator) sets a number for that goal and a week-by-week build-up.
 
 ## Move goal or step goal — which should you use?
 

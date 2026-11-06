@@ -207,6 +207,7 @@ Combine this with a [Lock Screen step counter](https://stepswidget.app/blog/ipho
 Related reading:
 - [You sit longer than you realize](https://stepswidget.app/blog/you-sit-longer-than-you-realize) — why mid-afternoon awareness beats nightly guilt.
 - [How to set a realistic daily step goal](https://stepswidget.app/blog/how-to-set-a-realistic-daily-step-goal) — setting a target you can actually sustain.
+- [Step goal calculator](https://stepswidget.app/tools/step-goal-calculator) — a daily target for weight loss, heart health, recovery, and more.
 - [Pedometer app with move reminders](https://stepswidget.app/blog/pedometer-app-with-move-reminders) — how activity-aware nudges prevent notification fatigue.
 - [iPhone Lock Screen steps widget](https://stepswidget.app/blog/iphone-lock-screen-steps-widget) — keeping your real-time count visible at every glance.
 
