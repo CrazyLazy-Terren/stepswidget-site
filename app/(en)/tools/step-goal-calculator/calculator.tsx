@@ -1,15 +1,14 @@
 'use client'
 
-import { useId, useState, type ReactNode } from 'react'
-import { calculate, explain, goalById, goals, stepsPerMinute, type GoalId } from './goals'
+import { useEffect, useId, useState, type ReactNode } from 'react'
+import { buildUpPlan, calculate, explain, goalById, goals, stepsPerMinute, type GoalId } from './goals'
+import { kcalOptions, registerStepGoalTool, type KcalOption } from './webmcp'
 
 type Units = 'metric' | 'imperial'
 
 const nf = new Intl.NumberFormat('en-US')
 const kgPerLb = 0.45359237
 const cmPerIn = 2.54
-
-const kcalOptions = [150, 250, 350] as const
 
 function NumberField({
   label,
@@ -115,11 +114,29 @@ export function StepGoalCalculator() {
   // Stored in the unit on screen; converted when calculating.
   const [weight, setWeight] = useState(80)
   const [height, setHeight] = useState(172)
-  const [extraKcal, setExtraKcal] = useState<(typeof kcalOptions)[number]>(250)
+  const [extraKcal, setExtraKcal] = useState<KcalOption>(250)
   const [priorSteps, setPriorSteps] = useState(8000)
   // Null follows the recommended pace; a number is the person's own choice.
   const [chosenWeeks, setChosenWeeks] = useState<number | null>(null)
   const weeksSliderId = useId()
+
+  // WebMCP: let an in-browser AI agent run the calculator. The tool's result is also shown on
+  // screen, so the person sees the same numbers the agent reads. Setters are stable, so this runs once.
+  useEffect(
+    () =>
+      registerStepGoalTool((input) => {
+        setGoal(input.goal)
+        setUnits('metric')
+        setCurrentSteps(input.currentSteps)
+        setAge(input.age)
+        setWeight(input.weightKg)
+        setHeight(input.heightCm)
+        setExtraKcal(input.extraKcal)
+        setPriorSteps(input.priorSteps)
+        setChosenWeeks(input.weeks)
+      }),
+    []
+  )
 
   const switchUnits = (next: Units) => {
     if (next === units) return
@@ -151,12 +168,7 @@ export function StepGoalCalculator() {
 
   const selected = goalById[goal]
   const alreadyThere = result.extraSteps <= 0
-  const recommendedWeeks = result.ramp.length
-  const weeksMax = Math.min(52, Math.max(12, recommendedWeeks * 2))
-  const weeks = Math.min(weeksMax, chosenWeeks ?? recommendedWeeks)
-  const perWeek = weeks > 0 ? Math.ceil(result.extraSteps / weeks / 50) * 50 : 0
-  // Faster than the top of the recommended weekly increase for this goal.
-  const tooFast = perWeek > (goal === 'recovery' ? 500 : 1000)
+  const { recommendedWeeks, weeksMax, weeks, perWeek, tooFast } = buildUpPlan(goal, result, chosenWeeks)
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">

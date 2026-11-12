@@ -342,3 +342,26 @@ export function explain(input: CalculatorInput, result: CalculatorResult): strin
 
   return lines
 }
+
+export type BuildUpPlan = {
+  /** Weeks at the recommended pace; zero when already at the goal. */
+  recommendedWeeks: number
+  /** Most weeks the plan slider offers. */
+  weeksMax: number
+  /** Weeks actually used: the chosen number, or the recommended one. */
+  weeks: number
+  /** Steps a day to add at the start of each week, rounded up to 50. */
+  perWeek: number
+  /** Faster than the top of the recommended weekly increase for this goal. */
+  tooFast: boolean
+}
+
+/** The build-up plan for a result, at the recommended pace or over a chosen number of weeks. */
+export function buildUpPlan(goal: GoalId, result: CalculatorResult, chosenWeeks?: number | null): BuildUpPlan {
+  const recommendedWeeks = result.ramp.length
+  const weeksMax = Math.min(52, Math.max(12, recommendedWeeks * 2))
+  const weeks = recommendedWeeks > 0 ? Math.min(weeksMax, Math.max(1, Math.round(chosenWeeks ?? recommendedWeeks))) : 0
+  const perWeek = weeks > 0 ? Math.ceil(result.extraSteps / weeks / 50) * 50 : 0
+  const tooFast = perWeek > (goal === 'recovery' ? 500 : 1000)
+  return { recommendedWeeks, weeksMax, weeks, perWeek, tooFast }
+}
