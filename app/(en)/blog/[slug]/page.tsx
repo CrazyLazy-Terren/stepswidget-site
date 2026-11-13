@@ -32,6 +32,9 @@ import {
 } from '../../../structured-data'
 import { extractFaqEntries } from '../extract-faq'
 import { getBlogPost, getBlogPosts } from '../posts'
+import { DevHeroButton } from './dev-hero-button'
+
+const isDev = process.env.NODE_ENV === 'development'
 import { getEsBlogPost } from '@/app/(es)/es/blog/posts'
 
 /** Flattens a heading's rendered children back to the plain text it reads as. */
@@ -370,8 +373,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </div>
 
+          {isDev && !post.image && (
+            <div className="mt-8">
+              <DevHeroButton slug={post.slug} hasImage={false} />
+            </div>
+          )}
+
           {post.image && (
-            <div className="mt-8 overflow-hidden rounded-lg">
+            <div className="relative mt-8 overflow-hidden rounded-lg">
+              {isDev && (
+                <div className="absolute right-3 top-3 z-10">
+                  <DevHeroButton slug={post.slug} hasImage />
+                </div>
+              )}
               <Image
                 src={post.image}
                 alt={`${post.title} hero`}
