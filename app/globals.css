@@ -220,6 +220,21 @@ body {
 }
 
 /*
+ * Fades an image's edges out unevenly. The mask is an inline SVG drawn on a
+ * 1000×1000 canvas that stretches to the image:
+ *   - rect x/y/width/height: how far in the solid area starts (bigger x/y = more fade)
+ *   - feGaussianBlur stdDeviation: how soft the fade is
+ *   - feDisplacementMap scale: how uneven the edge is (0 = smooth)
+ *   - feTurbulence baseFrequency: size of the wobbles (smaller = broader)
+ *   - feTurbulence seed: the edge's random shape
+ */
+.fade-edges-uneven {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cfilter id='f' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006' numOctaves='2' seed='7'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='160' xChannelSelector='R' yChannelSelector='G'/%3E%3CfeGaussianBlur stdDeviation='40'/%3E%3C/filter%3E%3Crect x='120' y='120' width='760' height='760' fill='white' filter='url(%23f)'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+/*
  * Both phones hang from left: 50% in the markup. The back one sits mostly left
  * of centre and the front one mostly right, overlapping by a quarter of a phone;
  * the scroll offsets then push them apart.

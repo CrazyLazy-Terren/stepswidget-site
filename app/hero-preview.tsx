@@ -108,12 +108,25 @@ export function HeroPreview({ intro, galleryHeading }: { intro: ReactNode; galle
         </div>
       </div>
       {/* Padding, not margin, so it adds to the eyebrow's own margin the way a PageSection does. */}
-      <div className="pt-16">
-        {galleryHeading ?? (
-          <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
-            Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
-          </SectionHeading>
-        )}
+      <div className="flex items-start gap-6 pt-16">
+        <div className="min-w-0 flex-1">
+          {galleryHeading ?? (
+            <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
+              Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
+            </SectionHeading>
+          )}
+        </div>
+        {/* Beside the heading from md up. A full photo, so it gets a rounded frame rather than a fade. */}
+        <div className="pointer-events-none hidden w-72 shrink-0 overflow-hidden rounded-lg md:block lg:w-[28rem]">
+          <Image
+            src="/assets/find-your-style-collage.webp"
+            alt=""
+            width={960}
+            height={640}
+            sizes="(max-width: 1024px) 288px, 448px"
+            className="h-auto w-full"
+          />
+        </div>
       </div>
 
       <div className="relative -mx-6 mt-12 h-100 overflow-hidden lg:-mx-8">

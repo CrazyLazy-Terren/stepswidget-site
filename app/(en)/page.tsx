@@ -124,7 +124,7 @@ const hitDaysPerStage = 5
 const streakRules: readonly { title: string; description: string; icon?: 'spent' | 'earn' | 'stepBack' }[] = [
   {
     title: 'Start with two skip days',
-    description: 'Every plan begins with 2 skip days, ready for a sick day, a long flight, or a rainy weekend.',
+    description: 'Every plan begins with 2 skip days, ready for a long flight, or a rainy weekend.',
   },
   {
     title: 'A missed day uses one',
@@ -602,8 +602,16 @@ export default function Home() {
       </PageSection>
 
       <PageSection id="walking-plan" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-5">
-          <SectionHeading eyebrow="Walking plan" title="Protecting Your progress.">
+        <div className="lg:col-span-6 ">
+          <SectionHeading eyebrow="Walking plan" title="Protecting Your Progress.">
+            <Image
+              src="/assets/protecting-progress-mirror.webp"
+              alt=""
+              width={960}
+              height={644}
+              sizes="(max-width: 1024px) 100vw, 448px"
+              className="fade-edges-uneven pointer-events-none h-auto w-full mb-4"
+            />
             Every day is a chance to get a little closer to your goal. Your Walking Plan helps you find a pace that works for you, celebrate the progress you
             make, and keep going when life gets in the way.
           </SectionHeading>
@@ -638,7 +646,7 @@ export default function Home() {
           </ArrowLink>
         </div>
 
-        <div className="space-y-6 lg:col-span-6 lg:col-start-7">
+        <div className="space-y-6 lg:col-span-5 lg:col-start-8">
           <figure className="rounded-2xl border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
             <div className="flex flex-wrap items-start justify-between gap-6">
               <div>
@@ -778,7 +786,7 @@ export default function Home() {
           </figure>
         </div>
       </PageSection>
-      <PageSection id="reminder-messages" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
+      {/* <PageSection id="reminder-messages" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-6">
           <SectionHeading eyebrow="Your Voice" title="Reminders That Fit Your Day.">
             Rewrite reminders in your own words and keep a few in rotation. Adjust how soon or how late they can arrive, and see which messages tend to get you
@@ -789,7 +797,7 @@ export default function Home() {
           </ArrowLink>
         </div>
         <IPhoneCarousel screens={reminderScreens} className="mx-auto w-full max-w-96 lg:col-span-6" sizes="(max-width: 720px) 80vw, 288px" />
-      </PageSection>
+      </PageSection> */}
       <PageSection id="share" paddingY="section">
         <SectionHeading eyebrow="Sharing" title="Share Your Style. Compare Your Steps.">
           Send a widget look to a friend, or walk with one, side by side on your Home Screen.
