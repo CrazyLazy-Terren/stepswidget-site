@@ -42,8 +42,8 @@ function PostCard({ post }: { post: BlogPost }) {
       {/* Bottom corners: reading time left, Read link right */}
       <div className="flex items-center justify-between gap-3 text-sm text-[var(--text-subtle)]">
         <span>{post.readingTime}</span>
-        <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
-          Read <ArrowRight />
+        <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:-translate-x-1">
+          Read <ArrowRight className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100" />
         </span>
       </div>
     </Link>
@@ -196,8 +196,8 @@ export default function BlogPage() {
             <p className="leading-7 text-[var(--text-muted)]">{featuredPost.description}</p>
             <div className="mt-auto flex items-center justify-between gap-3 pt-4 text-sm text-[var(--text-subtle)]">
               <span>{featuredPost.readingTime}</span>
-              <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
-                Read <ArrowRight />
+              <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition ">
+                Read <ArrowRight className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100" />
               </span>
             </div>
           </div>

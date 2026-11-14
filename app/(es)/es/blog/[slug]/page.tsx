@@ -369,7 +369,7 @@ export default async function SpanishBlogPostPage({ params }: BlogPostPageProps)
                     <div className="flex items-center justify-between gap-3 pt-6 text-sm text-[var(--text-subtle)]">
                       <span>{recommended.readingTime}</span>
                       <span className="inline-flex items-center gap-1.5 font-medium text-[var(--accent-color)] transition group-hover:translate-x-1">
-                        Leer <ArrowRight />
+                        Leer <ArrowRight className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100" />
                       </span>
                     </div>
                   </Link>
