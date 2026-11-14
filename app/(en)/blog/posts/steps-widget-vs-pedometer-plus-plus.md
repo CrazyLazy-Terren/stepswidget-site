@@ -5,7 +5,7 @@ title: 'Steps Widget vs Pedometer++: Which iPhone Step App Should You Use?'
 metaTitle: Steps Widget vs Pedometer++ Compared (2026) | Steps Widget
 description: Pedometer++ is built for workouts and routes; Steps Widget keeps an ordinary day on track. Compare them honestly to see which iPhone step app fits how you walk.
 date: 2026-07-25
-updated: 2026-09-26
+updated: 2026-11-14
 keywords:
   - steps widget vs pedometer++
   - pedometer++ alternative
@@ -39,7 +39,7 @@ This post is written by the developer of Steps Widget, so treat the verdict acco
 | Mac desktop                          | Yes, through macOS iPhone widgets                              | Yes, through the same macOS feature                                 |
 | Apple Watch app                      | Yes, with standalone goal reminders and complications          | Yes, with workouts and complications                                |
 | Step history                         | Hourly chart, plus a month of days under a draggable goal line | Deep history, streaks, badges, Rest Days                            |
-| Streaks and badges                   | No, on purpose                                                 | Yes                                                                 |
+| Streaks and badges                   | Walking Plan streaks with skip days for missed days; no badges | Yes                                                                 |
 | Route mapping and GPX                | No                                                             | Yes, including offline maps                                         |
 | Workout tracking                     | No                                                             | Yes, on iPhone and Watch                                            |
 | Wheelchair push counting             | No                                                             | Yes, with an Apple Watch                                            |
@@ -140,7 +140,7 @@ Pedometer++ supports a wider range and reaches further back on both iPhone and A
 
 - Your focus is workouts, walks, and hikes you set out to do.
 - You want the most capable step tracker, full stop.
-- Step history, streaks, badges, and long-term stats matter to you.
+- Step history, badges, monthly challenges, and long-term stats matter to you.
 - You hike, walk routes, or want GPX import and offline maps.
 - You want workout tracking on your iPhone or Apple Watch.
 - You need wheelchair push counting.
@@ -153,7 +153,7 @@ Pedometer++ supports a wider range and reaches further back on both iPhone and A
 
 - Your focus is staying active through an ordinary day, not training for anything.
 - You spend most of the day sitting, and walking slips your mind between work, meetings, and life.
-- You do not want a workout plan, streaks, or calorie counting. You just want to move a little more than yesterday.
+- You do not want a workout plan or calorie counting. You just want to move a little more than yesterday.
 - You want your step count on the Home Screen, Lock Screen, StandBy, Apple Watch, and Mac without opening an app.
 - You want a widget that looks like it belongs on your Home Screen.
 - You want a reminder that stays quiet on days you are already on track.

@@ -42,3 +42,4 @@ next-env.d.ts
 
 # postarticle webhook local storage (no Blob token)
 /.data
+scripts/.image-compression-cache.json

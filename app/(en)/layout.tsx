@@ -5,7 +5,7 @@ import { SiteDocument, baseMetadata } from '../site-document'
 
 const title = 'Steps Widget - See Your Steps, Get a Gentle Nudge on iPhone and Apple Watch'
 const description =
-  'Track steps with customizable iPhone, Apple Watch, and Mac widgets. Get timely, on-device nudges only when needed—no account required. See how it works.'
+  'A daily movement companion for iPhone, Apple Watch, and Mac. Your Apple Health steps at a glance, with on-device nudges only when needed. No account required.'
 const shareDescription =
   'No workout plans, no calorie counting. Just your step count in sight and a gentle nudge at the right moment. Move a little more every day.'
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description,
   keywords: [
     'Steps Widget',
-    'iPhone step counter widget',
+    'daily movement companion app',
     'Apple Health steps widget',
     'Lock Screen steps widget',
     'Apple Watch steps widget',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     'reminder to walk more for desk workers',
     'daily step goal reminder',
     'healthy walking habit app',
-    'simple step counter no workout plans',
-    'pedometer widget for iPhone',
-    'private step counter no account',
+    'daily movement app with no workout plans',
+    'daily movement companion for iPhone and Apple Watch',
+    'private steps widget no account',
   ],
   openGraph: {
     title,

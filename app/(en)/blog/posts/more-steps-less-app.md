@@ -3,7 +3,7 @@ title: 'More Steps, Less App: A Step Counter That Wants You to Close It'
 metaTitle: 'Minimalist Step Counter: More Steps, Less App | Steps Widget'
 description: Most fitness apps want your time on screen. Steps Widget makes the opposite bet. See why a quiet step counter that gets out of your way helps you walk more.
 date: '2026-09-11'
-updated: 2026-09-26
+updated: 2026-11-14
 slug: more-steps-less-app
 category: Behind the App
 image: /assets/blog-more-steps-less-app.webp
@@ -11,7 +11,7 @@ image: /assets/blog-more-steps-less-app.webp
 keywords:
   - more steps less app
   - minimalist step counter
-  - step counter without streaks
+  - step counter with skip days
   - calm fitness app
   - simple step tracker iphone
   - step counter no account
@@ -31,7 +31,7 @@ That sounds obvious. It is not how most fitness apps are built.
 - **The philosophy:** Success is measured in daily steps taken, not minutes spent looking at a screen.
 - **The glance:** Live step counts live on your Home Screen, Lock Screen, StandBy, Apple Watch, and Mac — zero taps required.
 - **The nudge:** Intelligent on-device pace forecasting only alerts you when your projected day is falling short of your goal.
-- **Zero friction:** No streaks to stress over, no social leaderboards, no user accounts, and no banner ads.
+- **Zero friction:** No all-or-nothing streaks (skip days cover a missed day), no social leaderboards, no user accounts, and no banner ads.
 - **Privacy first:** Reads directly from Apple Health on your device; your personal data never leaves your iPhone.
 
 ## Why typical fitness apps optimize for screen time instead of movement
@@ -62,7 +62,7 @@ Neither job requires you to launch the app. On most days, you will never open it
 
 A short list of features Steps Widget intentionally excludes, and why:
 
-- **No streaks.** A streak turns one sick day or busy travel day into a reason to feel defeated and quit. Your true history is preserved in Apple Health; an off Tuesday does not reset your fitness journey.
+- **No all-or-nothing streaks.** A streak that wipes out your progress on one sick day or busy travel day becomes a reason to feel defeated and quit. In a [Walking Plan](/docs/getting-started/walking-plan) you start with two skip days: a missed day uses one and keeps your stage progress, and every three-day streak of hits earns one back, up to three. An off Tuesday does not reset your fitness journey.
 - **No social feeds or leaderboards.** Comparing your activity with strangers is a recipe for endless scrolling, not healthier movement. There is no social layer to check.
 - **No accounts or logins.** Nothing to sign up for, no passwords to manage, and no database holding your personal location or fitness history. Your steps are read securely from [Apple Health](https://stepswidget.app/blog/apple-health-steps-widget), and settings sync seamlessly through your personal iCloud.
 - **No ads or tracking pixels.** An ad-funded app trades your attention for revenue. Steps Widget is designed to give you your attention back.
@@ -102,7 +102,7 @@ This pricing structure aligns incentives: because revenue does not depend on kee
 
 **Do I need to open the app every day for steps to track?** No. Steps Widget reads directly from Apple Health in the background. As long as background refresh is enabled and notifications are allowed, the widgets and reminders update automatically without daily app launches.
 
-**Why are there no streaks or badges in the app?** Streaks incentivize opening an app rather than building sustainable, lifelong walking habits. A single broken streak often leads people to give up entirely. Your long-term data stays safe in Apple Health without artificial streak pressure.
+**Does the app have streaks?** Only inside a Walking Plan, and they never cost you progress. You start with two skip days. A missed day uses one, which restarts the streak but keeps your stage count, and every three-day streak of hits earns a skip day back, up to three. Only a miss with no skip days left steps you back, and then just one stage. There are no badges.
 
 **How does Steps Widget protect my privacy without an account?** Steps Widget operates entirely on-device. It does not require an account, email address, or third-party servers. All step data is read directly from Apple Health on your iPhone and syncs across devices exclusively via your private iCloud.
 
@@ -118,7 +118,7 @@ This pricing structure aligns incentives: because revenue does not depend on kee
 | **Information access** | Open app, navigate feeds and dashboards        | Instant glance on Home Screen, Lock Screen, Watch & Mac |
 | **Notifications**      | Fixed hourly chimes or promotional badges      | Smart on-device forecasting only when falling behind    |
 | **Account & Privacy**  | Cloud login, analytics, profile tracking       | 100% on-device Apple Health integration, zero account   |
-| **Motivation**         | Fragile streaks, leaderboards, social pressure | Sustainable pacing and calm daily awareness             |
+| **Motivation**         | Fragile streaks, leaderboards, social pressure | Skip days, sustainable pacing, calm awareness           |
 
 ---
 

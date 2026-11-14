@@ -53,7 +53,7 @@ const values = [
   },
   {
     title: 'No pressure',
-    description: 'No feeds, no streaks, no leaderboards. Your progress, your pace, so daily movement can stay personal and calm.',
+    description: 'No feeds, no public leaderboards, and no plan that one missed day can undo. Your progress, your pace, so daily movement can stay personal and calm.',
   },
   {
     title: 'On device, not on a server',

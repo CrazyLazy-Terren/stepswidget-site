@@ -142,13 +142,13 @@ export function applicationSchema() {
     name: appFacts.name,
     alternateName: `${appFacts.name} by CrazyLazy`,
     applicationCategory: 'HealthApplication',
-    applicationSubCategory: 'Pedometer',
+    applicationSubCategory: 'Daily movement companion',
     operatingSystem: `iOS ${requirements.ios}+, iPadOS ${requirements.ipados}+, watchOS ${requirements.watchos}+, visionOS ${requirements.visionos}+`,
     url: siteUrl,
     downloadUrl: appFacts.appStoreUrl,
     installUrl: appFacts.appStoreUrl,
     description:
-      'A step counter with two halves: the glance and the nudge. Your Apple Health steps sit on the Home Screen, Lock Screen, Apple Watch, and Mac in a style you choose, and an on-device model projects the step count you are heading for so it nudges you only when you are on track to miss your goal. Nudges are free; an optional subscription lets you apply extra widget styles.',
+      'A daily movement companion with two halves: the glance and the nudge. Your Apple Health steps sit on the Home Screen, Lock Screen, Apple Watch, and Mac in a style you choose, and an on-device model projects the step count you are heading for so it nudges you only when you are on track to miss your goal. Nudges are free; an optional subscription lets you apply extra widget styles.',
     screenshot: appFacts.screenshot,
     featureList: [...appFacts.features],
     audience: {

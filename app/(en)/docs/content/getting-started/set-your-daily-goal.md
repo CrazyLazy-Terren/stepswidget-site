@@ -31,6 +31,8 @@ Changing it is not destructive. Your steps live in Apple Health and are untouche
 
 You can also drag the goal line directly on the chart in [Insight](/docs/steps-and-data/insight), which re-evaluates a whole month of your own days against the new value before you commit. That is the most reliable way to pick a number.
 
+If the number you want is well above where you are now, tap **Walking Plan** under the slider instead. It sets a target for what you are walking for and raises your goal to it in stages. See [Walking Plan](/docs/getting-started/walking-plan).
+
 ## What the research says
 
 The app's **Goal Tips** popover cites two sources:
@@ -68,4 +70,5 @@ Both are covered in [The step window](/docs/steps-and-data/step-window).
 
 - [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work) — what the model does with your goal.
 - [The step window](/docs/steps-and-data/step-window) — when your day starts and ends.
+- [Walking Plan](/docs/getting-started/walking-plan) — build up to a bigger goal in stages.
 - [Insight](/docs/steps-and-data/insight) — pick a goal against a month of real days.

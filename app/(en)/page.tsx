@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 import { ArrowLink } from '../arrow'
 import { AppStoreButton } from '../app-store-button'
 import { DuoDemo } from '../duo-demo'
@@ -87,7 +88,120 @@ const shareCards = [
   },
 ] satisfies PhoneFeature[]
 
-const notThis = ['No feeds.', 'No streaks.', 'No guilt.', 'No noise.']
+type StreakDay = 'hit' | 'earned' | 'skipped'
+
+/**
+ * A worked two-week example of the Walking Plan rules (docs/getting-started/
+ * walking-plan): the plan starts with 2 skip days, a missed day uses one and
+ * resets the streak, and every 3-day streak of hits earns one back (max 3).
+ * Two misses here, and it ends holding 2 skip days, 2 days into a streak.
+ */
+const sampleStreak: readonly StreakDay[] = ['hit', 'hit', 'skipped', 'hit', 'hit', 'earned', 'hit', 'hit', 'skipped', 'hit', 'hit', 'earned', 'hit', 'hit']
+const streakWeekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+/** Hits in a row that earn back one skip day. */
+const daysPerSkipDay = 3
+const maxSkipDays = 3
+const sampleSkipDaysHeld = 2
+/** Hits since the streak last reset or earned a skip day. */
+const sampleStreakDays = 2
+
+const streakDayLabel: Record<StreakDay, string> = {
+  hit: 'goal hit',
+  earned: 'goal hit, skip day earned',
+  skipped: 'missed, a skip day was used',
+}
+
+/**
+ * The worked example from the Walking Plan doc: 5,000 steps a day, aged 40,
+ * "Live a longer, healthier life" sets an 8,000 target. Stages are ~10% of
+ * current steps (500–1,000), so five stages, then the target itself.
+ */
+const goalStages = [5500, 6000, 6500, 7000, 7500, 8000]
+const goalStageCurrent = 2
+/** Hit days on a stage's goal that move you up. */
+const hitDaysPerStage = 5
+
+const streakRules: readonly { title: string; description: string; icon?: 'spent' | 'earn' | 'stepBack' }[] = [
+  {
+    title: 'Start with two skip days',
+    description: 'Every plan begins with 2 skip days, ready for a sick day, a long flight, or a rainy weekend.',
+  },
+  {
+    title: 'A missed day uses one',
+    icon: 'spent',
+    description: 'It is used automatically. Your stage count is kept, so you lose no progress, but your streak starts over.',
+  },
+  {
+    title: 'A 3-day streak earns one back',
+    icon: 'earn',
+    description: 'Hit your goal three days running and the streak bar fills, giving you a skip day back, up to a maximum of 3.',
+  },
+  {
+    title: 'Run out, step back one stage',
+    icon: 'stepBack',
+    description:
+      'Miss with no skip days left and you drop one stage and restart its count. Skip days refill to 2, so one bad week can’t slide you all the way down.',
+  },
+]
+
+/** A heraldic shield outline, the mark for a skip day. `spent` slashes it through, for a skip day used to cover a miss. */
+function ShieldIcon({ className, filled = false, spent = false }: { className?: string; filled?: boolean; spent?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill={filled ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.75">
+      <path d="M12 2.75l7.25 2.9v5.6c0 4.5-3.05 8.4-7.25 9.9-4.2-1.5-7.25-5.4-7.25-9.9v-5.6L12 2.75z" strokeLinejoin="round" />
+      {spent ? <path d="M3.5 20.5L20.5 3.5" strokeLinecap="round" strokeWidth="2" /> : null}
+    </svg>
+  )
+}
+
+/** The mark beside each rule: a skip day, one used, one earned back, or a turn back one stage. */
+function RuleIcon({ icon, className }: { icon?: 'spent' | 'earn' | 'stepBack'; className?: string }) {
+  if (icon === 'spent') return <ShieldIcon className={className} spent />
+  if (icon === 'earn') {
+    return (
+      <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.75">
+        <path d="M12 2.75l7.25 2.9v5.6c0 4.5-3.05 8.4-7.25 9.9-4.2-1.5-7.25-5.4-7.25-9.9v-5.6L12 2.75z" strokeLinejoin="round" />
+        <path d="M12 8.5v7M8.5 12h7" strokeLinecap="round" strokeWidth="2" />
+      </svg>
+    )
+  }
+  if (icon === 'stepBack') {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className={className}
+        aria-hidden="true"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round">
+        <path d="M9 14L4 9l5-5" />
+        <path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />
+      </svg>
+    )
+  }
+  return <ShieldIcon className={className} filled />
+}
+
+/** Three segments that fill one per hit day; the shield at the end is the skip day a full bar earns back. */
+function StreakBar({ filled, className = '' }: { filled: number; className?: string }) {
+  return (
+    <div className={`flex items-center gap-2 ${className}`.trim()}>
+      <div
+        className="grid flex-1 grid-cols-3 gap-1.5"
+        role="progressbar"
+        aria-label="Hit days toward the next skip day"
+        aria-valuemin={0}
+        aria-valuemax={daysPerSkipDay}
+        aria-valuenow={filled}>
+        {Array.from({ length: daysPerSkipDay }, (_, index) => (
+          <span key={index} className={`h-2.5 rounded-full ${index < filled ? 'bg-[var(--accent-color)]' : 'bg-[var(--border)]'}`} />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const trustFacts = [
   { label: 'Step data', value: 'Read from Apple Health on device' },
@@ -196,60 +310,96 @@ const watchCards = [
 
 const faqItems = [
   {
-    question: 'What is Steps Widget?',
+    question: 'What is Steps Widget, and what does it do?',
     answer:
-      'Steps Widget is a step counter and goal reminder app for iPhone. Your steps sit on your Home Screen in a style you choose, and a model on your device projects the step count you are heading for so it can nudge you when you are on track to miss your daily goal. It works on the Home Screen, Lock Screen, Apple Watch, Mac, and in Messages.',
+      'Steps Widget is a daily movement companion for iPhone, Apple Watch and Mac. It displays your Apple Health step count on your Home Screen and Lock Screen, helps you track daily progress, and sends gentle reminders when you may need encouragement to reach your walking goal.',
+    keywords: ['daily movement companion', 'iPhone step count widget', 'Apple Health', 'walking goal', 'activity reminders'],
   },
   {
-    question: 'How is this different from an hourly stand reminder?',
+    question: 'How is Steps Widget different from a regular step counter?',
     answer:
-      'An hourly reminder fires on a timer no matter what you did, which is why most people mute it. Steps Widget projects your end-of-day total from your own step history and only nudges you when that projection falls short of your goal, so hours where you are already walking stay quiet.',
+      'Steps Widget does more than display your daily step count. It helps you stay aware of your movement throughout the day, estimates whether you are on track to reach your goal, and sends timely nudges when you may be falling behind. It stays quiet when you are already on track instead of sending reminders on a fixed hourly timer.',
+    keywords: ['step counter vs step widget', 'smart walking reminders', 'daily movement tracking', 'step goal prediction'],
   },
   {
-    question: 'Can I change how the nudges are worded?',
+    question: 'Can Steps Widget work with Fitbit, Garmin, or Oura?',
     answer:
-      'Yes. Settings › Edit Messages lets you rewrite every reminder title and message in your own words, with placeholders that fill in your remaining steps and hours. You can also set how far behind or ahead the day has to look before a reminder is sent, and each message shows how many steps tended to follow it. On iOS 26 with Apple Intelligence you can describe a voice, such as a sports coach, and the on-device model restyles them all for you to review before saving.',
+      'Yes. Steps Widget reads step data from Apple Health, so it can work with Fitbit, Garmin, Oura and other fitness trackers that sync their steps to Apple Health. You do not need an Apple Watch.',
+    keywords: ['Fitbit', 'Garmin', 'Oura', 'Apple Health sync', 'fitness tracker compatibility', 'no Apple Watch needed'],
   },
   {
-    question: 'Does the on-device model send my activity anywhere?',
+    question: 'Can Steps Widget help me reach my daily walking goal?',
     answer:
-      'No. The model trains and runs on your iPhone, and your step data is not sent to our servers. There is no account to create and no sign-in. Optional iCloud sync keeps your settings consistent across your own devices, using your private iCloud account rather than ours.',
+      'Yes. Set a daily step goal, follow your progress throughout the day, and get gentle reminders when you may need help staying on track. The Walking Plan also helps you build toward your goal over time, one manageable stage at a time.',
+    keywords: ['daily walking goal', 'step goal tracker', 'walking plan', 'walking reminders', 'daily step goal'],
   },
   {
-    question: 'What does the app read from Apple Health?',
+    question: 'Can I customize walking reminders and their timing?',
     answer:
-      'Three read-only types: your step count, your stand hours, and your daily activity summary. It never writes to Apple Health, and it does not request location for step counting. Location is used only if you turn on Local Sunset, which shifts evening nudges earlier.',
+      'Yes. You can rewrite reminders in Settings › Edit Messages, keep several messages in rotation, and adjust how easily or late a reminder is triggered. You can also use Apple Intelligence to restyle messages in a voice you describe. Over time, you can see which messages tend to get you moving.',
+    keywords: ['custom walking reminders', 'personalized notifications', 'reminder timing', 'Apple Intelligence'],
   },
   {
-    question: 'Is Steps Widget free?',
+    question: 'Does Steps Widget upload my health or activity data?',
     answer:
-      'The app is free to download with no ads at any tier, and the entire nudge system is free, including the on-device model and every setting behind it. An optional Customization subscription lets you apply extra widget styles and colours. An active subscription is only needed to change to a different style — one you have already applied keeps working if it lapses.',
+      'No. Your activity data and on-device reminder processing stay on your device. You do not need an account or sign-in. Optional syncing between your devices uses your own iCloud account.',
+    keywords: ['private step tracking', 'on-device processing', 'no account', 'no sign-in', 'iCloud sync'],
   },
   {
-    question: 'Can I share my steps with friends?',
+    question: 'What Apple Health data does Steps Widget access?',
     answer:
-      'Yes, in Messages. Open Steps from the app drawer in a conversation to send today’s count. Friends who have Steps tap the bubble to add theirs, and it becomes a ranking for the day. The ranking lives inside the message, so there is no account and nothing is uploaded. Messages reads the count the app has already saved, never Apple Health directly.',
+      'Steps Widget reads your step count, stand hours and activity summaries from Apple Health. Access is read-only: the app never writes or changes your Health data. Location is only used for the optional Local Sunset feature.',
+    keywords: ['Apple Health permissions', 'step count', 'stand hours', 'read-only Health access', 'Local Sunset'],
   },
   {
-    question: 'Can I show my step count on the iPhone Lock Screen?',
-    answer: 'Yes. Add a Steps Widget Lock Screen widget to keep your current step count visible without opening a fitness app.',
+    question: 'Is Steps Widget free to use?',
+    answer:
+      'Yes. The core step-count widgets and daily movement reminders are free, with no ads. An optional subscription unlocks additional widget styles and customization. Styles you have already applied continue working even if your subscription expires.',
+    keywords: ['free iPhone step widget', 'no ads', 'free walking reminders', 'optional subscription', 'widget styles'],
   },
   {
-    question: 'Can I put the widget on my Mac?',
+    question: 'Can I share my daily steps with friends or family?',
     answer:
-      'Yes. On macOS Sonoma or later the Mac can show your iPhone widgets over Continuity, so your step count can sit on the desktop you are already working at. There is no separate Mac app to install.',
+      'Yes. You can share your daily step count through Apple Messages and see how your steps compare in a daily ranking. No account is required, and your activity data is not uploaded to a central server.',
+    keywords: ['share steps with friends', 'family step count', 'daily step ranking', 'Apple Messages', 'no account'],
   },
   {
-    question: 'Does Steps Widget support Apple Watch?',
-    answer:
-      'Yes. Steps Widget runs on Apple Watch with its own settings and goal nudges, so you are notified even when your iPhone is not nearby. You can change styles and subscribe from the wrist, and the subscription syncs with your iPhone automatically.',
+    question: 'How can I show my step count on my iPhone Lock Screen?',
+    answer: 'Add a Steps Widget Lock Screen widget to see your daily step count at a glance, without unlocking your iPhone or opening the app.',
+    keywords: ['iPhone Lock Screen step counter', 'step count Lock Screen widget', 'Apple Health widget'],
   },
   {
-    question: 'Why is my step widget not updating right away?',
+    question: 'Can I see my iPhone steps on my Mac?',
     answer:
-      'iOS manages widget refreshes to preserve battery life, so updates are not instant. Apple Health also shares step updates roughly once an hour. If it looks stuck, check Apple Health permission and open Steps Widget once. Turning on Motion Sensor reads the pedometer directly for a fresher count.',
+      'Yes. You can add Steps Widget to your Mac desktop using Apple Continuity on macOS Sonoma or later. Your iPhone widget can appear on your Mac without installing a separate Mac app.',
+    keywords: ['show iPhone steps on Mac', 'Mac desktop widget', 'macOS Sonoma', 'Apple Continuity'],
+  },
+  {
+    question: 'Does Steps Widget work with Apple Watch?',
+    answer:
+      'Yes. Steps Widget supports Apple Watch with step-count displays and its own activity reminders. Your subscription also syncs between your iPhone and Apple Watch.',
+    keywords: ['Apple Watch step count widget', 'Apple Watch activity reminders', 'Apple Watch steps'],
+  },
+  {
+    question: 'Why is my iPhone step-count widget not updating?',
+    answer:
+      'iOS controls how often widgets refresh to help save battery. Apple Health step data may also take time to sync, sometimes around an hour. You can enable Motion Sensor to get a fresher step count between Health updates.',
+    keywords: ['iPhone step widget not updating', 'Apple Health sync delay', 'widget refresh', 'Motion Sensor'],
   },
 ]
+
+function emphasize(text: string, keywords: readonly string[]) {
+  const escaped = keywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  return text.split(new RegExp(`(${escaped.join('|')})`)).map((part, i) =>
+    keywords.includes(part) ? (
+      <strong key={i} className="font-bold text-[var(--text-strong)]">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  )
+}
 
 type PhoneFeature = {
   title: string
@@ -423,7 +573,7 @@ export default function Home() {
       </PageSection>
 
       <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-6">
           <SectionHeading eyebrow="Photo styles" title="Make the widget yours.">
             Turn any photo into a style: the picture itself behind your step count, or its colours lifted onto the widget. Then set tone, blur and foreground
             until the numbers read clearly. Making a style is free; applying one is part of the Customization subscription, and a style already on a widget
@@ -436,7 +586,7 @@ export default function Home() {
         <IPhoneMockup
           src="/assets/style-editor-dark.webp"
           alt="Photo style editor: a mountain photo behind an 8,072-step widget, with Tone, Blur and Foreground controls"
-          className="mx-auto w-full max-w-96 lg:col-span-7 lg:mt-12"
+          className="mx-auto w-full max-w-96 lg:col-span-6 lg:mt-12"
           sizes="(max-width: 720px) 80vw, 384px"
         />
       </PageSection>
@@ -451,19 +601,195 @@ export default function Home() {
         <FeatureCards cards={nudgeCards} />
       </PageSection>
 
-      <PageSection id="reminder-messages" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
+      <PageSection id="walking-plan" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
-          <SectionHeading eyebrow="Your Voice" title="Reminders in Your Own Words.">
-            Rewrite every reminder and keep a few in rotation. Each message shows how many steps tended to follow it, so you can keep the ones that actually get
-            you moving.
+          <SectionHeading eyebrow="Walking plan" title="Protecting Your progress.">
+            Every day is a chance to get a little closer to your goal. Your Walking Plan helps you find a pace that works for you, celebrate the progress you
+            make, and keep going when life gets in the way.
+          </SectionHeading>
+
+          <dl className="mt-10 space-y-6">
+            {streakRules.map((rule) => (
+              <div key={rule.title} className="flex gap-4">
+                <RuleIcon icon={rule.icon} className="mt-0.5 size-6 shrink-0 text-[var(--accent-color)]" />
+                <div>
+                  <dt className="font-semibold text-[var(--text-strong)]">{rule.title}</dt>
+                  <dd className="mt-1 leading-7 text-[var(--text-muted)]">{rule.description}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-10 border-l-2 border-[color:var(--accent-color)] pl-4 text-sm leading-6 text-[var(--text-muted)]">
+            Missing one day didn't undo the progress (
+            <a
+              href="https://doi.org/10.1002/ejsp.674"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--accent-color)] underline underline-offset-2 transition hover:opacity-80">
+              Lally et al., 2010
+            </a>
+            ). That's the idea behind skip days: habits grow by coming back, not by being perfect every day. Hold your target for 66 days and the plan marks the
+            habit as formed.
+          </p>
+
+          <ArrowLink href="/tools/step-goal-calculator" className="mt-8 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+            Plan your daily goal with the step goal calculator
+          </ArrowLink>
+        </div>
+
+        <div className="space-y-6 lg:col-span-6 lg:col-start-7">
+          <figure className="rounded-2xl border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
+            <div className="flex flex-wrap items-start justify-between gap-6">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">Streak</p>
+                <p className="mt-2 text-3xl font-semibold tracking-[-0.02em] tabular-nums text-[var(--text-strong)]">
+                  {sampleStreakDays}
+                  <span className="text-lg font-normal tracking-normal text-[var(--text-muted)]"> of {daysPerSkipDay} days</span>
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">Skip days</p>
+                <p className="mt-3 flex justify-end gap-1 text-[var(--accent-color)]">
+                  <span className="sr-only">{`${sampleSkipDaysHeld} of ${maxSkipDays} skip days`}</span>
+                  {Array.from({ length: maxSkipDays }, (_, index) => (
+                    <ShieldIcon key={index} className={`size-7 ${index < sampleSkipDaysHeld ? '' : 'opacity-30'}`} filled={index < sampleSkipDaysHeld} />
+                  ))}
+                </p>
+              </div>
+            </div>
+
+            <StreakBar filled={sampleStreakDays} className="mt-6" />
+            <p className="mt-3 text-sm text-[var(--text-muted)]">One more hit day earns a skip day back.</p>
+
+            <div className="mt-8 border-t border-[color:var(--border)]" />
+
+            <ol className="mt-8 grid grid-cols-7 gap-2 sm:gap-3" aria-label="The last two weeks">
+              {sampleStreak.map((day, index) => {
+                const isToday = index === sampleStreak.length - 1
+                return (
+                  <li key={index} className="flex flex-col items-center gap-2">
+                    {index < 7 ? (
+                      <span className="text-xs text-[var(--text-subtle)]" aria-hidden="true">
+                        {streakWeekdays[index]}
+                      </span>
+                    ) : null}
+                    <span
+                      className={`relative flex aspect-square w-full items-center justify-center rounded-lg ${
+                        day === 'skipped'
+                          ? 'border-2 border-dashed border-[color:var(--accent-color)] text-[var(--accent-color)]'
+                          : 'bg-[var(--accent-color)] text-white'
+                      } ${isToday ? 'ring-2 ring-[color:var(--accent-color)] ring-offset-2 ring-offset-[var(--page-bg)]' : ''}`}>
+                      <span className="sr-only">{`Day ${index + 1}: ${streakDayLabel[day]}${isToday ? ' (today)' : ''}`}</span>
+                      {day === 'skipped' ? (
+                        <ShieldIcon className="size-6" spent />
+                      ) : (
+                        <svg viewBox="0 0 16 16" className="size-6" fill="none" aria-hidden="true">
+                          <path d="M3.5 8.5l3 3 6-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                      {day === 'earned' ? (
+                        <span className="absolute -right-1.5 -top-1.5 z-10 rounded-full border border-[color:var(--accent-color)] bg-[var(--page-bg)] p-0.5 text-[var(--accent-color)]  sm:-right-2 sm:-top-2 sm:p-1">
+                          <ShieldIcon className="size-3 sm:size-4" filled />
+                        </span>
+                      ) : null}
+                    </span>
+                  </li>
+                )
+              })}
+            </ol>
+
+            <figcaption className="mt-8 space-y-2 text-sm leading-6 text-[var(--text-muted)]">
+              <p>
+                <strong className="text-[var(--text-strong)]">Two misses, no progress lost.</strong> Each miss used a skip day and restarted the streak. The
+                next 3-day streak earned it back.
+              </p>
+              <p className="flex flex-wrap gap-x-5 gap-y-1 text-xs text-[var(--text-subtle)]">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="size-3 rounded-sm bg-[var(--accent-color)]" aria-hidden="true" />
+                  Goal hit
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldIcon className="size-3.5 text-[var(--accent-color)]" filled />
+                  Skip day earned
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldIcon className="size-3.5 text-[var(--accent-color)]" spent />
+                  Missed, skip day used
+                </span>
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure className="rounded-2xl border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">Goal stages</p>
+              <p className="flex items-center gap-1.5" role="img" aria-label={`Stage ${goalStageCurrent + 1} of ${goalStages.length - 1}`}>
+                {goalStages.slice(0, -1).map((goal, index) => (
+                  <span
+                    key={goal}
+                    className={`rounded-full ${
+                      index < goalStageCurrent ? 'size-3 bg-[var(--accent-color)] opacity-90' : 'size-3 bg-[var(--border-strong)] opacity-50'
+                    }`}
+                  />
+                ))}
+              </p>
+            </div>
+            <ol className="mt-12 flex gap-2 sm:gap-3" aria-label="Daily goal by stage">
+              {goalStages.map((goal, index) => {
+                const isCurrent = index === goalStageCurrent
+                const isDone = index < goalStageCurrent
+                return (
+                  <li key={goal} className="flex flex-1 flex-col items-center gap-2">
+                    {/* Fixed-height track, so each bar is exactly its goal over the top stage's goal. */}
+                    <div className="flex h-40 w-full items-end" aria-hidden="true">
+                      <div className="relative w-full" style={{ height: `${(goal / goalStages[goalStages.length - 1]) * 100}%` }}>
+                        <div
+                          className={`h-full w-full rounded-md ${
+                            isCurrent ? 'bg-[var(--accent-color)]' : isDone ? 'bg-[var(--accent-color)] opacity-40' : 'bg-[var(--border-strong)] opacity-50'
+                          }`}
+                        />
+                        <span
+                          className={`absolute inset-x-0 -top-5 text-center text-xs tabular-nums ${
+                            isCurrent ? 'font-bold text-[var(--accent-color)]' : 'text-[var(--text-subtle)]'
+                          }`}>
+                          {goal.toLocaleString('en-US')}
+                        </span>
+                      </div>
+                    </div>
+                    <span className={`text-xs ${isCurrent ? 'font-bold text-[var(--text-strong)]' : 'text-[var(--text-subtle)]'}`}>
+                      <span className="sr-only">{`${index === goalStages.length - 1 ? 'Target' : `Stage ${index + 1}`}: ${goal.toLocaleString('en-US')} steps a day${isCurrent ? ' (current)' : ''}`}</span>
+                      <span aria-hidden="true">{index === goalStages.length - 1 ? 'Target' : `S${index + 1}`}</span>
+                    </span>
+                  </li>
+                )
+              })}
+            </ol>
+            <figcaption className="mt-6 flex flex-col text-sm leading-6 text-[var(--text-muted)]">
+              <p>
+                <strong className="text-[var(--text-strong)]">Hit a stage on {hitDaysPerStage} days, then move up.</strong> The days don’t have to be in a row,
+                and a missed day doesn’t reset the count. Each stage is about 10% above your current steps, between 500 and 1,000, so walking 5,000 a day toward
+                8,000 takes five stages and at least 25 days.
+              </p>
+              <ArrowLink href="/docs/getting-started/walking-plan" className="mt-4 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+                How Walking Plan works
+              </ArrowLink>
+            </figcaption>
+          </figure>
+        </div>
+      </PageSection>
+      <PageSection id="reminder-messages" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
+        <div className="lg:col-span-6">
+          <SectionHeading eyebrow="Your Voice" title="Reminders That Fit Your Day.">
+            Rewrite reminders in your own words and keep a few in rotation. Adjust how soon or how late they can arrive, and see which messages tend to get you
+            moving. Keep the ones that work best for you.
           </SectionHeading>
           <ArrowLink href="/docs/goal-reminders/reminder-messages" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
             Writing your messages
           </ArrowLink>
         </div>
-        <IPhoneCarousel screens={reminderScreens} className="mx-auto w-full max-w-96 lg:col-span-7 lg:mt-12" sizes="(max-width: 720px) 80vw, 288px" />
+        <IPhoneCarousel screens={reminderScreens} className="mx-auto w-full max-w-96 lg:col-span-6" sizes="(max-width: 720px) 80vw, 288px" />
       </PageSection>
-
       <PageSection id="share" paddingY="section">
         <SectionHeading eyebrow="Sharing" title="Share Your Style. Compare Your Steps.">
           Send a widget look to a friend, or walk with one, side by side on your Home Screen.
@@ -525,8 +851,8 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-10">
-          <ArrowLink href="/docs/widgets/apple-watch" className="text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+        <div className="mt-12 flex items-center justify-end">
+          <ArrowLink href="/docs/widgets/apple-watch" className="font-medium text-[var(--accent-color)] transition hover:opacity-80">
             Apple Watch documentation
           </ArrowLink>
         </div>
@@ -576,28 +902,20 @@ export default function Home() {
           ))}
         </div>
       </PageSection>
-      <PageSection id="faq" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12">
+      <PageSection id="faq" paddingY="section" containerClassName="">
         <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
           <SectionHeading eyebrow="FAQ" title="Questions, Answered." />
-          <ArrowLink href="/docs" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+          <ArrowLink href="/docs" className="mt-6 font-medium text-[var(--accent-color)] transition hover:opacity-80">
             Full documentation
           </ArrowLink>
         </div>
-        <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-6">
+        <p className="lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mt-6 text-lg  leading-8 text-pretty text-[var(--text-main)]">
           {faqItems.map((item) => (
-            <details key={item.question} className="disclosure group border-b border-[color:var(--border)] py-6">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
-                <span className="font-medium text-[var(--text-strong)]">{item.question}</span>
-                <span className="mt-0.5 shrink-0 text-[var(--text-subtle)] transition group-open:rotate-45">
-                  <svg className="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
-              </summary>
-              <p className="mt-4 max-w-2xl leading-7 text-[var(--text-muted)]">{item.answer}</p>
-            </details>
+            <Fragment key={item.question}>
+              <span className="font-bold text-[var(--text-subtle)]">{' # ' + item.question}</span> {emphasize(item.answer, item.keywords)}
+            </Fragment>
           ))}
-        </div>
+        </p>
       </PageSection>
 
       <PageSection paddingY="bottom" containerClassName="grid gap-6 lg:grid-cols-12">
