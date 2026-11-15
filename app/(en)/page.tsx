@@ -22,28 +22,6 @@ export const metadata: Metadata = {
   },
 }
 
-const glanceCards = [
-  {
-    title: 'Styled to fit the way you use your phone',
-    eyebrow: 'Widget styles',
-    description: 'Your steps can look at home on your Home Screen. Pick a look that belongs there — light, dark, tinted, and a colour of your own.',
-    image: '/assets/f01.webp',
-    // A tall Home Screen capture: anchor the crop to the top so the widgets
-    // stay in frame instead of a centre band of wallpaper.
-    imageClassName: 'object-top',
-    href: '/docs/widgets/widget-gallery',
-    linkLabel: 'Every widget style',
-  },
-  {
-    title: 'On every screen you already look at',
-    eyebrow: 'Home Screen, Lock Screen, Watch, Mac',
-    description: 'Home Screen, Lock Screen, StandBy, Apple Watch, and your Mac. Your steps, always one glance away.',
-    image: '/assets/f02.webp',
-    href: '/docs/widgets/widget-gallery',
-    linkLabel: 'Where it can live',
-  },
-]
-
 const nudgeCards = [
   {
     title: 'It knows how your day is going to end',
@@ -504,7 +482,7 @@ function FeatureCards({ cards }: { cards: readonly FeatureCard[] }) {
       {cards.map((feature) => (
         <article
           key={feature.title}
-          className="flex flex-col rounded-xl overflow-hidden border border-[color:var(--border)] bg-[var(--surface-1)]  transition duration-300 hover:border-[color:var(--border-strong)]">
+          className="flex flex-col rounded-2xl overflow-hidden border border-[color:var(--border)] bg-[var(--surface-1)]  transition duration-300 hover:border-[color:var(--border-strong)]">
           <div className="relative aspect-[16/9]">
             <Image
               src={feature.image}
@@ -565,11 +543,14 @@ export default function Home() {
       </PageSection>
 
       <PageSection id="features" paddingY="section">
-        <SectionHeading eyebrow="The glance" title="Always in Sight.">
-          Your steps are already there — right on your screen, styled to fit your and the wallpaper. Just a quick look at how much you have moved today.
-        </SectionHeading>
-
-        <FeatureCards cards={glanceCards} />
+        <Image
+          src="/assets/f02.webp"
+          alt="Step widgets on the Home Screen, Lock Screen, StandBy, Apple Watch and Mac"
+          width={3840}
+          height={2560}
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="h-auto w-full rounded-2xl"
+        />
       </PageSection>
 
       <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
