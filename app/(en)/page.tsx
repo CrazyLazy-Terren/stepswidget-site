@@ -542,17 +542,6 @@ export default function Home() {
         </dl>
       </PageSection>
 
-      <PageSection id="features" paddingY="section">
-        <Image
-          src="/assets/f02.webp"
-          alt="Step widgets on the Home Screen, Lock Screen, StandBy, Apple Watch and Mac"
-          width={3840}
-          height={2560}
-          sizes="(max-width: 1280px) 100vw, 1280px"
-          className="h-auto w-full rounded-2xl"
-        />
-      </PageSection>
-
       <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-6">
           <SectionHeading eyebrow="Photo styles" title="Make the widget yours.">
@@ -571,7 +560,16 @@ export default function Home() {
           sizes="(max-width: 720px) 80vw, 384px"
         />
       </PageSection>
-
+      {/* <PageSection id="features" paddingY="section">
+        <Image
+          src="/assets/f02.webp"
+          alt="Step widgets on the Home Screen, Lock Screen, StandBy, Apple Watch and Mac"
+          width={3840}
+          height={2560}
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="h-auto w-full rounded-2xl"
+        />
+      </PageSection> */}
       <PageSection id="nudge" paddingY="section">
         <SectionHeading eyebrow="The nudge" title="When It Counts.">
           An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
