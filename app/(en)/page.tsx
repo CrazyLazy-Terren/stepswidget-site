@@ -22,6 +22,27 @@ export const metadata: Metadata = {
   },
 }
 
+// The two screens of the Custom Styles section: choosing a style, then making one from a photo.
+const styleScreens = [
+  {
+    src: '/assets/style-picker.webp',
+    alt: 'Style picker: a live 8,072-step widget preview above rows of solid, two-tone, ring and striped colour styles',
+    title: 'Pick a style',
+    description: 'Swipe through the widget layouts and tap a colour. The preview updates live, so you see the widget before it lands on your Home Screen.',
+    href: '/docs/widgets/widget-gallery',
+    linkLabel: 'Every widget style',
+  },
+  {
+    src: '/assets/style-editor-dark.webp',
+    alt: 'Photo style editor: a mountain photo behind an 8,072-step widget, with Tone, Blur and Foreground controls',
+    title: 'Make one from a photo',
+    description:
+      'Put the picture itself behind your step count, or lift its colours onto the widget. Then set tone, blur and foreground until the numbers read clearly.',
+    href: '/docs/widgets/photo-styles',
+    linkLabel: 'Styles from a photo',
+  },
+]
+
 const nudgeCards = [
   {
     title: 'It knows how your day is going to end',
@@ -518,11 +539,11 @@ export default function Home() {
         <HeroPreview
           intro={
             <div className="flex flex-col items-start">
-              <p className="mt-12 text-md font-bold uppercase tracking-[0.14em] text-[var(--accent-color)]">Styled steps. Smart nudges.</p>
-              <h1 className="mt-2 text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">The Glance. The Nudge.</h1>
+              <p className="mt-12 text-md font-bold uppercase tracking-[0.14em] text-[var(--accent-color)]">Move More, at Your Own Pace.</p>
+              <h1 className="mt-2 text-balance text-5xl font-semibold tracking-[-0.02em] text-[var(--text-strong)] sm:text-7xl">Your Walking Companion</h1>
               <p className="mt-12 max-w-3xl text-pretty text-lg leading-8 text-[var(--text-muted)]">
-                <strong>A glance that stays in sight. A nudge when it’s time to move.</strong> Steps live on the screen in a style that belongs there, while an
-                on-device model speaks up only when a little extra motivation is needed.
+                Stay connected with your movement, discover your own pace, and get a little encouragement along the way. It brings together thoughtful tools and
+                gentle guidance to help you keep moving, wherever life takes you.
               </p>
 
               <AppStoreButton className="mt-12" />
@@ -531,6 +552,40 @@ export default function Home() {
         />
       </PageSection>
 
+      <PageSection id="make-it-yours" paddingY="section">
+        {/* Hidden by default behind a divider-style toggle. The toggle stays in place; the section opens below it. */}
+        <details className="disclosure group">
+          <summary className="flex cursor-pointer list-none items-center gap-4 text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--text-strong)] [&::-webkit-details-marker]:hidden">
+            <span className="flex-1 border-t border-[color:var(--border-strong)]" aria-hidden="true" />
+            <span className="flex items-center gap-2">
+              Custom Styles
+              <svg className="size-4 transition group-open:rotate-45" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </span>
+            <span className="flex-1 border-t border-[color:var(--border-strong)]" aria-hidden="true" />
+          </summary>
+
+          <SectionHeading eyebrow="Custom styles" title="A style that’s yours.">
+            Pick a look for your Home Screen widget, or turn any photo into one.
+          </SectionHeading>
+
+          <div className="mt-12 grid gap-12 sm:grid-cols-2">
+            {styleScreens.map((screen) => (
+              <figure key={screen.src} className="flex flex-col items-center">
+                <IPhoneMockup src={screen.src} alt={screen.alt} className="w-full max-w-80" sizes="(max-width: 640px) 80vw, 320px" />
+                <figcaption className="mt-8 max-w-80">
+                  <p className="font-semibold text-[var(--text-strong)]">{screen.title}</p>
+                  <p className="mt-2 leading-7 text-[var(--text-muted)]">{screen.description}</p>
+                  <ArrowLink href={screen.href} className="mt-4 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+                    {screen.linkLabel}
+                  </ArrowLink>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </details>
+      </PageSection>
       <PageSection paddingY="section">
         <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {trustFacts.map((fact) => (
@@ -540,25 +595,6 @@ export default function Home() {
             </div>
           ))}
         </dl>
-      </PageSection>
-
-      <PageSection id="make-it-yours" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-6">
-          <SectionHeading eyebrow="Photo styles" title="Make the widget yours.">
-            Turn any photo into a style: the picture itself behind your step count, or its colours lifted onto the widget. Then set tone, blur and foreground
-            until the numbers read clearly. Making a style is free; applying one is part of the Customization subscription, and a style already on a widget
-            keeps working if it lapses.
-          </SectionHeading>
-          <ArrowLink href="/docs/widgets/photo-styles" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
-            Styles from a photo
-          </ArrowLink>
-        </div>
-        <IPhoneMockup
-          src="/assets/style-editor-dark.webp"
-          alt="Photo style editor: a mountain photo behind an 8,072-step widget, with Tone, Blur and Foreground controls"
-          className="mx-auto w-full max-w-96 lg:col-span-6 lg:mt-12"
-          sizes="(max-width: 720px) 80vw, 384px"
-        />
       </PageSection>
       {/* <PageSection id="features" paddingY="section">
         <Image
@@ -570,8 +606,8 @@ export default function Home() {
           className="h-auto w-full rounded-2xl"
         />
       </PageSection> */}
-      <PageSection id="nudge" paddingY="section">
-        <SectionHeading eyebrow="The nudge" title="When It Counts.">
+      <PageSection id="reminder" paddingY="section">
+        <SectionHeading eyebrow="Walking Reminder" title="Nudge When It's Time.">
           An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
         </SectionHeading>
         <ArrowLink href="/tools/step-goal-calculator" className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">

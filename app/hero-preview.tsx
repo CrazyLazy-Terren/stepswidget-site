@@ -111,7 +111,7 @@ export function HeroPreview({ intro, galleryHeading }: { intro: ReactNode; galle
       <div className="flex items-start gap-6 pt-16">
         <div className="min-w-0 flex-1">
           {galleryHeading ?? (
-            <SectionHeading eyebrow="Widget gallery" title="Find Your Style.">
+            <SectionHeading eyebrow="Widget Style" title="The Widget, You Keep.">
               Minimal step counts, progress rings, hourly charts, and Lock Screen gauges keep your progress visible across iPhone, Apple Watch, and Mac.
             </SectionHeading>
           )}
