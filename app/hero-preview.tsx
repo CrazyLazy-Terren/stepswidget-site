@@ -108,7 +108,7 @@ export function HeroPreview({ intro, galleryHeading }: { intro: ReactNode; galle
         </div>
       </div>
       {/* Padding, not margin, so it adds to the eyebrow's own margin the way a PageSection does. */}
-      <div className="flex items-start gap-6 pt-16">
+      <div className="flex flex-col gap-8 pt-16 md:flex-row md:items-start md:gap-6">
         <div className="min-w-0 flex-1">
           {galleryHeading ?? (
             <SectionHeading eyebrow="Widget Style" title="The Widget, You Keep.">
@@ -116,19 +116,18 @@ export function HeroPreview({ intro, galleryHeading }: { intro: ReactNode; galle
             </SectionHeading>
           )}
         </div>
-        {/* Beside the heading from md up. A full photo, so it gets a rounded frame rather than a fade. */}
-        <div className="pointer-events-none hidden w-72 shrink-0 overflow-hidden rounded-lg md:block lg:w-[28rem]">
+        {/* Below the heading at full width on phones, beside it from md up. A full photo, so it gets a rounded frame rather than a fade. */}
+        <div className="pointer-events-none w-full shrink-0 overflow-hidden rounded-lg md:w-72 lg:w-[28rem]">
           <Image
             src="/assets/find-your-style-collage.webp"
             alt=""
             width={960}
             height={640}
-            sizes="(max-width: 1024px) 288px, 448px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 288px, 448px"
             className="h-auto w-full"
           />
         </div>
       </div>
-
       <div className="relative -mx-6 mt-12 h-100 overflow-hidden lg:-mx-8">
         <div className="phone-grids w-[200%] left-[-50%] sm:left-0 sm:w-full absolute top-[-10%] sm:top-[-240px] z-5 ">
           <Image
