@@ -76,13 +76,13 @@ function BackgroundWidget({ recipe }: { recipe: BackgroundRecipe }) {
 }
 
 /** The widget a Colors Palette style makes, and the colours it came from. */
-function PaletteWidget({ recipe }: { recipe: PaletteRecipe }) {
+function PaletteWidget({ recipe, label }: { recipe: PaletteRecipe; label: string }) {
   return (
     <div className="flex flex-col items-center gap-6">
       {/* <div className={widgetFrame} style={{ backgroundColor: recipe.hint }}>
         <WidgetFace color={isLight(recipe.hint) ? '#111111' : '#FFFFFF'} />
       </div> */}
-      <div className="flex gap-2" role="img" aria-label="Colours taken from the photo">
+      <div className="flex gap-2" role="img" aria-label={label}>
         {samplePalette.map((color) => (
           <span key={color} className="size-12 rounded-full ring-2 ring-white/80" style={{ backgroundColor: '#' + color }} />
         ))}
@@ -102,15 +102,19 @@ type StyleHeroProps = {
    * it; on desktop the page's own download block sits right under the steps.
    */
   cta?: ReactNode
+  /** The hero's own text, in the page's language. */
+  labels: {
+    seeSteps: string
+    captionSample: string
+    captionPalette: string
+    captionBackground: string
+    paletteLabel: string
+  }
 }
 
-export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHeroProps) {
+export function StyleHero({ recipe, eyebrow, title, description, cta, labels }: StyleHeroProps) {
   const shown = recipe ?? fallback
-  const caption = !recipe
-    ? 'A photo style, shown on a sample.'
-    : shown.mode === 'palette'
-      ? 'Colors Palette style: the widget takes its colours from the photo instead of showing it.'
-      : 'Background style: the photo sits behind the step count.'
+  const caption = !recipe ? labels.captionSample : shown.mode === 'palette' ? labels.captionPalette : labels.captionBackground
 
   return (
     <PageSection
@@ -139,7 +143,7 @@ export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHer
           <div className="mt-8 flex flex-col items-center gap-4 lg:hidden">
             {cta}
             <a href="#steps" className="py-2 text-sm font-medium text-white/85 underline-offset-4 hover:underline">
-              Already have the app? See the steps
+              {labels.seeSteps}
             </a>
           </div>
         )}
@@ -147,7 +151,7 @@ export function StyleHero({ recipe, eyebrow, title, description, cta }: StyleHer
 
       {/* First on a phone: the style is the hook, the explanation follows it. */}
       <figure className="-order-1 flex flex-col items-center lg:order-none">
-        {shown.mode === 'palette' ? <PaletteWidget recipe={shown} /> : <BackgroundWidget recipe={shown} />}
+        {shown.mode === 'palette' ? <PaletteWidget recipe={shown} label={labels.paletteLabel} /> : <BackgroundWidget recipe={shown} />}
         <figcaption className="mt-4 max-w-72 text-center text-xs leading-5 text-white/85 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)] lg:mt-6">{caption}</figcaption>
       </figure>
     </PageSection>

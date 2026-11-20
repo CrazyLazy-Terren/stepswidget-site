@@ -54,9 +54,10 @@ const themeScript = `(function(){try{if(/(?:^|; )theme=dark(?:;|$)/.test(documen
  *
  * There is one root layout per language (`app/(en)`, `app/(es)`) so that
  * `<html lang>` is known at build time instead of being read from a request
- * header.
+ * header. The exception is `app/(intl)`, the pages shared links land on,
+ * which follow the visitor's device language.
  */
-export function SiteDocument({ lang, children }: Readonly<{ lang: 'en' | 'es'; children: React.ReactNode }>) {
+export function SiteDocument({ lang, children }: Readonly<{ lang: string; children: React.ReactNode }>) {
   return (
     <html lang={lang} className="h-full antialiased" data-theme="light" data-accent={accent} suppressHydrationWarning>
       <head>

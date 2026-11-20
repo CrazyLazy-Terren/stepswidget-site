@@ -26,10 +26,13 @@ type AppStoreButtonProps = {
   lang?: keyof typeof badges
   /** Overrides the default listing link, e.g. to attribute installs to a campaign. */
   href?: string
+  /** Overrides the badge's alt text, for a language without its own badge artwork. */
+  alt?: string
 }
 
-export function AppStoreButton({ className = '', label = 'Download Steps Widget on the App Store', lang = 'en', href = appStoreUrl }: AppStoreButtonProps) {
+export function AppStoreButton({ className = '', label = 'Download Steps Widget on the App Store', lang = 'en', href = appStoreUrl, alt }: AppStoreButtonProps) {
   const badge = badges[lang]
+  const badgeAlt = alt ?? badge.alt
 
   return (
     <a
@@ -41,7 +44,7 @@ export function AppStoreButton({ className = '', label = 'Download Steps Widget 
       onClick={() => sendGTMEvent({ event: 'app_store_download' })}>
       <Image
         src={badge.black}
-        alt={badge.alt}
+        alt={badgeAlt}
         width={120}
         height={40}
         className="app-store-badge-black h-14 w-auto"
@@ -49,7 +52,7 @@ export function AppStoreButton({ className = '', label = 'Download Steps Widget 
       />
       <Image
         src={badge.white}
-        alt={badge.alt}
+        alt={badgeAlt}
         width={120}
         height={40}
         className="app-store-badge-white h-14 w-auto"

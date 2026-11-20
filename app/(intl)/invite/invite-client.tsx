@@ -23,17 +23,23 @@ function useFragment() {
   return useSyncExternalStore(subscribeToHash, () => window.location.hash.slice(1), () => '')
 }
 
-type InviteHeroProps = { title: string; description: string }
+type InviteHeroProps = {
+  eyebrow: string
+  title: string
+  /** The title once the sender's name is known; `{name}` marks where it goes. */
+  titleWithName: string
+  description: string
+}
 
-export function InviteHero({ title, description }: InviteHeroProps) {
+export function InviteHero({ eyebrow, title, titleWithName, description }: InviteHeroProps) {
   const fragment = useFragment()
   const name = fragment ? senderName(fragment) : null
 
   return (
     <PageSection paddingY="top">
-      <p className="text-md font-bold uppercase tracking-[0.14em] text-[var(--accent-color)]">Shared card</p>
+      <p className="text-md font-bold uppercase tracking-[0.14em] text-[var(--accent-color)]">{eyebrow}</p>
       <h1 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--text-strong)] sm:text-6xl">
-        {name ? `${name} wants to walk with you` : title}
+        {name ? titleWithName.replace('{name}', name) : title}
       </h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
     </PageSection>
@@ -41,14 +47,14 @@ export function InviteHero({ title, description }: InviteHeroProps) {
 }
 
 /** Hands the card to the app; only there when the link carried one. */
-export function OpenInStepsButton() {
+export function OpenInStepsButton({ label }: { label: string }) {
   const fragment = useFragment()
   if (!fragment) return null
   return (
     <a
       href={`stepsapp://invite#${fragment}`}
       className="inline-flex h-12 w-fit items-center rounded-full bg-[var(--text-strong)] px-6 font-semibold text-background transition hover:opacity-90">
-      Open in Steps
+      {label}
     </a>
   )
 }

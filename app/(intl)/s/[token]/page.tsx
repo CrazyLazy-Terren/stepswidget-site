@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { AppStoreButton } from '../../../app-store-button'
 import { ArrowRight } from '../../../arrow'
 import { ContentShell } from '../../../content-shell'
+import { defaultOgImages } from '../../../shared-metadata'
+import { appStoreBadgeAlt, chromeLang, getLocale, ogLocale } from '../../locale'
+import { styleMessages } from './messages'
 import { decodeShareToken } from './share-code'
 import { StyleHero } from './style-preview'
 
@@ -14,40 +17,24 @@ import { StyleHero } from './style-preview'
  * at a card. The token is decoded only to preview the style on a sample
  * photo; beyond that the page says how to get the app and how to
  * turn the image they were sent into a style.
+ *
+ * The copy follows the visitor's device language (see `../../locale.ts`).
  */
 
-const title = 'Someone shared a widget style with you'
-const description =
-  'The image you were sent is a Steps Widget style card: a photo with the style built into it. Open it in the app to make the same widget style in a few taps.'
-
 // Every card has its own URL, and none of them should be indexed on its own.
-export const metadata: Metadata = {
-  title: `${title} - Steps Widget`,
-  description,
-  robots: { index: false, follow: true },
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale()
+  const t = styleMessages[locale]
+  return {
+    title: `${t.title} - Steps Widget`,
+    description: t.description,
+    robots: { index: false, follow: true },
+    openGraph: { title: t.title, description: t.description, locale: ogLocale[locale], images: defaultOgImages },
+  }
 }
 
 // Separate campaign token so installs from shared cards show up on their own.
 const styleShareAppStoreUrl = 'https://apps.apple.com/app/apple-store/id6756297788?pt=120739140&ct=style-share&mt=8'
-
-const steps = [
-  {
-    heading: 'Save the image',
-    body: 'Save the whole card, code strip included, to Photos or Files.',
-  },
-  {
-    heading: 'Tap Style from Photo',
-    body: 'Pick the widget you want to restyle, then tap Style from Photo.',
-  },
-  {
-    heading: 'Pick the card',
-    body: 'Choose the saved image. Your style is set up automatically.',
-  },
-  {
-    heading: 'Save the style',
-    body: 'Tap the checkmark to put the style on your widget.',
-  },
-]
 
 type SharedStylePageProps = {
   params: Promise<{ token: string }>
@@ -56,26 +43,40 @@ type SharedStylePageProps = {
 export default async function SharedStylePage({ params }: SharedStylePageProps) {
   const { token } = await params
   const recipe = decodeShareToken(token)
+  const locale = await getLocale()
+  const t = styleMessages[locale]
+  const lang = chromeLang(locale)
+  const appStoreButton = (
+    <AppStoreButton href={styleShareAppStoreUrl} label={t.appStoreLabel} lang={lang} alt={appStoreBadgeAlt[locale]} />
+  )
 
   return (
     <ContentShell
-      eyebrow="Shared widget style"
-      title={title}
-      description={description}
+      lang={lang}
+      eyebrow={t.eyebrow}
+      title={t.title}
+      description={t.description}
       hero={
         <StyleHero
           recipe={recipe}
-          eyebrow="Shared widget style"
-          title={title}
-          description={description}
-          cta={<AppStoreButton href={styleShareAppStoreUrl} label="Download Steps Widget on the App Store" />}
+          eyebrow={t.eyebrow}
+          title={t.title}
+          description={t.description}
+          cta={appStoreButton}
+          labels={{
+            seeSteps: t.seeSteps,
+            captionSample: t.captionSample,
+            captionPalette: t.captionPalette,
+            captionBackground: t.captionBackground,
+            paletteLabel: t.paletteLabel,
+          }}
         />
       }>
       <div className="grid gap-20">
         <ol id="steps" className="grid gap-6 lg:grid-cols-4">
-          {steps.map((step, index) => (
+          {t.steps.map((step, index) => (
             <li
-              key={step.heading}
+              key={index}
               className="grid grid-cols-[auto_minmax(0,1fr)] content-start gap-4 rounded-lg lg:grid-cols-1 border border-[color:var(--border)] bg-[var(--surface-1)] px-6 pt-6 pb-8">
               <div className="flex flex-col gap-4">
                 <h3 className="flex items-center gap-3 text-xl font-semibold text-[var(--text-strong)]">
@@ -91,24 +92,19 @@ export default async function SharedStylePage({ params }: SharedStylePageProps) 
         </ol>
         {/* Phones get this button in the hero instead. */}
         <div className="hidden flex-col items-start gap-4 lg:flex">
-          <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">Don&apos;t have the app yet?</h2>
-          <p className="max-w-md leading-7 text-[var(--text-muted)]">
-            Install it on the iPhone you want the widget on, then follow the steps above. It is free, and it reads your step count from Apple Health.
-          </p>
-          <AppStoreButton className="" href={styleShareAppStoreUrl} label="Download Steps Widget on the App Store" />
+          <h2 className="text-2xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{t.noAppHeading}</h2>
+          <p className="max-w-md leading-7 text-[var(--text-muted)]">{t.noAppBody}</p>
+          {appStoreButton}
         </div>
       </div>
 
       <div className="mt-16 rounded-lg border border-[color:var(--border)] bg-[var(--surface-1)] p-6 sm:p-8">
-        <h2 className="text-xl font-semibold text-[var(--text-strong)]">If the image opens as a plain photo</h2>
-        <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">
-          The app needs the original card. A screenshot of it, or a copy with the bottom strip cropped off, no longer carries the style, so ask for the image
-          itself to be sent again. Applying a style to a widget needs the Customization subscription; opening and saving the style is free.
-        </p>
+        <h2 className="text-xl font-semibold text-[var(--text-strong)]">{t.plainPhotoHeading}</h2>
+        <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">{t.plainPhotoBody}</p>
         <Link
           href="/docs/widgets/share-a-style"
           className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent-color)] transition hover:translate-x-1">
-          How style sharing works <ArrowRight />
+          {t.howItWorks} <ArrowRight />
         </Link>
       </div>
     </ContentShell>
