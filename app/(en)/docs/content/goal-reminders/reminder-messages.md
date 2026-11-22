@@ -4,7 +4,7 @@ title: Reminder messages
 metaTitle: Write Your Own Goal Reminder Messages in Steps Widget
 description: Edit every reminder title and message in your own words, rotate several phrasings, keep the live numbers with placeholders, and restyle the lot on device with Apple Intelligence.
 order: 2
-updated: 2026-09-26
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - custom reminder message
@@ -27,16 +27,20 @@ The screen opens prefilled with exactly what is sent today, so you are editing t
 
 Messages are grouped by how your day is tracking — the same four states described in [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work#what-each-message-is-telling-you):
 
-| Section            | Default title | Placeholders             | Messages                    |
-| ------------------ | ------------- | ------------------------ | --------------------------- |
-| **Falling behind** | Push now      | `{stepsLeft}`, `{hours}` | Up to you — ships with four |
-| **Goal reached**   | Goal hit      | none                     | Up to you — ships with four |
-| **Ahead of pace**  | Strong lead   | `{stepsAhead}`           | One                         |
-| **On track**       | Steady pace   | `{stepsLeft}`            | One                         |
+| Section            | Default title | Placeholders             | Ships with   |
+| ------------------ | ------------- | ------------------------ | ------------ |
+| **Falling behind** | Let's walk    | `{stepsLeft}`, `{hours}` | Five messages |
+| **Goal reached**   | Goal hit 🎉   | none                     | Six messages |
+| **Ahead of pace**  | Stay ahead    | `{stepsAhead}`           | Four messages |
+| **On track**       | Keep going    | `{stepsLeft}`            | Four messages |
 
 Each section has one **Title** and one or more **Body** messages. The title is sent exactly as you write it; placeholders go in the body.
 
 **Falling behind** is the one you will actually see most. It is the message sent when the projection says you are heading for a miss, so it is the one worth getting right.
+
+After a **Falling behind** message has been sent, the editor shows how it did underneath it — for example, *"Avg +620 steps the next hour · sent 7×"*. That is how many steps you took, on average, in the hour after that wording arrived. Keep the ones that get you moving and rewrite the ones that do not.
+
+With [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode) on, the built-in messages talk about pushes and rolling instead of steps and walking — **Falling behind** becomes *"Let's roll"*. Messages you wrote yourself are sent as you wrote them.
 
 ## Placeholders
 
@@ -56,15 +60,15 @@ Each section's footer lists which placeholders it replaces. A placeholder from a
 
 ## Several messages in rotation
 
-**Falling behind** and **Goal reached** can hold several messages, and the app picks one from the list each time:
+Every section can hold several messages, and the app takes turns with them:
 
-- **Falling behind** changes its pick every hour, so two nudges in the same afternoon do not repeat each other word for word.
+- **Falling behind**, **Ahead of pace**, and **On track** change their pick every hour, so two nudges in the same afternoon do not repeat each other word for word, and the line under your widget count varies through the day.
 - **Goal reached** changes its pick every day. The congratulation arrives once and stays on screen afterwards, so it reads the same all day and differently tomorrow.
 
 - **Add Message** adds another one to the rotation.
 - **Swipe left** on a message to remove it.
 
-The last message in a section cannot be removed; every state needs something to send. The other two sections carry a single message.
+The last message in a section cannot be removed; every state needs something to send.
 
 ## Restyling with Apple Intelligence
 
@@ -125,7 +129,7 @@ Reminders are delivered with the default notification sound. One iOS setting to 
 
 ## Can I have different messages at different times of day?
 
-Not by schedule. The rotation in **Falling behind** varies the wording from hour to hour, but every message in it can be picked at any time. The closest thing to a quiet stretch is a Focus mode covering the hours you want silence.
+Not by schedule. The rotation varies the wording from hour to hour, but every message in it can be picked at any time. The closest thing to a quiet stretch is a Focus mode covering the hours you want silence.
 
 ## What to read next
 

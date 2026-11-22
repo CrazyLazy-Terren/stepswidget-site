@@ -2,9 +2,9 @@
 slug: connect-apple-health
 title: Connect Apple Health
 metaTitle: Connect Steps Widget to Apple Health on iPhone
-description: The three read-only Health types Steps requests, how to grant access after declining, and the system switches step counting depends on.
+description: The read-only Health types Steps requests, how to grant access after declining, how to see which devices counted your steps, and the switches step counting depends on.
 order: 2
-updated: 2026-07-28
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - Apple Health permission
@@ -27,11 +27,20 @@ Three read-only types:
 | Stand hours      | Marks the hours you stood in the hourly chart                   |
 | Activity summary | Carries the day's stand total and stand goal                    |
 
+Two features ask for one more type, only when you use them:
+
+| Type                   | Asked for when                                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| Wheelchair push count  | You turn on [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode)                                     |
+| Age, weight and height | You tap the Health import in [Walking Plan](/docs/getting-started/walking-plan) for a goal that uses them |
+
 And what it never asks for: writing to Health, heart rate, sleep or workouts. HealthKit enforces this per category — an app cannot read what it has not requested.
 
 ## Granting access on first launch
 
-The app shows **Requesting Health Access** with the line _"Allow access to step count so Steps can show your daily progress."_ Tap **Authorize**, then **Allow** on the system sheet.
+The first screen has a **Connect Apple Health** button. Tap it and an **About Permissions** sheet lists what the app reads — **Step Count**, plus **Motion Sensor** for live counts. Tap **Allow Access**, then **Allow** on the system sheet.
+
+If you use a wheelchair, turn on **Wheelchair Mode** on that same first screen before connecting, so the app asks for push count instead of reading steps. See [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode).
 
 ## Granting access after declining
 
@@ -56,11 +65,25 @@ Health permission only matters if iOS is recording motion at all. One system swi
 
 With Fitness Tracking off, nothing counts steps. Turning it back on starts recording from that moment — it does not backfill the hours it missed.
 
+## See which devices counted your steps
+
+**Settings › Apple Health** opens **Step Sources**, a breakdown of today's total by where it came from:
+
+- A bar filled against your daily goal, split by each source's share.
+- One row per source — this iPhone, your Apple Watch, and any app that writes steps to Health, such as a fitness band's companion app — with when it last synced and when it recorded its last step.
+- A **Motion Sensor** row comparing the live pedometer with Health's figure for this iPhone.
+
+Health counts a step once even when several devices recorded it, so the rows can add up to more than the total. That is expected, not double counting.
+
+When an app has not synced while other sources kept recording, the page says so and offers **Try Open** for that app — opening it usually makes it sync — or **Check Access in Health** if it is not allowed to write steps. Pull down to refresh afterwards.
+
+If the numbers still look wrong, **Report an Issue** at the bottom sends what you expected along with the counts on that page. Device and app names are left out.
+
 ## Why does my widget show a different number than Health?
 
 Over a day it will not. Short differences have two ordinary causes.
 
-Widget refresh timing. iOS decides when a widget may redraw. The app asks for a refresh roughly every three minutes during your active hours and up to every thirty minutes during quiet ones, but the system grants those requests on its own schedule. The Health app recalculates the instant you open it, so it is always the more current of the two.
+Widget refresh timing. iOS decides when a widget may redraw. The app asks for a refresh as often as every five minutes while you are walking and up to every thirty minutes during quiet stretches, but the system grants those requests on its own schedule. Tap the step number on the widget to refresh it on the spot. The Health app recalculates the instant you open it, so it is always the more current of the two.
 
 Apple Health's own cadence. Health shares step updates with apps about once an hour. If you want a count that tracks your walk in near real time, turn on **Motion Sensor** in Settings — it reads the pedometer for the stretch since Health's last sample and adds it on top. See [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity).
 

@@ -4,7 +4,7 @@ title: Motion Sensor
 metaTitle: Motion Sensor Mode for Near Real-Time Steps in Steps Widget
 description: Fill the gap between Apple Health's last step sample and now by reading the iPhone pedometer, so your count moves while you are still walking.
 order: 2
-updated: 2026-07-28
+updated: 2026-11-22
 readingTime: 4 min read
 keywords:
   - real time step counter
@@ -22,6 +22,10 @@ Apple Health shares step updates with apps about **once an hour**. That is fine 
 **Settings › Motion Sensor**. The app describes it in one line: *"See your latest steps without waiting for Health sync."*
 
 It is also in the Watch app's settings, where it is **on by default** — the Watch runs its pedometer live and pushes the count to your iPhone, which is why the Watch is rarely the device that looks behind.
+
+## Wheelchair Mode turns it off
+
+With [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode) on, Motion Sensor is not used. The pedometer counts steps, not pushes, so its figure would be the wrong number to add. Your count updates as Apple Health receives pushes from your Apple Watch.
 
 ## What changes
 

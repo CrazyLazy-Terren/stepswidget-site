@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "postdeploy": "node scripts/post-deploy.js",
-    "compress-images": "node scripts/compress-images.mjs"
+    "compress-images": "node scripts/compress-images.mjs",
+    "widgets:pick": "node scripts/widget-picker.mjs",
+    "widgets:auto": "node scripts/pick-widget-tiles.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1167.0",

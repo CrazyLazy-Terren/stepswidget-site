@@ -4,7 +4,7 @@ title: Widget not updating
 metaTitle: Fix a Steps Widget That Is Not Updating on iPhone
 description: The three-stage chain from Health to widget, what counts as normal lag, and the checks that fix a widget genuinely stuck or reading zero.
 order: 1
-updated: 2026-08-10
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - widget not updating iPhone
@@ -21,13 +21,13 @@ First, separate two situations, because their causes are completely different.
 
 ## The chain
 
-Your steps pass through three stages, each on its own schedule. The app explains this on its **How Step Update** screen, reachable from Settings › Links.
+Your steps pass through three stages, each on its own schedule.
 
 | Stage                                              | Cadence                                                                                                                 |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Apple Health** collects your steps               | Shares updates with apps about once an hour                                                                             |
 | **The app** reads Health and hands data to widgets | Every time you open it, plus background refreshes                                                                       |
-| **The widget** redraws                             | Asks about every 5 minutes in active hours, up to every 30 minutes in quiet ones — iOS decides when it actually reloads |
+| **The widget** redraws                             | Asks as often as every 5 minutes while you walk, up to every 30 minutes in quiet stretches — iOS decides when it actually reloads |
 
 Nothing in that chain is instant, and the widget is the least instant part of it. That cadence is not fixed — it adapts to when you move and when you tend to check, and the Apple Watch stretches further in both directions. See [Adaptive widget updates](/docs/widgets/widget-gallery#adaptive-widget-updates). iOS grants each widget a limited daily reload budget to protect battery life, which is why a widget is a recent snapshot rather than a live readout.
 
@@ -37,13 +37,19 @@ If you want a genuinely live number, that is what [Motion Sensor](/docs/steps-an
 
 Expected, and not a fault. The app pushes those updates itself, so they stop as soon as iOS suspends it — pocket the phone and the count freezes at its last value. Open it again and it resumes and catches up. See [Motion Sensor](/docs/steps-and-data/motion-sensor-and-live-activity).
 
-## 1. Open the app once
+## 1. Tap the number
+
+On a Home Screen widget, tap the step count itself. The widget fetches your latest steps from Health and redraws on the spot, along with your other step widgets. The app also remembers the tap and refreshes ahead of that time on later days.
+
+If the number does not change, Health itself has nothing newer yet — see the chain above, or check [Step Sources](/docs/getting-started/connect-apple-health#see-which-devices-counted-your-steps) for a device or app that has not synced.
+
+## 2. Open the app once
 
 Opening the app gives it a foreground moment to read current Health data and hand fresh values to the widget system. This resolves a large share of cases, particularly after an iOS update or a restart.
 
 > **Note:** Do not force-quit the app as a habit. Swiping an app away from the App Switcher makes iOS block its background refresh until you open it again — force-quitting makes widget staleness _more_ likely, not less.
 
-## 2. Check Health permission
+## 3. Check Health permission
 
 If access was revoked — sometimes silently during a major iOS update — the widget has nothing to show and reads zero rather than displaying an error.
 
@@ -53,7 +59,7 @@ If access was revoked — sometimes silently during a major iOS update — the w
 
 See [Connect Apple Health](/docs/getting-started/connect-apple-health).
 
-## 3. Check Fitness Tracking
+## 4. Check Fitness Tracking
 
 If the system-wide motion switch is off, nothing on the phone counts steps.
 
@@ -61,7 +67,7 @@ If the system-wide motion switch is off, nothing on the phone counts steps.
 2. Turn on **Fitness Tracking**.
 3. Confirm **Health** is enabled in the list below.
 
-## 4. Check Background App Refresh
+## 5. Check Background App Refresh
 
 Widgets depend on iOS being allowed to wake the app in the background.
 
@@ -69,21 +75,21 @@ Widgets depend on iOS being allowed to wake the app in the background.
 2. Ensure the top-level setting is on.
 3. Find **Steps Widget** and make sure it is enabled.
 
-## 5. Check Low Power Mode
+## 6. Check Low Power Mode
 
 Low Power Mode deliberately throttles background activity, and widget refreshes are among the first things it cuts. If your battery has been low, this is very likely your answer. Check **Settings › Battery**.
 
-## 6. Confirm which window you are looking at
+## 7. Confirm which window you are looking at
 
 A widget that looks wrong rather than stale may be showing a different slice of time than you expect. If **Last 24-Hour** is on, the number is a rolling 24-hour total, not today. If **Start of Day** is set past midnight, a late-night walk counts toward the previous day.
 
 Both are in Settings, and both are explained in [the step window](/docs/steps-and-data/step-window).
 
-## 7. Remove and re-add the widget
+## 8. Remove and re-add the widget
 
 If everything above is correct and the widget is still frozen, rebuild it: touch and hold, **Remove Widget**, then add it again. This clears a stale widget instance and touches none of your data.
 
-## 8. Restart the iPhone
+## 9. Restart the iPhone
 
 A restart clears the widget refresh queue along with other temporary system state. Blunt, but it resolves what survives everything above.
 

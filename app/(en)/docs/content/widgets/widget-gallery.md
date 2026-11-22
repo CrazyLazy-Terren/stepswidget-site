@@ -2,9 +2,9 @@
 slug: widget-gallery
 title: The widget gallery
 metaTitle: Every Steps Widget for iPhone Home and Lock Screen
-description: All eight Steps widgets — Steps Ring, Timeline, Prompt, Goal Progress, Minimal, and the three Lock Screen accessories — plus how adaptive refresh keeps them current.
+description: Every Steps widget — Steps Ring, Timeline, Prompt, Goal Progress, Minimal, Walking Plan, Side by Side, and the Lock Screen accessories — plus how adaptive refresh keeps them current.
 order: 1
-updated: 2026-09-08
+updated: 2026-11-22
 readingTime: 6 min read
 keywords:
   - iPhone step widget
@@ -14,31 +14,38 @@ keywords:
 image: /assets/steps-widget-grid.png
 ---
 
-Steps ships eight widgets: five for the Home Screen and three accessory widgets for the Lock Screen and watch-style layouts. They all read the same Apple Health data and the same [daily goal](/docs/getting-started/set-your-daily-goal), so they never disagree with each other.
+Steps ships seven Home Screen widgets and four accessory widgets for the Lock Screen and Apple Watch. They all read the same Apple Health data and the same [daily goal](/docs/getting-started/set-your-daily-goal), so they never disagree with each other.
 
 ## Home Screen widgets
 
-| Widget             | Sizes         | Shows                                      |
-| ------------------ | ------------- | ------------------------------------------ |
-| **Steps Ring**     | Small         | Current steps with goal progress in a ring |
-| **Steps Timeline** | Small         | Steps by hour as a compact bar chart       |
-| **Steps Prompt**   | Small, Medium | Step count with a motivational message     |
-| **Goal Progress**  | Small         | How close you are to today's goal          |
-| **Steps Minimal**  | Small         | A clean, minimal step count                |
+| Widget             | Sizes         | Shows                                         |
+| ------------------ | ------------- | --------------------------------------------- |
+| **Steps Ring**     | Small         | Current steps with goal progress in a ring    |
+| **Steps Timeline** | Small         | Steps by hour as a compact bar chart          |
+| **Steps Prompt**   | Small, Medium | Step count with a motivational message        |
+| **Goal Progress**  | Small, Medium | How close you are to today's goal             |
+| **Steps Minimal**  | Small, Medium | A clean, minimal step count                   |
+| **Walking Plan**   | Small, Medium | Your walking plan's stage, streak, and skips  |
+| **Side by Side**   | Medium        | Your steps next to a friend's                 |
 
 **Steps Timeline** shows the shape of the day rather than just the outcome: a flat run of empty bars from 10am to 3pm tells you more than a daily total does. It can also render as a **line chart**, plotting your running total as a climbing curve whose slope shows your momentum — see [Line Chart: the momentum view](/docs/widgets/widget-styles#line-chart-the-momentum-view).
 
-**Steps Prompt** is the only one with a medium size, because the message needs the room.
+**Walking Plan** follows a plan you started in the app, stage by stage. Without a plan running it has nothing to show, so start one first — see [Walking Plan](/docs/getting-started/walking-plan).
+
+**Side by Side** puts one friend's day next to yours. Touch and hold it, tap **Edit Widget**, and choose the friend — see [Walk with a friend](/docs/sharing/walk-with-a-friend).
+
+**Tap the step number** on a Home Screen widget to refresh it on the spot. The app fetches your latest count from Health and redraws your other step widgets with it.
 
 ## Lock Screen and accessory widgets
 
-| Widget                 | Families                      | Shows                                   |
-| ---------------------- | ----------------------------- | --------------------------------------- |
-| **Steps Complication** | Inline, Circular, Rectangular | Quick step glance in any accessory slot |
-| **Steps Summary**      | Rectangular                   | Compact summary of steps and goal       |
-| **Steps Reminder**     | Inline                        | Inline reminder text to stay on track   |
+| Widget                 | Families                      | Shows                                    |
+| ---------------------- | ----------------------------- | ---------------------------------------- |
+| **Steps Complication** | Inline, Circular, Rectangular | Quick step glance in any accessory slot  |
+| **Steps Summary**      | Circular, Rectangular         | Compact summary of steps and goal        |
+| **Steps Reminder**     | Inline                        | Inline reminder text to stay on track    |
+| **Walking Plan**       | Inline, Circular, Rectangular | Today's plan goal and stage at a glance  |
 
-The same three families serve the iPhone Lock Screen and Apple Watch complication slots, which is why one widget covers both.
+The same families serve the iPhone Lock Screen and Apple Watch complication slots, which is why one widget covers both.
 
 The rectangular layout includes the **stand dots**: a row of one dot per hour along the bottom of the chart, brighter for the hours you stood. Stand hours come from Apple Watch, so with no Watch paired the row stays dim.
 
@@ -80,24 +87,21 @@ That said, with **Smart Rotate** on, iOS decides what is showing when you glance
 
 ## Adaptive widget updates
 
-Widgets do not refresh on a fixed timer. The app varies how often it asks iOS to redraw, based on how likely the number is to have changed and how likely you are to look at it.
+Widgets do not refresh on a fixed timer. The app plans each redraw for the moment the number on screen is likely to have changed enough to notice, or just before you usually look — whichever comes first.
 
-|        | iPhone                 | Apple Watch            |
-| ------ | ---------------------- | ---------------------- |
-| Active | about every 5 minutes  | about every 5 minutes  |
-| Quiet  | up to every 30 minutes | up to every 60 minutes |
+|              | iPhone           | Apple Watch      |
+| ------------ | ---------------- | ---------------- |
+| Fastest      | every 5 minutes  | every 4 minutes  |
+| Slowest      | every 30 minutes | every 60 minutes |
 
-Three signals push it toward the fast end:
+Two things decide when the next redraw lands:
 
-- **You are moving now** — steps recorded in the current stretch.
-- **This hour is usually active for you** — from a learned profile of your own 24 hours.
-- **You usually open the app around now** — a glance at the widget tends to precede the tap, so those hours are kept fresh too.
-
-It weighs the current hour _and the next one_, so the widget speeds up ahead of your usual walk rather than catching up after it. Everything is measured against your own busiest hour rather than an absolute, so a generally quiet day still gets its fast periods.
+- **When your count will have moved.** A redraw is due once your steps have changed by about 2% of your daily goal — 160 steps on an 8,000 goal, and never less than 50. The app estimates when that will happen from how fast you are walking right now and from the reminder model's forecast for the hours ahead, so the widget speeds up as your usual walk begins rather than catching up after it.
+- **When you usually look.** Opening the app and tapping a widget's number are both remembered, in 15-minute slots over the last two weeks. A slot you have used on a few different days becomes a usual look time, and the widget refreshes five minutes before it. A tap counts double, because it means the widget was stale when you looked.
 
 The Watch has the wider range because its refresh budget is tighter. Spending less on quiet stretches leaves more for the moments you actually raise your wrist.
 
-> **Note:** These are requests, not guarantees — iOS grants widget reloads from a daily budget and can delay any of them to save power. The app also skips reloads that would change nothing visible: a redraw needs at least 200 steps of change and at least 60 seconds since the last one.
+> **Note:** These are requests, not guarantees — iOS grants widget reloads from a daily budget and can delay any of them to save power. If a widget looks behind, tap its number to refresh it.
 
 ## Can I put the widget on my Mac?
 

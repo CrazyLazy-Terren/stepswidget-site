@@ -4,9 +4,12 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 import { ArrowLink } from '../arrow'
 import { AppStoreButton } from '../app-store-button'
+import { BoostedTreesChart } from '../boosted-trees-chart'
 import { DuoDemo } from '../duo-demo'
 import { DuoMockup } from '../duo-mockup'
 import { HeroPreview } from '../hero-preview'
+import { WidgetStyleWall } from '../widget-style-wall'
+import { IOSNotification } from '../ios-notification'
 import { IPhoneCarousel } from '../iphone-carousel'
 import { IPhoneMockup } from '../iphone-mockup'
 import { PageSection, pageGutter } from '../page-shell'
@@ -40,27 +43,6 @@ const styleScreens = [
       'Put the picture itself behind your step count, or lift its colours onto the widget. Then set tone, blur and foreground until the numbers read clearly.',
     href: '/docs/widgets/photo-styles',
     linkLabel: 'Styles from a photo',
-  },
-]
-
-const nudgeCards = [
-  {
-    title: 'It knows how your day is going to end',
-    eyebrow: 'On-device model',
-    description:
-      'A model on your iPhone projects the step count you are heading for. A nudge arrives only when that projection falls short of your goal, so a day you are already walking stays quiet.',
-    image: '/assets/f03.webp',
-    href: '/docs/goal-reminders/how-goal-reminders-work',
-    linkLabel: 'How the projection works',
-  },
-  {
-    title: 'Your day, your way',
-    eyebrow: 'Reminder settings',
-    description:
-      'Set the day to match your routine. Move the day boundary up to six hours past midnight, or use a rolling 24-hour window for shift work. Local Sunset makes it easier to get a nudge as the light fades. Insight shows a month of real days under a draggable goal line, so the target comes from your own activity.',
-    image: '/assets/f04.webp',
-    href: '/docs/goal-reminders/reminder-timing-and-devices',
-    linkLabel: 'Timing and settings',
   },
 ]
 
@@ -440,17 +422,6 @@ function PhoneFeatures({ features }: { features: readonly PhoneFeature[] }) {
   )
 }
 
-type FeatureCard = {
-  title: string
-  eyebrow: string
-  description: string
-  image: string
-  /** Extra classes on the `<Image>`, for cards whose art needs a different crop. */
-  imageClassName?: string
-  href?: string
-  linkLabel?: string
-}
-
 /**
  * The star row on a review card.
  *
@@ -497,38 +468,6 @@ const reminderScreens = [
   },
 ] as const
 
-function FeatureCards({ cards }: { cards: readonly FeatureCard[] }) {
-  return (
-    <div className={`mt-12 grid gap-6 sm:grid-cols-2 ${cards.length === 3 ? 'lg:grid-cols-3' : ''}`}>
-      {cards.map((feature) => (
-        <article
-          key={feature.title}
-          className="flex flex-col rounded-2xl overflow-hidden border border-[color:var(--border)] bg-[var(--surface-1)]  transition duration-300 hover:border-[color:var(--border-strong)]">
-          <div className="relative aspect-[16/9]">
-            <Image
-              src={feature.image}
-              alt={`${feature.title} preview`}
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className={`object-cover ${feature.imageClassName ?? ''}`.trim()}
-            />
-          </div>
-          <div className="flex flex-1 flex-col p-6">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-subtle)]">{feature.eyebrow}</p>
-            <h3 className="mt-6 text-xl font-semibold tracking-[-0.01em] text-[var(--text-strong)]">{feature.title}</h3>
-            <p className="mt-2 flex-1 leading-7 text-[var(--text-muted)]">{feature.description}</p>
-            {feature.href ? (
-              <ArrowLink href={feature.href} className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
-                {feature.linkLabel}
-              </ArrowLink>
-            ) : null}
-          </div>
-        </article>
-      ))}
-    </div>
-  )
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--text-strong)] transition-colors duration-300">
@@ -550,6 +489,10 @@ export default function Home() {
             </div>
           }
         />
+      </PageSection>
+
+      <PageSection id="widget-style" paddingY="section">
+        <WidgetStyleWall />
       </PageSection>
 
       <PageSection id="make-it-yours" paddingY="section">
@@ -607,13 +550,23 @@ export default function Home() {
         />
       </PageSection> */}
       <PageSection id="reminder" paddingY="section">
-        <SectionHeading eyebrow="Walking Reminder" title="Nudge When It's Time.">
-          An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
-        </SectionHeading>
-        <ArrowLink href="/tools/step-goal-calculator" className="mt-10 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
-          Not sure what goal to set? Try the step goal calculator
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <SectionHeading eyebrow="Walking Reminder" title="Nudge When It's Time.">
+              An on-device model learns your patterns and steps in only when you’re heading for a miss, giving a timely nudge when it matters.
+            </SectionHeading>
+          </div>
+          {/* The nudge the diagram below ends in: 2,100 short at 2 PM, 8 hours left. */}
+          <IOSNotification
+            className="lg:col-span-5 lg:justify-self-end"
+            title="Let’s walk"
+            body="You’ve closed bigger gaps than 2,100 steps, and 8h is plenty of room."
+          />
+        </div>
+        <BoostedTreesChart />
+        <ArrowLink href="/docs/goal-reminders/how-goal-reminders-work" className="mt-6 text-sm font-medium text-[var(--accent-color)] transition hover:opacity-80">
+          How the projection works
         </ArrowLink>
-        <FeatureCards cards={nudgeCards} />
       </PageSection>
 
       <PageSection id="walking-plan" paddingY="section" containerClassName="grid gap-6 lg:grid-cols-12 lg:items-center">
@@ -701,7 +654,7 @@ export default function Home() {
                       className={`relative flex aspect-square w-full items-center justify-center rounded-lg ${
                         day === 'skipped'
                           ? 'border-2 border-dashed border-[color:var(--accent-color)] text-[var(--accent-color)]'
-                          : 'bg-[var(--accent-color)] text-white'
+                          : 'bg-[var(--accent-color)] text-[var(--button-text)]'
                       } ${isToday ? 'ring-2 ring-[color:var(--accent-color)] ring-offset-2 ring-offset-[var(--page-bg)]' : ''}`}>
                       <span className="sr-only">{`Day ${index + 1}: ${streakDayLabel[day]}${isToday ? ' (today)' : ''}`}</span>
                       {day === 'skipped' ? (

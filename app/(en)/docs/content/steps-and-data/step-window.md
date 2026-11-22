@@ -2,9 +2,9 @@
 slug: step-window
 title: The step window
 metaTitle: Last 24-Hour Mode and Start of Day in Steps Widget
-description: Change what "today" means — push the day boundary up to six hours past midnight for night owls, or drop the calendar day for a rolling 24-hour window.
+description: Change what "today" means — push the day boundary up to eight hours past midnight for night owls, or drop the calendar day for a rolling 24-hour window.
 order: 1
-updated: 2026-08-10
+updated: 2026-11-22
 readingTime: 4 min read
 keywords:
   - last 24 hours steps
@@ -19,9 +19,9 @@ By default your step count covers today, midnight to midnight. Two settings chan
 
 If you are often awake past midnight, the default boundary splits your evening in half: a walk at 12:30am lands in a brand-new day with an empty ring, while the day you were actually living closes out one walk short.
 
-**Settings › Start of Day** moves the boundary up to **six hours** past midnight. Pick 3:00 AM and steps taken at 1am count toward the day that started the previous morning; your count resets at 3am instead.
+**Settings › Start of Day** moves the boundary up to **eight hours** past midnight. Pick 3:00 AM and steps taken at 1am count toward the day that started the previous morning; your count resets at 3am instead.
 
-The picker shows real times in your locale — 12:00 AM through 6:00 AM — and the app explains it in one line: *"Steps before this time count toward yesterday."*
+The picker shows real times in your locale — 12:00 AM through 8:00 AM — and the app explains it in one line: *"Steps before this time count toward yesterday."*
 
 This shifts everything consistently: the widgets, the goal, Insight, and the reminder model's sense of how much day you have left. It does not change what Apple Health stores, only the window the app reads.
 

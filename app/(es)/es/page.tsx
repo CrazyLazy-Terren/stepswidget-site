@@ -5,6 +5,7 @@ import { ArrowLink } from '@/app/arrow'
 import { AppStoreButton } from '@/app/app-store-button'
 import { DuoDemo } from '@/app/duo-demo'
 import { HeroPreview } from '@/app/hero-preview'
+import { WidgetStyleWall } from '@/app/widget-style-wall'
 import { IPhoneCarousel } from '@/app/iphone-carousel'
 import { IPhoneMockup } from '@/app/iphone-mockup'
 import { PageSection, pageGutter } from '@/app/page-shell'
@@ -424,7 +425,12 @@ export default function SpanishHome() {
               <AppStoreButton className="mt-12" lang="es" label={appStoreLabel} />
             </div>
           }
-          galleryHeading={
+        />
+      </PageSection>
+
+      <PageSection id="widget-style" paddingY="section">
+        <WidgetStyleWall
+          heading={
             <SectionHeading eyebrow="Galería de widgets" title="Encuentra tu estilo.">
               Conteo de pasos minimalista, anillos de progreso, gráficos por horas y medidores en la pantalla de bloqueo para tener tu actividad a la vista en
               iPhone, Apple Watch y Mac.

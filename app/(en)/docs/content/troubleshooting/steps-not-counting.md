@@ -4,7 +4,7 @@ title: Steps not counting
 metaTitle: Fix an iPhone That Is Not Counting Steps
 description: Work through the recording chain — motion tracking, Health permission, data sources, and where you carry the phone — when your count stays at zero or reads low.
 order: 2
-updated: 2026-10-01
+updated: 2026-11-22
 readingTime: 6 min read
 keywords:
   - iPhone not counting steps
@@ -53,6 +53,8 @@ Pocket, hand, and armband all work well. A loose bag counts less reliably, becau
 
 ## 5. Check your data sources
 
+Start in the app: **Settings › Apple Health** opens **Step Sources**, which lists every device and app that counted steps today, when each last synced, and whether one looks behind. If a fitness band's app has not synced, tap **Try Open** to open it — that usually makes it sync — then pull down to refresh. See [See which devices counted your steps](/docs/getting-started/connect-apple-health#see-which-devices-counted-your-steps).
+
 If several devices or apps write steps to Health, source priority decides whose numbers win.
 
 1. **Health › Browse › Activity › Steps**.
@@ -78,6 +80,10 @@ If everything above is correct, restart the iPhone — this clears temporary gli
 Then run a deliberate test: walk about a hundred steps with the phone in your pocket, wait a minute or two, and open the Health app. If Health registers them, the recording chain works and anything left is a refresh problem — go to [Widget not updating](/docs/troubleshooting/widget-not-updating).
 
 If Health registers nothing after a restart and a test walk, check **Settings › General › Software Update**. Motion tracking bugs are occasionally fixed in point releases.
+
+## Is Wheelchair Mode on?
+
+With **Wheelchair Mode** on, the app counts pushes from Apple Watch, not steps — so walking with only your iPhone adds nothing. Turn it off in **Settings** if you did not mean to set it. See [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode).
 
 ## Why does my Apple Watch show more steps than my iPhone?
 

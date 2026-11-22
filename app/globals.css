@@ -43,7 +43,8 @@
   --accent-sky: oklch(80.9% 0.105 251.813);
   --accent-neutral: oklch(85% 0.008 60);
   /* The default: Swiss signal orange, lifted for the dark ground. */
-  --accent-swiss: rgb(255, 79, 0);
+  /* The iOS app's page accent (Color.pageAccent, dark), so the site and app share one orange. */
+  --accent-swiss: #ee8a4e;
   --accent-color: var(--accent-swiss);
   --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 18%, transparent);
   --accent-color-soft: color-mix(in oklch, var(--accent-color) 14%, transparent);
@@ -82,7 +83,8 @@ html[data-theme='light'] {
   --control-active: rgb(14, 14, 12);
   --control-active-text: rgb(242, 241, 236);
   --button-bg: rgb(14, 14, 12);
-  --button-text: rgb(242, 241, 236);
+  /* White reads better than cream on the app's orange. */
+  --button-text: #ffffff;
   --app-store-bg: rgb(14, 14, 12);
   --hero-rule: rgba(14, 14, 12, 0.14);
   --progress-track: rgba(14, 14, 12, 0.07);
@@ -94,7 +96,8 @@ html[data-theme='light'] {
   --accent-green: oklch(49% 0.14 160);
   --accent-sky: oklch(0.5535 0.2629 260.39);
   --accent-neutral: oklch(41.8% 0.008 75);
-  --accent-swiss: rgb(194, 59, 0);
+  /* The iOS app's page accent (Color.pageAccent, light). */
+  --accent-swiss: #d9692b;
   --accent-color: var(--accent-swiss);
   --accent-pink-soft: color-mix(in oklch, var(--accent-pink) 14%, transparent);
   --accent-color-soft: color-mix(in oklch, var(--accent-color) 10%, transparent);
@@ -192,31 +195,12 @@ body {
   --hero-front-y: 0px;
   --hero-back-x: 0px;
   --hero-back-y: 0px;
-  --hero-grids-y: 48px;
 }
 
-.phone-grids,
 .phone-front,
 .phone-back {
   transform-style: preserve-3d;
   will-change: transform;
-}
-
-.phone-grids {
-  transform: translate3d(0, var(--hero-grids-y), -140px) scale(0.96);
-}
-
-.hero-grid-fade {
-  --fade-solid: color-mix(in oklch, var(--page-bg) 99%, transparent);
-  --fade-clear: color-mix(in oklch, var(--accent-color) 0%, transparent);
-}
-
-.hero-grid-fade-top {
-  background: linear-gradient(to bottom in oklch, var(--fade-solid) 0%, var(--fade-clear) 100%);
-}
-
-.hero-grid-fade-bottom {
-  background: linear-gradient(to top in oklch, var(--fade-solid) 0%, var(--fade-clear) 100%);
 }
 
 /*
@@ -274,8 +258,117 @@ body {
   opacity: 1;
 }
 
+/*
+ * Widget wall: tiles exported from the app, one light and one dark render each.
+ * They wait small, low and blurred until the wall scrolls into view, then pop
+ * up to full size in a diagonal wave, overshooting slightly before settling
+ * (each tile's --tile-delay is set inline).
+ */
+.widget-tile {
+  opacity: 0;
+  transform: translateY(24px) scale(0.6);
+  filter: blur(6px);
+  transition:
+    opacity 750ms ease-out,
+    transform 800ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 500ms ease-out;
+  transition-delay: var(--tile-delay, 0ms);
+}
+
+.widget-wall[data-visible='true'] .widget-tile {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/*
+ * Hover scale. On the image rather than the tile, so it answers straight away
+ * instead of waiting out the tile's staggered entry delay. Only for real
+ * pointers: a tap on a phone would leave a tile stuck enlarged.
+ */
+.widget-tile > img {
+  transition:
+    scale 320ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 250ms ease-out;
+}
+
+@media (hover: hover) {
+  /* Above its neighbours, which it overlaps once enlarged. */
+  .widget-tile:hover {
+    position: relative;
+    z-index: 1;
+  }
+
+  .widget-tile:hover > img {
+    scale: 1.075;
+  }
+
+  /* The rest fall back while one is hovered. */
+  .widget-wall:has(.widget-tile:hover) .widget-tile:not(:hover) > img {
+    opacity: 0.4;
+  }
+}
+
+.widget-tile-light {
+  display: none;
+}
+
+html[data-theme='light'] .widget-tile-light {
+  display: block;
+}
+
+html[data-theme='light'] .widget-tile-dark {
+  display: none;
+}
+
+/*
+ * iOS notification entry, the first time it scrolls into view. The two cards
+ * move differently: the notification springs up to size, then the stacked
+ * card behind it (a second notification) slides out from under it, tucked in
+ * narrower and settling without a bounce, as iOS fans out a stack.
+ */
+.ios-notification-card {
+  opacity: 0;
+  transform: translate(-16px, -16px) scale(0.5);
+  transform-origin: bottom center;
+  transition:
+    opacity 400ms ease-out,
+    transform 650ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    /* The card's own hover scale. */
+    scale 150ms ease-out;
+}
+
+.ios-notification[data-visible='true'] .ios-notification-card {
+  opacity: 1;
+  transform: none;
+}
+
+.ios-notification-stack {
+  opacity: 0;
+  transform: translateY(-32px) scaleX(0.8);
+  transform-origin: top center;
+  transition:
+    opacity 350ms ease-out 450ms,
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1) 450ms;
+}
+
+.ios-notification[data-visible='true'] .ios-notification-stack {
+  opacity: 1;
+  transform: none;
+}
+
+/* Boosted-trees chart: a label or value that changes fades in rather than snapping. */
+@keyframes chart-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.chart-fade-in {
+  animation: chart-fade-in 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .phone-grids,
   .phone-front,
   .phone-back {
     transition: none;
@@ -283,6 +376,30 @@ body {
   }
 
   .disclosure::details-content {
+    transition: none;
+  }
+
+  .widget-tile {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .widget-tile > img,
+  .widget-tile:hover > img {
+    transition: none;
+    scale: none;
+  }
+
+  .chart-fade-in {
+    animation: none;
+  }
+
+  .ios-notification-card,
+  .ios-notification-stack {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }

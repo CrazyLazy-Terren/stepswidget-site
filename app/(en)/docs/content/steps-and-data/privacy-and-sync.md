@@ -4,7 +4,7 @@ title: Privacy and sync
 metaTitle: How Steps Widget Handles Your Health Data
 description: What Steps reads, what stays on your device, what iCloud carries, and why there is no account, no leaderboard, and no server that can read your steps.
 order: 5
-updated: 2026-10-25
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - private step counter
@@ -18,7 +18,7 @@ Step data is health data. It shows when you leave home, how long you sit still, 
 
 ## What the app reads
 
-Three read-only Apple Health types, with your permission: **step count**, **stand hours**, and your **activity summary**. It never writes to Health, and it never requests location for step counting.
+Three read-only Apple Health types, with your permission: **step count**, **stand hours**, and your **activity summary**. Two optional features add one more each, only when you use them: **wheelchair push count** for [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode), and **age, weight and height** when you import them into a [Walking Plan](/docs/getting-started/walking-plan). It never writes to Health, and it never requests location for step counting.
 
 No GPS is involved. Steps come from the iPhone's motion coprocessor and from Apple Watch, both surfaced through Health.
 
@@ -26,7 +26,7 @@ There is one location exception, and it is opt-in: **Local Sunset** uses your lo
 
 ## What stays on your device
 
-The model that decides when to remind you runs and _trains_ on your iPhone. It trains against your existing Apple Health step history, read at training time — it does not build a separate copy of your activity to learn from. Your pattern, the thing that makes the reminders feel personal, never leaves the phone.
+The model that decides when to remind you runs and _trains_ on your iPhone. It trains against your existing Apple Health step history, read at training time — it does not build a separate copy of your activity to learn from. The finished model is copied to your own Apple Watch through your private iCloud database, so the Watch projects your day the same way; it goes nowhere else. Your pattern, the thing that makes the reminders feel personal, never reaches a CrazyLazy server.
 
 Restyling your reminder messages with Apple Intelligence is the same story: the rewrite runs on Apple's on-device model, so your wording and your style description are not sent to a server — not ours, and not Apple's. Siri requests are answered the same way, by the app reading Health on your device.
 
@@ -55,6 +55,7 @@ If you use more than one Apple device, your **settings** follow you — not your
 - Last 24-Hour and Start of Day
 - Goal Reminder on/off, your reminder messages, Local Sunset
 - Widget styles and display options
+- Wheelchair Mode
 
 This runs through your own private iCloud key-value store, the same account that syncs your Notes. There is no CrazyLazy server involved, which is a different arrangement from the usual model where you create an account and the vendor holds your data.
 

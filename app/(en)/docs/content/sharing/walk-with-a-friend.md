@@ -4,7 +4,7 @@ title: Walk with a friend
 metaTitle: Share Your Steps with a Friend on iPhone with Steps Widget
 description: Swap cards with someone you know, see each other's steps side by side, and put them right on your Home Screen.
 order: 1
-updated: 2026-10-25
+updated: 2026-11-22
 readingTime: 3 min read
 keywords:
   - share steps with friends
@@ -22,7 +22,7 @@ Your card is how friends recognise you.
 
 1. Open Steps Widget and tap **Side by Side** icon at the home screen.
 2. Add your name under **Your Name Card**.
-3. Pick a look: a photo, a quick snap with the camera, an emoji, or your initials on a colour.
+3. Pick a look: a photo from your library, a quick snap with the camera, an image from Files, an emoji, or your initials on a colour. With Apple Intelligence on, **Image Playground** can make one for you too.
 
 You can change your card any time. Friends you're connected with see the update.
 

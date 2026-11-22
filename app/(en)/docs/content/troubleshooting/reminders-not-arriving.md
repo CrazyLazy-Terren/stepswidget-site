@@ -4,7 +4,7 @@ title: Reminders not arriving
 metaTitle: Fix Goal Reminders That Are Not Arriving in Steps Widget
 description: The reminder window, the elected sending device, notification permission, Focus modes, and Scheduled Summary — why a goal reminder stays silent.
 order: 3
-updated: 2026-08-10
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - notifications not working iPhone
@@ -85,9 +85,13 @@ The Watch app requests Health access on its own. If it shows **Health Access Req
 
 If the iPhone is the elected sender, the reminder arrives and you never see it. The fix is the wrist: wear your Apple Watch and let it be the sender, so a tap reaches you regardless of where the phone is. See [Apple Watch](/docs/widgets/apple-watch).
 
-## Why did I get "Steady pace" instead of a nudge?
+## Why does my widget say "Keep going" instead of nudging me?
 
-That is the message for being on track, and it carries your remaining step count so it still gives you a concrete figure. The four states are Goal hit, Strong lead, Steady pace, and Push now, chosen from your projection. Only states at or above the threshold are delivered.
+That is the **On track** message, and it carries your remaining step count so it still gives you a concrete figure. The four states are Goal reached, Ahead of pace, On track, and Falling behind, chosen from your projection. Only **Falling behind** and **Goal reached** are sent as notifications; the other two are the line the widgets show under your count. See [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work#what-each-message-is-telling-you).
+
+## Did I mute it?
+
+Tapping **Mute for 1 Hour** on a reminder silences the next hour on that device. It lifts by itself after the hour; there is nothing to turn back on.
 
 ## Nothing here fixed it
 

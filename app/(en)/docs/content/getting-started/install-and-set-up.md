@@ -4,7 +4,7 @@ title: Install and set up
 metaTitle: Install and Set Up Steps Widget on iPhone
 description: Install Steps, allow Health access, set your daily goal, add a widget, and turn on goal reminders. About five minutes, start to finish.
 order: 1
-updated: 2026-07-28
+updated: 2026-11-22
 readingTime: 4 min read
 keywords:
   - Steps Widget setup
@@ -38,22 +38,26 @@ Two features need a newer OS than the minimum: restyling your reminder messages 
 
 ## Step 2: Allow Health access
 
-On first launch the app shows **Requesting Health Access** and asks to read your step count. Tap **Allow**.
+The first screen says **Every Step Counts**. If you use a wheelchair, turn on **Wheelchair Mode** here first — the app then counts pushes from Apple Watch instead of steps. See [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode).
 
-It requests three read-only Health types and nothing else — step count, plus your stand hours and daily activity summary so the hourly chart can mark the hours you stood. It never writes to Health. [Connect Apple Health](/docs/getting-started/connect-apple-health) has the detail, including how to grant access later if you declined.
+Tap **Connect Apple Health**, then **Allow Access**, then **Allow** on the system sheet.
+
+It requests three read-only Health types — step count, plus your stand hours and daily activity summary so the hourly chart can mark the hours you stood. It never writes to Health.
+
+A **Welcome!** screen then walks through three quick steps: Apple Health, widgets and reminders, and styling your widget. While you read it, the app starts learning your routine from your Health history; the status underneath changes to **Personalized to your routine** once the reminder model is trained. [Connect Apple Health](/docs/getting-started/connect-apple-health) has the detail, including how to grant access later if you declined.
 
 ## Step 3: Set your daily goal
 
 Open **Settings** in the app. The first row is **Daily Goal** — type a number or drag the slider, which runs from 2,200 to 20,000 in steps of 200. The default is 8,000.
 
-The goal is the number everything else measures against: the progress ring in every widget, and the target the reminder model projects you against. **Goal Tips** in the app cites the research; [Set your daily goal](/docs/getting-started/set-your-daily-goal) covers how to pick a figure you will actually hit.
+The goal is the number everything else measures against: the progress ring in every widget, and the target the reminder model projects you against. [Set your daily goal](/docs/getting-started/set-your-daily-goal) covers how to pick a figure you will actually hit. If you want to build up to a bigger number, tap **Walking Plan** under the slider — see [Walking Plan](/docs/getting-started/walking-plan).
 
 ## Step 4: Add a widget
 
 1. Touch and hold an empty area of the Home Screen until the icons jiggle.
 2. Tap **Edit** or the **customize icon** in iOS 27, then tap **Add Widget**.
 3. Search for **Steps**.
-4. Pick one of the widgets — **Steps Ring**, **Steps Timeline**, **Steps Prompt**, **Goal Progress**, or **Steps Minimal**.
+4. Pick one of the widgets — **Steps Ring**, **Steps Timeline**, **Steps Prompt**, **Goal Progress**, **Steps Minimal**, **Walking Plan**, or **Side by Side**.
 5. Tap **Add Widget**, drag it into place, tap **Done**.
 
 [The widget gallery](/docs/widgets/widget-gallery) describes what each one shows and which sizes it supports.
@@ -68,7 +72,9 @@ The reminder settings are free, including the schedule and the message tone. Not
 
 ## Do I need an account?
 
-No. There is no account, no sign-in, and no password, because there is no server holding anything. Your steps are read from Apple Health on your device and stay there, and there is no leaderboard or social feed.
+No. There is no account, no sign-in, and no password. Your steps are read from Apple Health on your device and stay there, and there is no leaderboard or social feed.
+
+The one feature that talks to a server is [Side by Side](/docs/sharing/walk-with-a-friend), when you choose to share steps with a friend. Even then there is no account: your card is the key, your step chart is encrypted on your iPhone, and the server only delivers updates it cannot read. See [Private by design](/docs/sharing/private-by-design).
 
 Sign in to iCloud and your settings — goal, reminder preferences, widget styles — follow you across your own devices through your private iCloud. See [Privacy and sync](/docs/steps-and-data/privacy-and-sync).
 
@@ -76,10 +82,10 @@ Sign in to iCloud and your settings — goal, reminder preferences, widget style
 
 Yes. It is free to download with no ads at any tier, and the free tier is not time-limited. The whole reminder system costs nothing: the on-device model, the projection, the schedule, the message style, and the Apple Watch reminders.
 
-The optional **Customization** subscription lets you apply additional widget styles, colours, and gradient themes. An active subscription is needed to _change_ to a different style; a style you have already applied keeps working if the subscription lapses. Prices are on the App Store listing.
+The optional **Customization** subscription lets you apply additional widget styles, colours, gradient themes, and fonts. The app also offers a one-time gift of every style free for 30 minutes, and whatever you apply during it is yours to keep — see [Styling widgets](/docs/widgets/widget-styles#try-every-style-free-for-30-minutes). An active subscription is needed to _change_ to a different style; a style you have already applied keeps working if the subscription lapses. Prices are on the App Store listing.
 
 ## What to read next
 
 - [Connect Apple Health](/docs/getting-started/connect-apple-health) — what it reads, and how to fix access.
 - [How goal reminders work](/docs/goal-reminders/how-goal-reminders-work) — the projection and the threshold.
-- [The widget gallery](/docs/widgets/widget-gallery) — all eight widgets.
+- [The widget gallery](/docs/widgets/widget-gallery) — every widget and where it fits.

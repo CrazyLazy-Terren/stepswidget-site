@@ -4,7 +4,7 @@ title: Apple Watch
 metaTitle: Steps Widget for Apple Watch - Complications and Reminders
 description: The standalone Watch app, its three complication styles, the settings you can change from the wrist, and why the Watch is the best device to send reminders.
 order: 5
-updated: 2026-08-10
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - Apple Watch step app
@@ -22,7 +22,7 @@ Usually automatic: if the app installed on your iPhone, watchOS installs the Wat
 
 To check or install manually, open the **Watch** app on iPhone, go to **My Watch**, scroll to **Available Apps**, and tap **Install** next to Steps Widget. To make future installs automatic, open **Settings** on the Watch, tap **App Store**, and turn on **Automatic Downloads**.
 
-The app's own **How Step Update** screen has an **Open Watch App** button that jumps straight there when the Watch app is not yet installed.
+Until the Watch app is installed, the app's **Settings** shows an **Open Watch App** button that jumps straight there.
 
 ## Complications
 
@@ -61,10 +61,10 @@ The Watch app is not read-only. From the wrist you can change:
 - **Last 24 Hour** and **Start of Day** — see [the step window](/docs/steps-and-data/step-window)
 - **Motion Sensor**
 - **Goal Reminder**
-- Complication style, chart type, and timestamp format for each accessory type
+- Complication style, chart type, and timestamp format for each accessory type, plus the **Font** they draw in
 - The Customization subscription
 
-Everything syncs with your iPhone. Subscribe on the Watch and it applies to the phone.
+Everything syncs with your iPhone. Subscribe on the Watch and it applies to the phone. **Wheelchair Mode** is set on the iPhone and follows to the Watch, where the complications switch to a wheelchair figure and count pushes — see [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode).
 
 ## Reminders on your wrist
 

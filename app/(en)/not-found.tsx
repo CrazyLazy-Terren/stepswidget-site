@@ -42,7 +42,7 @@ export default function NotFound() {
       </div>
 
       <div className="mt-12 flex">
-        <Link href="/" className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-color)] px-6 py-3 text-sm font-semibold text-white transition">
+        <Link href="/" className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-color)] px-6 py-3 text-sm font-semibold text-[var(--button-text)] transition">
           Back to Home
         </Link>
       </div>

@@ -2,9 +2,9 @@
 slug: widget-styles
 title: Styling widgets
 metaTitle: Widget Styles, Colours, and Display Options in Steps Widget
-description: Per-widget colour palettes, gradients, appearance, chart type, timestamp format, milestones, and exactly what the Customization subscription covers.
+description: Per-widget colour palettes, gradients, fonts, appearance, chart type, timestamp format, milestones, and exactly what the Customization subscription covers.
 order: 2
-updated: 2026-09-08
+updated: 2026-11-22
 readingTime: 5 min read
 keywords:
   - customize iPhone widget
@@ -31,6 +31,18 @@ Each widget type offers three rows of styles:
 | Gradient | A gradient background with light text, in themes like Sunrise, Meadow, Dusk, Aurora, and Ocean |
 
 A fourth row appears once you have made styles of your own. **Style from Photo**, in the bottom bar, builds one out of any picture in your library — either as a palette lifted off the photo, or as the photo itself behind the step count. See [Styles from a photo](/docs/widgets/photo-styles), and [Sharing a photo style](/docs/widgets/share-a-style) to send one to someone else.
+
+## Fonts
+
+Under the style row, pick the typeface the widget draws its text in:
+
+| Font            | Look                                         |
+| --------------- | -------------------------------------------- |
+| **Handwritten** | A marker-pen face, like a note on the fridge |
+| **Rounded**     | The system's rounded font — the default      |
+| **Digital**     | A clean, narrow face like a road sign or scoreboard |
+
+The font belongs to the style, so every widget using that style changes together. Applying a new font is part of the Customization subscription, the same as colours. On Apple Watch, the style screen on the wrist has its own font picker for the accessory widgets.
 
 ## Display options
 
@@ -66,9 +78,17 @@ What is free and what is paid:
 
 **Free forever** — goal reminders and every setting behind them, the on-device model and its training, your reminder messages, the reminder schedule, your daily goal, Insight, Live Activity, the Apple Watch app, Motion Sensor, the step window settings, and a working widget on every surface.
 
-**Paid** — applying additional widget styles, colours, and gradient themes.
+**Also free** — [Walking Plan](/docs/getting-started/walking-plan), [Side by Side](/docs/sharing/walk-with-a-friend) sharing with friends, [Wheelchair Mode](/docs/steps-and-data/wheelchair-mode), and the [Step Sources](/docs/getting-started/connect-apple-health#see-which-devices-counted-your-steps) breakdown.
+
+**Paid** — applying additional widget styles, colours, gradient themes, and fonts.
 
 No feature the app needs to function is behind the paywall. Without the subscription you still get the full reminder system and your step count on every surface. It changes appearance only.
+
+## Try every style free for 30 minutes
+
+Once, the app offers a gift: **A Little Gift for You**. Tap **Unwrap** and every style, colour, and font is unlocked for 30 minutes, so you can see what fits your Home Screen before paying for anything.
+
+Whatever you apply in those 30 minutes stays when the time runs out, by the same rule as a lapsed subscription below. If you tap **Not Now**, the offer waits on the main screen as **Your Gift Is Still Here** until you claim it or tap **No Thanks**.
 
 ## What happens if the subscription lapses
 
