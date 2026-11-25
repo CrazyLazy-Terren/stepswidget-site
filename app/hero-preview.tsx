@@ -85,7 +85,7 @@ export function HeroPreview({ intro }: { intro: ReactNode }) {
         <div className="lg:col-span-5">{intro}</div>
 
         {/* The phones bleed to the screen edge on phones; on desktop they fill their seven columns. */}
-        <div className="relative -mx-6 mt-10 h-[32rem] overflow-hidden sm:h-[37rem] lg:col-span-7 lg:mx-0 lg:mt-0 lg:h-[48rem]">
+        <div className="relative -mx-6 mt-10 h-[36rem] overflow-hidden  lg:col-span-7 lg:mx-0 lg:mt-0 lg:h-[48rem]">
           <div className="phone-back absolute left-1/2 top-8 w-52 sm:w-64 lg:w-80">
             <IPhoneMockup
               src="/assets/home-screen-widgets.webp"
